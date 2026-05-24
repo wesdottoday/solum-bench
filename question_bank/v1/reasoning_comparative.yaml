@@ -1,0 +1,480 @@
+metadata:
+  category: reasoning
+  subcategory: comparative
+  version: v1
+
+questions:
+  - id: reasoning_comparative_0001
+    question_type: open_ended
+    difficulty: medium
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare no-till versus chisel plow tillage for a clay Vertisol in central India that experiences both monsoon flooding and dry season cracking. Which approach is better for long-term soil health, and why? Consider the unique shrink-swell properties of Vertisols, residue management challenges, and the implications for water infiltration during monsoon rains.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should address: Vertisols have >30% smectite clay that swells when wet and cracks when dry; self-mulching: natural shrink-swell acts as 'biological tillage' mixing surface material into cracks; no-till on Vertisols is challenging because surface sealing under monsoon rain reduces infiltration, and residue management is difficult with heavy clay; chisel plow breaks surface crust without inverting soil, preserving some structure; however, no-till with adequate residue cover can succeed if paired with controlled traffic and precision seeding into dry cracks; long-term no-till builds organic matter which improves Vertisol workability; in Indian context, the 'broad bed and furrow' system may be more appropriate than either pure no-till or conventional tillage; should acknowledge that Vertisols are the most challenging soil order for no-till adoption globally."
+    tags: [no_till, chisel_plow, vertisols, india, shrink_swell, tillage]
+
+  - id: reasoning_comparative_0002
+    question_type: open_ended
+    difficulty: hard
+    regions: [tropics, central_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare silvopasture (trees + pasture + livestock) versus rotational grazing alone (pasture + livestock, no trees) for a tropical highland farm at 1500 m elevation in Costa Rica. Evaluate both systems across soil carbon sequestration, nutrient cycling efficiency, water regulation, biodiversity, livestock productivity, and long-term soil health. Why might silvopasture outperform rotational grazing alone in this context?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare across multiple dimensions: SOIL CARBON: silvopasture sequesters more C through tree root inputs at depth (2-5 t C/ha/yr vs 0.5-1.5 for grazing alone), deep roots deposit C below tillage zone; NUTRIENT CYCLING: trees act as nutrient pumps lifting deep nutrients to surface via leaf litter, N-fixing trees (Erythrina, Gliricidia) add 50-200 kg N/ha/yr; WATER: tree canopy intercepts rainfall reducing splash erosion, deeper root zone improves infiltration and reduces runoff, shade reduces evapotranspiration from soil surface; BIODIVERSITY: multi-strata habitat for birds, insects, soil organisms; LIVESTOCK: shade reduces heat stress improving weight gain and milk production (15-20% improvement documented in tropics); tree fodder supplements pasture during dry season; SOIL HEALTH: continuous root inputs, diverse litter quality, protection from compaction under tree canopy. Rotational grazing alone still superior to continuous grazing but lacks the tree-derived benefits. Trade-offs: establishment cost, management complexity, reduced pasture production under heavy shade."
+    tags: [silvopasture, rotational_grazing, costa_rica, tropical_highlands, agroforestry]
+
+  - id: reasoning_comparative_0003
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the soil health impacts of synthetic nitrogen (urea or ammonium nitrate) versus organic nitrogen (composted cattle manure) applied at equivalent total nitrogen rates over a 10-year period on a temperate silt loam under continuous corn production. Address soil organic matter, microbial biomass and diversity, aggregate stability, CEC, pH trends, and micronutrient status.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: SYNTHETIC N: provides immediately available N for crop uptake; no organic matter addition so SOM declines over time (residue return only); soil acidification (requires periodic liming); microbial biomass does not increase (no additional C substrate); aggregate stability unchanged or declining; CEC unchanged or declining as SOM decreases; suppresses mycorrhizal colonization; may accumulate NO3- in soil profile. ORGANIC N (manure compost): only 10-30% of N available first year (slow release); builds SOM progressively (compost at 10 t/ha/yr adds significant C); increases microbial biomass and diversity; improves aggregate stability through organic binding agents; increases CEC as SOM builds; supplies Ca, Mg, micronutrients; less acidifying than urea; may over-accumulate P over time (N:P ratio of manure doesn't match crop demand). 10-year outcome: compost plots typically show 0.3-0.8% higher SOM, 2-3x higher microbial biomass, better water infiltration, but possibly excessive soil test P. Integrated approach using some of each is often optimal."
+    tags: [synthetic_vs_organic, nitrogen_sources, soil_health, manure, urea, long_term]
+
+  - id: reasoning_comparative_0004
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare chemical versus biological approaches to phosphorus solubilization in agriculture. Chemical approaches include acidulated fertilizers (MAP, DAP, TSP) and pH manipulation, while biological approaches include mycorrhizal inoculation, phosphate-solubilizing bacteria, and organic acid-producing cover crops (buckwheat, lupins). Under what soil conditions does each approach excel, and what are the long-term consequences of relying solely on one approach?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: CHEMICAL: MAP/DAP/TSP dissolve rapidly providing high solution P concentration; effective on low-P soils needing immediate correction; but 70-90% of applied P becomes fixed within a season (especially in Fe/Al-rich tropical soils and calcareous soils); acidulation works but is energy-intensive and creates soluble P vulnerable to runoff; long-term sole reliance leads to P accumulation in non-labile pools (legacy P), environmental risk (eutrophication), and suppression of biological P cycling mechanisms. BIOLOGICAL: mycorrhizae access soil P through extended hyphal network and organic acid secretion; PSB solubilize through gluconic/citric acid production and phosphatase enzymes; buckwheat and lupins exude organic acids (citrate, oxalate, malate) from proteoid/cluster roots; slower but more sustainable; maintains active biological P cycling; long-term sole reliance may not supply enough P for high-yield targets in severely P-deficient soils. OPTIMAL: use minimal chemical P to correct severe deficiency, then maintain biological cycling; band P fertilizer to reduce soil contact and fixation; integrate P-scavenging species in rotation."
+    tags: [phosphorus_solubilization, chemical_vs_biological, mycorrhizae, fertilizer, sustainability]
+
+  - id: reasoning_comparative_0005
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the effects of monoculture versus polyculture (diverse crop mixtures) on soil microbiology over a five-year period. Consider mycorrhizal diversity and colonization rates, bacterial community composition, suppression of soilborne pathogens, enzyme activity, and the formation of disease-suppressive soils. Why does plant diversity above ground drive microbial diversity below ground?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: MONOCULTURE: selects for narrow microbial community adapted to single root exudate profile; AMF diversity declines (some species favored, others lost); pathogen inoculum builds without host-free period; bacterial community becomes less diverse and functionally redundant; enzyme activity may be high but specialized; suppressive soil capacity diminishes. POLYCULTURE: diverse root exudate profiles (sugars, organic acids, amino acids) support diverse microbial communities; different plants associate with different AMF species maintaining network diversity; crops with antifungal root exudates (Brassicas producing isothiocyanates, Tagetes producing thiophenes) reduce pathogen pressure for neighboring/subsequent crops; diverse litter quality supports diverse decomposer community; functional redundancy provides resilience; niche complementarity means more complete nutrient cycling. MECHANISM: plant species-specific root exudates act as selective media for microbial recruitment; rhizosphere microbiome assembly driven by plant chemistry; diverse plant communities create diverse chemical environments supporting greater microbial niche space."
+    tags: [monoculture, polyculture, soil_microbiology, diversity, disease_suppression]
+
+  - id: reasoning_comparative_0006
+    question_type: open_ended
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare annual grain systems (e.g., wheat-corn-soybean rotation) with emerging perennial grain systems (e.g., Kernza intermediate wheatgrass) for their effects on soil carbon sequestration, soil structure, water cycling, and overall sustainability. What are the biological mechanisms by which perennial root systems build soil carbon more effectively, and what are the current yield and economic limitations preventing widespread adoption of perennial grains?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: ANNUAL SYSTEMS: root systems re-established each year, shallow and short-lived; soil is bare or lightly covered for significant portions of the year; tillage disrupts soil structure periodically; root C inputs limited to growing season (4-6 months); soil C typically stable or declining under best management. PERENNIAL SYSTEMS (Kernza): permanent root systems extend 3+ meters deep (vs ~1.5m for wheat); continuous root exudation feeds soil biology year-round; no soil disturbance from tillage; root turnover deposits C at depth where decomposition is slower; year-round ground cover eliminates erosion; perennial roots access deep water reducing irrigation need; documented SOC increases of 0.5-1.5 t C/ha/yr in Kernza research plots. LIMITATIONS: Kernza yields currently 20-30% of wheat; grain size is small requiring different processing; breeding programs still in early stages (Land Institute); economic viability requires premium markets; perennial stands decline in productivity after 3-5 years requiring re-establishment; weed management without tillage is challenging. Should note this is an active area of research with significant potential."
+    tags: [perennial_grains, kernza, soil_carbon, annual_vs_perennial, sustainability]
+
+  - id: reasoning_comparative_0007
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare "conventional organic" farming (certified organic, but relying heavily on tillage for weed control, monoculture cash crops, and purchased organic fertilizers) with "regenerative organic" farming (no-till or minimal till, diverse rotations, cover crops, integrated livestock, and on-farm fertility). Where do these approaches diverge in their effects on soil health, and why might a conventional organic farm actually degrade soil faster than some well-managed conventional farms?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should distinguish: CONVENTIONAL ORGANIC: avoids synthetic chemicals (positive for biology), but intensive tillage for weed control destroys aggregate structure and mycorrhizal networks; soil may actually lose carbon faster than no-till conventional due to tillage frequency; monoculture organic still has disease pressure issues; purchased inputs (Chilean nitrate, blood meal, rock phosphate) can be unsustainable supply chains; meets letter of organic certification but not soil health principles. REGENERATIVE ORGANIC: combines prohibition on synthetic chemicals with soil-building practices; no-till/reduced-till uses cover crop mulch and roller-crimper for weed suppression; diverse rotations break pest cycles biologically; livestock integration provides fertility and residue cycling; builds SOM progressively; may have lower yields initially but cost savings on inputs; Regenerative Organic Certified (ROC) label attempts to codify this distinction. KEY DIVERGENCE: tillage intensity and system diversity are the critical differences; a no-till conventional farm using cover crops and diverse rotations may have better soil health indicators than a heavily tilled organic farm; this challenges the assumption that 'organic = good for soil.'"
+    tags: [organic_farming, regenerative_organic, conventional_organic, tillage, soil_health]
+
+  - id: reasoning_comparative_0008
+    question_type: open_ended
+    difficulty: medium
+    regions: [middle_east, central_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare drip irrigation versus flood irrigation for their effects on soil salinity in an arid environment (e.g., the Jordan Valley or Fergana Valley of Uzbekistan). Consider salt distribution patterns, water use efficiency, root zone management, and long-term soil structural impacts. Under what conditions might drip irrigation actually worsen salinity problems at the field margins?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: FLOOD IRRIGATION: applies large volumes pushing salts downward (leaching); but also raises water table if drainage is inadequate; uniform but inefficient (50-60% efficiency); risk of waterlogging and secondary salinization through capillary rise; entire soil volume wetted. DRIP IRRIGATION: highly efficient (85-95%); maintains root zone at optimal moisture; BUT creates a specific salt distribution pattern - salts move outward and upward from the wetted bulb, accumulating at the wetting front (the dry-wet boundary); salt fringe can encircle the root zone; if system fails or seasonal rain pushes accumulated salts back into root zone, severe damage can occur; between-row salt accumulation can be extreme; less total water applied means less leaching to flush salts below root zone; DRIP CAN WORSEN SALINITY: at field margins where wetting patterns overlap, or when irrigation is interrupted (power failure, maintenance), or when transitioning between crops; periodic leaching irrigation may still be needed; should mention subsurface drip as partial solution; long-term: drip maintains structure better (no surface crusting from flooding), but salt management requires careful monitoring."
+    tags: [drip_irrigation, flood_irrigation, salinity, arid_soils, water_management]
+
+  - id: reasoning_comparative_0009
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare compost versus biochar as soil amendments for building long-term soil carbon stocks. Consider the persistence of carbon in soil, the mechanisms of carbon stabilization, effects on nutrient cycling, impacts on soil biology, and the practical considerations of production and application. Under what soil conditions would you recommend one over the other?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: COMPOST: C in organic forms with variable stability; 10-20% of applied C remains after 10 years; stimulates biological activity immediately; supplies N, P, K, micronutrients; increases CEC through organic matter; improves water-holding capacity; supports full soil food web; C stabilization mainly through MAOM formation. BIOCHAR: 70-90% of C in aromatic ring structures highly resistant to decomposition (>100 year residence time); provides CEC through surface oxidation (develops over time); creates microbial habitat but does not directly feed biology; nutrient content depends on feedstock and temperature; can adsorb and immobilize some nutrients initially; does not supply significant N (mostly volatilized during pyrolysis); excellent for permanently raising soil C. RECOMMENDATIONS: degraded tropical soils with very low CEC benefit most from biochar; biologically depleted soils need compost first; best approach may be combination - compost for biology and nutrients, biochar for permanent C and CEC; sandy soils benefit from biochar's water retention; productive soils with active biology benefit more from compost; biochar in contaminated soils can immobilize heavy metals; cost and availability often determine practical choice."
+    tags: [compost, biochar, soil_carbon, soil_amendments, carbon_persistence]
+
+  - id: reasoning_comparative_0010
+    question_type: open_ended
+    difficulty: easy
+    regions: [south_asia, southeast_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare burning versus mulching crop residues (e.g., rice straw) in terms of their impacts on soil biology, nutrient cycling, soil organic matter, and weed suppression. Why do many farmers still prefer burning despite its known negative consequences?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: BURNING: kills surface-dwelling organisms (fungi, bacteria, arthropods, earthworms); volatilizes N (>95% lost) and S (~60% lost); returns K, P, Ca, Mg in ash (but vulnerable to wind/water loss); destroys organic matter that would have fed soil biology; creates pyrogenic carbon (small amount, stable); eliminates weed seeds in residue; heat penetration to 1-2 cm sterilizes surface layer; repeated burning depletes SOM over decades. MULCHING: provides food for decomposer community (bacteria, fungi, earthworms, termites); slow nutrient release as residues decompose; N temporarily immobilized if high C:N straw; protects soil surface from erosion, temperature extremes, and evaporation; maintains soil moisture (up to 50% reduction in evaporation); builds SOM over time; provides weed suppression through physical barrier and allelopathy (rice straw); creates habitat for beneficial predators. WHY FARMERS BURN: rapid field clearing (hours vs months for decomposition); eliminates disease inoculum (rice blast, stem borer); makes planting easier with reduced residue interference; cultural tradition; no capital investment required; short turnaround time between crops in double-cropping systems."
+    tags: [residue_burning, mulching, rice_straw, soil_biology, farmer_decision]
+
+  - id: reasoning_comparative_0011
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare shallow-rooted annual cover crops (such as crimson clover or annual ryegrass, rooting to 30-60 cm) with deep-rooted cover crops (such as daikon radish or chicory, rooting to 1-2 meters) in terms of their effects on soil compaction, subsoil nutrient recovery, and water infiltration. When would you recommend each type?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: SHALLOW-ROOTED: excellent for surface erosion protection and topsoil SOM building; dense fibrous roots (ryegrass) improve surface aggregate stability; clover fixes N in top 30 cm; limited ability to penetrate compacted layers; do not access deep nutrients; root channels confined to plow layer. DEEP-ROOTED: daikon radish creates macropores through compacted layers (bio-drilling); channels remain after root decomposes, improving water infiltration and subsequent crop root penetration; access nutrients (N, K, S, Ca) leached below annual crop root zone; chicory's deep taproot can penetrate surprisingly dense subsoil; root decomposition feeds deep soil biology; limitations: daikon winterkills in cold climates (can be advantage or disadvantage); deep-rooted species may use significant subsoil moisture. RECOMMENDATIONS: compacted fields benefit from deep-rooted species; erosion-prone slopes need dense shallow-rooted cover; ideal is mixture of both (e.g., clover + radish + rye) for multi-depth benefits; rotate cover crop species to maximize diverse root architecture effects."
+    tags: [cover_crops, root_depth, compaction, biodrilling, nutrient_recovery]
+
+  - id: reasoning_comparative_0012
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the carbon sequestration potential and climate impact of four regenerative practices: (1) no-till cropping, (2) cover crops, (3) agroforestry, and (4) managed grazing on permanent pasture. For each, estimate the approximate annual carbon sequestration rate, explain the mechanisms of carbon stabilization, identify the saturation point or permanence concerns, and discuss the non-CO2 greenhouse gas implications (N2O, CH4). Which combination of practices offers the most climate benefit per hectare?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should provide quantitative comparisons: NO-TILL: 0.3-0.7 t C/ha/yr, mainly in top 10 cm as POM, may saturate in 10-20 years, possible increase in N2O from denitrification in wetter surface soil; COVER CROPS: 0.2-0.5 t C/ha/yr additional, root C inputs plus reduced erosion, synergistic with no-till, legume covers may increase N2O; AGROFORESTRY: 1-5 t C/ha/yr (above + below ground), deep root C sequestration more permanent, longest sequestration window, some systems reduce N2O through competition for N; MANAGED GRAZING: 0.3-1.5 t C/ha/yr (wide range, context-dependent), primarily through root inputs and reduced decomposition, methane from ruminants partially offsets soil C gains (enteric CH4 important consideration). COMBINATION: integrated crop-livestock-tree systems offer highest total climate benefit by maximizing above and below-ground C, spreading inputs across depths, and creating multiple stabilization mechanisms. Should note high uncertainty in all estimates and importance of measurement context."
+    tags: [carbon_sequestration, climate_impact, no_till, cover_crops, agroforestry, grazing]
+
+  - id: reasoning_comparative_0013
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the soil health effects of moldboard plowing (full inversion to 25-30 cm) versus strip tillage (tilling only a narrow 15-20 cm band in the crop row). Why is strip tillage considered a compromise between conventional tillage and no-till, and for which soil types and climates does it offer the best balance of benefits?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: MOLDBOARD PLOW: inverts full soil surface burying residue; destroys all macroaggregates and earthworm burrows; exposes carbon-rich subsoil to oxidation; creates clean seedbed but high erosion risk; stimulates large mineralization pulse; beneficial for incorporating amendments and breaking disease cycles in some cases. STRIP TILL: only disturbs 25-30% of soil surface; inter-row zones remain undisturbed (preserving structure, biology, residue cover); tilled strip warms faster in spring (important in cold climates); allows precise fertilizer placement in tilled zone; 70-75% of erosion reduction compared to full no-till; better suited for: cold wet climates where no-till delays planting (northern Corn Belt, Scandinavia), heavy clay soils that drain poorly, fields transitioning from conventional to no-till; compromises: more equipment cost than either plow or no-till, still some aggregate disruption in tilled zone, may not build as much SOM as full no-till over time."
+    tags: [strip_tillage, moldboard_plow, soil_health, compromise_tillage, cold_climates]
+
+  - id: reasoning_comparative_0014
+    question_type: open_ended
+    difficulty: medium
+    regions: [sub_saharan_africa, south_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the "push-pull" intercropping system (Desmodium repels stem borers, Napier grass attracts them, with a food crop in between) with conventional pesticide-based pest management for cereal production in East African smallholder systems. Evaluate both approaches for soil health impacts, pest control efficacy, economic sustainability, and effects on soil biology.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: PUSH-PULL (developed by ICIPE/Rothamsted): Desmodium uncinatum/intortum intercropped between cereal rows repels stem borers through volatile chemicals; also suppresses Striga (parasitic weed) through allelopathic root exudates; Napier grass (Pennisetum purpureum) border trap crop attracts borers away from cereal; Desmodium is a legume fixing 50-100 kg N/ha; provides continuous ground cover reducing erosion; root system improves soil structure; livestock feed from Napier and Desmodium; builds SOM through perennial ground cover; documented 2-3x yield increases over monoculture. PESTICIDE APPROACH: targets specific pest with chemical control; immediate efficacy but resistance develops; kills non-target organisms including natural enemies of borers; no soil health benefit; recurring cost each season; may contaminate soil and water; does not address Striga. SOIL HEALTH: push-pull dramatically superior - diverse root systems, N fixation, ground cover, organic matter inputs, biological pest control supports arthropod diversity above and below ground; economically: push-pull has higher establishment cost but lower recurring cost and multiple income streams."
+    tags: [push_pull, intercropping, pest_management, east_africa, desmodium, striga]
+
+  - id: reasoning_comparative_0015
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare aerobic composting, vermicomposting, and anaerobic digestion (biogas) as methods for processing organic waste and producing soil amendments. For each process, evaluate the nutrient conservation efficiency, carbon retention, pathogen elimination, greenhouse gas emissions during processing, and the quality of the final product as a soil amendment. Under what farm-scale conditions is each method most appropriate?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: AEROBIC COMPOSTING: N loss 20-50% (NH3 volatilization); C loss 50-70% as CO2 (by design - stabilization); pathogen kill through thermophilic temperatures (>55C for 3+ days); produces stable humus-like material; moderate GHG emissions (CH4 if poorly managed, some N2O); versatile for many farm sizes. VERMICOMPOSTING: N loss 5-15% (lower because mesophilic, less NH3); C loss 30-50%; pathogen reduction through passage through worm gut (less reliable than thermophilic composting); produces castings with high biological activity, plant growth hormones (auxins, cytokinins), and disease-suppressive properties; low GHG emissions; limited throughput, sensitive to temperature and moisture; best for small to medium farms. ANAEROBIC DIGESTION: N conserved at 80-95% (highest retention, mostly as NH4+); C loss 30-60% as CH4 (captured for energy); pathogen reduction depends on temperature (mesophilic less effective, thermophilic more); digestate is liquid, high in NH4+, acts like fast-release fertilizer; requires significant capital investment; best for large farms with livestock (manure as feedstock) and energy needs; energy co-benefit offsets cost. Best combination: anaerobic digestion for energy capture, then composting the digestate for stable soil amendment."
+    tags: [composting, vermicomposting, anaerobic_digestion, organic_waste, soil_amendments]
+
+  - id: reasoning_comparative_0016
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the effects of grazing by cattle, sheep, and goats on pasture and soil health. How do the different grazing behaviors, hoof sizes, and digestive systems of these animals create different outcomes for soil compaction, vegetation diversity, nutrient distribution, and soil biology?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: CATTLE: non-selective grazers, take large bites; heavy body weight (500-700 kg) can cause significant compaction especially on wet soils; large dung pats create concentrated fertility patches that are slowly decomposed; promote grass-dominated swards; hoof action effective at breaking soil crusts and incorporating seed. SHEEP: more selective grazers than cattle; lighter weight (50-80 kg) causing less compaction; smaller fecal pellets distributed more evenly across pasture; can graze closer to ground risking overgrazing; effective for weed control on specific species. GOATS: browsers preferring shrubs, weeds, and woody species over grass; lightest compaction impact; effective for brush clearing and invasive species control; can access steep terrain; fecal pellets small and well-distributed; may damage desirable trees if not managed. SOIL BIOLOGY: different manure composition supports different dung beetle communities; cattle dung supports larger dung beetle species creating deeper burrows; mixed-species grazing creates most diverse soil biological response; management (stocking rate, rotation) matters more than species for soil health outcomes."
+    tags: [cattle, sheep, goats, grazing_behavior, soil_compaction, pasture_management]
+
+  - id: reasoning_comparative_0017
+    question_type: open_ended
+    difficulty: medium
+    regions: [north_america, south_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the soil biology impacts of glyphosate-based weed management in no-till systems versus mechanical cultivation (sweep cultivator or rotary hoe) in organic systems. Both approaches aim to control weeds but through completely different mechanisms. Evaluate their effects on mycorrhizal networks, soil bacterial and fungal communities, earthworm populations, and overall soil food web function.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should address: GLYPHOSATE IN NO-TILL: no physical soil disturbance preserves fungal hyphae networks and earthworm burrows; however, glyphosate is a chelator of metal micronutrients (Mn, Zn, Fe) potentially affecting microbial enzyme systems; inhibits EPSPS enzyme in the shikimate pathway which exists in soil bacteria and fungi (not just plants); evidence of transient shifts in rhizosphere microbial community; debate about persistence and cumulative effects; mycorrhizal networks physically intact but potentially functionally impaired. MECHANICAL CULTIVATION: physically severs fungal hyphae and earthworm burrows; destroys macroaggregates exposing protected organic matter; promotes bacterial-dominated communities over fungal; mixes residue into soil accelerating decomposition; must be repeated multiple times per season amplifying damage; but no chemical residue concern. NUANCED VIEW: neither is ideal; regenerative systems aim to reduce both through cover crop competition, diverse rotations, and integrated approaches; the 'organic vs no-till' tension is a central challenge in regenerative agriculture; some farms achieving no-till organic using roller-crimper technology to avoid both herbicides and cultivation."
+    tags: [glyphosate, mechanical_cultivation, soil_biology, mycorrhizae, weed_management]
+
+  - id: reasoning_comparative_0018
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the soil moisture dynamics under plastic mulch versus organic mulch (straw or wood chips) in vegetable production. How does each type of mulch affect soil temperature, moisture, microbial activity, and long-term soil health? Why might a regenerative farmer choose organic mulch despite lower yields in some crops?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: PLASTIC MULCH: impermeable barrier eliminating evaporation from covered surface; black plastic warms soil 3-5C (beneficial for warm-season crops in cool climates); clear plastic warms more but allows weed growth; blocks rainfall requiring drip irrigation; no organic matter contribution; creates microplastic pollution as it degrades; must be removed and disposed (labor + waste); no benefit to soil biology (actually suppresses some organisms through temperature extremes and moisture exclusion). ORGANIC MULCH: reduces evaporation while allowing rainfall infiltration; moderates soil temperature (cooler in summer, warmer in winter); provides continuous food source for decomposers (fungi, bacteria, earthworms); builds SOM over time; suppresses weeds through physical barrier and allelopathy; maintains soil moisture more evenly; improves aggregate stability at soil surface; attracts and supports arthropod communities; straw may introduce weed seeds; wood chips can immobilize N at soil surface. REGENERATIVE CHOICE: short-term yield sacrifice offset by long-term soil building, no plastic waste, reduced input costs over time, carbon sequestration, and improved system resilience."
+    tags: [plastic_mulch, organic_mulch, soil_moisture, soil_health, vegetable_production]
+
+  - id: reasoning_comparative_0019
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the soil ecosystem effects of precision agriculture (variable-rate technology, GPS-guided operations, sensor-based management) versus traditional regenerative agriculture (holistic management, ecological observation, farmer intuition). Can these approaches be integrated? Where does technology enhance regenerative goals, and where might it undermine the ecological thinking that underpins regenerative agriculture?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should thoughtfully compare: PRECISION AG: GPS-guided traffic reduces compaction (controlled traffic farming); variable-rate fertilizer matches nutrient supply to within-field variability reducing excess application; sensors detect soil moisture, compaction, and organic matter variability; drone/satellite monitoring tracks crop health and soil conditions; data-driven decisions improve resource use efficiency. REGENERATIVE AG: holistic management framework considers social, economic, and ecological dimensions; emphasis on mimicking natural systems; farmer observation of indicator species, soil smell, aggregate stability; adaptive management based on ecological feedback; focus on biological self-regulation. INTEGRATION POTENTIAL: soil mapping + regenerative practices = targeted interventions where needed most; sensors monitoring soil biology (emerging technology) could guide management decisions; reduced-rate precision fertilizer compatible with biological system enhancement; controlled traffic + no-till is synergistic. TENSION: over-reliance on technology can disconnect farmer from ecological observation; data optimization may focus on yield rather than ecosystem health; technology cost excludes smallholders globally; reductionist data analysis may miss emergent ecological properties. Best outcome: technology serves ecological goals, not the reverse."
+    tags: [precision_agriculture, holistic_management, technology_integration, soil_monitoring]
+
+  - id: reasoning_comparative_0020
+    question_type: open_ended
+    difficulty: medium
+    regions: [mediterranean, australia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the effectiveness of mechanical water harvesting techniques (swales, keyline design, terraces) versus biological water harvesting approaches (deep-rooted perennials, mulch cover, soil organic matter building) for improving water infiltration and retention in semi-arid landscapes. Under what conditions does each approach provide the greatest benefit, and how do they interact when combined?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: MECHANICAL: swales (contour ditches) capture overland flow and infiltrate it; keyline design uses landscape contour to distribute water from valleys to ridges; terraces reduce slope and slow runoff; immediate effect upon construction; effective even on degraded, biologically inactive soils; require earthworks (cost, energy); can be overwhelmed by extreme rainfall; maintenance required. BIOLOGICAL: deep-rooted plants create macropores for preferential flow; organic matter increases water-holding capacity (each 1% SOM increase holds additional 75,000-150,000 L/ha); mulch prevents surface sealing and raindrop impact; aggregate stability from biological activity maintains infiltration; slower to establish but self-maintaining; improves with time rather than degrading. INTERACTION: mechanical harvesting concentrates water, biological components capture and store it; swales without vegetation can erode during intense storms; vegetation without water harvesting may not survive establishment in driest sites; Keyline + perennial plantings + mulch = maximum water capture; P.A. Yeomans' original keyline system integrated both mechanical and biological elements; example: Australian property combining keyline design with perennial pasture and silvopasture restored productive capacity on degraded semi-arid land."
+    tags: [water_harvesting, swales, keyline, mulch, semi_arid, infiltration]
+
+  - id: reasoning_comparative_0021
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the nutrient profiles and soil health effects of three common organic amendments: composted cattle manure, poultry litter, and municipal green waste compost. Which is best suited for (a) a phosphorus-deficient soil, (b) building long-term soil organic matter, and (c) correcting micronutrient deficiencies? Explain your reasoning.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare nutrient contents and characteristics: CATTLE MANURE COMPOST: moderate N (1.5-2.5%), moderate P (0.5-1.5%), high K (2-3%); balanced micronutrients; good organic matter contribution; relatively stable C; slower nutrient release; lower salt content. POULTRY LITTER: high N (3-5%), very high P (2-4%), moderate K (2-3%); high Ca from limestone in feed; potential for excessive P accumulation; higher salt content and potential for NH3 burn; faster nutrient release; contains trace elements from feed additives (Zn, Cu, sometimes concerning levels). GREEN WASTE COMPOST: low N (0.5-1.5%), low P (0.2-0.5%), low K (0.5-1%); highest C:N ratio and most stable organic matter; best for bulk soil improvement; very low salt; slow nutrient release. RECOMMENDATIONS: (a) P-deficient: poultry litter (highest P) but watch for over-application; (b) long-term SOM: green waste compost (most stable C, highest application rates practical); (c) micronutrient correction: cattle manure provides balanced trace elements, but specific deficiencies may need targeted amendments."
+    tags: [organic_amendments, manure, compost, nutrient_comparison, poultry_litter]
+
+  - id: reasoning_comparative_0022
+    question_type: open_ended
+    difficulty: hard
+    regions: [sub_saharan_africa, south_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the System of Rice Intensification (SRI) with conventional flooded rice cultivation for their effects on soil health, water use, greenhouse gas emissions, and yield potential. SRI uses younger seedlings, wider spacing, intermittent flooding, and organic matter additions. Explain the soil biological and chemical mechanisms by which SRI can produce equal or higher yields with less water and fewer inputs. What limits its adoption despite demonstrated benefits?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: CONVENTIONAL FLOODED: continuous standing water; anaerobic soil conditions; methane emissions from methanogenesis (significant GHG source); reduced nutrient availability (Zn, S); Fe and Mn toxicity risk; high water use (1500-2000 L/kg rice); limited root growth in puddled soil. SRI: aerobic soil periods during intermittent drying promote root aerobic growth (larger root systems documented); alternating wet-dry creates oscillating redox conditions supporting diverse microbial communities; reduced methane (40-60% less) but potentially more N2O during dry phases (net GHG benefit still positive); wider spacing reduces competition and allows more tillers per plant; younger seedlings transplanted with minimal root damage; organic matter inputs feed soil biology; mycorrhizal colonization possible during aerobic phases (impossible under continuous flooding); 25-50% water savings. ADOPTION BARRIERS: labor-intensive (careful transplanting, water management); requires reliable water control (not possible in all paddies); perceived risk by risk-averse smallholders; extension services often promote conventional package; labor availability declining in many rice-growing regions; results variable across soil types."
+    tags: [sri, rice, water_management, methane, soil_health, adoption_barriers]
+
+  - id: reasoning_comparative_0023
+    question_type: open_ended
+    difficulty: medium
+    regions: [europe, north_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the soil health outcomes of two regenerative transition strategies for a 500-hectare conventional corn-soybean farm in Iowa: (A) rapid transition: implement no-till, diverse cover crops, and reduce fertilizer immediately across the whole farm; versus (B) gradual transition: convert 20% of acres per year over 5 years, learning and adjusting as you go. What are the agronomic, economic, and soil health trade-offs of each approach?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: RAPID (A): immediate soil disturbance reduction across all acres; faster accumulation of surface residue and biological recovery; BUT high risk of yield penalty in years 1-3 ('transition trough') across entire income base; soil biology and structure need 3-5 years to adjust; weed pressure may spike without tillage or full cover crop establishment; herbicide-resistant weeds a challenge; compacted soils may waterlog without established biopores; financial risk is concentrated. GRADUAL (B): 20%/year allows learning curve; can observe which fields/soil types respond best; income from conventional acres cushions transition losses; allows equipment acquisition over time (cover crop seeder, roller-crimper); each successive block benefits from farmer's growing experience; BUT slower to realize whole-farm soil health benefits; conventional acres continue degrading; split management increases operational complexity; 5 years to full implementation delays carbon and water benefits. HYBRID APPROACH often best: start with most responsive fields (lighter soils, less compaction), learn, adjust, then transition more challenging fields; maintain some flexibility in practices rather than rigid whole-farm protocol."
+    tags: [transition_strategy, no_till, cover_crops, economic_risk, iowa, farm_management]
+
+  - id: reasoning_comparative_0024
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare soil food web structure and function in four contrasting agricultural systems: (1) intensive conventional row cropping (corn-soybean, tillage, synthetic inputs), (2) certified organic vegetable production (tillage-intensive, compost-based), (3) regenerative no-till grain production (cover crops, diverse rotation, reduced inputs), and (4) managed silvopasture (trees + pasture + rotational grazing). For each system, describe the dominant trophic levels, fungal:bacterial ratio, key functional groups present or absent, and the implications for nutrient cycling and disease suppression.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare all four: (1) INTENSIVE CONVENTIONAL: bacterial-dominated (F:B <0.5); simplified food web with few higher-order predators; low protozoan and nematode diversity; mycorrhizae largely absent due to tillage, high P, and fungicides; bacterial-driven nutrient cycling is fast but leaky (mineralization excess, no fungal retention); pathogen pressure high without biological suppression. (2) ORGANIC VEGETABLE: moderate F:B (0.5-1.0); more diverse bacteria due to compost inputs; but frequent tillage still suppresses fungi and earthworms; protozoan grazing releases bacterial-held nutrients; some disease suppression from compost biology; better than (1) but still tillage-limited. (3) REGENERATIVE NO-TILL: fungal-dominated (F:B 1.0-2.0); mycorrhizal networks re-established; diverse nematode community including predators and fungivores; earthworm populations high; fungal-mediated nutrient cycling is slow and efficient; disease-suppressive soil develops through competitive exclusion and antibiosis; most similar to native prairie soil ecology. (4) SILVOPASTURE: highest F:B ratio (>2.0 approaching forest soils); ectomycorrhizae on trees plus AM fungi on grasses; complex multi-trophic food web; dung beetle community adds macro-fauna processing; highest arthropod diversity; most resilient to perturbation; nutrient cycling through both fungal and bacterial channels provides greatest functional diversity."
+    tags: [soil_food_web, farming_systems_comparison, fungal_bacterial_ratio, trophic_structure]
+
+  - id: reasoning_comparative_0025
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare the use of synthetic gypsum (CaSO4 from industrial byproduct) versus mined agricultural lime (CaCO3) for improving soil structure on a sodic clay soil (ESP > 15%, pH 8.7). Explain the different chemical mechanisms by which each amendment addresses sodicity, how quickly each works, and the secondary effects on nutrient availability, soil biology, and water infiltration.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should compare: GYPSUM (CaSO4): provides Ca2+ to displace Na+ from exchange sites; Na+ removed as Na2SO4 in drainage water; DOES NOT raise pH (neutral salt); works relatively quickly (weeks to months) as gypsum is moderately soluble; also provides sulfur as SO42- (secondary nutrient benefit); Ca improves flocculation of clay creating aggregates; effective even on calcareous sodic soils; improves infiltration as structure improves. LIME (CaCO3): also provides Ca2+ but much less soluble than gypsum; raises pH further (problematic in already alkaline soil); very slow to dissolve at pH >7 due to carbonate buffering; would worsen micronutrient availability (Fe, Zn, Mn); on ACIDIC sodic soils, lime would be appropriate (pH correction + Ca2+ supply); but on alkaline sodic soils (pH 8.7 as specified), lime is WRONG choice - pH increase would be harmful. CLEAR RECOMMENDATION: gypsum for alkaline sodic soils; lime only for acidic soils needing pH correction; gypsum rate typically 2-10 t/ha depending on severity; must be combined with adequate drainage for Na removal; organic matter additions complement chemical amendment by stabilizing improved structure."
+    tags: [gypsum, lime, sodic_soils, soil_structure, sodium, calcium]

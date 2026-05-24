@@ -1,0 +1,665 @@
+metadata:
+  category: factual
+  subcategory: regen_practices
+  version: v1
+
+questions:
+  - id: factual_regen_0001
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What are the three principles of Conservation Agriculture as defined by the FAO?
+    choices:
+      - "A) Monocropping, deep tillage, and burning residues"
+      - "B) Minimum soil disturbance (no-till), permanent soil cover, and crop diversification (rotations/associations)"
+      - "C) Heavy irrigation, synthetic fertilizer application, and GPS-guided planting"
+      - "D) Soil fumigation, plastic mulching, and single-crop specialization"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "FAO Conservation Agriculture is built on three pillars: (1) minimum mechanical soil disturbance, (2) permanent organic soil cover, and (3) diversified crop species through rotations and/or associations. Adopted on ~205 million ha globally."
+    tags: [conservation_agriculture, fao, no_till, soil_cover, crop_diversification]
+
+  - id: factual_regen_0002
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the ideal C:N ratio range for a well-balanced compost feedstock mix to achieve thermophilic decomposition?
+    choices:
+      - "A) 5:1 to 10:1"
+      - "B) 25:1 to 35:1"
+      - "C) 80:1 to 100:1"
+      - "D) 200:1 to 400:1"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Optimal initial compost C:N is 25-35:1. Below 20:1, excess nitrogen is lost as ammonia. Above 40:1, decomposition slows dramatically as microbes are nitrogen-limited. Finished compost typically has a C:N of 10-20:1."
+    tags: [composting, cn_ratio, thermophilic, decomposition]
+
+  - id: factual_regen_0003
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In holistic planned grazing, what is the primary reason livestock are concentrated at high density for short periods and then moved?
+    choices:
+      - "A) To maximize soil compaction for seed-soil contact"
+      - "B) To mimic natural herd behavior of wild ungulates, ensuring even grazing, trampling of residue for ground cover, and adequate recovery time for pasture regrowth"
+      - "C) To eliminate all vegetation so it can be replanted with monoculture grass"
+      - "D) To reduce the number of livestock needed per farm"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Holistic planned grazing (Allan Savory) mimics the grazing pattern of wild herds bunched by predators: high impact, short duration, long recovery. This stimulates root growth, cycles nutrients via manure, and prevents selective overgrazing of palatable species."
+    tags: [holistic_grazing, planned_grazing, rotational_grazing, livestock]
+
+  - id: factual_regen_0004
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the four main temperature phases of thermophilic composting and the approximate temperature ranges for each phase.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["mesophilic", "thermophilic"]
+      rubric_criteria:
+        - name: phase_1
+          description: "Mesophilic phase: initial microbial colonization at 20-40 C, lasting days"
+          max_points: 2
+        - name: phase_2
+          description: "Thermophilic phase: core temperatures reach 55-70 C, killing pathogens and weed seeds"
+          max_points: 3
+        - name: phase_3
+          description: "Cooling/second mesophilic phase: temperatures drop back to 35-45 C as easily decomposable material is consumed"
+          max_points: 2
+        - name: phase_4
+          description: "Curing/maturation phase: ambient temperatures, fungi and actinomycetes dominate, humus formation occurs over weeks to months"
+          max_points: 2
+    source_notes: "The four phases: (1) mesophilic (20-40 C, days 1-3), (2) thermophilic (55-70 C, days 3-21+), (3) cooling/second mesophilic (35-45 C, weeks), (4) curing/maturation (ambient, months). PFRP requires >55 C for 3+ consecutive days."
+    tags: [composting, thermophilic, temperature_phases, pathogen_kill]
+
+  - id: factual_regen_0005
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following correctly describes the Haney Soil Health Test compared to conventional soil tests?
+    choices:
+      - "A) The Haney test only measures soil pH and texture"
+      - "B) The Haney test uses a water extract and an organic acid extract (H3A) to estimate plant-available nutrients, plus a 24-hour CO2 burst test to measure microbial activity, yielding a Soil Health Calculation score"
+      - "C) The Haney test is exclusively used for measuring heavy metal contamination"
+      - "D) The Haney test replaces all need for field scouting and crop monitoring"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "The Haney test (developed by Rick Haney, USDA-ARS) measures: (1) water-extractable organic C and N, (2) H3A-extractable nutrients (mimics organic acid root exudates), (3) 24-hr CO2 burst (Solvita) for microbial activity. The Soil Health Calculation integrates these into a single score."
+    tags: [haney_test, soil_health_testing, microbial_activity, nrcs]
+
+  - id: factual_regen_0006
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the primary mechanism by which no-till farming improves soil health over time?
+    choices:
+      - "A) No-till increases soil temperature, which speeds up nutrient cycling"
+      - "B) No-till preserves soil aggregate structure, protects fungal hyphal networks, maintains surface residue cover, and increases soil organic carbon over time"
+      - "C) No-till eliminates all weeds without the need for any weed management strategy"
+      - "D) No-till increases soil erosion by leaving the surface unprotected"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "No-till preserves macroaggregates, maintains continuous fungal networks (especially AM fungi), reduces erosion by 90%+, and can increase SOC by 0.3-0.5 t C/ha/year. However, it may require adapted weed management strategies."
+    tags: [no_till, soil_health, aggregation, soil_organic_carbon, fungi]
+
+  - id: factual_regen_0007
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In integrated pest management (IPM), what is the correct hierarchy of pest control interventions from first to last resort?
+    choices:
+      - "A) Chemical control, then biological control, then cultural practices"
+      - "B) Prevention and cultural practices, then biological control, then chemical control as a last resort"
+      - "C) Calendar-based pesticide spraying, then crop rotation"
+      - "D) Genetic modification first, then no further action needed"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "IPM pyramid from base to apex: (1) prevention and cultural practices (rotation, resistant varieties, sanitation), (2) monitoring and thresholds, (3) biological control (predators, parasitoids), (4) chemical control as targeted last resort."
+    tags: [ipm, pest_management, biological_control, cultural_practices]
+
+  - id: factual_regen_0008
+    question_type: mcq
+    difficulty: hard
+    regions: [sahel, sub_saharan_africa]
+    turns:
+      - role: user
+        content: |
+          Zai pits (tassa in Niger) are a traditional water harvesting technique used in the Sahel. How do they function to rehabilitate degraded, crusted land?
+    choices:
+      - "A) Zai pits are large reservoirs that store water for irrigation pumps"
+      - "B) Zai pits are shallow holes (20-30 cm deep, 20-40 cm diameter) dug in a grid pattern, filled with organic matter, that concentrate scarce rainfall and termite activity around planted crop seeds"
+      - "C) Zai pits are deep wells drilled to access groundwater for drip irrigation"
+      - "D) Zai pits are raised mounds of soil that shed water to prevent waterlogging"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Zai pits were revived by Yacouba Sawadogo in Burkina Faso. Pits capture rainfall runoff, the added compost/manure attracts termites whose tunneling improves infiltration, and the concentrated resources support crop establishment on otherwise barren laterite crusts. Typically 12,000-15,000 pits/ha."
+    tags: [zai_pits, water_harvesting, sahel, dryland, traditional_practices, rehabilitation]
+
+  - id: factual_regen_0009
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is silvopasture? Describe the three components of a silvopasture system and at least three benefits it provides compared to open pasture.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["trees", "pasture", "livestock"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines silvopasture as an agroforestry system integrating trees, forage, and livestock on the same land"
+          max_points: 2
+        - name: three_components
+          description: "Identifies the three components: trees/shrubs, forage/grass, and grazing animals"
+          max_points: 3
+        - name: benefits
+          description: "Lists at least 3 benefits: shade reducing heat stress, carbon sequestration, diversified income, improved animal welfare, erosion control, enhanced biodiversity"
+          max_points: 4
+    source_notes: "Silvopasture combines trees + forage + livestock. Benefits: shade reduces heat stress by 5-10 C (improving animal weight gain and milk production), sequesters 2-5x more carbon than open pasture, diversifies income (timber, nuts, fruit), and improves biodiversity."
+    tags: [silvopasture, agroforestry, livestock, carbon_sequestration, shade]
+
+  - id: factual_regen_0010
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is biochar, how is it produced, and what are its primary benefits when applied to agricultural soils? Include information about its carbon persistence.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["pyrolysis", "carbon"]
+      rubric_criteria:
+        - name: production
+          description: "Describes biochar as biomass pyrolyzed at 300-700 C under low-oxygen conditions"
+          max_points: 3
+        - name: soil_benefits
+          description: "Lists benefits: improved water-holding capacity, increased CEC, enhanced microbial habitat"
+          max_points: 3
+        - name: carbon_persistence
+          description: "Explains biochar is a stable carbon form with mean residence time of 100-1000+ years, making it an effective carbon sink"
+          max_points: 3
+    source_notes: "Biochar is pyrolyzed biomass (300-700 C in low oxygen). Its porous structure increases water retention and CEC. It is a stable carbon form (mean residence time 100-1000+ years), making it a net carbon sink. Typical application rates: 5-50 t/ha."
+    tags: [biochar, carbon_sequestration, soil_amendment, water_retention, cec]
+
+  - id: factual_regen_0011
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following is the correct definition of a living mulch?
+    choices:
+      - "A) Plastic sheeting placed over the soil surface"
+      - "B) A low-growing cover crop maintained as a living ground cover between or beneath cash crop rows during the growing season"
+      - "C) Dried straw spread over a field after harvest"
+      - "D) A layer of gravel used to suppress weeds"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Living mulch is a cover crop (e.g., white clover, creeping red fescue) maintained alive alongside the cash crop. It suppresses weeds, reduces erosion, and may fix nitrogen (if leguminous), but must be managed to minimize competition with the cash crop."
+    tags: [living_mulch, cover_crops, weed_suppression, ground_cover]
+
+  - id: factual_regen_0012
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In Korean Natural Farming (KNF), what is Indigenous Microorganisms (IMO) cultivation, and what is the first collection step?
+    choices:
+      - "A) IMO is a synthetic microbial inoculant purchased from commercial labs; the first step is ordering online"
+      - "B) IMO cultivation involves collecting local soil microbes by placing cooked rice in a wooden box in an undisturbed forest floor, allowing native fungi and bacteria to colonize the rice (IMO-1), then culturing through successive stages with brown sugar and soil"
+      - "C) IMO involves sterilizing all soil microbes and replacing them with a single Bacillus species"
+      - "D) IMO is the application of raw manure directly to crop fields without any processing"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "KNF IMO process: IMO-1 = cooked rice in ventilated box on forest floor (3-5 days, white mycelium colonizes). IMO-2 = mix with equal weight brown sugar. IMO-3 = mix with wheat bran and ferment. IMO-4 = mix with soil and ferment. Developed by Cho Han Kyu."
+    tags: [korean_natural_farming, imo, indigenous_microorganisms, fermentation, biological_inputs]
+
+  - id: factual_regen_0013
+    question_type: short_answer
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is bokashi composting? How does it differ from traditional aerobic composting?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["ferment", "anaerobic"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines bokashi as an anaerobic fermentation process using effective microorganisms (EM) or lactobacillus-dominant inoculant on organic waste"
+          max_points: 3
+        - name: key_difference
+          description: "Explains the key difference: bokashi is anaerobic fermentation (not decomposition), while traditional composting is aerobic decomposition"
+          max_points: 3
+        - name: process_details
+          description: "Mentions bran inoculant, sealed container, acidic pickling of waste, and need for subsequent soil burial to complete decomposition"
+          max_points: 3
+    source_notes: "Bokashi uses lactobacillus-dominant inoculant on wheat/rice bran to anaerobically ferment food waste. pH drops to ~3.5-4.0. Unlike aerobic compost, bokashi preserves nearly all nutrients and produces no heat. The fermented material must be buried in soil or added to compost to finish decomposition."
+    tags: [bokashi, fermentation, anaerobic, composting, effective_microorganisms]
+
+  - id: factual_regen_0014
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the keyline design system developed by P.A. Yeomans primarily used for?
+    choices:
+      - "A) Designing buildings on agricultural land"
+      - "B) Managing water flow across landscapes by plowing along keylines to distribute water from valleys to ridges, increasing soil infiltration and reducing runoff"
+      - "C) Selecting crop varieties for maximum yield"
+      - "D) Calculating livestock stocking rates based on pasture productivity"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Keyline design (P.A. Yeomans, 1950s, Australia) uses the 'keypoint' (where a valley transitions from steep to gentle slope) as a reference. Keyline plowing runs parallel to this contour but with a slight drift toward ridges, gradually moving water from wet valleys to dry ridges."
+    tags: [keyline_design, water_management, landscape_design, yeomans, swales]
+
+  - id: factual_regen_0015
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following NRCS soil health principles emphasizes keeping live roots in the soil year-round?
+    choices:
+      - "A) Minimize soil disturbance"
+      - "B) Maximize continuous living roots"
+      - "C) Energize with living cover"
+      - "D) Maximize biodiversity"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "NRCS soil health principles: (1) minimize disturbance, (2) maximize soil cover, (3) maximize continuous living roots, (4) maximize biodiversity, (5) integrate livestock. Living roots feed the soil food web through exudates year-round."
+    tags: [nrcs, soil_health_principles, living_roots, cover_crops]
+
+  - id: factual_regen_0016
+    question_type: mcq
+    difficulty: hard
+    regions: [mesoamerica, global]
+    turns:
+      - role: user
+        content: |
+          Chinampas are an ancient agricultural system developed by the Aztecs in the Valley of Mexico. Which of the following best describes this system?
+    choices:
+      - "A) Terraced hillside farming using stone retaining walls"
+      - "B) Artificial island gardens constructed in shallow lakes using alternating layers of lake sediment, aquatic vegetation, and soil, anchored by willow trees, with continuous water access via surrounding canals"
+      - "C) Slash-and-burn shifting cultivation in tropical forests"
+      - "D) Dryland stone mulch farming on volcanic soils"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Chinampas ('floating gardens') were built in Lake Xochimilco and Lake Chalco. Canal mud provided nutrients, willow (ahuejote) roots anchored beds, and canal water provided sub-irrigation. One of the most productive pre-industrial farming systems, supporting 3-7 harvests per year."
+    tags: [chinampas, traditional_practices, aztec, mesoamerica, aquaculture, raised_beds]
+
+  - id: factual_regen_0017
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is terra preta (Amazonian dark earths)? Describe its origin, key characteristics, and what it teaches modern regenerative agriculture about long-term soil building.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["biochar", "carbon", "Amazon"]
+      rubric_criteria:
+        - name: origin
+          description: "Explains terra preta was created by pre-Columbian indigenous peoples in the Amazon through deliberate addition of charcoal, bone, pottery fragments, and organic waste"
+          max_points: 3
+        - name: characteristics
+          description: "Describes high stable carbon content, elevated CEC, persistent fertility (500-7000+ years), and dark color from charcoal"
+          max_points: 3
+        - name: modern_lessons
+          description: "Connects to modern biochar application, demonstrating that human management can create lasting soil fertility in even the most challenging environments (highly weathered Oxisols)"
+          max_points: 3
+    source_notes: "Terra preta soils in the Amazon contain 70x more black carbon than surrounding Oxisols, have CEC 2-3x higher, and remain fertile after centuries. They inspired modern biochar research and demonstrate that intentional soil building can create permanent fertility."
+    tags: [terra_preta, biochar, amazon, indigenous_knowledge, soil_building, carbon]
+
+  - id: factual_regen_0018
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          When terminating a cover crop for no-till planting, which method provides the best residue mat for weed suppression while avoiding soil disturbance?
+    choices:
+      - "A) Deep moldboard plowing to bury all residue"
+      - "B) Roller-crimper termination at anthesis (flowering stage), which flattens and crimps stems into a uniform surface mat"
+      - "C) Burning the cover crop with prescribed fire"
+      - "D) Removing all biomass by baling and selling as hay"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Roller-crimping at anthesis kills most cover crops by crimping stems every ~10 cm, creating a thick residue mat. Timing at flowering is critical because plants are physiologically ready to die. Cereal rye needs to be at anthesis or later for reliable kill. Developed by Rodale Institute and USDA-ARS."
+    tags: [roller_crimper, cover_crop_termination, no_till, weed_suppression, residue_management]
+
+  - id: factual_regen_0019
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is vermicomposting?
+    choices:
+      - "A) Composting using extremely high temperatures above 100 degrees Celsius"
+      - "B) Composting using earthworms (typically Eisenia fetida, red wigglers) to break down organic waste into nutrient-rich castings"
+      - "C) Composting in sealed anaerobic containers with no oxygen"
+      - "D) Composting only mineral materials like rock dust and sand"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Vermicomposting uses red wiggler worms (Eisenia fetida) at mesophilic temperatures (15-25 C). Worm castings have 5-11x more available N, P, and K than the parent material, plus beneficial microbes and plant growth hormones (cytokinins, auxins)."
+    tags: [vermicomposting, earthworms, castings, organic_amendments]
+
+  - id: factual_regen_0020
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following best describes alley cropping as an agroforestry practice?
+    choices:
+      - "A) Growing crops in narrow alleys between buildings in urban areas"
+      - "B) Planting rows of trees or shrubs with annual crops cultivated in the alleys between tree rows, combining long-term perennial income with annual crop production"
+      - "C) Growing only trees with no understory crops whatsoever"
+      - "D) Planting all crops in a single row with no tree component"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Alley cropping is a simultaneous agroforestry system where tree rows (often leguminous species like Leucaena, Gliricidia, or nut/timber trees) are spaced 5-20+ meters apart with annual crops in the alleys. Tree prunings can serve as green manure or mulch."
+    tags: [alley_cropping, agroforestry, intercropping, perennial_crops]
+
+  - id: factual_regen_0021
+    question_type: short_answer
+    difficulty: medium
+    regions: [asia, tropics]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the integrated rice-fish farming system (paddy-fish culture). What are the key benefits of raising fish in flooded rice paddies compared to rice monoculture?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["rice", "fish", "nutrient"]
+      rubric_criteria:
+        - name: system_description
+          description: "Describes fish (carp, tilapia, or similar species) raised in flooded rice paddies during the growing season"
+          max_points: 2
+        - name: pest_control
+          description: "Explains fish consume insect pests, reducing need for insecticide"
+          max_points: 2
+        - name: nutrient_cycling
+          description: "Explains fish excreta fertilizes rice, reducing need for external fertilizer"
+          max_points: 2
+        - name: weed_control
+          description: "Notes fish stir sediment and consume weed seedlings, reducing weed pressure"
+          max_points: 2
+        - name: food_security
+          description: "Mentions dual output: rice carbohydrates plus fish protein on the same land"
+          max_points: 2
+    source_notes: "Rice-fish culture is practiced across Asia (China, Bangladesh, Indonesia, Japan). Fish provide biological pest control (50-70% insect reduction), fertilization (reducing N fertilizer by 10-20%), weed suppression, and protein production. System has been practiced for >2000 years in China."
+    tags: [rice_fish, paddy_aquaculture, integrated_farming, asia, traditional_practices]
+
+  - id: factual_regen_0022
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The Regenerative Organic Certified (ROC) standard includes three pillars. Which of the following correctly lists all three?
+    choices:
+      - "A) Soil health, animal welfare, and social fairness"
+      - "B) Yield maximization, technology adoption, and export readiness"
+      - "C) Carbon credits, water rights, and biodiversity offsets"
+      - "D) Soil testing, crop insurance, and equipment standards"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "Regenerative Organic Certified (ROC), launched by Rodale Institute, Dr. Bronner's, and Patagonia, has three pillars: (1) Soil Health and Land Management, (2) Animal Welfare, (3) Social Fairness. It builds on USDA Organic as a baseline. Three levels: Bronze, Silver, Gold."
+    tags: [regenerative_organic_certified, roc, standards, certification, rodale]
+
+  - id: factual_regen_0023
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the recommended application rate range for biochar in most agricultural field trials?
+    choices:
+      - "A) 0.01 to 0.1 t/ha"
+      - "B) 5 to 20 t/ha"
+      - "C) 100 to 200 t/ha"
+      - "D) 500 to 1,000 t/ha"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Most biochar field trials use 5-20 t/ha, though rates vary by soil type and biochar feedstock. Higher rates (>50 t/ha) can cause nutrient immobilization or pH shifts. Biochar should ideally be charged (pre-loaded with nutrients or compost) before application to avoid short-term nutrient tie-up."
+    tags: [biochar, application_rates, soil_amendment, carbon_sequestration]
+
+  - id: factual_regen_0024
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of compost tea in regenerative agriculture. Describe the difference between actively aerated compost tea (AACT) and passive (non-aerated) compost extract, and what each is primarily used for.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["aerated", "microbial"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines compost tea as a water-based extract of compost designed to multiply and apply beneficial microorganisms"
+          max_points: 2
+        - name: aact_description
+          description: "Describes AACT as brewed with continuous aeration (pump/bubbler) for 12-48 hours to favor aerobic microbes, sometimes with microbial foods (molasses, kelp)"
+          max_points: 3
+        - name: passive_extract
+          description: "Describes passive extract as compost soaked in water without aeration, primarily extracting soluble nutrients rather than multiplying aerobic organisms"
+          max_points: 2
+        - name: applications
+          description: "Notes AACT is used as a foliar spray or soil drench to inoculate surfaces with beneficial microbes; passive extract is used primarily as a soluble nutrient source"
+          max_points: 2
+    source_notes: "AACT (Elaine Ingham method) maintains dissolved oxygen >6 ppm to grow aerobic bacteria, fungi, protozoa, and nematodes. Passive extract lacks aeration and may go anaerobic, favoring different (potentially harmful) organisms. AACT is applied within 4-6 hours of completion."
+    tags: [compost_tea, aact, biological_inputs, foliar_spray, microbial_inoculant]
+
+  - id: factual_regen_0025
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following mulching effects is most important for soil moisture conservation?
+    choices:
+      - "A) Mulch increases soil evaporation by heating the surface"
+      - "B) Mulch reduces direct evaporation from the soil surface, moderates soil temperature, and reduces raindrop impact"
+      - "C) Mulch has no measurable effect on soil moisture"
+      - "D) Mulch increases water runoff by creating a smooth impervious surface"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Organic mulch at 5-10 cm depth can reduce soil evaporation by 30-70%, moderate soil temperature fluctuations by 5-10 C, prevent crusting from raindrop impact, and reduce erosion. It also feeds soil organisms as it decomposes."
+    tags: [mulching, soil_moisture, evaporation, soil_temperature, erosion]
+
+  - id: factual_regen_0026
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which NRCS soil health indicator uses the permanganate oxidizable carbon (POXC) test, also known as active carbon?
+    choices:
+      - "A) Aggregate stability"
+      - "B) Soil respiration"
+      - "C) Active carbon/labile carbon, which measures the readily decomposable fraction of soil organic matter that fuels microbial activity"
+      - "D) Soil electrical conductivity"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "POXC (permanganate oxidizable carbon) measures the labile (active) fraction of soil organic carbon. It is more sensitive to management changes than total organic carbon and correlates with microbial biomass and nutrient cycling. Part of the NRCS Soil Health Assessment."
+    tags: [poxc, active_carbon, soil_health_indicators, nrcs, soil_testing]
+
+  - id: factual_regen_0027
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is a food forest (forest garden)? Describe the typical vertical layers and give one example plant for each layer.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["canopy", "layer"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines food forest as a designed perennial polyculture mimicking forest ecosystem structure with edible and useful species"
+          max_points: 2
+        - name: seven_layers
+          description: "Names most of the 7 layers: canopy, understory tree, shrub, herbaceous, ground cover, vine/climber, root/rhizosphere"
+          max_points: 4
+        - name: examples
+          description: "Provides at least 4 correct species examples matched to their layers"
+          max_points: 3
+    source_notes: "Food forest layers (Robert Hart model): (1) canopy/tall tree (walnut, chestnut), (2) understory tree (apple, plum), (3) shrub (blueberry, currant), (4) herbaceous (comfrey, herbs), (5) ground cover (strawberry, clover), (6) vine (grape, kiwi), (7) root (turmeric, horseradish)."
+    tags: [food_forest, agroforestry, permaculture, perennial_polyculture, layers]
+
+  - id: factual_regen_0028
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In a well-managed no-till system, which challenge commonly requires the most adaptation compared to conventional tillage?
+    choices:
+      - "A) Seed placement is more difficult, requiring specialized no-till planters that cut through residue"
+      - "B) Soil dries out too quickly without tillage"
+      - "C) Beneficial insects disappear entirely from no-till fields"
+      - "D) Soil organic matter decreases rapidly under no-till"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "No-till planters need coulters to cut residue, proper down-pressure for seed-soil contact, and sometimes row cleaners. Seed slot closure in high-residue conditions is a common issue. Early no-till adoption often requires investment in proper planting equipment."
+    tags: [no_till, planting_equipment, residue_management, challenges]
+
+  - id: factual_regen_0029
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the primary reason for maintaining a minimum crop rotation diversity of at least three different crop families?
+    choices:
+      - "A) To confuse neighbors about what you are growing"
+      - "B) To break pest and disease cycles, balance nutrient demands, diversify root exudate profiles, and reduce reliance on external inputs"
+      - "C) To comply with a single government regulation"
+      - "D) To ensure all fields are planted at exactly the same time"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Diverse rotations (3+ families) interrupt pest/disease life cycles (most pathogens are family-specific), balance nutrient draw (legumes fix N, grasses add C, brassicas scavenge nutrients), and feed diverse soil microbial communities through varied root exudates."
+    tags: [crop_rotation, diversity, disease_break, nutrient_cycling, soil_biology]
+
+  - id: factual_regen_0030
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Compare swale-based water harvesting with keyline design for managing water on sloping agricultural land. How does each system work, and in what contexts is each most appropriate?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["contour", "water", "infiltration"]
+      rubric_criteria:
+        - name: swale_description
+          description: "Describes swales as level-bottom ditches dug on contour that capture and infiltrate runoff, with berms on the downhill side often planted with trees"
+          max_points: 3
+        - name: keyline_description
+          description: "Describes keyline as off-contour plowing from the keypoint, with lines drifting toward ridges to distribute water from valleys to drier ridge areas"
+          max_points: 3
+        - name: swale_context
+          description: "Notes swales are best on gentler slopes (<15%), in permaculture/agroforestry systems, and in drier climates where maximizing infiltration is critical"
+          max_points: 2
+        - name: keyline_context
+          description: "Notes keyline is better for larger-scale agricultural land, works on moderate slopes, and can be implemented with standard farm equipment (keyline plow)"
+          max_points: 2
+    source_notes: "Swales (on-contour, level) store and infiltrate water in place. Keyline (off-contour, slight fall toward ridges) redistributes water across the landscape. Swales suit small-scale permaculture; keyline suits broadacre farming. Both aim to maximize beneficial water infiltration."
+    tags: [swales, keyline_design, water_harvesting, landscape_design, infiltration, contour]

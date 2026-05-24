@@ -1,0 +1,480 @@
+metadata:
+  category: reasoning
+  subcategory: nutrient_cycling
+  version: v1
+
+questions:
+  - id: reasoning_nutrient_cycling_0001
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Describe the complete nitrogen cycle in a legume-grain rotation (e.g., soybean followed by corn). Trace nitrogen from atmospheric N2 through biological fixation, incorporation into plant tissue, residue decomposition, mineralization, nitrification, plant uptake by the subsequent grain crop, and potential loss pathways. Where are the key decision points where a farmer's management can increase or decrease nitrogen use efficiency?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should trace: Rhizobium in legume root nodules fix N2 to NH3 using nitrogenase; NH3 assimilated into amino acids and plant protein; soybean exports significant N in grain (~75% of fixed N); remaining N in roots, nodules, and unharvested residue (~40-60 kg N/ha); residue decomposition by heterotrophic microbes releases NH4+ (ammonification); Nitrosomonas oxidizes NH4+ to NO2-, then Nitrobacter oxidizes to NO3- (nitrification); NO3- mobile in soil solution available to subsequent corn; loss pathways: leaching of NO3-, denitrification under wet conditions (N2O, N2), volatilization of NH3 from surface residue; management decisions: residue incorporation timing, cover crop to capture mineralized N over winter, N fertilizer rate adjustment for legume credit (typically 30-50 kg N/ha credit for soybean), timing of N application to match corn uptake curve."
+    tags: [nitrogen_cycle, legume_rotation, biological_fixation, mineralization]
+
+  - id: reasoning_nutrient_cycling_0002
+    question_type: open_ended
+    difficulty: hard
+    regions: [tropics, sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why phosphorus is the most limiting nutrient in highly weathered tropical soils rich in iron and aluminum oxides (Ferralsols and Acrisols). Trace the chemical mechanisms of phosphorus immobilization, including specific reactions with goethite and gibbsite surfaces. Why do conventional P fertilizer applications have such low efficiency (often <15%) in these soils, and what biological strategies can improve P availability?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: P in solution as H2PO4- or HPO42- (depending on pH); iron oxides (goethite, FeOOH) and aluminum oxides (gibbsite, Al(OH)3) have high surface area with hydroxyl groups that chemisorb phosphate through ligand exchange; initially reversible (labile P) but over time converts to occluded P within oxide mineral structures (aging/fixation); at pH 4-5 common in these soils, both Fe and Al fixation are maximum; conventional fertilizers dissolve quickly releasing P that is rapidly fixed; only 10-15% recovered by first crop; biological strategies: mycorrhizal fungi extend root surface area 10-100x and produce organic acids (citrate, oxalate) that compete for sorption sites; phosphate-solubilizing bacteria (Bacillus, Pseudomonas) produce organic acids and phosphatases; organic matter additions provide organic acids and block fixation sites; strategic placement (banding) reduces soil contact volume."
+    tags: [phosphorus_fixation, tropical_soils, iron_oxides, mycorrhizae, nutrient_availability]
+
+  - id: reasoning_nutrient_cycling_0003
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how arbuscular mycorrhizal fungi (AMF) bridge the "phosphorus gap" between what soils contain and what plants can access. Include the specific biochemical mechanisms (enzyme production, organic acid exudation, hyphal transport), the energetic cost to the host plant, and why this symbiosis is suppressed by high P fertilizer applications.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: AMF hyphae (2-5 um diameter) access micropores inaccessible to roots (>10 um); hyphal network extends effective root surface area by 10-100x; hyphae produce acid phosphatases that mineralize organic P; exude organic acids (citrate, oxalate) that desorb P from mineral surfaces; P transported as polyphosphate granules through vacuolar pathway within hyphae; plant provides 10-20% of photosynthate to fungal partner; high soil P suppresses plant strigolactone signaling (the chemical invitation to fungi); when P is abundant, the cost-benefit shifts against maintaining the symbiosis; plants downregulate mycorrhizal colonization genes; this creates a dependency trap where fields with long fertilization history have reduced AMF diversity and must maintain high P inputs; AMF also transport Zn, Cu, and water."
+    tags: [mycorrhizae, phosphorus, symbiosis, nutrient_cycling, soil_biology]
+
+  - id: reasoning_nutrient_cycling_0004
+    question_type: open_ended
+    difficulty: medium
+    regions: [east_asia, southeast_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the potassium cycle in a lowland paddy rice system in Southeast Asia. How does the alternating flooding and draining cycle affect K availability, and why are these systems particularly vulnerable to K depletion despite relatively high total soil K? Include the roles of clay mineral interlayer K, exchangeable K, and K in solution.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: K exists in four pools - solution K, exchangeable K (on CEC sites), non-exchangeable K (fixed in 2:1 clay interlayers, especially illite and vermiculite), and structural K (in feldspars, slow weathering); flooding displaces K from exchange sites through mass action with Fe2+ and Mn2+ released under reducing conditions; K leaches downward with percolating water in paddies; rice straw contains high K (1-2% by weight) but straw is often removed or burned; grain exports 0.2-0.4% K; repeated cropping draws down exchangeable pool; 2:1 clay minerals can release interlayer K but this is slow; wetting-drying cycles can collapse expanded clay interlayers trapping K (fixation); farmers focus on N and P fertilization neglecting K; long-term K mining shows as yield plateau despite adequate N and P; some soils buffer K depletion from mineral reserves for decades before sudden decline."
+    tags: [potassium, paddy_rice, nutrient_cycling, clay_minerals, flooding]
+
+  - id: reasoning_nutrient_cycling_0005
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the calcium-magnesium balance in soil and its cascading effects on soil structure, nutrient availability, and crop health. Why does a Ca:Mg ratio below 3:1 often correlate with compacted, poorly drained soils? Include the role of the Albrecht model and its scientific validity alongside modern understanding of base cation ratios.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: Ca2+ acts as a flocculant bridging negatively charged clay particles creating aggregates and pore space; Mg2+ has a larger hydrated radius and weaker bonding to clay, promoting dispersion (similar to Na but less extreme); high Mg relative to Ca can degrade structure especially in fine-textured soils; William Albrecht proposed ideal base saturation ratios (Ca 65%, Mg 10%, K 5%) but scientific testing shows these exact ratios are less critical than Albrecht claimed; what matters more is absolute sufficiency of each cation rather than exact ratios; however extreme imbalances do cause real problems (very high Mg from serpentine soils, or Mg-rich irrigation water); Ca deficiency impairs cell wall development; Mg is central to chlorophyll and enzyme activation; modern view: ensure adequate Ca and Mg levels, maintain Ca:Mg > 2:1, but don't over-fixate on exact ratios."
+    tags: [calcium, magnesium, base_saturation, soil_structure, albrecht_model]
+
+  - id: reasoning_nutrient_cycling_0006
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how soil pH affects the availability of iron, zinc, and boron. For each micronutrient, describe the specific chemical mechanism that controls its solubility across the pH range from 4.0 to 8.5. Why do calcareous soils often produce micronutrient-deficient crops?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain for each: IRON - Fe3+ forms insoluble hydroxides above pH 6; for every unit pH increase, Fe3+ solubility decreases 1000-fold; plants need siderophores or acidification strategies (Strategy I/II) to access Fe at high pH; bicarbonate in calcareous soils inhibits root Fe reductase. ZINC - Zn2+ adsorbed increasingly by oxides and clay surfaces as pH rises; Zn availability decreases 100-fold per pH unit above 5.5; Zn-phosphate precipitates form at high pH with high P. BORON - exists as uncharged boric acid B(OH)3 below pH 7 (mobile and available); above pH 9 converts to borate B(OH)4- which adsorbs to clay and oxide surfaces; optimal B availability at pH 5-7; B is leachable in acid sandy soils. Calcareous soils (pH 7.5-8.5) simultaneously limit Fe, Zn, and Mn creating multi-micronutrient deficiency."
+    tags: [micronutrients, iron, zinc, boron, ph_effects, calcareous_soils]
+
+  - id: reasoning_nutrient_cycling_0007
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how the composting process transforms nutrients from unavailable forms in raw organic waste into plant-available forms. Trace the journey of nitrogen, phosphorus, and potassium through the thermophilic, mesophilic, and maturation phases of composting. What determines whether finished compost will be a net nitrogen source or cause temporary immobilization when applied to soil?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: raw organic matter contains N in proteins/amino acids, P in organic esters and phytate, K mostly in soluble ionic form; THERMOPHILIC PHASE (55-70C): rapid decomposition of labile compounds, protein breakdown releases NH4+ (some lost as NH3 volatilization if pile too hot or too wet), pathogens and weed seeds killed; MESOPHILIC COOLING PHASE: diverse microbial community re-establishes, continued breakdown of cellulose/hemicellulose, NH4+ converted to NO3- as aeration improves; MATURATION/CURING: humification produces stable organic compounds, microbial biomass incorporates nutrients, C:N ratio stabilizes at 15-25:1; finished compost with C:N <20:1 will be net N mineralizer; C:N >25:1 may cause temporary immobilization; P availability increases as organic P is mineralized by phosphatases; K remains mostly soluble throughout and can leach from poorly covered piles."
+    tags: [composting, nutrient_transformation, nitrogen, phosphorus, potassium]
+
+  - id: reasoning_nutrient_cycling_0008
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of carbon-nitrogen coupling in soils and why "you cannot build soil carbon without also building soil nitrogen." What is the stoichiometric constraint that links C and N accumulation, and what are the practical implications for farmers trying to increase soil organic matter? Include the roles of microbial biomass C:N ratios and the concept of nitrogen saturation.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: soil organic matter has a relatively constrained C:N ratio of 10-12:1 in the humus fraction; to increase SOC by 1 tonne requires co-sequestration of ~80-100 kg N; microbial biomass (the engine of SOM formation) has C:N of ~8:1 (bacteria) to ~15:1 (fungi); microbial necromass is major precursor to stable SOM (MAOM); building 1% SOC increase in top 30 cm (~35 t C/ha) requires ~3000 kg N/ha; this N must come from biological fixation, fertilizer, or atmospheric deposition; this is why legume-based systems build C faster than grass-only systems; nitrogen saturation concept: when N inputs exceed biological demand and C availability, excess N is lost (leaching, denitrification) rather than building SOM; practical implication: maximize C inputs (high-biomass cover crops, residue retention) while ensuring adequate but not excessive N supply; C:N ratio of inputs determines whether they contribute to C building or just stimulate decomposition."
+    tags: [carbon_nitrogen_coupling, stoichiometry, soil_organic_matter, microbial_biomass]
+
+  - id: reasoning_nutrient_cycling_0009
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Compare sulfur cycling in a well-drained upland soil versus a waterlogged lowland paddy soil. Explain the different oxidation states of sulfur that dominate in each environment, the microbial processes responsible for transformations, and why sulfur deficiency is becoming more common in many agricultural regions worldwide.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: WELL-DRAINED SOILS: organic S mineralized to SO42- by aerobic microbes; SO42- is mobile anion subject to leaching; taken up by plants as SO42-; some adsorbed by iron/aluminum oxides in subsoil. WATERLOGGED SOILS: sulfate-reducing bacteria (Desulfovibrio) reduce SO42- to H2S under anaerobic conditions; H2S reacts with Fe2+ to form FeS and FeS2 (pyrite) immobilizing both S and Fe; H2S is toxic to roots at high concentrations; upon draining, reoxidation of sulfides generates sulfuric acid (acid sulfate soils in coastal areas). GLOBAL DEFICIENCY TREND: reduced atmospheric S deposition from clean air legislation (less SO2 emissions from coal burning); increased crop yields removing more S; S-free fertilizers replacing S-containing ones (e.g., urea replacing ammonium sulfate, TSP replacing SSP); organic matter decline reducing S mineralization pool."
+    tags: [sulfur_cycling, anaerobic_soils, paddy_soils, nutrient_deficiency]
+
+  - id: reasoning_nutrient_cycling_0010
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how cover crop decomposition can either release nitrogen (net mineralization) or lock up nitrogen (net immobilization) depending on the species and termination timing. Provide specific examples: what happens when a pure crimson clover cover crop (C:N 12:1) is terminated vs. a pure cereal rye cover crop terminated at heading (C:N 50:1) vs. a mixed clover-rye cover crop? How does this affect nitrogen management for the subsequent cash crop?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: CRIMSON CLOVER (C:N ~12:1): rapid decomposition, net N mineralization begins within 1-2 weeks; releases 50-100 kg N/ha depending on biomass; most N available within 4-6 weeks; can replace 50-70% of fertilizer N for following corn; risk of N loss if cash crop not planted promptly. CEREAL RYE AT HEADING (C:N ~50:1): high lignin and cellulose content; microbes decomposing it need more N than residue provides; immobilize soil N for 4-8 weeks; can reduce corn yields if no supplemental N provided; excellent for weed suppression via allelopathy and physical mulch. MIXED SPECIES: intermediate C:N (~20-30:1); more gradual N release matching crop uptake curve better; lower risk of both N loss and N deficiency; mixture allows optimizing for multiple goals; management implications for fertilizer rate, timing, and placement differ for each scenario."
+    tags: [cover_crops, nitrogen_mineralization, immobilization, cn_ratio, termination]
+
+  - id: reasoning_nutrient_cycling_0011
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          A grain farmer wants to understand nutrient export from their fields. For a wheat crop yielding 5 tonnes/ha of grain, calculate and explain the approximate amounts of nitrogen, phosphorus (as P2O5), potassium (as K2O), sulfur, and zinc removed in the harvested grain. Then explain why this nutrient balance approach is foundational to sustainable nutrient management, and what happens when nutrient exports consistently exceed inputs over decades.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should include approximate calculations: Wheat grain at 5 t/ha removes approximately: N = 100-115 kg/ha (2.0-2.3% N in grain), P2O5 = 40-50 kg/ha (0.35-0.45% P), K2O = 25-30 kg/ha (0.4-0.5% K, most K stays in straw), S = 8-12 kg/ha, Zn = 100-150 g/ha; if straw is also removed, K export roughly doubles; nutrient balance approach: inputs (fertilizer, fixation, deposition, weathering) must at least equal outputs (harvest removal, leaching, erosion, gaseous losses) for sustainability; chronic negative balance leads to mining of soil reserves; K and micronutrient mining is insidious because soil tests may remain adequate for years while reserves deplete; this approach is the basis for nutrient management plans and highlights the importance of returning nutrients (compost, manure, rock minerals) in regenerative systems."
+    tags: [nutrient_export, nutrient_balance, wheat, sustainability, mining]
+
+  - id: reasoning_nutrient_cycling_0012
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the biological nitrogen fixation process in a legume root nodule. What roles do the plant and the Rhizobium bacteria each play? Why does the process require so much energy, and how does the plant regulate how much nitrogen is fixed?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: molecular recognition through plant flavonoids and bacterial Nod factors; root hair curling and infection thread formation; bacteria differentiate into bacteroids within nodule cells; nitrogenase enzyme complex (Fe-protein and MoFe-protein) reduces N2 to NH3; requires 16 ATP per N2 molecule (extremely energy expensive); the triple bond in N2 is one of the strongest in nature; leghemoglobin (pink/red pigment) maintains microaerobic environment essential because nitrogenase is irreversibly inactivated by O2; plant provides photosynthate (sucrose) as energy source; bacteria provide fixed N as NH4+ or amino acids; plant regulates through autoregulation of nodulation (AON) signaling pathway; high soil mineral N (especially NO3-) suppresses nodulation (why add expensive N when it's free in soil); typical fixation rates 100-300 kg N/ha/yr for well-nodulated legumes."
+    tags: [biological_nitrogen_fixation, rhizobium, legumes, nitrogenase, nodulation]
+
+  - id: reasoning_nutrient_cycling_0013
+    question_type: open_ended
+    difficulty: medium
+    regions: [south_america, sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how rock phosphate can be an effective phosphorus source in acidic tropical soils but is almost useless in alkaline calcareous soils. What chemical mechanisms govern rock phosphate dissolution, and how can biological processes (mycorrhizae, phosphate-solubilizing microorganisms) enhance its effectiveness?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: rock phosphate is calcium apatite Ca5(PO4)3(F,OH); dissolution requires acid conditions: Ca5(PO4)3F + acid -> Ca2+ + H2PO4- + F-; in acid soils (pH <5.5), proton supply drives dissolution; in alkaline/calcareous soils, high Ca2+ concentration and high pH suppress dissolution (Le Chatelier's principle); effectiveness factors: particle size (finer = faster), reactivity (sedimentary > ignite), soil pH, Ca activity in soil solution; biological enhancement: mycorrhizal hyphae produce organic acids in the hyphosphere directly at mineral surfaces; PSB (Bacillus, Pseudomonas, Aspergillus) produce gluconic, citric, and oxalic acids; organic acids chelate Ca2+ shifting equilibrium toward dissolution; phosphatases mineralize organic P released in the process; co-application of organic matter provides carbon substrates for acid-producing microbes; in practice, rock phosphate works well in Brazilian Cerrado Oxisols (pH 4.5-5.5) but not in Indian calcareous Vertisols (pH 7.5-8.2)."
+    tags: [rock_phosphate, tropical_soils, phosphorus_solubilization, mycorrhizae, psb]
+
+  - id: reasoning_nutrient_cycling_0014
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          What is the difference between "available" and "total" phosphorus in a soil test, and why can a soil have very high total P but still produce P-deficient crops? Explain the different P pools in soil and the processes that move phosphorus between them.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: soil P pools form a continuum: solution P (immediately available, typically <0.1 mg/L) -> labile P (readily desorbs from surfaces, extracted by Olsen or Bray tests) -> moderately labile P (requires stronger extractants) -> non-labile P (occluded within mineral structures, organic P in humus) -> primary mineral P (apatite, very slow weathering); a soil with 800 mg/kg total P may have only 5-15 mg/kg available P; P does not move readily in soil (diffusion coefficients ~10^-12 m2/s); depletion zones form around roots within hours; replenishment from labile pool depends on buffering capacity; organic P (30-65% of total P) must be mineralized by phosphatases; high P-fixing soils (Fe/Al rich) convert added P to non-labile forms over time; management to increase availability: maintain organic matter, AMF colonization, appropriate pH (6.0-7.0 optimal for P availability)."
+    tags: [phosphorus_pools, soil_testing, nutrient_availability, phosphorus]
+
+  - id: reasoning_nutrient_cycling_0015
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of "nutrient stoichiometry" in soil microbial ecology. How do the C:N:P ratios of microbial biomass constrain nutrient cycling rates? What happens when organic inputs have stoichiometry that is mismatched with microbial demand, and how does this concept inform practical decisions about composting recipes, cover crop mixtures, and fertilizer strategies?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: ecological stoichiometry (Redfield-like ratios for soil); bacterial biomass C:N:P roughly 60:10:1 (C:N ~6-8:1); fungal biomass more variable C:N 10-15:1 with lower P demand; when substrate C:N:P doesn't match microbial demand, limiting nutrients are immobilized from soil solution while excess nutrients are mineralized; threshold C:N for net N mineralization ~20-25:1; threshold C:P for net P mineralization ~200:1; composting implications: balance high-C materials (straw, woodchips) with high-N materials (manure, food waste) targeting C:N 25-30:1 for efficient composting; cover crop mixtures: combine N-fixers (low C:N) with grasses (high C:N) to match decomposition to crop needs; fertilizer: adding mineral N to high-C:N residues can overcome immobilization; microbial community shifts (bacterial vs fungal dominance) affect stoichiometric flexibility; nutrient use efficiency framework."
+    tags: [stoichiometry, microbial_ecology, nutrient_cycling, composting, cover_crops]
+
+  - id: reasoning_nutrient_cycling_0016
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the role of soil organic matter as a slow-release nutrient source. How do different fractions of SOM (particulate organic matter, mineral-associated organic matter, dissolved organic matter, and microbial biomass) contribute to nutrient cycling on different timescales? Why does a soil with 4% organic matter require less fertilizer than a soil with 1% organic matter, assuming similar textures?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: POM (particulate, >53um) is partially decomposed plant residue, turns over in years to decades, releases nutrients relatively quickly; MAOM (mineral-associated, <53um) is microbial products adsorbed to mineral surfaces, turns over in decades to centuries, very slow nutrient release; DOM (dissolved) is the most bioavailable fraction, rapidly cycled, small pool but high flux; microbial biomass is living nutrient pool that releases nutrients upon death (turnover days to weeks); 4% SOM in top 30 cm contains roughly: 7000 kg N, 600 kg P, 600 kg S; if 2-3% mineralizes annually, that's 140-210 kg N/ha/yr released; 1% SOM provides only ~35-50 kg N/ha/yr; higher SOM also means higher CEC retaining applied nutrients against leaching; synchrony between mineralization and crop demand depends on temperature and moisture driving microbial activity."
+    tags: [soil_organic_matter, nutrient_release, som_fractions, mineralization, fertility]
+
+  - id: reasoning_nutrient_cycling_0017
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why nitrogen is lost from agricultural soils through so many different pathways (leaching, volatilization, denitrification, runoff, erosion) while phosphorus is primarily lost through erosion and surface runoff. What fundamental chemical properties of nitrogen and phosphorus in soil explain this difference in mobility?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: nitrogen exists in multiple oxidation states (-3 to +5) enabling biological transformations between forms: NH4+ (adsorbed to CEC, somewhat immobile), NO3- (mobile anion, not held by soil, leaches readily), NH3 gas (volatile at high pH), N2O and N2 gases (denitrification products); nitrogen is highly soluble in multiple forms and undergoes both aqueous and gaseous losses; PHOSPHORUS by contrast is almost entirely in oxidation state +5 (PO43-), forms very insoluble precipitates with Ca, Fe, Al; strongly adsorbed to mineral surfaces; diffusion coefficient 1000x lower than NO3-; P concentration in soil solution is extremely low (0.01-0.1 mg/L); P moves mainly attached to sediment particles (erosion) or in dissolved form during intense runoff events; this fundamental difference in chemistry explains why N management focuses on timing and form while P management focuses on erosion control and soil test buildup."
+    tags: [nitrogen_loss, phosphorus_loss, nutrient_mobility, soil_chemistry]
+
+  - id: reasoning_nutrient_cycling_0018
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the phenomenon of "luxury consumption" in plants and its implications for nutrient cycling in regenerative systems. How do plants take up nutrients beyond their immediate needs, how does this stored nutrient capital cycle back through the system, and how can a farmer use this phenomenon strategically in nutrient management?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: luxury consumption occurs when nutrient supply exceeds growth demand; plants accumulate excess nutrients in vacuoles and cell walls; K is most commonly luxury-consumed (can reach 5-6% in tissue when 1.5-2% is sufficient); this is a survival strategy for uncertain nutrient availability; implications for nutrient cycling: cover crops that luxury-consume K or other nutrients act as nutrient 'bioaccumulators', capturing nutrients from deep soil and concentrating them in biomass; when terminated, these nutrients are released in the root zone of subsequent crops; strategic use: deep-rooted cover crops (daikon radish, sunflower) can mine subsoil nutrients; nutrient scavenging cover crops (rye for N, buckwheat for P) capture residual fertility; in regenerative systems, this creates a biological nutrient lift from lower to upper soil profile; risk: luxury K consumption by forages can cause grass tetany in grazing livestock (high K inhibits Mg absorption)."
+    tags: [luxury_consumption, nutrient_cycling, cover_crops, potassium, bioaccumulation]
+
+  - id: reasoning_nutrient_cycling_0019
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the nitrogen cycle in a compost heap, from the initial raw materials through to finished compost. Why does a poorly managed compost pile lose up to 50% of its initial nitrogen, and what management practices minimize these losses? Include the specific forms of nitrogen (NH3, NH4+, NO3-, N2O, N2, organic N) at each stage.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should trace: initial organic N in proteins, amino acids, nucleic acids; thermophilic phase: rapid ammonification releases NH4+; at high pH (>8) common in early composting, NH4+ converts to NH3 gas and volatilizes (primary loss pathway); if pile too wet and anaerobic, denitrification produces N2O and N2; excessive turning aerates and promotes NH3 loss; during cooling/mesophilic phase: nitrification converts NH4+ to NO3-; NO3- can leach if pile is uncovered in rain; MINIMIZE LOSSES: maintain C:N 25-30:1 (high C absorbs NH4+); avoid excessive temperatures (>65C increases NH3 volatilization); cover pile to prevent leaching; minimal turning once temperature stabilizes; add bulking agent for structure; slightly acidic conditions favor NH4+ over NH3; biochar or zeolite amendments adsorb NH4+; finished compost has N mostly in stable organic forms (1.5-3% N) slowly mineralized when applied to soil."
+    tags: [composting, nitrogen_loss, ammonia_volatilization, compost_management]
+
+  - id: reasoning_nutrient_cycling_0020
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          What role do soil microorganisms play as a "living nutrient reservoir"? Explain how the microbial biomass pool stores and releases nutrients, and why management practices that kill or reduce soil microbial populations can lead to short-term nutrient flushes followed by long-term nutrient deficits.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: soil microbial biomass typically contains 1-5% of total soil C, 2-6% of total N, 1-5% of total P; this is a dynamic pool with rapid turnover (bacterial generation time hours to days); nutrients in living microbes are protected from leaching; when microbes die (from drying, tillage, fumigation, biocide application), their cellular contents are released (biomass flush or 'Birch effect' for wetting-drying); this produces a pulse of available N, P, S; but if the cause of mortality persists (e.g., repeated fumigation, chronic tillage), the biomass pool shrinks permanently; smaller microbial biomass means: less nutrient cycling capacity, reduced disease suppression, lower enzyme production for organic matter decomposition, and greater dependency on external fertilizer inputs; healthy soils may have 500-1000 kg microbial biomass C per hectare representing a significant nutrient bank."
+    tags: [microbial_biomass, nutrient_reservoir, soil_biology, nutrient_cycling]
+
+  - id: reasoning_nutrient_cycling_0021
+    question_type: open_ended
+    difficulty: hard
+    regions: [south_asia, east_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In many Asian rice-growing regions, the practice of incorporating rice straw with blue-green algae (cyanobacteria) and Azolla has sustained paddy yields for centuries without synthetic fertilizer. Explain the complete nutrient cycling system: how nitrogen enters (biological fixation by cyanobacteria and Azolla-Anabaena symbiosis), how phosphorus and potassium are recycled, and why this system works in flooded paddies but not in upland conditions.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: free-living cyanobacteria (Nostoc, Anabaena) fix 20-30 kg N/ha/season in paddy floodwater; Azolla pinnata harbors Anabaena azollae in leaf cavities fixing additional 40-60 kg N/ha when grown as dual crop; Azolla doubles in biomass every 3-5 days providing green manure; rice straw incorporation returns 80% of K (most important recycled nutrient), ~40% P, and organic C for soil food web; flooding mobilizes P by reducing Fe3+ to Fe2+ releasing P from iron-phosphate complexes; silicate weathering accelerated under flooded conditions providing Si for rice; K released from straw and clay minerals under reducing conditions; this system requires flooding because: cyanobacteria need aquatic habitat, Azolla is aquatic fern, flooded conditions provide unique redox chemistry that mobilizes P and Si; in upland aerobic conditions, none of these mechanisms operate effectively."
+    tags: [paddy_rice, cyanobacteria, azolla, nitrogen_fixation, traditional_systems, asia]
+
+  - id: reasoning_nutrient_cycling_0022
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how deep-rooted perennial plants (such as trees in agroforestry systems or deep-rooted prairie grasses) contribute to nutrient cycling through what is called the "nutrient pump" or "nutrient lift" effect. How does this process redistribute nutrients vertically in the soil profile, and why is it particularly valuable in leaching-prone environments?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: deep roots (2-10+ meters) access nutrient pools below the rooting depth of annual crops; nutrients absorbed from subsoil are incorporated into biomass; leaf litter, root turnover, and root exudates deposit these nutrients in the topsoil; this effectively moves nutrients upward against the direction of leaching; especially important for mobile nutrients (NO3-, SO42-, K+) that leach below annual crop root zones; in agroforestry, tree roots intercept nutrients leaching past crop roots ('safety net' function); trees also weather subsoil minerals making previously unavailable nutrients accessible; calcium and magnesium from deep weathering enriches topsoil through litterfall; quantification: a mature tree can cycle 50-200 kg Ca/ha/yr through this mechanism; in leaching-prone sandy soils or high-rainfall environments, this prevents permanent nutrient loss from the system; practical implications for alley cropping, silvopasture, and prairie restoration."
+    tags: [nutrient_pump, deep_rooting, agroforestry, nutrient_cycling, leaching]
+
+  - id: reasoning_nutrient_cycling_0023
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why soil pH is sometimes called the "master variable" for nutrient availability. Describe how pH affects the availability of nitrogen, phosphorus, potassium, calcium, magnesium, and iron, and identify the pH range where the greatest number of nutrients are simultaneously available to plants.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: pH controls the solubility, adsorption, and speciation of nearly every nutrient; N: nitrification (NH4+ to NO3-) optimal at pH 6-8, below pH 5.5 it slows dramatically; P: maximum availability at pH 6.0-7.0 (below 6.0 fixed by Al/Fe, above 7.0 by Ca); K: relatively unaffected by pH directly but low pH and high Al displaces K from exchange sites; Ca and Mg: abundant at neutral to alkaline pH, leached in acidic conditions; Fe, Mn, Zn, Cu: increasingly available as pH decreases (can become toxic below pH 4.5); Mo: opposite pattern, more available at higher pH; B: optimal at pH 5-7; the ideal range of pH 6.0-7.0 is where the most nutrients overlap in their availability windows; this is why liming acidic soils and acidifying alkaline soils both improve nutrient availability; soil-specific factors modify these generalizations."
+    tags: [soil_ph, nutrient_availability, master_variable, liming, soil_chemistry]
+
+  - id: reasoning_nutrient_cycling_0024
+    question_type: open_ended
+    difficulty: hard
+    regions: [tropics, sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of "integrated soil fertility management" (ISFM) as developed for sub-Saharan African smallholder systems. Why is neither purely organic nor purely synthetic fertilizer sufficient alone in these low-fertility, weathered tropical soils? Explain the synergistic mechanisms when organic and mineral inputs are combined, including effects on nutrient cycling rates, CEC, biological activity, and nutrient use efficiency.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: ISFM combines organic inputs (compost, manure, crop residues, green manures) with targeted mineral fertilizer and improved germplasm adapted to local conditions; purely organic approach limited by: insufficient total nutrient supply for yield targets, slow mineralization in some conditions, limited availability of organic inputs; purely mineral fertilizer limited by: no organic matter benefit, rapid leaching in sandy soils with low CEC, acidification, no biological stimulation, cost; SYNERGIES: organic matter increases CEC retaining applied fertilizer nutrients; improved microbial activity from organic inputs accelerates nutrient cycling; organic acids from decomposition mobilize fixed P; slow-release organic N complements fast-release mineral N improving synchrony with crop demand; organic matter improves water-holding capacity allowing better fertilizer uptake; documented examples from Kenya, Malawi: combined application yields 30-50% more than sum of individual inputs; ISFM framework recognizes local soil heterogeneity and farmer resource constraints."
+    tags: [isfm, sub_saharan_africa, organic_mineral_synergy, smallholder, nutrient_management]
+
+  - id: reasoning_nutrient_cycling_0025
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how silicon (Si) cycling in soil affects crop health and nutrient uptake, particularly in rice and sugarcane. Why is silicon not classified as an essential nutrient for most plants, yet its deficiency significantly reduces yields in certain crops? How do soil processes control silicon availability, and how does intensive cropping deplete plant-available silicon?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: Si exists in soil as monosilicic acid Si(OH)4, released by weathering of silicate minerals; taken up by rice, sugarcane, wheat as Si(OH)4 via aquaporin-like transporters; deposited as phytoliths (amorphous SiO2) in cell walls; not classified as essential because most plants complete life cycle without it, but 'beneficial element'; in rice, Si strengthens cell walls (disease resistance against blast, sheath blight), improves lodging resistance, reduces transpiration, alleviates Fe and Mn toxicity in flooded soils; Si-accumulating crops remove 100-500 kg SiO2/ha/year; continuous cultivation depletes plant-available Si pool; paddy soils in Japan, Korea, Louisiana show Si depletion after decades of cropping; slag silicates applied as Si fertilizer in many countries; phytolith cycling: plant Si returns to soil through residue decomposition but if residues removed or burned, Si is exported; in highly weathered tropical soils, native silicates already depleted by intense weathering."
+    tags: [silicon, rice, sugarcane, beneficial_elements, nutrient_cycling, phytoliths]

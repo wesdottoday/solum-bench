@@ -1,0 +1,14 @@
+models:
+  - name: nemotron-nano-4b
+    provider: vllm_local
+    model_id: nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16
+    dtype: bfloat16
+    tensor_parallel: 1
+    max_model_len: 4096
+
+  - name: nemotron-nano-30b
+    provider: vllm_local
+    model_id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+    dtype: bfloat16
+    tensor_parallel: 2
+    max_model_len: 32768

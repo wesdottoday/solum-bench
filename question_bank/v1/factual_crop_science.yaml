@@ -1,0 +1,889 @@
+metadata:
+  category: factual
+  subcategory: crop_science
+  version: v1
+
+questions:
+  - id: factual_crop_0001
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following crops uses the C4 photosynthetic pathway?
+    choices:
+      - "A) Wheat"
+      - "B) Rice"
+      - "C) Sorghum"
+      - "D) Soybean"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Sorghum is a C4 crop with high photosynthetic efficiency and water use efficiency. Wheat, rice, and soybean are all C3 crops."
+    tags: [photosynthesis, c4, sorghum, plant_physiology]
+
+  - id: factual_crop_0002
+    question_type: mcq
+    difficulty: medium
+    regions: [sub_saharan_africa]
+    turns:
+      - role: user
+        content: |
+          In the push-pull intercropping system developed for East Africa, what is the primary role of Desmodium (silverleaf) planted between maize rows?
+    choices:
+      - "A) It provides grain for human consumption"
+      - "B) It repels stem borer moths and suppresses Striga weed through root exudates"
+      - "C) It serves solely as a windbreak to reduce lodging"
+      - "D) It attracts pollinators to increase maize yield"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Push-pull system (ICIPE, Kenya): Desmodium 'pushes' stem borers away via volatile chemicals and suppresses Striga through allelopathic root exudates. Napier grass on borders 'pulls' borers toward it."
+    tags: [push_pull, intercropping, africa, stem_borer, striga, companion_planting]
+
+  - id: factual_crop_0003
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the approximate range of nitrogen fixation by soybeans per hectare per year under good conditions?
+    choices:
+      - "A) 10-30 kg N/ha"
+      - "B) 80-200 kg N/ha"
+      - "C) 300-450 kg N/ha"
+      - "D) 500-700 kg N/ha"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Soybeans fix approximately 80-200 kg N/ha/year through symbiosis with Bradyrhizobium japonicum. Actual rates depend on inoculation, soil N status, and growing conditions."
+    tags: [nitrogen_fixation, soybeans, legumes, nutrient_cycling]
+
+  - id: factual_crop_0004
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the approximate C:N ratio of mature wheat straw?
+    choices:
+      - "A) 10:1"
+      - "B) 25:1"
+      - "C) 80:1"
+      - "D) 200:1"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Mature wheat straw has a C:N ratio of approximately 80:1 (range 60-100:1). This high ratio means soil microbes will immobilize nitrogen during decomposition, temporarily reducing plant-available N."
+    tags: [cn_ratio, wheat, crop_residues, decomposition]
+
+  - id: factual_crop_0005
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the Three Sisters companion planting system. Which three crops are involved and what is the ecological role of each?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["corn", "beans", "squash"]
+      rubric_criteria:
+        - name: three_crops
+          description: "Identifies all three crops: corn (maize), beans, and squash"
+          max_points: 3
+        - name: corn_role
+          description: "Explains corn provides a structural trellis for beans to climb"
+          max_points: 2
+        - name: beans_role
+          description: "Explains beans fix nitrogen benefiting all three crops"
+          max_points: 2
+        - name: squash_role
+          description: "Explains squash provides ground cover that suppresses weeds and retains moisture"
+          max_points: 2
+    source_notes: "Three Sisters is a traditional Indigenous American polyculture. Corn provides structure, beans fix N, squash shades soil. Together they provide complementary nutrition (carbs, protein, vitamins)."
+    tags: [companion_planting, three_sisters, intercropping, indigenous_knowledge]
+
+  - id: factual_crop_0006
+    question_type: mcq
+    difficulty: hard
+    regions: [east_africa]
+    turns:
+      - role: user
+        content: |
+          Teff (Eragrostis tef) is a staple grain of Ethiopia. Which of the following statements about teff is correct?
+    choices:
+      - "A) Teff is a C3 grass that requires high rainfall above 1500 mm annually"
+      - "B) Teff is a C4 grass with very small seeds (~0.3 mm diameter), naturally gluten-free, and adapted to both waterlogged and drought conditions"
+      - "C) Teff is a legume that fixes atmospheric nitrogen"
+      - "D) Teff requires vernalization and is primarily grown in cold temperate zones"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Teff is a C4 panicoid grass. Its tiny seeds (~3000 per gram) make it one of the smallest cereal grains. It tolerates both waterlogged Vertisols and drought, grows at 1800-2800 m elevation in Ethiopia, and is gluten-free."
+    tags: [teff, ethiopia, small_grains, c4, gluten_free, africa]
+
+  - id: factual_crop_0007
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following is a taproot crop rather than having a fibrous root system?
+    choices:
+      - "A) Wheat"
+      - "B) Rice"
+      - "C) Daikon radish (tillage radish)"
+      - "D) Oats"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Daikon radish has a deep taproot that can penetrate compacted layers (often called 'tillage radish' or 'biodrilling'). Wheat, rice, and oats are grasses with fibrous root systems."
+    tags: [root_architecture, taproot, fibrous_roots, cover_crops, biodrilling]
+
+  - id: factual_crop_0008
+    question_type: mcq
+    difficulty: medium
+    regions: [south_america, global]
+    turns:
+      - role: user
+        content: |
+          Quinoa (Chenopodium quinoa) is well-adapted to harsh Andean environments. Which stress tolerance is NOT characteristic of quinoa?
+    choices:
+      - "A) Soil salinity tolerance up to 40 dS/m"
+      - "B) Frost tolerance down to -8 degrees Celsius during vegetative growth"
+      - "C) Growth at altitudes up to 4,000 meters"
+      - "D) Tolerance of permanently waterlogged, anaerobic soils"
+    correct_answer: "D"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "D"
+    source_notes: "Quinoa is remarkably stress-tolerant: halophyte-level salinity tolerance, frost tolerance, drought tolerance, and high-altitude adaptation. However, it does not tolerate waterlogged soils and requires reasonable drainage."
+    tags: [quinoa, andean_crops, stress_tolerance, salinity, south_america]
+
+  - id: factual_crop_0009
+    question_type: short_answer
+    difficulty: medium
+    regions: [tropics]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain why cassava (Manihot esculenta) is considered a critical food security crop in tropical Africa. Describe its stress tolerances, its role as a living food reserve, and any nutritional limitations.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["drought", "food security"]
+      rubric_criteria:
+        - name: stress_tolerance
+          description: "Describes cassava's tolerance of poor, acidic soils (pH 4-8), drought, and low fertility"
+          max_points: 3
+        - name: living_reserve
+          description: "Explains roots can be left unharvested in the ground for 6-24 months as a flexible food bank"
+          max_points: 3
+        - name: nutritional_limitations
+          description: "Notes cassava is primarily a carbohydrate/energy source but low in protein (~1-2%), and contains cyanogenic glycosides requiring proper processing"
+          max_points: 3
+    source_notes: "Cassava is the ultimate food security crop: tolerates poor soils, drought, and low fertility. Roots can remain in the ground 6-24 months. It feeds ~500 million people in the tropics but requires processing to remove cyanogenic glycosides (linamarin)."
+    tags: [cassava, food_security, tropics, africa, root_crops, drought_tolerance]
+
+  - id: factual_crop_0010
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Compare the C:N ratios of the following crop residues and rank them from fastest to slowest decomposition: hairy vetch biomass, mature corn stalks, crimson clover biomass, and sawdust. Provide approximate C:N ratios.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["C:N", "vetch", "corn"]
+      rubric_criteria:
+        - name: correct_ranking
+          description: "Ranks from fastest to slowest: hairy vetch (~11:1), crimson clover (~15:1), corn stalks (~60:1), sawdust (~400-500:1)"
+          max_points: 4
+        - name: approximate_ratios
+          description: "Provides reasonable C:N ratios for at least 3 of the 4 materials"
+          max_points: 3
+        - name: decomposition_principle
+          description: "Explains that lower C:N ratios decompose faster because microbes have sufficient nitrogen"
+          max_points: 2
+    source_notes: "Hairy vetch ~11:1, crimson clover ~13-15:1, mature corn stalks ~55-65:1, sawdust ~400-500:1. Materials above ~25:1 cause temporary N immobilization during decomposition."
+    tags: [cn_ratio, decomposition, crop_residues, cover_crops, nitrogen]
+
+  - id: factual_crop_0011
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which cover crop family is best known for biological nitrogen fixation?
+    choices:
+      - "A) Poaceae (grasses)"
+      - "B) Brassicaceae (mustard family)"
+      - "C) Fabaceae (legume family)"
+      - "D) Polygonaceae (buckwheat family)"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Fabaceae (legumes) form symbioses with Rhizobium bacteria in root nodules to fix atmospheric N2. Examples: clovers, vetches, peas, cowpeas, pigeon peas."
+    tags: [nitrogen_fixation, legumes, cover_crops, fabaceae]
+
+  - id: factual_crop_0012
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following crop residues has the strongest documented allelopathic effect on subsequent crop germination?
+    choices:
+      - "A) Oat straw"
+      - "B) Sorghum residue (sorgoleone and related compounds)"
+      - "C) Wheat straw"
+      - "D) Clover residue"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Sorghum produces sorgoleone from root hairs, a potent allelochemical that inhibits photosystem II in sensitive plants. Sorghum residues also contain dhurrin and phenolic acids. This can suppress weeds but also inhibit small-seeded crops planted soon after."
+    tags: [allelopathy, sorghum, sorgoleone, crop_rotation, weed_suppression]
+
+  - id: factual_crop_0013
+    question_type: mcq
+    difficulty: medium
+    regions: [asia, tropics]
+    turns:
+      - role: user
+        content: |
+          Paddy rice cultivation under flooded conditions contributes to greenhouse gas emissions primarily through which mechanism?
+    choices:
+      - "A) Nitrous oxide (N2O) emissions from nitrification"
+      - "B) Carbon dioxide (CO2) from root respiration only"
+      - "C) Methane (CH4) production by methanogenic archaea in anaerobic soil conditions"
+      - "D) Ozone (O3) depletion from pesticide volatilization"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Flooded rice paddies create anaerobic conditions ideal for methanogenic archaea. Rice paddies account for approximately 10-12% of global anthropogenic methane emissions. Alternate wetting and drying (AWD) can reduce CH4 by 30-50%."
+    tags: [rice, methane, greenhouse_gas, paddy, asia, climate]
+
+  - id: factual_crop_0014
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following is a CAM (Crassulacean Acid Metabolism) crop?
+    choices:
+      - "A) Corn"
+      - "B) Pineapple"
+      - "C) Barley"
+      - "D) Sunflower"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Pineapple uses CAM photosynthesis, opening stomata at night to fix CO2 into organic acids, then releasing CO2 internally during the day for the Calvin cycle. This minimizes water loss and is an adaptation to arid/semi-arid conditions. Agave and sisal are other CAM crops."
+    tags: [photosynthesis, cam, pineapple, water_use_efficiency]
+
+  - id: factual_crop_0015
+    question_type: mcq
+    difficulty: medium
+    regions: [west_africa]
+    turns:
+      - role: user
+        content: |
+          Fonio (Digitaria exilis) is an ancient grain crop of West Africa. What is its primary agronomic advantage?
+    choices:
+      - "A) It produces the highest yield per hectare of any cereal globally"
+      - "B) It matures extremely rapidly (6-8 weeks) and grows on poor, sandy soils where other cereals fail"
+      - "C) It is the only cereal that fixes its own nitrogen"
+      - "D) It requires irrigation and heavy fertilization for successful production"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Fonio is the fastest-maturing cereal (42-56 days to harvest for some varieties). It thrives on nutrient-poor laterite and sandy soils in the Sahel. Called the 'hungry rice' because it bridges the gap before main crops mature."
+    tags: [fonio, west_africa, small_grains, dryland, food_security]
+
+  - id: factual_crop_0016
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What are the key differences between C3 and C4 photosynthetic pathways? Provide at least two examples of crop species for each pathway.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["C3", "C4", "photorespiration"]
+      rubric_criteria:
+        - name: c3_mechanism
+          description: "Explains C3 uses RuBisCO directly, first product is a 3-carbon compound, susceptible to photorespiration"
+          max_points: 2
+        - name: c4_mechanism
+          description: "Explains C4 has a CO2 concentrating mechanism (PEP carboxylase), first product is a 4-carbon compound, reduced photorespiration"
+          max_points: 2
+        - name: c3_examples
+          description: "Provides correct C3 examples such as wheat, rice, soybean, barley, oats"
+          max_points: 2
+        - name: c4_examples
+          description: "Provides correct C4 examples such as corn, sorghum, sugarcane, millet, switchgrass"
+          max_points: 2
+        - name: efficiency_comparison
+          description: "Notes C4 is more efficient in hot, dry, high-light conditions"
+          max_points: 2
+    source_notes: "C3 crops (wheat, rice, soybean) lose 20-40% of fixed carbon to photorespiration. C4 crops (corn, sorghum, sugarcane) concentrate CO2 around RuBisCO, virtually eliminating photorespiration and increasing water use efficiency."
+    tags: [photosynthesis, c3, c4, plant_physiology, water_use_efficiency]
+
+  - id: factual_crop_0017
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which legume species typically fixes the LEAST amount of nitrogen per hectare per year?
+    choices:
+      - "A) Alfalfa (Medicago sativa), ~150-250 kg N/ha"
+      - "B) Pigeon pea (Cajanus cajan), ~40-90 kg N/ha"
+      - "C) White clover (Trifolium repens), ~100-150 kg N/ha"
+      - "D) Leucaena (Leucaena leucocephala), ~100-500 kg N/ha"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Pigeon pea fixes 40-90 kg N/ha/year, less than many temperate legumes. However, pigeon pea has deep roots (2+ meters) that mine subsoil nutrients and break hardpans, making it invaluable in tropical farming systems."
+    tags: [nitrogen_fixation, legumes, pigeon_pea, alfalfa, comparative]
+
+  - id: factual_crop_0018
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the recommended seeding rate range for crimson clover (Trifolium incarnatum) as a cover crop when drilled?
+    choices:
+      - "A) 1-3 kg/ha"
+      - "B) 12-20 kg/ha"
+      - "C) 80-100 kg/ha"
+      - "D) 200-300 kg/ha"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Crimson clover drilled seeding rate is typically 12-20 kg/ha (10-18 lbs/acre). Broadcast rates are 25-30% higher to compensate for reduced seed-soil contact."
+    tags: [seeding_rates, cover_crops, crimson_clover, legumes]
+
+  - id: factual_crop_0019
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the principles of crop rotation for soilborne disease management. What is the minimum recommended rotation interval, and why do some pathogens require longer breaks?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["rotation", "disease", "years"]
+      rubric_criteria:
+        - name: minimum_interval
+          description: "States 3-4 year minimum rotation interval for most crop families"
+          max_points: 3
+        - name: mechanism
+          description: "Explains that rotation starves soilborne pathogens by removing their host crop family"
+          max_points: 3
+        - name: persistent_pathogens
+          description: "Notes some pathogens (Verticillium, clubroot, white mold) form persistent resting structures and may need 5-7+ year breaks"
+          max_points: 3
+    source_notes: "A 3-4 year rotation interval is the standard recommendation. Some pathogens (e.g., Verticillium microsclerotia, Plasmodiophora brassicae resting spores) persist in soil for 5-20 years, requiring longer rotations or resistant varieties."
+    tags: [crop_rotation, disease_break, soilborne_pathogens, solanaceae]
+
+  - id: factual_crop_0020
+    question_type: mcq
+    difficulty: hard
+    regions: [tropics]
+    turns:
+      - role: user
+        content: |
+          Moringa (Moringa oleifera) is widely promoted as a multipurpose tree in tropical smallholder systems. Which of the following correctly describes its agronomic characteristics?
+    choices:
+      - "A) Moringa is a slow-growing hardwood that requires 10+ years to first harvest"
+      - "B) Moringa is a fast-growing tree that can be coppiced repeatedly, with leaves containing approximately 27% protein on a dry-weight basis"
+      - "C) Moringa can only grow in rich alluvial soils with pH above 7.5"
+      - "D) Moringa produces no usable products until the tree reaches full maturity at 15 years"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Moringa oleifera grows 3-5 meters in its first year, tolerates coppicing for intensive leaf production, and thrives in poor soils (pH 5-9). Leaves contain ~27% protein, plus high levels of vitamins A, C, and minerals. Seeds can purify water."
+    tags: [moringa, agroforestry, tropics, protein, multipurpose_trees]
+
+  - id: factual_crop_0021
+    question_type: short_answer
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is a cover crop cocktail (multi-species mix)? Name at least four functional groups that might be included and give one species example from each group.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["legume", "grass"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines a cover crop cocktail as a multi-species blend designed for diverse root architectures and functions"
+          max_points: 2
+        - name: four_groups
+          description: "Names at least four groups such as: legumes (N-fixing), grasses (biomass/carbon), brassicas (biofumigation), broadleaves (taproot/diversity)"
+          max_points: 4
+        - name: species_examples
+          description: "Provides at least one correct species per functional group named"
+          max_points: 3
+    source_notes: "Cover crop cocktails typically include: legumes (clover, vetch), cool-season grasses (cereal rye, oats), brassicas (radish, turnip), broadleaves (sunflower, phacelia). Diversity improves root exudate variety and soil biology."
+    tags: [cover_crops, multi_species, cocktail_mix, diversity]
+
+  - id: factual_crop_0022
+    question_type: mcq
+    difficulty: medium
+    regions: [mediterranean, temperate]
+    turns:
+      - role: user
+        content: |
+          Barley (Hordeum vulgare) is preferred over wheat in many dryland Mediterranean and semi-arid regions because:
+    choices:
+      - "A) Barley has higher protein content than wheat in all conditions"
+      - "B) Barley has greater salt tolerance, earlier maturity, and better performance on marginal soils than wheat"
+      - "C) Barley requires more water than wheat but produces triple the yield"
+      - "D) Barley is a legume and fixes its own nitrogen"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Barley is more salt-tolerant, drought-tolerant, and faster-maturing than wheat. It can produce grain on as little as 200-250 mm rainfall. It tolerates soil salinity up to ~8 dS/m (vs ~6 dS/m for wheat)."
+    tags: [barley, wheat, dryland, salt_tolerance, mediterranean]
+
+  - id: factual_crop_0023
+    question_type: mcq
+    difficulty: hard
+    regions: [sub_saharan_africa, south_asia]
+    turns:
+      - role: user
+        content: |
+          Cowpea (Vigna unguiculata) is a critical grain legume in semi-arid tropical systems. What makes it particularly suited to intercropping with pearl millet in the Sahel?
+    choices:
+      - "A) Cowpea is a tall-growing crop that shades millet, reducing heat stress"
+      - "B) Cowpea has an indeterminate prostrate growth habit, fixes 40-80 kg N/ha, tolerates drought and sandy soils, and matures after millet harvest allowing relay cropping"
+      - "C) Cowpea requires the same planting and harvest dates as millet"
+      - "D) Cowpea produces allelopathic compounds that eliminate all weeds around millet"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Cowpea-millet intercropping is a foundational system across the Sahel. Cowpea's prostrate habit doesn't compete for light, it fixes N, and its drought tolerance matches millet. The dual-crop system provides both protein and carbohydrates on minimal rainfall (~300 mm)."
+    tags: [cowpea, millet, intercropping, sahel, dryland, nitrogen_fixation]
+
+  - id: factual_crop_0024
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What soil temperature (at 5 cm depth) is generally required for successful germination of most warm-season cover crops such as cowpea, sorghum-sudangrass, and buckwheat?
+    choices:
+      - "A) At or above 0 degrees Celsius"
+      - "B) At or above 10-15 degrees Celsius"
+      - "C) At or above 30 degrees Celsius"
+      - "D) At or above 40 degrees Celsius"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Most warm-season cover crops require soil temperatures of at least 10-15 degrees C for reliable germination. Sorghum-sudangrass prefers 15+ C, buckwheat germinates at 10+ C, and cowpea at 15+ C."
+    tags: [germination, soil_temperature, cover_crops, warm_season]
+
+  - id: factual_crop_0025
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Compare the root architecture and rooting depth of four major oilseed crops: soybean, sunflower, flax (linseed), and sesame. Which has the deepest root system, and how does root architecture affect their roles in crop rotation?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["taproot", "sunflower"]
+      rubric_criteria:
+        - name: sunflower_deepest
+          description: "Identifies sunflower as having the deepest taproot (1.5-3 meters), valuable for breaking compaction"
+          max_points: 3
+        - name: comparative_depths
+          description: "Provides reasonable depth comparisons for at least 3 of the 4 crops (soybean ~1m, sesame ~1m, flax ~0.6-1m)"
+          max_points: 3
+        - name: rotation_role
+          description: "Explains how deep-rooted crops mine subsoil nutrients and break compacted layers, benefiting subsequent crops in rotation"
+          max_points: 3
+    source_notes: "Sunflower taproot reaches 1.5-3 m. Sesame taproot ~0.9-1.2 m. Soybean taproot ~0.6-1.5 m. Flax relatively shallow ~0.6-1 m. Deep roots improve soil structure and access deep moisture and nutrients for following crops."
+    tags: [sunflower, root_architecture, oilseeds, compaction, taproot, crop_rotation]
+
+  - id: factual_crop_0026
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of allelopathy in crop residue management. Name two crops known for strong allelopathic effects and describe how this can be both beneficial and problematic in regenerative systems.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["allelopathy", "chemical"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines allelopathy as the release of biochemicals by one plant that inhibit germination or growth of other plants"
+          max_points: 2
+        - name: crop_examples
+          description: "Names at least two allelopathic crops (e.g., sorghum/sorgoleone, rye/DIBOA/DIBOA, walnut/juglone, sunflower, brassicas)"
+          max_points: 3
+        - name: benefits
+          description: "Describes benefits: natural weed suppression reducing herbicide need"
+          max_points: 2
+        - name: drawbacks
+          description: "Describes drawbacks: can inhibit cash crop germination if planting too soon after residue incorporation"
+          max_points: 2
+    source_notes: "Sorghum (sorgoleone), cereal rye (benzoxazinoids DIBOA/DIMBOA), and black walnut (juglone) are well-known allelopathic species. Benefits include natural weed suppression; risks include crop injury if planting intervals are too short."
+    tags: [allelopathy, sorghum, cereal_rye, weed_suppression, residue_management]
+
+  - id: factual_crop_0027
+    question_type: mcq
+    difficulty: medium
+    regions: [south_america, global]
+    turns:
+      - role: user
+        content: |
+          Amaranth (Amaranthus spp.) is a pseudo-cereal originally domesticated in Mesoamerica. Which nutritional characteristic distinguishes it from true cereal grains?
+    choices:
+      - "A) Amaranth contains no carbohydrates"
+      - "B) Amaranth has exceptionally high lysine content compared to true cereals, making it a more complete protein source"
+      - "C) Amaranth contains more gluten than wheat"
+      - "D) Amaranth has lower mineral content than all true cereals"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Amaranth grain contains 13-15% protein with high lysine content (5.2 g/100g protein vs 2.8 g in wheat), making it nutritionally complementary to true cereals. It is also gluten-free and rich in iron and calcium."
+    tags: [amaranth, pseudo_cereal, protein, lysine, south_america, nutrition]
+
+  - id: factual_crop_0028
+    question_type: mcq
+    difficulty: medium
+    regions: [asia, tropics]
+    turns:
+      - role: user
+        content: |
+          Taro (Colocasia esculenta) is a staple food across the Pacific Islands and tropical Asia. What are its primary growing requirements?
+    choices:
+      - "A) Dry, sandy soils with full sun and freezing winters for dormancy"
+      - "B) Moist to flooded conditions, partial shade tolerance, and frost-free environments with consistent warmth"
+      - "C) Alkaline calcareous soils with minimal rainfall"
+      - "D) High-altitude temperate zones with cool summers"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Taro is a tropical aroid requiring consistent moisture (can grow in flooded paddies or upland with >2000mm rainfall), warmth (20-30 C), and is one of few crops tolerant of partial shade. It has been cultivated for over 10,000 years."
+    tags: [taro, tropics, pacific_islands, asia, wetland_crops]
+
+  - id: factual_crop_0029
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In a temperate cover crop system, cereal rye (Secale cereale) is often preferred over other small grains because:
+    choices:
+      - "A) It has the highest nitrogen fixation rate of any grass"
+      - "B) It is the most winter-hardy cereal, produces large biomass, has allelopathic weed suppression, and establishes even when planted late in autumn"
+      - "C) It decomposes faster than any other cover crop residue"
+      - "D) It has a C:N ratio below 15:1, making it ideal for rapid nitrogen release"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Cereal rye survives to -34 C, produces 4-10 t/ha biomass, and releases benzoxazinoids that suppress weed germination. It can be planted later in fall than other cereals and still establish. Its high C:N (~40-60:1 at maturity) means slow decomposition and potential N immobilization."
+    tags: [cereal_rye, cover_crops, winter_hardiness, allelopathy, temperate]
+
+  - id: factual_crop_0030
+    question_type: short_answer
+    difficulty: medium
+    regions: [south_asia, sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the role of pigeon pea (Cajanus cajan) in smallholder tropical farming systems. Include its nitrogen fixation capacity, root characteristics, and how it is used in intercropping.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["nitrogen", "root", "intercrop"]
+      rubric_criteria:
+        - name: n_fixation
+          description: "States pigeon pea fixes approximately 40-90 kg N/ha/year"
+          max_points: 2
+        - name: root_depth
+          description: "Describes deep taproot system (2+ meters) that mines subsoil nutrients and breaks hardpans"
+          max_points: 2
+        - name: intercropping_use
+          description: "Explains common intercropping with cereals (maize, sorghum, millet) where pigeon pea grows slowly initially then produces after cereal harvest"
+          max_points: 3
+        - name: food_value
+          description: "Mentions pigeon pea provides high-protein food (20-22% protein) and is a dietary staple (dal)"
+          max_points: 2
+    source_notes: "Pigeon pea is the world's sixth most important grain legume. Deep roots access subsoil P and water. Slow initial growth allows intercropping without competing with cereals. Perennial ratoon capability in tropical systems."
+    tags: [pigeon_pea, intercropping, nitrogen_fixation, tropics, smallholder]
+
+  - id: factual_crop_0031
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following crops has the highest water use efficiency (most biomass produced per unit of water consumed)?
+    choices:
+      - "A) Rice (paddy)"
+      - "B) Pearl millet"
+      - "C) Alfalfa"
+      - "D) Cotton"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Pearl millet (Pennisetum glaucum) is a C4 crop with outstanding water use efficiency, producing grain with as little as 200-250 mm of rainfall. It is the most drought-tolerant cereal crop, critical for food security in the Sahel and arid India."
+    tags: [water_use_efficiency, pearl_millet, drought_tolerance, c4]
+
+  - id: factual_crop_0032
+    question_type: short_answer
+    difficulty: medium
+    regions: [tropics, asia]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the agronomic potential of breadfruit (Artocarpus altilis) as a perennial staple crop. Include its approximate annual yield per tree, nutritional profile, and advantages over annual staple crops.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["perennial", "breadfruit"]
+      rubric_criteria:
+        - name: yield
+          description: "States a mature breadfruit tree produces approximately 200-700 kg of fruit per year"
+          max_points: 3
+        - name: nutrition
+          description: "Describes starchy fruit with ~25% carbohydrate content, suitable as a staple carbohydrate source"
+          max_points: 2
+        - name: perennial_advantages
+          description: "Explains advantages over annuals: no annual replanting, continuous soil cover, lower labor, carbon sequestration in woody biomass, production for 50+ years"
+          max_points: 4
+    source_notes: "A mature breadfruit tree produces 200-700 kg of fruit per year. The starchy fruit contains ~25% carbohydrate. As a perennial, it requires no annual tillage, sequesters carbon, and can produce for decades with minimal inputs."
+    tags: [breadfruit, perennial_staples, tropics, food_security, agroforestry]
+
+  - id: factual_crop_0033
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          When inoculating legume seeds with Rhizobium bacteria, which of the following factors most commonly causes inoculant failure?
+    choices:
+      - "A) Planting in soil with pH between 6.0 and 7.0"
+      - "B) Exposure of inoculant to direct sunlight, high temperatures (above 40 C), or desiccation, which kills the bacteria before they colonize roots"
+      - "C) Planting into soil that already contains organic matter"
+      - "D) Using fresh, properly stored inoculant within its expiration date"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Rhizobium inoculant bacteria are living organisms sensitive to UV light, heat, and desiccation. Inoculated seed left in the sun or in hot planter boxes can lose >90% viability within hours. Best practice: inoculate in shade, plant within 24 hours, store inoculant at 4 C."
+    tags: [rhizobium, inoculation, nitrogen_fixation, legumes, seed_treatment]
+
+  - id: factual_crop_0034
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What are the key crop rotation principles for nutrient cycling? Explain how alternating between nitrogen-fixing legumes, deep-rooted crops, and high-residue cereals contributes to long-term soil fertility without synthetic fertilizers.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["nitrogen", "rotation", "residue"]
+      rubric_criteria:
+        - name: legume_role
+          description: "Explains legumes add biologically fixed nitrogen to the system"
+          max_points: 2
+        - name: deep_root_role
+          description: "Explains deep-rooted crops mine subsoil nutrients (P, K, Ca) and improve soil structure"
+          max_points: 2
+        - name: cereal_residue_role
+          description: "Explains high-residue cereals add carbon, build organic matter, and protect soil"
+          max_points: 2
+        - name: cycling_concept
+          description: "Describes how nutrients cycle between deep and shallow pools, and between organic and mineral forms"
+          max_points: 2
+        - name: practical_sequence
+          description: "Provides an example rotation sequence demonstrating principles"
+          max_points: 2
+    source_notes: "Effective rotations cycle: legume (N input) -> high-demand crop (uses N) -> deep-rooted crop (mines subsoil) -> high-residue cereal (builds C). This mimics natural nutrient cycling without external inputs."
+    tags: [crop_rotation, nutrient_cycling, legumes, soil_fertility, regenerative]
+
+  - id: factual_crop_0035
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which brassica cover crop is specifically known for biofumigation, releasing compounds toxic to soilborne pathogens when incorporated into the soil?
+    choices:
+      - "A) Sunflower"
+      - "B) Cereal rye"
+      - "C) Mustard (Sinapis alba or Brassica juncea)"
+      - "D) Red clover"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Brassica species, particularly mustards, contain glucosinolates that break down into isothiocyanates (similar to the active ingredient in the fumigant metam sodium) when plant tissue is disrupted. This biofumigation suppresses Verticillium, Rhizoctonia, and nematodes."
+    tags: [biofumigation, brassica, mustard, glucosinolates, disease_suppression, cover_crops]
+
+  - id: factual_crop_0036
+    question_type: mcq
+    difficulty: medium
+    regions: [south_asia, east_africa]
+    turns:
+      - role: user
+        content: |
+          Chickpea (Cicer arietinum) is the world's second most important grain legume. Which of the following correctly describes its nitrogen fixation and cropping pattern?
+    choices:
+      - "A) Chickpea fixes 500+ kg N/ha and is always grown in the rainy season"
+      - "B) Chickpea fixes approximately 30-80 kg N/ha and is often grown as a post-rainy season (rabi) crop on residual soil moisture"
+      - "C) Chickpea fixes no nitrogen and must receive heavy N fertilizer"
+      - "D) Chickpea requires flooded paddy conditions for successful production"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Chickpea fixes 30-80 kg N/ha through Mesorhizobium ciceri symbiosis. In South Asia, it is the dominant rabi (post-monsoon) crop, grown on residual soil moisture. Its deep taproot can access water at 1-2 m depth."
+    tags: [chickpea, legumes, nitrogen_fixation, rabi, south_asia]
+
+  - id: factual_crop_0037
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Rapeseed/canola (Brassica napus) has a glucosinolate-rich root system. What effect does this have when used in rotation before potatoes?
+    choices:
+      - "A) No measurable effect on soil health"
+      - "B) Glucosinolate breakdown products act as natural biofumigants that can suppress Verticillium wilt and certain nematode populations in subsequent potato crops"
+      - "C) It increases Verticillium populations due to hosting the same pathogen"
+      - "D) It removes all soil phosphorus making the field unsuitable for potatoes"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Research in the Pacific Northwest (USA) showed canola/rapeseed in rotation before potatoes reduced Verticillium dahliae microsclerotia by 20-40% through glucosinolate-derived isothiocyanates. This biofumigation effect is enhanced when residues are chopped and incorporated quickly."
+    tags: [rapeseed, canola, biofumigation, verticillium, potatoes, crop_rotation]
+
+  - id: factual_crop_0038
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is the role of groundnut (peanut, Arachis hypogaea) in tropical crop rotations? Describe its nitrogen fixation, unique fruiting habit, and compatibility with cereal rotation systems.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["nitrogen", "peg"]
+      rubric_criteria:
+        - name: n_fixation_rate
+          description: "States groundnut fixes approximately 50-150 kg N/ha/year via Bradyrhizobium symbiosis"
+          max_points: 2
+        - name: fruiting_habit
+          description: "Describes the unique geocarpic fruiting: flowers above ground, then pegs extend into soil where pods develop underground"
+          max_points: 3
+        - name: rotation_benefit
+          description: "Explains that groundnut in rotation with cereals (maize, sorghum, millet) provides nitrogen benefit to subsequent crops and breaks cereal pest/disease cycles"
+          max_points: 2
+        - name: soil_requirements
+          description: "Notes preference for light, sandy, well-drained soils and calcium availability for pod development"
+          max_points: 2
+    source_notes: "Groundnut fixes 50-150 kg N/ha. Its geocarpic fruiting (pegging into soil) requires light-textured soils with adequate calcium. A staple rotation partner for cereals across tropical Africa, Asia, and the Americas."
+    tags: [groundnut, peanut, legumes, nitrogen_fixation, tropical_rotation, oilseeds]
+
+  - id: factual_crop_0039
+    question_type: mcq
+    difficulty: easy
+    regions: [asia]
+    turns:
+      - role: user
+        content: |
+          Tea (Camellia sinensis) is a major crop across Asia. What soil pH range does tea prefer for optimal growth?
+    choices:
+      - "A) 7.5 to 8.5 (alkaline)"
+      - "B) 6.5 to 7.5 (neutral)"
+      - "C) 4.5 to 5.5 (acidic)"
+      - "D) 3.0 to 3.5 (extremely acidic)"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Tea is an acid-loving crop (acidophile) that grows best at pH 4.5-5.5. It is one of the few crops that thrives in strongly acidic soils, particularly the weathered Ultisols and Oxisols of tropical and subtropical Asia."
+    tags: [tea, soil_ph, acidophile, asia, perennial_crops]
+
+  - id: factual_crop_0040
+    question_type: mcq
+    difficulty: hard
+    regions: [africa, global]
+    turns:
+      - role: user
+        content: |
+          Sesame (Sesamum indicum) is one of the oldest oilseed crops, widely grown in sub-Saharan Africa and South Asia. Which combination of traits makes it well-suited to smallholder dryland farming?
+    choices:
+      - "A) High water requirement (>1200 mm), shallow roots, and need for mechanized harvesting"
+      - "B) Drought tolerance via deep taproot, low input requirements, short growing season (90-120 days), and indeterminate flowering that spreads harvest risk"
+      - "C) Requirement for heavy clay soils and waterlogged conditions"
+      - "D) Exclusive dependence on a single pollinator species for seed set"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Sesame thrives on 300-600 mm rainfall, has a deep taproot, needs minimal inputs, and its indeterminate habit means capsules mature sequentially. It is self-pollinating but benefits from insect pollinators. Seed contains 44-58% oil and 18-25% protein."
+    tags: [sesame, oilseeds, dryland, smallholder, africa, south_asia]

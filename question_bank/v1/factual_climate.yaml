@@ -1,0 +1,846 @@
+metadata:
+  category: factual
+  subcategory: climate_ecology
+  version: v1
+
+questions:
+  - id: factual_climate_0001
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the Köppen climate classification system, what does the letter "C" designate?
+    choices:
+      - "A) Tropical climates"
+      - "B) Arid climates"
+      - "C) Temperate (mesothermal) climates"
+      - "D) Continental (microthermal) climates"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Köppen A=tropical, B=arid, C=temperate/mesothermal, D=continental/microthermal, E=polar. Group C has coldest month between -3°C and 18°C."
+    tags: [koppen, climate_classification, fundamentals]
+
+  - id: factual_climate_0002
+    question_type: mcq
+    difficulty: medium
+    regions: [ohio]
+    turns:
+      - role: user
+        content: |
+          Columbus, Ohio (40°N latitude) has a Köppen classification of Dfa. What does the "f" modifier indicate in this classification?
+    choices:
+      - "A) Hot summer"
+      - "B) Fully humid — no dry season"
+      - "C) Frequent frost events"
+      - "D) Fog-prone coastal location"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "In Köppen D-group climates, 'f' = fully humid (no dry season), 's' = dry summer, 'w' = dry winter. Ohio receives relatively even precipitation year-round."
+    tags: [koppen, ohio, humid_continental]
+
+  - id: factual_climate_0003
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the formula for calculating Growing Degree Days (GDD) for a single day?
+    choices:
+      - "A) GDD = (T_max + T_min) / 2 - T_base"
+      - "B) GDD = T_max - T_min"
+      - "C) GDD = T_max - T_base"
+      - "D) GDD = (T_max - T_base) × hours of sunlight"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "GDD = ((T_max + T_min) / 2) - T_base. If the average is below T_base, GDD for that day is 0. Common base temperatures: 10°C for corn, 5°C for wheat."
+    tags: [gdd, growing_degree_days, fundamentals]
+
+  - id: factual_climate_0004
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Corn (maize) typically requires approximately how many cumulative growing degree days (base 10°C) from planting to physiological maturity?
+    choices:
+      - "A) 500–700 GDD"
+      - "B) 1,200–1,700 GDD"
+      - "C) 2,500–3,000 GDD"
+      - "D) 4,000–5,000 GDD"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Corn hybrids range from ~1,200 GDD (short-season) to ~1,700 GDD (full-season) base 10°C. This is used to select appropriate hybrids for each growing region."
+    tags: [gdd, corn, crop_selection]
+
+  - id: factual_climate_0005
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What defines the "frost-free growing season" in agricultural terms?
+    choices:
+      - "A) The period between the vernal equinox and the autumnal equinox"
+      - "B) The period between the average date of last spring frost and the average date of first fall frost"
+      - "C) The number of days with temperatures above 30°C"
+      - "D) The period when soil temperature exceeds 15°C"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Frost-free season is bounded by the average last spring frost and first fall frost dates. Often reported at 50% or 90% probability thresholds."
+    tags: [frost_dates, growing_season, fundamentals]
+
+  - id: factual_climate_0006
+    question_type: mcq
+    difficulty: medium
+    regions: [helsinki]
+    turns:
+      - role: user
+        content: |
+          Helsinki, Finland (60°N) has an average frost-free growing season of approximately how many days?
+    choices:
+      - "A) 60–80 days"
+      - "B) 130–170 days"
+      - "C) 200–220 days"
+      - "D) 250–280 days"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Helsinki (Dfb climate) has a frost-free period roughly from mid-May to mid-October, approximately 130–170 days, moderated by Baltic Sea maritime influence."
+    tags: [frost_dates, helsinki, boreal, growing_season]
+
+  - id: factual_climate_0007
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the USDA Plant Hardiness Zone Map, what criterion is used to define each zone?
+    choices:
+      - "A) Average annual precipitation"
+      - "B) Average annual minimum winter temperature"
+      - "C) Average summer high temperature"
+      - "D) Length of the growing season"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "USDA zones are based on the average annual extreme minimum temperature, divided into 10°F (5.6°C) increments. Zone 1 is coldest (<-51°C), Zone 13 is warmest."
+    tags: [hardiness_zones, usda, fundamentals]
+
+  - id: factual_climate_0008
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which European hardiness zone system is widely used as an alternative to the USDA system, and how does it relate to USDA zones?
+    choices:
+      - "A) The RHS system, which uses identical zone numbers to USDA"
+      - "B) The EGF (European Garden Flora) system, which uses H1–H7 ratings from tender to fully hardy"
+      - "C) The Sunset Western Garden system, which uses 45 climate zones"
+      - "D) The Köppen-derived European Agricultural Zone system"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "The RHS/EGF system uses H1 (tropical, >15°C) through H7 (fully hardy, <-20°C). Widely used in UK and European horticulture. H5 roughly equals USDA Zone 7."
+    tags: [hardiness_zones, europe, rhs]
+
+  - id: factual_climate_0009
+    question_type: mcq
+    difficulty: medium
+    regions: [tokyo]
+    turns:
+      - role: user
+        content: |
+          Tokyo's climate (classified as Cfa — humid subtropical) is strongly influenced by the East Asian monsoon. During which months does Tokyo typically receive its heaviest rainfall?
+    choices:
+      - "A) January–February"
+      - "B) June–July (tsuyu/baiu season) and September–October (typhoon season)"
+      - "C) March–April"
+      - "D) November–December"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Tokyo has dual rainfall peaks: the 'tsuyu' (plum rain) in June-July and typhoon-related rain in Sept-Oct. Annual rainfall ~1,500 mm, with farming calendars built around these patterns."
+    tags: [monsoon, tokyo, humid_subtropical, precipitation]
+
+  - id: factual_climate_0010
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain how the Indian Summer Monsoon (ISM) affects the kharif and rabi cropping seasons in South Asia. Include the approximate timing of each season and name one major crop grown in each.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["kharif", "rabi", "monsoon"]
+      rubric_criteria:
+        - name: kharif_timing
+          description: "States kharif season runs approximately June/July to September/October, coinciding with monsoon rains"
+          max_points: 2
+        - name: rabi_timing
+          description: "States rabi season runs approximately October/November to March/April, in the dry post-monsoon period"
+          max_points: 2
+        - name: kharif_crop
+          description: "Names a valid kharif crop (e.g., rice, millet, sorghum, maize, cotton, sugarcane)"
+          max_points: 1
+        - name: rabi_crop
+          description: "Names a valid rabi crop (e.g., wheat, barley, mustard, chickpea, lentil)"
+          max_points: 1
+        - name: monsoon_link
+          description: "Explains that the ISM provides critical rainfall for kharif crops and its withdrawal enables rabi planting"
+          max_points: 2
+    source_notes: "The ISM (June–September) delivers ~70–80% of India's annual rainfall. Kharif crops are rain-fed; rabi crops rely on residual moisture and irrigation."
+    tags: [monsoon, india, kharif, rabi, cropping_seasons]
+
+  - id: factual_climate_0011
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          During an El Niño event, which of the following agricultural impacts is most commonly observed?
+    choices:
+      - "A) Increased rainfall in eastern Australia and Indonesia"
+      - "B) Drought in eastern Australia and Southeast Asia, increased rainfall along the west coast of South America"
+      - "C) Cooler-than-normal temperatures across all tropical regions"
+      - "D) Increased monsoon rainfall in India and uniform global warming"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "El Niño shifts the Walker circulation, causing drought in western Pacific (Australia, SE Asia, India) and wet conditions in eastern Pacific (Peru, Ecuador). Major crop losses occur in both regions."
+    tags: [enso, el_nino, global_impacts, drought]
+
+  - id: factual_climate_0012
+    question_type: mcq
+    difficulty: hard
+    regions: [nairobi, mato_grosso]
+    turns:
+      - role: user
+        content: |
+          How do El Niño and La Niña events typically differ in their effects on East African and Brazilian Cerrado agriculture?
+    choices:
+      - "A) El Niño brings drought to both regions; La Niña brings excess rain to both"
+      - "B) El Niño brings above-normal rainfall to East Africa and drought to southern Brazil; La Niña reverses these patterns"
+      - "C) Neither ENSO phase has significant effects on these regions"
+      - "D) El Niño causes flooding in both regions; La Niña causes drought in both"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "El Niño typically brings above-average short rains (Oct-Dec) to East Africa and drought to southern Brazil/Cerrado. La Niña reverses this: drought in East Africa, above-average rain in southern Brazil."
+    tags: [enso, nairobi, mato_grosso, cerrado, east_africa]
+
+  - id: factual_climate_0013
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The FAO Penman-Monteith equation is the standard method for estimating which agricultural variable?
+    choices:
+      - "A) Soil erosion potential"
+      - "B) Reference evapotranspiration (ET₀)"
+      - "C) Crop yield prediction"
+      - "D) Groundwater recharge rate"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "FAO-56 Penman-Monteith is the international standard for ET₀ calculation, requiring temperature, humidity, wind speed, and solar radiation data. Crop ET = ET₀ × Kc."
+    tags: [evapotranspiration, penman_monteith, fao, irrigation]
+
+  - id: factual_climate_0014
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          List the four weather variables required as inputs for the FAO Penman-Monteith equation to calculate reference evapotranspiration (ET₀), and explain why this method is preferred over simpler approaches like the Hargreaves equation.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["temperature", "humidity", "wind", "radiation"]
+      rubric_criteria:
+        - name: four_variables
+          description: "Lists all four: air temperature, relative humidity (or vapor pressure), wind speed, and solar radiation (or net radiation)"
+          max_points: 4
+        - name: advantage_explanation
+          description: "Explains Penman-Monteith is physically-based and more accurate across diverse climates because it accounts for both energy balance and aerodynamic components"
+          max_points: 2
+        - name: hargreaves_comparison
+          description: "Notes Hargreaves only requires temperature data but is less accurate in humid or windy conditions"
+          max_points: 2
+    source_notes: "FAO-56 Penman-Monteith combines energy balance and aerodynamic approaches. Hargreaves (1985) uses only Tmin, Tmax, and extraterrestrial radiation — simpler but less accurate in non-arid climates."
+    tags: [evapotranspiration, penman_monteith, hargreaves, fao]
+
+  - id: factual_climate_0015
+    question_type: mcq
+    difficulty: medium
+    regions: [rajasthan]
+    turns:
+      - role: user
+        content: |
+          The De Martonne aridity index (P / (T + 10)) for Jodhpur, Rajasthan yields a value of approximately 7.5. How is this classified?
+    choices:
+      - "A) Humid"
+      - "B) Semi-humid"
+      - "C) Semi-arid"
+      - "D) Arid"
+    correct_answer: "D"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "D"
+    source_notes: "De Martonne index: <5 = hyperarid, 5-10 = arid, 10-20 = semi-arid, 20-30 = semi-humid, >30 = humid. Jodhpur (~350 mm rain, ~26°C mean) yields ~9.7 historically but drier years give ~7.5."
+    tags: [aridity_index, rajasthan, arid, de_martonne]
+
+  - id: factual_climate_0016
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the water balance equation used in agricultural hydrology?
+    choices:
+      - "A) P = ET + R + ΔS + D"
+      - "B) P = T × W × S"
+      - "C) Q = C × I × A"
+      - "D) V = A × h × n"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "Water balance: Precipitation = Evapotranspiration + Runoff + Change in Soil Storage + Deep Drainage. This is fundamental for irrigation scheduling and water resource management."
+    tags: [water_balance, hydrology, fundamentals]
+
+  - id: factual_climate_0017
+    question_type: mcq
+    difficulty: hard
+    regions: [canterbury_nz]
+    turns:
+      - role: user
+        content: |
+          Canterbury, New Zealand experiences pronounced foehn winds (nor'westers) that descend from the Southern Alps. What is the primary agricultural concern caused by these events?
+    choices:
+      - "A) Waterlogging of fields from orographic precipitation"
+      - "B) Rapid drying and desiccation stress on crops and pastures due to hot, dry descending air"
+      - "C) Salt spray damage from coastal storms"
+      - "D) Frost damage from cold polar air masses"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Canterbury nor'westers are classic foehn winds: moisture drops on the western Alps, dry air descends and warms adiabatically on the eastern plains, causing rapid ET, soil moisture loss, and crop stress."
+    tags: [canterbury_nz, foehn_wind, desiccation, microclimate]
+
+  - id: factual_climate_0018
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Climate projections indicate that for every 1°C increase in global mean temperature, wheat yields in tropical regions are expected to:
+    choices:
+      - "A) Increase by approximately 10–15%"
+      - "B) Remain largely unchanged"
+      - "C) Decline by approximately 4–6%"
+      - "D) Decline by approximately 20–25%"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Meta-analyses (Zhao et al., 2017, PNAS) estimate ~6% yield decline per °C for wheat globally, with larger declines in tropical regions already near thermal limits. Estimates range 4–8%."
+    tags: [climate_change, wheat, yield_decline, tropical]
+
+  - id: factual_climate_0019
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following is a documented benefit of elevated atmospheric CO₂ concentrations on crop growth, and what is its key limitation?
+    choices:
+      - "A) CO₂ fertilization increases yields of C4 crops by 30–40%, but only at temperatures above 35°C"
+      - "B) CO₂ fertilization increases photosynthesis in C3 crops by 10–30%, but reduces protein and micronutrient concentrations in grain"
+      - "C) Elevated CO₂ eliminates water stress in all crop species"
+      - "D) Elevated CO₂ increases nitrogen fixation rates in all legumes by 50%"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "FACE experiments show C3 crops (wheat, rice, soybean) gain 10–30% yield under elevated CO₂, but grain protein declines 5–15% and Zn/Fe concentrations drop. C4 crops (corn, sorghum) show minimal response."
+    tags: [co2_fertilization, climate_change, c3_crops, nutrient_quality]
+
+  - id: factual_climate_0020
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe two specific ways that climate change is projected to alter pest and disease pressure on crops globally.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["pest", "range"]
+      rubric_criteria:
+        - name: range_expansion
+          description: "Describes how warming allows pests and diseases to expand into previously cooler regions (poleward or upslope migration)"
+          max_points: 3
+        - name: generation_increase
+          description: "Explains that warmer temperatures accelerate insect development, increasing the number of generations per year"
+          max_points: 3
+        - name: additional_mechanism
+          description: "Mentions other valid mechanisms: overwintering survival increase, phenological mismatch with natural enemies, drought-stressed crops being more vulnerable"
+          max_points: 2
+    source_notes: "Deutsch et al. (2018) project 10–25% increase in insect-driven crop losses per °C warming. Range expansion, faster life cycles, and reduced winter kill are primary mechanisms."
+    tags: [climate_change, pests, disease, range_expansion]
+
+  - id: factual_climate_0021
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In Mediterranean climates (Köppen Csa/Csb), when does the majority of annual precipitation occur?
+    choices:
+      - "A) During hot summer months (June–August in Northern Hemisphere)"
+      - "B) During cool winter months (November–March in Northern Hemisphere)"
+      - "C) Evenly distributed throughout the year"
+      - "D) Primarily during the spring equinox period"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Mediterranean climates are defined by hot, dry summers and mild, wet winters. Agriculture depends on winter rain storage and summer irrigation or drought-adapted crops (olives, grapes, wheat)."
+    tags: [mediterranean, koppen, precipitation, seasonal]
+
+  - id: factual_climate_0022
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          A farmer uses windbreaks (shelterbelts) on the Great Plains of the US. Research shows that a well-designed windbreak typically reduces wind speed on the leeward side for a distance of approximately how many times the tree height (H)?
+    choices:
+      - "A) 2–5 H"
+      - "B) 10–20 H"
+      - "C) 30–40 H"
+      - "D) 50–60 H"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Windbreaks provide significant wind reduction (>20%) for 10–20 H leeward distance. Maximum protection occurs at 2–5 H downwind. Porosity of 40–60% gives the longest effective distance."
+    tags: [windbreaks, microclimate, wind_reduction, great_plains]
+
+  - id: factual_climate_0023
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which term describes crops like soybean and rice that initiate flowering when the dark period exceeds a critical length?
+    choices:
+      - "A) Day-neutral plants"
+      - "B) Long-day plants"
+      - "C) Short-day plants"
+      - "D) Vernalization-dependent plants"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Short-day plants (actually long-night plants) flower when nights exceed a critical length. Soybean, rice, cotton, and sugarcane are short-day crops. This affects cultivar selection at different latitudes."
+    tags: [photoperiod, short_day, soybean, rice]
+
+  - id: factual_climate_0024
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Wheat and barley are classified as long-day plants. What does this mean for their cultivation across latitudes?
+    choices:
+      - "A) They can only be grown in equatorial regions where day length is constant"
+      - "B) They flower when daylength exceeds a critical threshold, making them well-adapted to temperate and high-latitude summer cultivation"
+      - "C) They require artificially extended dark periods in greenhouses to flower"
+      - "D) They are insensitive to daylength and can be planted at any time of year"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Long-day plants flower when photoperiod exceeds a critical length (typically 12–14 hours). Wheat, barley, oats, and clover flower during lengthening spring/summer days at mid-to-high latitudes."
+    tags: [photoperiod, long_day, wheat, barley, latitude]
+
+  - id: factual_climate_0025
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          At what canopy-level temperature does rice experience critical spikelet sterility during flowering, leading to significant yield loss?
+    choices:
+      - "A) Above 25°C"
+      - "B) Above 30°C"
+      - "C) Above 35°C"
+      - "D) Above 42°C"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Rice spikelet sterility increases sharply above 35°C during anthesis, with near-complete sterility above 40°C. This is a major climate change concern for tropical rice production. Critical period is 1–2 hours around flowering."
+    tags: [heat_stress, rice, spikelet_sterility, threshold]
+
+  - id: factual_climate_0026
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Corn (maize) pollen viability is severely reduced when air temperatures exceed which threshold for extended periods during tasseling?
+    choices:
+      - "A) 25°C"
+      - "B) 30°C"
+      - "C) 35°C"
+      - "D) 40°C"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Corn pollen desiccates rapidly above 35°C and loses viability within hours. Combined with silk delay from drought stress, this causes the 'barren ear' syndrome. USDA estimates 1% yield loss per day above 35°C during flowering."
+    tags: [heat_stress, corn, pollen, threshold]
+
+  - id: factual_climate_0027
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of chilling requirements for temperate deciduous fruit trees. What happens if chilling is insufficient, and name two fruit species with high chilling requirements (>800 chill hours).
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["chill", "dormancy"]
+      rubric_criteria:
+        - name: concept_explanation
+          description: "Explains that temperate fruit trees require a period of cold temperatures (0–7°C) during winter dormancy to break bud dormancy and resume normal growth in spring"
+          max_points: 3
+        - name: insufficient_chilling
+          description: "Describes consequences of insufficient chilling: delayed, erratic, or incomplete budbreak; reduced fruit set; poor fruit quality; extended bloom period increasing frost risk"
+          max_points: 3
+        - name: high_chill_species
+          description: "Names two valid high-chill species (e.g., apple, cherry, pear, peach, walnut, plum — >800 chill hours)"
+          max_points: 2
+    source_notes: "Chilling is measured in hours between 0–7°C (or chill units by Utah/Dynamic models). High-chill: apple (800–1,800 hrs), cherry (700–1,200 hrs). Climate change is reducing available chill hours globally."
+    tags: [chilling_requirement, fruit_trees, dormancy, climate_change]
+
+  - id: factual_climate_0028
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The Palmer Drought Severity Index (PDSI) uses which primary inputs to classify drought conditions?
+    choices:
+      - "A) Only wind speed and solar radiation"
+      - "B) Precipitation and temperature (to estimate water supply and demand)"
+      - "C) Only satellite-derived vegetation indices"
+      - "D) Only streamflow measurements"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "PDSI uses a water balance model driven by precipitation and temperature data. Values: <-4 extreme drought, -3 to -4 severe, -2 to -3 moderate, near 0 normal, >+4 extreme wet."
+    tags: [pdsi, drought, palmer, indices]
+
+  - id: factual_climate_0029
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          How does the Standardized Precipitation Index (SPI) differ from the Palmer Drought Severity Index (PDSI)?
+    choices:
+      - "A) SPI uses only precipitation data fitted to a probability distribution and can be computed at multiple timescales; PDSI uses a water balance model and has a fixed timescale"
+      - "B) SPI incorporates soil moisture data while PDSI does not"
+      - "C) SPI is only valid for tropical regions while PDSI works globally"
+      - "D) SPI measures streamflow deficits while PDSI measures precipitation deficits"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "SPI (McKee, 1993) uses only precipitation, normalized via gamma distribution, and can be computed at 1, 3, 6, 12, 24-month scales. PDSI uses a two-layer water balance model with a fixed ~9-month memory."
+    tags: [spi, pdsi, drought_indices, comparison]
+
+  - id: factual_climate_0030
+    question_type: mcq
+    difficulty: easy
+    regions: [mato_grosso]
+    turns:
+      - role: user
+        content: |
+          The Cerrado biome of Mato Grosso, Brazil has a distinct wet and dry season. During which months does the dry season typically occur?
+    choices:
+      - "A) January to April"
+      - "B) May to September"
+      - "C) October to December"
+      - "D) July to November"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Cerrado dry season runs May–September with near-zero rainfall in June–August. Wet season (October–April) brings 1,200–1,800 mm. This drives the soy-safrinha corn double-cropping system."
+    tags: [cerrado, mato_grosso, dry_season, precipitation]
+
+  - id: factual_climate_0031
+    question_type: mcq
+    difficulty: medium
+    regions: [nairobi]
+    turns:
+      - role: user
+        content: |
+          Nairobi, Kenya sits at approximately 1,700 m elevation and has a tropical highland climate. Despite being near the equator, its mean annual temperature is approximately:
+    choices:
+      - "A) 10–13°C"
+      - "B) 17–20°C"
+      - "C) 25–28°C"
+      - "D) 30–33°C"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Nairobi's elevation produces a mild tropical highland climate (Cwb). Mean annual temp ~18°C despite equatorial latitude. Temperature decreases ~6.5°C per 1,000 m elevation (lapse rate)."
+    tags: [nairobi, tropical_highland, lapse_rate, elevation]
+
+  - id: factual_climate_0032
+    question_type: short_answer
+    difficulty: medium
+    regions: [rajasthan]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Rajasthan, India receives most of its 200–500 mm annual rainfall during the Southwest Monsoon. Describe two traditional water harvesting techniques used in arid Rajasthan agriculture to manage this concentrated precipitation.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["water", "harvesting"]
+      rubric_criteria:
+        - name: technique_one
+          description: "Describes one valid technique: johad (earthen dams), tanka (underground cisterns), khadins (bunded fields), nadis (village ponds), or beri (shallow wells)"
+          max_points: 3
+        - name: technique_two
+          description: "Describes a second valid technique distinct from the first"
+          max_points: 3
+        - name: context
+          description: "Links techniques to the challenge of storing concentrated monsoon rainfall for year-round agricultural use"
+          max_points: 2
+    source_notes: "Traditional Rajasthani water harvesting: khadins capture runoff behind earthen bunds for rabi crops; johads are crescent-shaped earthen check dams; tankas are underground rainwater cisterns. These systems predate modern irrigation by centuries."
+    tags: [rajasthan, water_harvesting, arid, traditional_agriculture, india]
+
+  - id: factual_climate_0033
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Mulching is a common microclimate modification practice. Which of the following is NOT a typical benefit of organic mulch?
+    choices:
+      - "A) Reduces soil evaporation"
+      - "B) Moderates soil temperature extremes"
+      - "C) Increases soil salinity"
+      - "D) Suppresses weed germination"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Organic mulch conserves moisture (reduces evaporation 25–50%), buffers temperature (3–8°C cooler in summer), and suppresses weeds. It does not increase salinity; in fact, it can help reduce surface salt accumulation by reducing evaporation."
+    tags: [mulch, microclimate, soil_temperature, water_conservation]
+
+  - id: factual_climate_0034
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The Köppen climate classification BSk (cold semi-arid steppe) applies to large agricultural regions. Which of the following sets of locations is MOST accurately classified as BSk?
+    choices:
+      - "A) Western Kansas (US), Ankara (Turkey), Almaty (Kazakhstan)"
+      - "B) Miami (US), Singapore, Lagos (Nigeria)"
+      - "C) London (UK), Paris (France), Amsterdam (Netherlands)"
+      - "D) Manaus (Brazil), Kinshasa (DRC), Jakarta (Indonesia)"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "BSk (cold semi-arid) characterizes continental interiors with 250–500 mm precipitation: US Great Plains, Anatolian plateau, Central Asian steppe, Patagonia. Important dryland farming regions for wheat and livestock."
+    tags: [koppen, steppe, bsk, semi_arid, dryland]
+
+  - id: factual_climate_0035
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In subarctic agriculture (Köppen Dfc/Dfd), which of the following is the primary limiting factor for crop production?
+    choices:
+      - "A) Excessive rainfall causing waterlogging"
+      - "B) Short growing season with limited accumulated heat units (GDD)"
+      - "C) High soil salinity"
+      - "D) Intense solar radiation causing sunscald"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Subarctic regions have frost-free seasons of 60–120 days with limited GDD accumulation. Despite long summer photoperiods, low temperatures restrict crop choices to fast-maturing varieties of barley, potato, and cold-hardy vegetables."
+    tags: [subarctic, growing_season, gdd, limiting_factor]
+
+  - id: factual_climate_0036
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the difference between the crop coefficient (Kc) approach and direct soil water balance methods for irrigation scheduling. When is each approach most appropriate?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["Kc", "ET"]
+      rubric_criteria:
+        - name: kc_explanation
+          description: "Explains that the Kc approach estimates crop ET as ET₀ × Kc, where Kc varies by crop growth stage (initial, mid, late)"
+          max_points: 3
+        - name: water_balance_explanation
+          description: "Explains that soil water balance tracks inputs (rain, irrigation) minus outputs (ET, drainage) to determine when soil moisture drops below a threshold"
+          max_points: 3
+        - name: appropriate_use
+          description: "Notes Kc approach is simpler and best for well-characterized crops with known coefficients; water balance methods are better when soil moisture sensors are available or for deficit irrigation strategies"
+          max_points: 2
+    source_notes: "Kc approach (FAO-56) uses tabulated crop coefficients for each growth stage. Water balance methods can integrate real-time soil moisture sensor data. Both aim to schedule irrigation to meet crop demand without over- or under-watering."
+    tags: [irrigation_scheduling, crop_coefficient, water_balance, et]
+
+  - id: factual_climate_0037
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the approximate temperature range of USDA Hardiness Zone 6 (average annual extreme minimum)?
+    choices:
+      - "A) -23.3°C to -17.8°C (-10°F to 0°F)"
+      - "B) -12.2°C to -6.7°C (10°F to 20°F)"
+      - "C) -1.1°C to 4.4°C (30°F to 40°F)"
+      - "D) 4.4°C to 10°C (40°F to 50°F)"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "USDA Zone 6: -23.3 to -17.8°C (-10 to 0°F). Each zone spans 10°F (5.6°C). Zone 6 covers much of the mid-Atlantic US, parts of central Europe, and northern Japan."
+    tags: [hardiness_zones, usda, temperature, fundamentals]
+
+  - id: factual_climate_0038
+    question_type: mcq
+    difficulty: hard
+    regions: [helsinki, tokyo]
+    turns:
+      - role: user
+        content: |
+          Helsinki (60°N) and Tokyo (35°N) have summer solstice daylengths of approximately 19 hours and 14.5 hours respectively. How does this photoperiod difference affect the choice of soybean maturity groups for each location?
+    choices:
+      - "A) The same maturity group can be used at both locations since soybean is day-neutral"
+      - "B) Helsinki requires earlier maturity groups (MG 000–0) adapted to very long days, while Tokyo uses later maturity groups (MG III–V) adapted to shorter tropical days"
+      - "C) Helsinki requires later maturity groups because longer days delay flowering"
+      - "D) Tokyo requires the earliest maturity groups because short days trigger premature flowering"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Soybean is a short-day crop. Very early maturity groups (MG 000–0) are adapted to long photoperiods at high latitudes and flower despite extended daylength. Later groups (III–V) suit 30–40°N. Tokyo grows MG III–V; Hokkaido/Helsinki would need MG 000–I."
+    tags: [photoperiod, soybean, maturity_groups, helsinki, tokyo]
+
+  - id: factual_climate_0039
+    question_type: mcq
+    difficulty: medium
+    regions: [canterbury_nz]
+    turns:
+      - role: user
+        content: |
+          Canterbury, New Zealand has a maritime temperate climate (Köppen Cfb). What is the typical frost-free growing season length in this region?
+    choices:
+      - "A) 90–120 days"
+      - "B) 150–180 days"
+      - "C) 200–250 days"
+      - "D) 330–365 days"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Canterbury's maritime influence and 43°S latitude provide a frost-free period of approximately 200–250 days (October–May), though inland areas can be shorter. Key crops include wheat, barley, ryegrass seed, and potatoes."
+    tags: [canterbury_nz, growing_season, maritime, frost_free]
+
+  - id: factual_climate_0040
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is the agricultural significance of the 10°C mean annual isotherm, and how has climate change affected its geographic position in the Northern Hemisphere over the past 50 years?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["isotherm", "growing"]
+      rubric_criteria:
+        - name: significance
+          description: "Explains that the 10°C mean annual isotherm roughly delineates the boundary between boreal/subarctic and temperate agricultural zones, correlating with the northern limit of reliable grain production"
+          max_points: 3
+        - name: shift_direction
+          description: "States the isotherm has shifted northward (poleward) due to climate warming"
+          max_points: 2
+        - name: magnitude_or_impact
+          description: "Provides approximate magnitude (100–300 km northward shift) or discusses agricultural impacts such as expanded growing regions in Canada, Scandinavia, or Russia, or notes new crop possibilities in previously marginal areas"
+          max_points: 3
+    source_notes: "The 10°C isotherm has shifted 100–300 km northward since the 1970s, expanding potential agricultural land in Canada, Russia, and Scandinavia. However, soil quality in newly warm areas often limits immediate agricultural use."
+    tags: [isotherm, climate_change, northern_limit, boreal, agriculture]

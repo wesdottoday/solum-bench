@@ -1,0 +1,25 @@
+# Full benchmark config — all frontier + base models
+models:
+  - name: claude-sonnet-4-20250514
+    provider: anthropic
+    model_id: claude-sonnet-4-20250514
+
+  - name: claude-opus-4-20250514
+    provider: anthropic
+    model_id: claude-opus-4-20250514
+
+  - name: gpt-4o
+    provider: openai
+    model_id: gpt-4o
+    seed: 42
+
+  - name: gemini-2.5-pro
+    provider: google
+    model_id: gemini-2.5-pro
+
+  - name: nemotron-nano-4b
+    provider: vllm_local
+    model_id: nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16
+    dtype: bfloat16
+    tensor_parallel: 1
+    max_model_len: 4096

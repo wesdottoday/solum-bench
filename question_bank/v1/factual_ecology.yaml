@@ -1,0 +1,851 @@
+metadata:
+  category: factual
+  subcategory: ecology
+  version: v1
+
+questions:
+  - id: factual_ecology_0001
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which bee genus is the most important managed pollinator for global agriculture?
+    choices:
+      - "A) Bombus (bumblebees)"
+      - "B) Apis (honey bees)"
+      - "C) Osmia (mason bees)"
+      - "D) Megachile (leafcutter bees)"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Apis mellifera (western honey bee) pollinates ~70% of the world's major food crops. An estimated 35% of global crop production depends on animal pollinators, with honey bees being the primary managed species."
+    tags: [pollinators, honey_bee, apis, agriculture]
+
+  - id: factual_ecology_0002
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following is considered the MOST significant driver of wild pollinator decline globally?
+    choices:
+      - "A) Electromagnetic radiation from cell towers"
+      - "B) Habitat loss and degradation, including loss of floral resources and nesting sites"
+      - "C) Competition from managed honey bee colonies"
+      - "D) Increased UV radiation from ozone depletion"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "IPBES (2016) global pollinator assessment identifies habitat loss as the primary driver, followed by pesticides, pathogens/parasites, invasive species, and climate change. Agricultural intensification removes hedgerows, wildflower margins, and nesting habitat."
+    tags: [pollinators, decline, habitat_loss, ipbes]
+
+  - id: factual_ecology_0003
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the soil food web, which organisms occupy the second trophic level as primary consumers that feed directly on bacteria and fungi?
+    choices:
+      - "A) Earthworms and millipedes"
+      - "B) Protozoa and bacterial-feeding nematodes"
+      - "C) Ground beetles and spiders"
+      - "D) Moles and shrews"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "In the soil food web (Ingham, USDA): First trophic level = bacteria, fungi (decomposers). Second level = protozoa (amoebae, flagellates, ciliates) and bacterial-feeding nematodes. Third level = predatory nematodes, microarthropods."
+    tags: [soil_food_web, trophic_levels, protozoa, nematodes]
+
+  - id: factual_ecology_0004
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the concept of the 'bacterial to fungal ratio' in soil and explain what a high fungal dominance (low B:F ratio) indicates about the ecosystem and land management.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["bacteria", "fungi", "ratio"]
+      rubric_criteria:
+        - name: ratio_concept
+          description: "Explains that the B:F ratio compares bacterial to fungal biomass in soil, typically measured by PLFA analysis or microscopy"
+          max_points: 2
+        - name: fungal_dominance
+          description: "States that high fungal dominance (low B:F ratio) indicates undisturbed, mature ecosystems such as forests or long-term no-till perennial systems"
+          max_points: 3
+        - name: bacterial_dominance
+          description: "Contrasts by noting high B:F ratios (bacterial dominance) are typical of disturbed, tilled, or early-successional agricultural soils"
+          max_points: 2
+        - name: functional_significance
+          description: "Explains functional implications: fungal-dominated soils have better aggregate stability, slower nutrient cycling, and higher carbon storage"
+          max_points: 2
+    source_notes: "Annual cropland B:F ratio ~1:1 to 2:1; grasslands ~0.5:1 to 1:1; forests ~0.1:1 to 0.5:1. Fungi store more C per unit biomass and create stable soil aggregates via hyphal networks."
+    tags: [soil_food_web, bacteria_fungi_ratio, soil_biology, succession]
+
+  - id: factual_ecology_0005
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What are the two main types of mycorrhizal associations found in agricultural and forest soils?
+    choices:
+      - "A) Arbuscular mycorrhizae (AM) and ectomycorrhizae (EM)"
+      - "B) Saprophytic and parasitic mycorrhizae"
+      - "C) Epiphytic and lithophytic mycorrhizae"
+      - "D) Aerobic and anaerobic mycorrhizae"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "AM fungi (Glomeromycota) colonize ~80% of plant species, penetrating root cells to form arbuscules. EM fungi form a mantle around root tips of ~10% of plant species, mainly trees (pines, oaks, birches, eucalyptus)."
+    tags: [mycorrhizae, am, ectomycorrhizae, soil_biology]
+
+  - id: factual_ecology_0006
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following crop families does NOT form arbuscular mycorrhizal (AM) associations and is considered non-mycorrhizal?
+    choices:
+      - "A) Poaceae (grasses — wheat, corn, rice)"
+      - "B) Fabaceae (legumes — soybean, clover, peas)"
+      - "C) Brassicaceae (mustards — canola, cabbage, broccoli)"
+      - "D) Solanaceae (nightshades — tomato, potato, pepper)"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Brassicaceae (along with Chenopodiaceae/Amaranthaceae including beet and spinach) are non-mycorrhizal. They produce glucosinolates that inhibit mycorrhizal colonization. This affects crop rotation planning for mycorrhizal management."
+    tags: [mycorrhizae, brassicaceae, non_mycorrhizal, crop_rotation]
+
+  - id: factual_ecology_0007
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which beneficial insect group is most commonly used in augmentative biological control of aphids in greenhouse and field agriculture?
+    choices:
+      - "A) Dragonflies (Odonata)"
+      - "B) Ladybird beetles (Coccinellidae) and parasitoid wasps (Aphidiinae)"
+      - "C) Butterflies (Lepidoptera)"
+      - "D) Cicadas (Hemiptera)"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Coccinellidae (ladybugs) are voracious aphid predators (a single adult can consume 50+ aphids/day). Parasitoid wasps (e.g., Aphidius colemani) lay eggs inside aphids. Both are commercially reared for biocontrol."
+    tags: [biocontrol, predator_prey, ladybird, parasitoid, aphids]
+
+  - id: factual_ecology_0008
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In ecological succession on abandoned agricultural land, what is the typical sequence of dominant vegetation types?
+    choices:
+      - "A) Forest → grassland → bare soil → annual weeds"
+      - "B) Annual weeds → perennial grasses/forbs → shrubs → pioneer trees → climax forest"
+      - "C) Mosses → ferns → grasses → annuals → bare soil"
+      - "D) Climax forest → shrubs → grassland → annual weeds → bare soil"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Secondary succession on abandoned farmland follows a predictable trajectory: pioneer annuals (1–3 years) → perennial grasses/forbs (3–15 years) → shrubs (15–30 years) → pioneer trees → climax community (50–200+ years)."
+    tags: [succession, plant_community, abandoned_farmland]
+
+  - id: factual_ecology_0009
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is silvopasture?
+    choices:
+      - "A) Growing crops between rows of young trees"
+      - "B) The intentional integration of trees, forage, and livestock grazing on the same land"
+      - "C) Harvesting timber exclusively for construction"
+      - "D) Planting trees along riverbanks to prevent erosion"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Silvopasture combines trees, forage (grass/legumes), and livestock grazing in an integrated system. Benefits include shade for livestock, diversified income (timber/fruit/nuts + livestock), and enhanced carbon sequestration."
+    tags: [agroforestry, silvopasture, livestock, trees]
+
+  - id: factual_ecology_0010
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Name and briefly describe three distinct types of agroforestry systems, and give a geographic region where each is commonly practiced.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["agroforestry", "trees"]
+      rubric_criteria:
+        - name: system_one
+          description: "Describes a valid agroforestry system (e.g., alley cropping, silvopasture, forest gardens, windbreaks/shelterbelts, riparian buffers, multistrata, taungya) with a correct geographic example"
+          max_points: 3
+        - name: system_two
+          description: "Describes a second distinct agroforestry system with a correct geographic example"
+          max_points: 3
+        - name: system_three
+          description: "Describes a third distinct agroforestry system with a correct geographic example"
+          max_points: 3
+    source_notes: "Major systems: alley cropping (temperate US/Europe), silvopasture (Latin America, southern US), forest gardens (SE Asia, Pacific Islands), taungya (tropical Africa/Asia), shelterbelts (Great Plains, Central Asia)."
+    tags: [agroforestry, alley_cropping, silvopasture, forest_gardens]
+
+  - id: factual_ecology_0011
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The Shannon Diversity Index (H') is commonly used to measure biodiversity. What does a HIGHER H' value indicate?
+    choices:
+      - "A) Lower species richness and lower evenness"
+      - "B) Higher species richness and/or greater evenness of species abundances"
+      - "C) Dominance by a single species"
+      - "D) A disturbed ecosystem with many invasive species"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Shannon H' = -Σ(pi × ln(pi)). Higher values indicate more species (richness) and/or more equal abundances (evenness). Typical range: 0 (one species) to ~4.5 (very diverse tropical ecosystems)."
+    tags: [biodiversity_metrics, shannon_index, species_richness, evenness]
+
+  - id: factual_ecology_0012
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Simpson's Diversity Index (1-D) and Shannon's Diversity Index (H') both measure biodiversity but weight different components. Which statement correctly distinguishes them?
+    choices:
+      - "A) Simpson's is more sensitive to rare species; Shannon's is more sensitive to dominant species"
+      - "B) Simpson's gives more weight to dominant (common) species; Shannon's is more sensitive to rare species"
+      - "C) Both indices give identical results for all community compositions"
+      - "D) Simpson's can only be used for animal communities; Shannon's is only for plant communities"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Simpson's (1-D = 1 - Σpi²) is heavily influenced by the most abundant species. Shannon's (H' = -Σpi×ln(pi)) is more sensitive to rare species due to the logarithmic function. Ecologists often report both."
+    tags: [biodiversity_metrics, simpson_index, shannon_index, comparison]
+
+  - id: factual_ecology_0013
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is a keystone species?
+    choices:
+      - "A) The most abundant species in an ecosystem"
+      - "B) A species whose impact on its ecosystem is disproportionately large relative to its abundance"
+      - "C) The species with the longest evolutionary history in a region"
+      - "D) Any species listed as endangered"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Keystone species (Paine, 1969) have outsized ecological effects relative to their biomass. Classic example: sea otters controlling urchins. Agricultural examples: dung beetles, earthworms, native pollinators."
+    tags: [keystone_species, ecology_concepts, fundamentals]
+
+  - id: factual_ecology_0014
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Dung beetles are considered keystone species in pastoral agricultural ecosystems. Which of the following functions do they perform?
+    choices:
+      - "A) Pollinating grassland flowers and dispersing seeds"
+      - "B) Burying dung, improving nutrient cycling, reducing parasitic fly populations, and enhancing water infiltration"
+      - "C) Predating on livestock parasites in the gut"
+      - "D) Decomposing dead tree roots and recycling woody debris"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Dung beetles (Scarabaeidae) bury dung (tunnelers, rollers, dwellers), cycling N and P into soil, creating macropores for water infiltration, and reducing habitat for pest flies and parasitic nematodes. Ivermectin use harms dung beetle populations."
+    tags: [keystone_species, dung_beetles, pastoral, nutrient_cycling]
+
+  - id: factual_ecology_0015
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which leguminous cover crop typically fixes the MOST atmospheric nitrogen per hectare per year under favorable conditions?
+    choices:
+      - "A) Crimson clover (Trifolium incarnatum) — 50–150 kg N/ha"
+      - "B) Hairy vetch (Vicia villosa) — 90–200 kg N/ha"
+      - "C) Austrian winter pea (Pisum sativum) — 50–120 kg N/ha"
+      - "D) White clover (Trifolium repens) — 40–100 kg N/ha"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Hairy vetch is among the highest N-fixing cover crops at 90–200 kg N/ha/yr. Crimson clover: 50–150 kg, winter peas: 50–120 kg, white clover: 40–100 kg. Actual rates depend on Rhizobium inoculation, soil conditions, and growth period."
+    tags: [cover_crops, nitrogen_fixation, hairy_vetch, legumes]
+
+  - id: factual_ecology_0016
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of allelopathy in the context of cover crops. Name two cover crop species known for strong allelopathic effects and describe how these effects can be both beneficial and problematic in crop rotations.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["allelopathy", "chemical"]
+      rubric_criteria:
+        - name: definition
+          description: "Defines allelopathy as the release of biochemicals (allelochemicals) by one plant that inhibit the germination or growth of nearby plants"
+          max_points: 2
+        - name: species
+          description: "Names two valid allelopathic cover crops (e.g., cereal rye/Secale cereale, sorghum-sudan, sunflower, black walnut, buckwheat, brassicas/mustards)"
+          max_points: 2
+        - name: benefits
+          description: "Describes benefits: weed suppression without herbicides, reduced weed seed germination"
+          max_points: 2
+        - name: problems
+          description: "Describes problems: can inhibit cash crop germination if planted too soon after termination, autotoxicity concerns, reduced crop establishment"
+          max_points: 2
+    source_notes: "Cereal rye releases benzoxazinoids (DIBOA, DIMBOA) that suppress small-seeded weeds. Sorghum-sudan produces sorgoleone. Benefits: natural weed control. Risks: must wait 2–3 weeks after termination before seeding small-seeded cash crops."
+    tags: [cover_crops, allelopathy, weed_suppression, cereal_rye]
+
+  - id: factual_ecology_0017
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What primary ecosystem services do wetlands provide in agricultural landscapes?
+    choices:
+      - "A) They increase the speed of surface runoff to drainage outlets"
+      - "B) They filter nutrients and sediment, attenuate flooding, recharge groundwater, and provide wildlife habitat"
+      - "C) They primarily serve as sources of peat for soil amendment"
+      - "D) They increase soil salinity in surrounding fields"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Wetlands remove 20–90% of nitrate-N from agricultural runoff through denitrification, trap sediment, buffer floods, and support biodiversity. Loss of >50% of global wetlands has reduced these services."
+    tags: [wetlands, ecosystem_services, nutrient_filtration, flooding]
+
+  - id: factual_ecology_0018
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In tallgrass prairie ecosystems of North America, what is the dominant mechanism that maintains grassland and prevents woody plant encroachment?
+    choices:
+      - "A) Extreme cold temperatures in winter"
+      - "B) Periodic fire, often combined with grazing by large herbivores"
+      - "C) Flooding from seasonal rivers"
+      - "D) Acidic soils that prevent tree seedling establishment"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Tallgrass prairies evolved with fire-grazing interaction. Fire removes dead thatch, kills woody seedlings, and stimulates grass regrowth. Bison grazing created a mosaic of short and tall patches. Without fire, prairies convert to woodland in 20–40 years."
+    tags: [grassland_ecology, tallgrass_prairie, fire, grazing]
+
+  - id: factual_ecology_0019
+    question_type: mcq
+    difficulty: hard
+    regions: [mato_grosso]
+    turns:
+      - role: user
+        content: |
+          In the Brazilian Cerrado (tropical savanna), what is the primary ecological concern when native vegetation is converted to soybean-corn cropland?
+    choices:
+      - "A) Loss of a globally insignificant biome with low biodiversity"
+      - "B) Conversion of a biodiversity hotspot containing >12,000 plant species, leading to habitat fragmentation, loss of deep-rooted vegetation that maintains water table levels, and soil carbon loss"
+      - "C) Increased forest cover due to tree planting on former grassland"
+      - "D) Improved hydrological function due to irrigation infrastructure"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "The Cerrado is the world's most biodiverse savanna (>12,000 vascular plants, 44% endemic). Deep-rooted native plants (roots to 15+ m) maintain water tables and baseflow. >50% has been converted to agriculture since the 1970s."
+    tags: [cerrado, mato_grosso, biodiversity, land_conversion, deforestation]
+
+  - id: factual_ecology_0020
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In tropical forests, nutrient cycling differs fundamentally from temperate forests. Where is the majority of the nutrient capital stored in a tropical rainforest ecosystem?
+    choices:
+      - "A) Deep in the mineral soil profile (B and C horizons)"
+      - "B) In the living biomass and surface litter layer, with rapid recycling"
+      - "C) In groundwater reservoirs"
+      - "D) Bound to calcium carbonate in the subsoil"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Tropical forests store 75–80% of nutrients in biomass and litter, with rapid cycling (litter decomposes in weeks to months vs. years in temperate forests). Soils (often Oxisols/Ultisols) are heavily weathered and nutrient-poor. Deforestation causes rapid nutrient loss."
+    tags: [tropical_forest, nutrient_cycling, biomass, decomposition]
+
+  - id: factual_ecology_0021
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the ecological function of riparian buffers along waterways in agricultural landscapes. What is a recommended minimum width, and what types of vegetation are most effective?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["riparian", "buffer"]
+      rubric_criteria:
+        - name: functions
+          description: "Describes key functions: filtering sediment and nutrients from runoff, stabilizing stream banks, providing wildlife corridor/habitat, shading water to moderate temperature"
+          max_points: 3
+        - name: width
+          description: "States recommended minimum width of approximately 10–30 meters (35–100 feet), noting wider buffers provide greater ecological benefit"
+          max_points: 2
+        - name: vegetation
+          description: "Describes effective vegetation: multi-zone design with grasses nearest the field, shrubs in the middle, and trees along the stream bank; or notes that native perennial vegetation is most effective"
+          max_points: 3
+    source_notes: "USDA-NRCS recommends minimum 35-foot (10.7 m) riparian buffers; 100-foot (30 m) provides substantially better nutrient removal (>80% N, >90% sediment). Three-zone design (trees-shrubs-grass) maximizes multiple functions."
+    tags: [riparian_buffer, water_quality, habitat, stream_health]
+
+  - id: factual_ecology_0022
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The invasive brown marmorated stink bug (Halyomorpha halys), native to East Asia, has become a major agricultural pest in North America and Europe. What makes this species particularly damaging to farming systems?
+    choices:
+      - "A) It exclusively attacks grain crops and can destroy entire wheat fields overnight"
+      - "B) It is an extreme host generalist feeding on >100 crop species, has no effective native natural enemies in invaded regions, and causes cosmetic and internal damage to fruits and vegetables"
+      - "C) It vectors bacterial diseases that kill fruit trees"
+      - "D) It rapidly depletes soil nutrients by consuming root systems"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "H. halys feeds on >100 host species (fruits, vegetables, row crops, ornamentals), lacks natural enemies in invaded regions, aggregates in large overwintering groups, and causes feeding damage that renders produce unmarketable. Samurai wasp (Trissolcus japonicus) is being evaluated as a classical biocontrol agent."
+    tags: [invasive_species, stink_bug, biocontrol, host_generalist]
+
+  - id: factual_ecology_0023
+    question_type: mcq
+    difficulty: medium
+    regions: [nairobi]
+    turns:
+      - role: user
+        content: |
+          The fall armyworm (Spodoptera frugiperda), an invasive pest from the Americas, was first detected in sub-Saharan Africa in 2016 and has since spread to East Africa including Kenya. What is its primary crop target, and why has it been so devastating?
+    choices:
+      - "A) Rice, because it thrives in flooded paddies"
+      - "B) Maize (corn), because it is the staple food crop across sub-Saharan Africa and the pest has high reproductive rates with few local natural enemies"
+      - "C) Coffee, because Kenya's highland climate is ideal for armyworm development"
+      - "D) Cassava, because the pest feeds exclusively on root crops"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Fall armyworm primarily attacks maize (also sorghum, millet, rice). In Africa it threatens food security of >300 million people who depend on maize. Losses estimated at $2.5–6.2 billion/year across Africa. Push-pull technology (Desmodium/Brachiaria) shows promise as a sustainable control method."
+    tags: [invasive_species, fall_armyworm, nairobi, maize, africa]
+
+  - id: factual_ecology_0024
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the difference between functional biodiversity and species richness?
+    choices:
+      - "A) They are identical concepts used interchangeably"
+      - "B) Species richness counts the total number of species present, while functional biodiversity measures the range of ecological roles and functions those species perform"
+      - "C) Functional biodiversity only applies to microbes, while species richness applies to plants and animals"
+      - "D) Species richness measures ecosystem health, while functional biodiversity measures economic value"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Species richness = number of species. Functional biodiversity = diversity of ecological functions (pollination, decomposition, predation, N-fixation). High species richness does not guarantee high functional diversity if species are ecologically redundant."
+    tags: [functional_biodiversity, species_richness, ecology_concepts]
+
+  - id: factual_ecology_0025
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In decomposer communities, what is the primary role of macro-detritivores such as millipedes, woodlice (isopods), and earthworms in the decomposition process?
+    choices:
+      - "A) They chemically break down lignin and cellulose using enzymes"
+      - "B) They physically fragment litter, increasing the surface area available for microbial colonization and decomposition"
+      - "C) They consume bacteria and fungi, slowing decomposition"
+      - "D) They transport organic matter from deep soil to the surface"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Macro-detritivores are physical fragmenters: they shred litter into smaller pieces, dramatically increasing surface area for bacterial and fungal colonization. Their frass (fecal pellets) is enriched with microbial inocula. Without them, decomposition rates drop by 30–50%."
+    tags: [decomposers, macro_detritivores, litter_fragmentation, soil_fauna]
+
+  - id: factual_ecology_0026
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the concepts of positive and negative plant-soil feedbacks. Give one example of each in an agricultural context and describe how negative plant-soil feedback influences crop rotation decisions.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["feedback", "soil"]
+      rubric_criteria:
+        - name: positive_feedback
+          description: "Defines positive plant-soil feedback as when a plant species modifies soil conditions in ways that benefit its own growth (e.g., legumes enriching soil N, or mycorrhizal network buildup)"
+          max_points: 3
+        - name: negative_feedback
+          description: "Defines negative plant-soil feedback as when a plant modifies soil in ways that inhibit its own growth (e.g., pathogen buildup, autotoxicity, nutrient depletion)"
+          max_points: 3
+        - name: crop_rotation_link
+          description: "Explains that negative feedbacks (e.g., soilborne disease buildup like Fusarium in continuous wheat, or soybean cyst nematode in continuous soybean) are a primary ecological justification for crop rotation"
+          max_points: 3
+    source_notes: "Negative PSF: continuous corn builds rootworm populations and depletes specific nutrients. Continuous soybean accumulates soybean cyst nematode. Rotation breaks pathogen/pest cycles. Positive PSF: perennial grasses build mycorrhizal networks and soil aggregation."
+    tags: [plant_soil_feedback, crop_rotation, pathogens, ecology]
+
+  - id: factual_ecology_0027
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the 'edge effect' in agricultural landscape ecology?
+    choices:
+      - "A) The tendency for crops at field edges to yield more due to reduced competition"
+      - "B) The zone of altered ecological conditions (microclimates, species composition, pest pressure) at the boundary between two different habitat types"
+      - "C) The erosion that occurs at the edges of terraced fields"
+      - "D) The effect of field size on machinery turning radius"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Edge effects create transition zones (ecotones) with distinct microclimate, species assemblages, and ecological processes. In fragmented farmland, edge effects can dominate small habitat patches, reducing interior habitat quality for sensitive species."
+    tags: [edge_effects, habitat_fragmentation, landscape_ecology]
+
+  - id: factual_ecology_0028
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Habitat fragmentation in agricultural landscapes creates 'island' patches of natural habitat. According to island biogeography theory (MacArthur & Wilson, 1967), which two factors most strongly predict the number of species a habitat patch can support?
+    choices:
+      - "A) Soil type and annual rainfall"
+      - "B) Patch area and isolation distance from other habitat patches"
+      - "C) Elevation and latitude"
+      - "D) Vegetation age and disturbance frequency"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Island biogeography: species richness scales with area (species-area relationship, S=cA^z) and decreases with isolation. Applied to farmland: larger, less isolated habitat patches (hedgerows, woodlots) support more species. This guides conservation planning in agricultural landscapes."
+    tags: [habitat_fragmentation, island_biogeography, landscape_ecology, conservation]
+
+  - id: factual_ecology_0029
+    question_type: mcq
+    difficulty: easy
+    regions: [ohio]
+    turns:
+      - role: user
+        content: |
+          In the humid continental climate of Ohio, which cover crop practice is most effective at reducing nitrate leaching to groundwater over winter?
+    choices:
+      - "A) Leaving fields bare after harvest to freeze and thaw the soil"
+      - "B) Planting a winter-active cover crop like cereal rye to take up residual soil nitrogen"
+      - "C) Tilling the soil after harvest to incorporate crop residues"
+      - "D) Applying additional nitrogen fertilizer in the fall"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Cereal rye planted after corn or soybean harvest scavenges 20–60 kg N/ha of residual soil nitrate, reducing over-winter leaching by 40–70%. This is critical in Ohio's Lake Erie watershed to reduce harmful algal blooms."
+    tags: [cover_crops, cereal_rye, nitrate_leaching, ohio, water_quality]
+
+  - id: factual_ecology_0030
+    question_type: mcq
+    difficulty: medium
+    regions: [canterbury_nz]
+    turns:
+      - role: user
+        content: |
+          In Canterbury, New Zealand, intensive dairy farming has raised concerns about waterway degradation. Which ecological process is most responsible for nitrate contamination of groundwater in the Canterbury Plains' alluvial gravel aquifer system?
+    choices:
+      - "A) Surface runoff of granular fertilizer directly into rivers"
+      - "B) Leaching of nitrate below the root zone through the highly permeable alluvial gravels, especially from urine patches in grazed pastures"
+      - "C) Atmospheric deposition of ammonia from dairy sheds"
+      - "D) Erosion of nitrogen-rich topsoil into waterways"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Canterbury's alluvial gravel aquifers are highly permeable. Dairy cow urine patches deposit N at rates equivalent to 1,000 kg N/ha locally, far exceeding plant uptake. This leaches rapidly through gravels to groundwater. Nitrate-N levels in some Canterbury wells exceed 11.3 mg/L drinking water standard."
+    tags: [canterbury_nz, nitrate_leaching, dairy, groundwater, ecology]
+
+  - id: factual_ecology_0031
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is the 'push-pull' system developed for smallholder maize farming in East Africa? Describe its ecological principles and name the specific companion plants used.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["push", "pull", "Desmodium"]
+      rubric_criteria:
+        - name: concept
+          description: "Explains push-pull as a companion planting system that repels (pushes) pests away from the crop and attracts (pulls) them to trap plants"
+          max_points: 2
+        - name: push_plant
+          description: "Identifies Desmodium (silverleaf or greenleaf) as the push plant intercropped between maize rows, which repels stemborers and suppresses Striga weed through allelopathy"
+          max_points: 3
+        - name: pull_plant
+          description: "Identifies Napier grass (Pennisetum purpureum) or Brachiaria grass planted as a border trap crop that attracts stemborers away from maize"
+          max_points: 3
+    source_notes: "Push-pull (Khan et al., icipe) uses Desmodium intercrop (repels stemborers via volatile chemicals, suppresses Striga via root exudates) and Napier/Brachiaria border (attracts stemborers, which are killed by plant gum). Also fixes nitrogen and provides livestock fodder. Adopted by >250,000 farmers."
+    tags: [push_pull, biocontrol, desmodium, napier_grass, east_africa, maize]
+
+  - id: factual_ecology_0032
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          White-rot fungi (e.g., Phanerochaete chrysosporium) are unique among soil decomposers because they are capable of:
+    choices:
+      - "A) Fixing atmospheric nitrogen symbiotically with tree roots"
+      - "B) Enzymatically degrading lignin using lignin peroxidase, manganese peroxidase, and laccase, which no other organism can fully decompose"
+      - "C) Photosynthesizing in the forest understory"
+      - "D) Producing antibiotics that eliminate all soil bacteria"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Only white-rot basidiomycetes can fully mineralize lignin, the second most abundant biopolymer on Earth. They produce extracellular oxidative enzymes (lignin peroxidase, MnP, laccase) that cleave the aromatic rings. Without them, dead wood would not decompose."
+    tags: [decomposers, white_rot_fungi, lignin, enzymes]
+
+  - id: factual_ecology_0033
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In grassland ecology, what is the key difference between tallgrass and shortgrass prairie ecosystems?
+    choices:
+      - "A) Tallgrass prairies receive more annual precipitation (750–1,000 mm) than shortgrass prairies (250–500 mm)"
+      - "B) Shortgrass prairies have deeper soils than tallgrass prairies"
+      - "C) Tallgrass prairies are found only in tropical latitudes"
+      - "D) Shortgrass prairies are dominated by trees while tallgrass prairies have no woody plants"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "The tallgrass-shortgrass gradient follows the precipitation gradient across the Great Plains. Tallgrass (big bluestem, switchgrass) in the wetter east (750–1,000 mm); shortgrass (blue grama, buffalo grass) in the drier west (250–500 mm). Mixed-grass prairie in between."
+    tags: [grassland_ecology, tallgrass, shortgrass, precipitation]
+
+  - id: factual_ecology_0034
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In managed grazing systems, what does 'adaptive multi-paddock' (AMP) grazing aim to mimic from natural grassland ecology?
+    choices:
+      - "A) The constant, year-round grazing pressure of wild herbivores"
+      - "B) The pattern of intense but brief grazing by large herds followed by long recovery periods, as seen with migratory herbivore herds on the African savanna or North American bison"
+      - "C) The selective feeding behavior of browsers that only eat woody plants"
+      - "D) The fire regimes that historically maintained grasslands"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "AMP grazing (also called mob grazing, management-intensive rotational grazing) concentrates livestock at high density for short periods (1–3 days) followed by long rest (30–90+ days). This mimics the intense-then-rest pattern of wild herds moved by predators."
+    tags: [grazing, adaptive_multi_paddock, grassland, rotational_grazing]
+
+  - id: factual_ecology_0035
+    question_type: mcq
+    difficulty: hard
+    regions: [tokyo]
+    turns:
+      - role: user
+        content: |
+          Traditional Japanese satoyama landscapes represent a socio-ecological production landscape. What ecological principle does the satoyama system demonstrate?
+    choices:
+      - "A) Maximum forest clearing for agricultural intensification"
+      - "B) Integration of managed woodlands (coppice forests), rice paddies, grasslands, and water systems creating a mosaic of habitats that supports high biodiversity through intermediate disturbance"
+      - "C) Complete preservation of old-growth forest without human intervention"
+      - "D) Monoculture forestry of Japanese cedar for timber production"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Satoyama landscapes maintain biodiversity through managed mosaic: coppiced broadleaf forest (fuel/charcoal), irrigated rice paddies (wetland habitat), grasslands (thatching/fodder), and irrigation ponds. Supports species like Japanese giant salamander and fireflies. Recognized by IPBES as a model of socio-ecological production landscapes."
+    tags: [satoyama, tokyo, japan, landscape_mosaic, intermediate_disturbance]
+
+  - id: factual_ecology_0036
+    question_type: short_answer
+    difficulty: hard
+    regions: [helsinki]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          In boreal forest ecosystems near Helsinki, Finland, ectomycorrhizal (EM) fungi dominate. Explain why EM fungi are more prevalent than arbuscular mycorrhizal (AM) fungi in boreal forests, and describe one key functional difference between EM and AM nutrient acquisition strategies.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["ectomycorrhizal", "boreal"]
+      rubric_criteria:
+        - name: dominance_explanation
+          description: "Explains that EM fungi dominate because boreal forests are dominated by EM-associated tree species (Betula/birch, Pinus/pine, Picea/spruce) and because EM fungi are better adapted to acidic, organic-matter-rich, nutrient-poor boreal soils"
+          max_points: 3
+        - name: functional_difference
+          description: "Describes a key functional difference: EM fungi can directly decompose organic matter and access organic nitrogen via enzymatic activity (saprotrophic capability), while AM fungi primarily access inorganic mineral nutrients (especially phosphorus)"
+          max_points: 3
+        - name: ecological_significance
+          description: "Notes the ecological significance: in nutrient-poor boreal soils where most N and P are locked in organic forms, EM fungi's ability to 'short-circuit' the decomposition pathway by directly mining organic matter gives them a competitive advantage"
+          max_points: 2
+    source_notes: "EM fungi produce extracellular enzymes (proteases, phosphatases) that can mobilize N and P directly from organic matter (Lindahl et al., 2007, New Phytologist). This 'mycorrhizal pathway' of nutrient cycling is dominant in boreal forests where organic horizons are thick and decomposition is slow."
+    tags: [ectomycorrhizae, boreal, helsinki, nutrient_acquisition, organic_matter]
+
+  - id: factual_ecology_0037
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following best describes a 'food web' compared to a 'food chain'?
+    choices:
+      - "A) A food web is a linear sequence of who eats whom; a food chain is more complex"
+      - "B) A food web shows the interconnected network of all feeding relationships in an ecosystem; a food chain is a single linear pathway"
+      - "C) They are identical concepts"
+      - "D) A food web only includes plants and herbivores"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "A food chain is a single linear pathway (grass → grasshopper → frog → snake → hawk). A food web is the interconnected network of all food chains in an ecosystem, showing the complexity of trophic relationships."
+    tags: [food_web, food_chain, ecology_concepts, fundamentals]
+
+  - id: factual_ecology_0038
+    question_type: mcq
+    difficulty: medium
+    regions: [rajasthan]
+    turns:
+      - role: user
+        content: |
+          The Thar Desert of Rajasthan supports a surprising diversity of life adapted to arid conditions. Which agroecological practice is traditionally used to maintain soil fertility and biodiversity in Rajasthani arid farming systems?
+    choices:
+      - "A) Heavy irrigation from deep tube wells year-round"
+      - "B) Khejri (Prosopis cineraria) based agroforestry, where the native tree provides nitrogen fixation, shade, fodder, and food while crops are grown underneath"
+      - "C) Complete clearing of all native vegetation for maximum crop area"
+      - "D) Continuous monoculture of rice"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Prosopis cineraria (khejri/janti) is the keystone tree of Rajasthani agroforestry: it fixes 50–75 kg N/ha/yr, produces nutritious pods (sangri), provides fodder/shade, and improves soil under its canopy. The Bishnoi community has protected these trees for centuries."
+    tags: [rajasthan, arid, agroforestry, prosopis, khejri, traditional]
+
+  - id: factual_ecology_0039
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain how the 'insurance hypothesis' of biodiversity relates to agricultural resilience. Why might a polyculture or diverse cover crop mixture be more resilient than a monoculture?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["diversity", "resilience"]
+      rubric_criteria:
+        - name: insurance_hypothesis
+          description: "Explains the insurance hypothesis: higher biodiversity provides a buffer against environmental fluctuations because different species respond differently to stresses, so some will perform well when others do not"
+          max_points: 3
+        - name: agricultural_application
+          description: "Applies this to agriculture: polycultures or diverse cover crop mixtures maintain productivity across variable conditions because different species fill in functional gaps under different weather, pest, or soil conditions"
+          max_points: 3
+        - name: specific_example
+          description: "Provides a specific example (e.g., a multi-species cover crop mix where legumes provide N when warm, brassicas grow in cool conditions, and grasses provide erosion control; or intercropping where one crop compensates for another's failure)"
+          max_points: 2
+    source_notes: "Insurance hypothesis (Yachi & Loreau, 1999): biodiversity insures ecosystems against decline by increasing the probability that some species maintain functioning under changing conditions. Applied to agriculture: diverse cover crop mixes (8–12 species) show more stable biomass production across years than monocultures."
+    tags: [insurance_hypothesis, biodiversity, resilience, polyculture, cover_crops]
+
+  - id: factual_ecology_0040
+    question_type: mcq
+    difficulty: hard
+    regions: [mato_grosso, nairobi]
+    turns:
+      - role: user
+        content: |
+          Tropical soils in both the Cerrado (Mato Grosso) and East African highlands (near Nairobi) are often deeply weathered. Despite this similarity, their soil food web dynamics differ. What is a key ecological difference in decomposer activity between these two tropical agricultural zones?
+    choices:
+      - "A) Decomposer communities are identical in all tropical soils"
+      - "B) The Cerrado's prolonged dry season (5 months) dramatically slows decomposition seasonally, creating a pulse of nutrient release at wet season onset; while Nairobi's bimodal rainfall supports more continuous year-round decomposition"
+      - "C) Nairobi soils have no fungal decomposers due to high elevation"
+      - "D) Cerrado soils lack earthworms entirely"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Cerrado (Aw climate) has a 5-month dry season where microbial activity plummets, creating litter accumulation and a nutrient flush with first rains. Nairobi's highland climate (Cwb) with bimodal rains (March-May, Oct-Dec) supports more continuous decomposition, though with seasonal variation."
+    tags: [decomposers, tropical, cerrado, nairobi, seasonal_dynamics, nutrient_cycling]

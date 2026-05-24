@@ -1,0 +1,17 @@
+models:
+  - name: claude-sonnet-4-20250514
+    provider: anthropic
+    model_id: claude-sonnet-4-20250514
+
+  - name: claude-opus-4-20250514
+    provider: anthropic
+    model_id: claude-opus-4-20250514
+
+  - name: gpt-4o
+    provider: openai
+    model_id: gpt-4o
+    seed: 42
+
+  - name: gemini-2.5-pro
+    provider: google
+    model_id: gemini-2.5-pro

@@ -1,0 +1,1294 @@
+metadata:
+  category: factual
+  subcategory: soil_science
+  version: v1
+
+questions:
+  - id: factual_soil_0001
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What does a soil pH of 4.5 indicate?
+    choices:
+      - "A) Strongly alkaline soil"
+      - "B) Neutral soil"
+      - "C) Strongly acidic soil"
+      - "D) Slightly acidic soil"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Basic soil chemistry. pH 4.5 is strongly acidic (below 5.0 threshold)."
+    tags: [ph, fundamentals]
+
+  - id: factual_soil_0002
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which soil texture class has the highest water-holding capacity?
+    choices:
+      - "A) Sand"
+      - "B) Clay"
+      - "C) Silt loam"
+      - "D) Loamy sand"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Clay has the highest water-holding capacity due to small particle size and large surface area."
+    tags: [texture, water_holding_capacity, fundamentals]
+
+  - id: factual_soil_0003
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What does CEC (Cation Exchange Capacity) measure in soil?
+    choices:
+      - "A) The soil's ability to conduct electricity"
+      - "B) The soil's ability to hold and exchange positively charged nutrient ions"
+      - "C) The total carbon content of the soil"
+      - "D) The rate of water infiltration through the soil"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "CEC measures the soil's capacity to hold cations (Ca2+, Mg2+, K+, Na+, H+, Al3+) on negatively charged clay and organic matter surfaces."
+    tags: [cec, fundamentals, nutrient_management]
+
+  - id: factual_soil_0004
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          A soil test shows a CEC of 5.2 cmol(c)/kg in a sandy loam. How would you classify this CEC value?
+    choices:
+      - "A) Very high"
+      - "B) High"
+      - "C) Moderate"
+      - "D) Low"
+    correct_answer: "D"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "D"
+    source_notes: "CEC ranges: <10 = low (sandy soils), 10-25 = moderate, 25-40 = high (clay/organic), >40 = very high. 5.2 in sandy loam is low but expected for that texture."
+    tags: [cec, soil_testing, sandy_soils]
+
+  - id: factual_soil_0005
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the ideal C:N ratio range for rapid decomposition of organic matter in soil?
+    choices:
+      - "A) 5:1 to 10:1"
+      - "B) 20:1 to 25:1"
+      - "C) 50:1 to 60:1"
+      - "D) 80:1 to 100:1"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "C:N of 20-25:1 is the sweet spot for decomposition. Below 20:1, excess N is mineralized. Above 30:1, microbes immobilize soil N to decompose carbon."
+    tags: [cn_ratio, decomposition, organic_matter]
+
+  - id: factual_soil_0006
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which soil order is characterized by a dark, organic-matter-rich surface horizon (mollic epipedon) and is typically found in grassland ecosystems?
+    choices:
+      - "A) Ultisols"
+      - "B) Mollisols"
+      - "C) Oxisols"
+      - "D) Spodosols"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Mollisols are defined by their mollic epipedon (thick, dark, high base saturation). They dominate the Great Plains and are among the most fertile soils globally."
+    tags: [taxonomy, soil_orders, grasslands]
+
+  - id: factual_soil_0007
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the USDA soil texture triangle, a soil with 35% sand, 30% silt, and 35% clay falls into which texture class?
+    choices:
+      - "A) Clay loam"
+      - "B) Sandy clay loam"
+      - "C) Silty clay loam"
+      - "D) Clay"
+    correct_answer: "A"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "A"
+    source_notes: "35% sand, 30% silt, 35% clay places squarely in clay loam on the USDA texture triangle (20-45% sand, 15-55% silt, 27-40% clay)."
+    tags: [texture_triangle, texture_class, soil_analysis]
+
+  - id: factual_soil_0008
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the primary role of mycorrhizal fungi in soil?
+    choices:
+      - "A) Decomposing dead plant material"
+      - "B) Fixing atmospheric nitrogen"
+      - "C) Extending plant root systems to access water and nutrients, especially phosphorus"
+      - "D) Breaking down rock into mineral particles"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Mycorrhizae form symbiotic associations with ~90% of plant species, extending hyphal networks that dramatically increase phosphorus and water uptake."
+    tags: [mycorrhizae, soil_biology, phosphorus]
+
+  - id: factual_soil_0009
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Bulk density of a soil sample is measured at 1.65 g/cm³. What does this suggest about the soil?
+    choices:
+      - "A) The soil is highly porous with excellent structure"
+      - "B) The soil is likely compacted with restricted root growth"
+      - "C) The soil has very high organic matter content"
+      - "D) The soil is waterlogged"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Bulk density >1.6 g/cm³ indicates compaction in most mineral soils. Root-limiting thresholds: 1.4 for clay, 1.6 for silt loam, 1.8 for sandy soils."
+    tags: [bulk_density, compaction, soil_physics]
+
+  - id: factual_soil_0010
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What percentage of soil organic matter (SOM) is approximately equal to 1% soil organic carbon (SOC)?
+    choices:
+      - "A) 0.58%"
+      - "B) 1.0%"
+      - "C) 1.72%"
+      - "D) 2.5%"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "The Van Bemmelen factor: SOM = SOC × 1.724 (since SOM is ~58% carbon). So 1% SOC ≈ 1.72% SOM."
+    tags: [organic_matter, organic_carbon, van_bemmelen, conversions]
+
+  - id: factual_soil_0011
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What are the three primary soil macronutrients, and what is their standard order in a fertilizer grade label (e.g., 10-10-10)?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["nitrogen", "phosphorus", "potassium"]
+      rubric_criteria:
+        - name: correct_elements
+          description: "Names all three: nitrogen (N), phosphorus (P), potassium (K)"
+          max_points: 3
+        - name: correct_order
+          description: "States the correct order: N-P-K"
+          max_points: 2
+    source_notes: "N-P-K is the universal fertilizer grade order. P is expressed as P2O5 and K as K2O in fertilizer labels."
+    tags: [npk, nutrients, fertilizer, fundamentals]
+
+  - id: factual_soil_0012
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which process converts ammonium (NH4+) to nitrate (NO3-) in soil?
+    choices:
+      - "A) Denitrification"
+      - "B) Nitrogen fixation"
+      - "C) Nitrification"
+      - "D) Ammonification"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Nitrification is the two-step aerobic process: NH4+ → NO2- (by Nitrosomonas) → NO3- (by Nitrobacter). Requires oxygen and is pH-sensitive."
+    tags: [nitrogen_cycle, nitrification, soil_biology]
+
+  - id: factual_soil_0013
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          At approximately what soil pH range is phosphorus most available to plants?
+    choices:
+      - "A) 4.0 to 5.0"
+      - "B) 6.0 to 7.0"
+      - "C) 7.5 to 8.5"
+      - "D) 8.5 to 9.5"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Phosphorus availability peaks at pH 6.0-7.0. Below 6, P binds with iron and aluminum. Above 7.5, P binds with calcium. This is a classic nutrient availability chart concept."
+    tags: [phosphorus, ph, nutrient_availability]
+
+  - id: factual_soil_0014
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the difference between soil structure and soil texture.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["particle", "aggregate"]
+      rubric_criteria:
+        - name: texture_definition
+          description: "Defines texture as the proportion of sand, silt, and clay particles (inherent, cannot be changed)"
+          max_points: 3
+        - name: structure_definition
+          description: "Defines structure as how particles aggregate into peds/clumps (can be improved through management)"
+          max_points: 3
+        - name: management_distinction
+          description: "Notes that texture is inherent while structure can be modified"
+          max_points: 2
+    source_notes: "Texture = mineral particle size distribution (permanent). Structure = arrangement of particles into aggregates (manageable). Critical distinction for farmers."
+    tags: [texture, structure, fundamentals]
+
+  - id: factual_soil_0015
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the typical pH range of most agricultural soils?
+    choices:
+      - "A) 2.0 to 4.0"
+      - "B) 4.0 to 5.0"
+      - "C) 5.5 to 7.5"
+      - "D) 8.5 to 10.0"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Most crops grow best in pH 5.5-7.5. Some exceptions exist (blueberries prefer 4.5-5.5, alfalfa prefers 6.5-7.5)."
+    tags: [ph, agriculture, fundamentals]
+
+  - id: factual_soil_0016
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the approximate weight of one acre-furrow-slice of soil (top 6.67 inches / 17 cm) in tons?
+    choices:
+      - "A) 500 tons"
+      - "B) 1,000 tons"
+      - "C) 2,000 tons"
+      - "D) 5,000 tons"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "An acre-furrow-slice weighs approximately 2,000,000 lbs (2,000 tons or ~1,000 tonnes). This is the standard reference for converting ppm soil test results to lbs/acre."
+    tags: [acre_furrow_slice, conversions, soil_testing]
+
+  - id: factual_soil_0017
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Name the six master soil horizons in order from the surface downward.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["O", "A", "E", "B", "C", "R"]
+      rubric_criteria:
+        - name: all_horizons
+          description: "Lists all six: O (organic), A (topsoil), E (eluviation), B (subsoil/illuviation), C (parent material), R (bedrock)"
+          max_points: 3
+        - name: correct_order
+          description: "Lists them in the correct top-to-bottom order: O, A, E, B, C, R"
+          max_points: 2
+        - name: brief_descriptions
+          description: "Provides brief descriptions of at least 3 horizons"
+          max_points: 2
+    source_notes: "O-A-E-B-C-R is the standard horizon sequence. Not all horizons are present in every soil profile."
+    tags: [horizons, soil_profile, fundamentals]
+
+  - id: factual_soil_0018
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following best describes the role of earthworms in soil health?
+    choices:
+      - "A) They primarily consume living plant roots"
+      - "B) They create macropores, mix organic matter into soil, and improve aggregation through their casts"
+      - "C) They fix atmospheric nitrogen in symbiosis with legumes"
+      - "D) They primarily break down mineral rock into clay particles"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Earthworms are ecosystem engineers: their burrowing creates macropores (improving infiltration and aeration), their casts are rich in plant-available nutrients, and they mix organic residues into the profile (bioturbation)."
+    tags: [earthworms, soil_biology, soil_health]
+
+  - id: factual_soil_0019
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Soil aggregation is primarily driven by which of the following binding agents?
+    choices:
+      - "A) Sand particles and gravel"
+      - "B) Glomalin (produced by mycorrhizal fungi), polysaccharides from bacteria, and root exudates"
+      - "C) Calcium carbonate precipitates only"
+      - "D) Iron oxide coatings only"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Soil aggregation hierarchy: microaggregates bound by persistent organic compounds and clay-polyvalent cation-organic matter complexes; macroaggregates bound by fungal hyphae, fine roots, glomalin, and transient polysaccharides."
+    tags: [aggregation, glomalin, mycorrhizae, soil_biology, soil_structure]
+
+  - id: factual_soil_0020
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely but thoroughly."
+    turns:
+      - role: user
+        content: |
+          A soil test report shows the following base saturation percentages: Ca 55%, Mg 18%, K 4%, Na 1%, H+ and Al3+ 22%. What does this indicate about the soil's fertility status, and what is the approximate base saturation percentage?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["base saturation"]
+      rubric_criteria:
+        - name: base_saturation_calc
+          description: "Correctly calculates base saturation as ~78% (Ca+Mg+K+Na = 55+18+4+1 = 78%)"
+          max_points: 3
+        - name: fertility_interpretation
+          description: "Interprets 78% base saturation as moderately high, indicating reasonable fertility"
+          max_points: 2
+        - name: ca_mg_ratio
+          description: "Notes the Ca:Mg ratio (~3:1) which is within acceptable range (3:1 to 5:1 ideal)"
+          max_points: 2
+        - name: acidity_note
+          description: "Notes the 22% acid saturation (H+ and Al3+) suggests moderate acidity, may benefit from liming"
+          max_points: 2
+    source_notes: "Base saturation = (sum of base cations / CEC) × 100. At 78%, this soil has good base status but the acid saturation suggests pH around 5.5-6.0."
+    tags: [base_saturation, cec, fertility, soil_testing, liming]
+
+  - id: factual_soil_0021
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which clay mineral is dominant in highly weathered tropical Oxisols of the Brazilian Cerrado and Congo Basin?
+    choices:
+      - "A) Montmorillonite (smectite)"
+      - "B) Illite"
+      - "C) Kaolinite"
+      - "D) Vermiculite"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Oxisols are dominated by kaolinite (1:1 clay) and iron/aluminum oxides (goethite, hematite, gibbsite). Intense weathering removes 2:1 clays, leaving low-CEC kaolinite."
+    tags: [oxisols, tropical_soils, clay_mineralogy, brazil, congo]
+
+  - id: factual_soil_0022
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In tropical Oxisols, aluminum toxicity becomes a growth-limiting factor for most crops when exchangeable Al saturation exceeds approximately what percentage?
+    choices:
+      - "A) 5%"
+      - "B) 20%"
+      - "C) 60%"
+      - "D) 90%"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Most tropical crops experience Al toxicity when Al saturation exceeds 60% of effective CEC. Tolerant species like tea can withstand higher levels. Critical threshold varies by crop but 60% is the widely cited general benchmark."
+    tags: [aluminum_toxicity, oxisols, tropical_soils, cec]
+
+  - id: factual_soil_0023
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Vertisols, common in the Deccan Plateau of India and the Gezira region of Sudan, exhibit pronounced shrink-swell behavior. Which clay mineral is primarily responsible for this property?
+    choices:
+      - "A) Kaolinite"
+      - "B) Halloysite"
+      - "C) Smectite (montmorillonite)"
+      - "D) Chlorite"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Smectite clays (2:1 expanding lattice) absorb water between layers, causing Vertisols to swell when wet and crack deeply (often >1 m) when dry. The Deccan Plateau black cotton soils and Sudan Gezira clays are classic examples."
+    tags: [vertisols, shrink_swell, smectite, india, sudan, clay_mineralogy]
+
+  - id: factual_soil_0024
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain why Vertisols develop gilgai microrelief and describe the self-mulching process that occurs in these soils.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["shrink", "swell", "crack"]
+      rubric_criteria:
+        - name: gilgai_definition
+          description: "Describes gilgai as the undulating micro-topography (mounds and depressions) formed by repeated cycles of swelling and shrinking"
+          max_points: 3
+        - name: self_mulching
+          description: "Explains that surface material falls into deep desiccation cracks and is incorporated at depth when the soil re-wets and swells, creating pedoturbation"
+          max_points: 3
+        - name: clay_mechanism
+          description: "Links the behavior to high smectite clay content (>30%) and its 2:1 expanding lattice structure"
+          max_points: 2
+    source_notes: "Gilgai form because differential swelling pressures push soil upward. Self-mulching occurs as surface aggregates fall into cracks during dry periods, then are buried when the soil swells shut. This creates an inverted soil profile over time."
+    tags: [vertisols, gilgai, self_mulching, pedoturbation, shrink_swell]
+
+  - id: factual_soil_0025
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the primary mineral responsible for the unique properties of Andisols, which are commonly found in volcanic regions of Japan, Ecuador, and the Pacific Northwest?
+    choices:
+      - "A) Quartz"
+      - "B) Feldspar"
+      - "C) Allophane"
+      - "D) Calcite"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Allophane is a short-range-order aluminosilicate mineral that gives Andisols their distinctive properties: low bulk density, high water retention, thixotropy, and extremely high phosphorus fixation capacity."
+    tags: [andisols, allophane, volcanic_soils, japan, ecuador]
+
+  - id: factual_soil_0026
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Andisols can fix phosphorus at rates far exceeding most other soil orders. What is the primary mechanism of P fixation in allophanic Andisols?
+    choices:
+      - "A) Precipitation as calcium phosphate at high pH"
+      - "B) Ligand exchange where phosphate replaces hydroxyl groups on reactive Al and Fe surfaces of allophane and ferrihydrite"
+      - "C) Incorporation into silicate crystal lattices"
+      - "D) Biological immobilization by fungal hyphae"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Allophane and ferrihydrite have enormous reactive surface areas with abundant Al-OH and Fe-OH groups. Phosphate displaces hydroxyl groups via ligand exchange, forming inner-sphere complexes that are nearly irreversible. Andisols can fix >2000 mg P/kg soil."
+    tags: [andisols, phosphorus_fixation, allophane, ligand_exchange]
+
+  - id: factual_soil_0027
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          A soil is classified as sodic when the Exchangeable Sodium Percentage (ESP) exceeds which threshold value?
+    choices:
+      - "A) 5%"
+      - "B) 15%"
+      - "C) 30%"
+      - "D) 50%"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "USDA Salinity Lab (Richards, 1954): sodic soil ESP >15%, pH typically >8.5, ECe <4 dS/m. High Na+ on exchange sites causes clay dispersion and severe structural degradation."
+    tags: [sodic_soils, esp, salinity, soil_chemistry]
+
+  - id: factual_soil_0028
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          According to USDA salinity classification, a saline soil is defined by an electrical conductivity of the saturated paste extract (ECe) greater than what value?
+    choices:
+      - "A) 1 dS/m"
+      - "B) 2 dS/m"
+      - "C) 4 dS/m"
+      - "D) 8 dS/m"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Saline soils: ECe >4 dS/m, ESP <15, pH <8.5. Saline-sodic: ECe >4, ESP >15. Sodic: ECe <4, ESP >15. The 4 dS/m threshold was established by the USDA Salinity Laboratory (Handbook 60, 1954)."
+    tags: [saline_soils, electrical_conductivity, salinity_classification]
+
+  - id: factual_soil_0029
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is the Sodium Adsorption Ratio (SAR), and why is it important for irrigation water quality assessment?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["sodium", "calcium", "magnesium"]
+      rubric_criteria:
+        - name: formula
+          description: "Provides the formula: SAR = Na+ / sqrt((Ca2+ + Mg2+) / 2), with concentrations in mmol/L"
+          max_points: 3
+        - name: interpretation
+          description: "Explains that high SAR irrigation water introduces excess sodium relative to divalent cations, leading to sodification of soils"
+          max_points: 2
+        - name: structural_impact
+          description: "Notes that high SAR causes clay dispersion, reduced infiltration, and soil structural degradation"
+          max_points: 2
+    source_notes: "SAR predicts the sodicity hazard of irrigation water. SAR >13 is generally considered a high sodium hazard. SAR interacts with ECe in determining the risk of soil structural deterioration."
+    tags: [sar, irrigation, sodic_soils, water_quality]
+
+  - id: factual_soil_0030
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the Munsell color notation system used for soil description, what do the three components hue, value, and chroma represent?
+    choices:
+      - "A) Hue = lightness, Value = spectral color, Chroma = saturation"
+      - "B) Hue = spectral color, Value = lightness (light to dark), Chroma = color intensity/saturation"
+      - "C) Hue = saturation, Value = spectral color, Chroma = lightness"
+      - "D) Hue = texture, Value = moisture, Chroma = organic matter content"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Munsell notation: Hue (spectral color, e.g., 10YR), Value (lightness 0-10, dark to light), Chroma (saturation/purity 0-8+, neutral to vivid). Standard field tool for soil taxonomy and land use interpretation."
+    tags: [munsell, soil_color, soil_description, fundamentals]
+
+  - id: factual_soil_0031
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          A soil horizon displays a matrix color of 10YR 5/1 with common, distinct 7.5YR 5/6 mottles. What do these redoximorphic features indicate?
+    choices:
+      - "A) High organic matter content and rapid decomposition"
+      - "B) Alternating periods of saturation and aeration, indicating a fluctuating water table with iron oxidation-reduction"
+      - "C) Recent volcanic ash deposition"
+      - "D) High calcium carbonate content from limestone parent material"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "The gray matrix (10YR 5/1, low chroma) indicates iron depletion under reducing (saturated) conditions. The strong brown mottles (7.5YR 5/6, high chroma) indicate iron re-oxidation when aerated. This pattern is diagnostic of aquic conditions."
+    tags: [redoximorphic_features, munsell, soil_color, hydric_soils, iron_redox]
+
+  - id: factual_soil_0032
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In Scandinavian and Russian boreal forests, Spodosols (Podzols) characteristically have a distinctive bleached E horizon. What process creates this ash-gray layer?
+    choices:
+      - "A) Calcification and calcium carbonate accumulation"
+      - "B) Podzolization: acidic leaching that removes iron, aluminum, and organic matter from the E horizon and deposits them in the Bhs horizon below"
+      - "C) Laterization and concentration of iron oxides"
+      - "D) Salinization and sodium accumulation"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Podzolization occurs under acidic coniferous litter. Organic acids (fulvic acid) chelate Fe and Al, translocating them from the E (eluvial) to the Bhs (spodic) horizon. The depleted E horizon appears white/ash-gray."
+    tags: [spodosols, podzolization, boreal_soils, scandinavia, russia, eluviation]
+
+  - id: factual_soil_0033
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the process of laterite formation in West African soils and describe why plinthite hardens irreversibly upon exposure to repeated wetting and drying.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["iron", "aluminum", "weathering"]
+      rubric_criteria:
+        - name: laterization_process
+          description: "Describes laterization as intense tropical weathering that removes silica and bases while concentrating iron and aluminum sesquioxides"
+          max_points: 3
+        - name: plinthite_mechanism
+          description: "Explains that plinthite is a Fe-rich, humus-poor mixture that is soft when in the soil but hardens irreversibly (to petroplinthite/ironstone) upon exposure and dehydration as iron oxides crystallize from amorphous to crystalline forms"
+          max_points: 3
+        - name: practical_significance
+          description: "Notes the agricultural significance: irreversible hardening limits root penetration and creates an impermeable barrier, restricting land use in West Africa"
+          max_points: 2
+    source_notes: "Laterite formation involves desilication under hot, humid conditions. Plinthite hardens because repeated wetting-drying cycles transform amorphous iron oxyhydroxides (ferrihydrite) to crystalline goethite and hematite, cementing the soil irreversibly."
+    tags: [laterite, plinthite, west_africa, iron_oxides, tropical_weathering]
+
+  - id: factual_soil_0034
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The Loess Plateau of China contains some of the deepest wind-deposited soil parent materials on Earth. What is the approximate maximum thickness of loess deposits in this region?
+    choices:
+      - "A) 10 meters"
+      - "B) 30 meters"
+      - "C) 100 meters"
+      - "D) 300 meters"
+    correct_answer: "D"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "D"
+    source_notes: "The Chinese Loess Plateau has loess deposits up to 300-350 m thick near Lanzhou, representing ~2.5 million years of aeolian deposition. It is the thickest and most extensive loess in the world, covering ~640,000 km2."
+    tags: [loess, china, parent_material, aeolian_deposits, soil_geography]
+
+  - id: factual_soil_0035
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Chernozems (Mollisols) of the Ukrainian steppe are among the most fertile soils on Earth. What is the characteristic feature that gives these soils their dark color and high fertility?
+    choices:
+      - "A) High iron oxide content"
+      - "B) Thick accumulation of humus-rich organic matter from centuries of grass root decomposition"
+      - "C) Manganese oxide coatings on soil particles"
+      - "D) High charcoal content from historical fires"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Chernozem (Russian: 'black earth') develops under tall-grass steppe vegetation. Deep, dense grass root systems contribute large amounts of organic matter. Cold winters slow decomposition, allowing humus to accumulate to 5-15% SOM in the A horizon, often >1 m thick."
+    tags: [chernozem, mollisols, ukraine, organic_matter, grassland_soils]
+
+  - id: factual_soil_0036
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In healthy grassland soils, the bacterial-to-fungal biomass ratio is typically around 1:1 to 2:1, while in undisturbed forest soils the ratio shifts strongly toward fungi. What is a typical bacterial:fungal ratio in mature temperate forest soils?
+    choices:
+      - "A) 5:1 to 10:1 (bacteria dominated)"
+      - "B) 1:1 (balanced)"
+      - "C) 1:2 to 1:10 (fungi dominated)"
+      - "D) 1:100 (almost exclusively fungi)"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Forest soils favor fungi due to recalcitrant lignin-rich litter, acidic pH, and minimal disturbance. Bacterial:fungal ratios of 1:2 to 1:10 are typical (Bardgett & McAlister, 1999). Tillage and disturbance shift ratios toward bacteria."
+    tags: [bacterial_fungal_ratio, soil_biology, forest_soils, grassland_soils]
+
+  - id: factual_soil_0037
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the role of bacterivorous nematodes and protozoa (flagellates, amoebae, ciliates) in the soil nitrogen cycle, specifically the concept of the 'microbial loop.'
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["nematode", "nitrogen", "mineralization"]
+      rubric_criteria:
+        - name: microbial_loop
+          description: "Explains that protozoa and bacterivorous nematodes graze on bacteria, releasing excess N as plant-available ammonium because grazers have higher C:N ratios than their bacterial prey"
+          max_points: 3
+        - name: nutrient_cycling
+          description: "Notes that this grazing-mediated N mineralization can account for 20-80% of plant N uptake in some systems"
+          max_points: 2
+        - name: rhizosphere_effect
+          description: "Describes how this process is concentrated in the rhizosphere where bacterial populations are highest due to root exudates"
+          max_points: 2
+    source_notes: "Bacteria have C:N ~5:1; protozoa C:N ~10:1. When protozoa consume bacteria, they excrete excess N as NH4+. This 'microbial loop' is a major pathway for N mineralization in the rhizosphere (Clarholm, 1985; Bonkowski, 2004)."
+    tags: [nematodes, protozoa, microbial_loop, nitrogen_cycle, soil_biology]
+
+  - id: factual_soil_0038
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Field capacity is defined as the soil water content after gravitational drainage has effectively ceased. At approximately what soil water potential is field capacity conventionally measured?
+    choices:
+      - "A) 0 kPa (saturation)"
+      - "B) -10 to -33 kPa"
+      - "C) -500 kPa"
+      - "D) -1500 kPa"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Field capacity is conventionally measured at -33 kPa (-1/3 bar) for fine-textured soils and -10 kPa for sandy soils. The -33 kPa value is the most widely cited standard (Cassel & Nielsen, 1986)."
+    tags: [field_capacity, soil_water, soil_physics, water_potential]
+
+  - id: factual_soil_0039
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The permanent wilting point, where plants can no longer extract water, is conventionally defined at which soil matric potential?
+    choices:
+      - "A) -33 kPa"
+      - "B) -100 kPa"
+      - "C) -500 kPa"
+      - "D) -1500 kPa"
+    correct_answer: "D"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "D"
+    source_notes: "Permanent wilting point is conventionally defined at -1500 kPa (-15 bar). At this tension, most mesophytic plants cannot generate sufficient root suction to extract water. Some xerophytes can extract water below -1500 kPa."
+    tags: [wilting_point, soil_water, soil_physics, water_potential]
+
+  - id: factual_soil_0040
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which soil texture class typically has the highest plant-available water capacity (water held between field capacity and permanent wilting point)?
+    choices:
+      - "A) Sand"
+      - "B) Silt loam"
+      - "C) Clay"
+      - "D) Loamy sand"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Silt loam holds the most plant-available water (~200 mm/m). Clay holds more total water but much of it is held too tightly (below -1500 kPa). Sand drains too rapidly. Silt loam optimally balances retention and accessibility (Brady & Weil, 2017)."
+    tags: [available_water, soil_texture, silt_loam, soil_physics]
+
+  - id: factual_soil_0041
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Compare labile and recalcitrant soil organic carbon pools. Give approximate turnover times for each and explain how they differ in their response to land management changes.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["labile", "recalcitrant"]
+      rubric_criteria:
+        - name: labile_pool
+          description: "Describes labile (active) pool as readily decomposable C with turnover of months to a few years (<5 years), includes dissolved organic C, microbial biomass C, and light-fraction particulate organic matter"
+          max_points: 3
+        - name: recalcitrant_pool
+          description: "Describes recalcitrant (passive/stable) pool with turnover of decades to millennia (100-1000+ years), includes mineral-associated organic matter and humic substances"
+          max_points: 3
+        - name: management_response
+          description: "Explains that labile C responds rapidly to management changes (tillage, cover crops) while recalcitrant C changes very slowly, making it a long-term carbon sink"
+          max_points: 2
+    source_notes: "Three-pool model (active, slow, passive): active C turns over in <5 yr, slow pool in 10-100 yr, passive pool in 100-5000 yr. Labile C constitutes 5-20% of total SOC but drives short-term nutrient cycling. MAOM (mineral-associated organic matter) is the primary recalcitrant pool."
+    tags: [soil_carbon, labile_carbon, recalcitrant_carbon, carbon_pools, organic_matter]
+
+  - id: factual_soil_0042
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the classical humus fractionation scheme, which humic substance fraction is soluble in both acid and alkali and has the lowest molecular weight?
+    choices:
+      - "A) Humin"
+      - "B) Humic acid"
+      - "C) Fulvic acid"
+      - "D) Hymatomelanic acid"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Fulvic acid: soluble at all pH, MW 1000-10000 Da, highest O content, most reactive. Humic acid: soluble in alkali, precipitates in acid, MW 10000-100000 Da. Humin: insoluble in both acid and alkali."
+    tags: [humic_substances, fulvic_acid, humic_acid, organic_matter, soil_chemistry]
+
+  - id: factual_soil_0043
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which nutrient interaction is correctly identified as antagonistic?
+    choices:
+      - "A) Nitrogen and sulfur (synergistic in protein synthesis)"
+      - "B) Excess calcium inhibiting magnesium uptake by competing for the same root membrane transporters"
+      - "C) Phosphorus enhancing nitrogen fixation in legumes"
+      - "D) Molybdenum enhancing nitrate reductase activity"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Ca-Mg antagonism is a classic cation competition. Excess Ca2+ inhibits Mg2+ uptake because both are divalent cations competing for the same nonselective cation channels in root cell membranes. Ca:Mg >5:1 can induce Mg deficiency even when soil Mg is adequate."
+    tags: [nutrient_interactions, antagonism, calcium, magnesium, plant_nutrition]
+
+  - id: factual_soil_0044
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Excess soil phosphorus is known to induce deficiency of which micronutrient by forming insoluble precipitates in the soil and in plant root tissues?
+    choices:
+      - "A) Boron"
+      - "B) Copper"
+      - "C) Zinc"
+      - "D) Chloride"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "P-Zn antagonism is well-documented. High P reduces Zn availability through formation of insoluble Zn3(PO4)2 in soil and physiological dilution/metabolic effects within the plant. Common in calcareous and heavily fertilized soils."
+    tags: [nutrient_interactions, phosphorus_zinc_antagonism, micronutrients, zinc]
+
+  - id: factual_soil_0045
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the approximate soil organic carbon sequestration rates (in tonnes C per hectare per year) that can be expected in tropical, temperate, and boreal systems under improved management practices such as no-till, cover cropping, and agroforestry.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["carbon", "sequestration"]
+      rubric_criteria:
+        - name: tropical_rates
+          description: "Provides approximate rates for tropical systems: 0.2-0.8 t C/ha/yr under improved management, noting rapid turnover limits accumulation despite high inputs"
+          max_points: 2
+        - name: temperate_rates
+          description: "Provides approximate rates for temperate systems: 0.3-0.6 t C/ha/yr under conservation agriculture, with higher rates (0.5-1.0) for conversion from cropland to perennial grassland or agroforestry"
+          max_points: 2
+        - name: boreal_rates
+          description: "Notes that boreal systems have slower sequestration rates (0.1-0.3 t C/ha/yr) but large existing stocks due to slow decomposition"
+          max_points: 2
+        - name: context_factors
+          description: "Mentions that rates depend on soil type, climate, baseline SOC levels, and that soils with depleted C have the highest sequestration potential (saturation deficit concept)"
+          max_points: 2
+    source_notes: "Meta-analyses (Minasny et al., 2017; Poeplau & Don, 2015) suggest global average rates of 0.2-0.5 t C/ha/yr for best management practices. The '4 per 1000' initiative targets 0.4% annual increase in top-40cm SOC stocks."
+    tags: [carbon_sequestration, climate_zones, tropical, temperate, boreal, regenerative_agriculture]
+
+  - id: factual_soil_0046
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          According to the GLASOD and more recent assessments, approximately what percentage of the world's agricultural land is affected by some degree of soil degradation (erosion, nutrient depletion, salinization, or compaction)?
+    choices:
+      - "A) 5-10%"
+      - "B) 15-20%"
+      - "C) 33-40%"
+      - "D) 70-80%"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "FAO (2015) Status of the World's Soil Resources report estimates 33% of global soils are moderately to highly degraded. GLASOD estimated ~38% of agricultural land degraded. IPBES (2018) reported 75% of land area substantially degraded, but the 33-40% figure specifically for agricultural soils is most widely cited."
+    tags: [soil_degradation, global_assessment, erosion, desertification]
+
+  - id: factual_soil_0047
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the estimated annual rate of global topsoil loss due to water and wind erosion according to recent FAO assessments?
+    choices:
+      - "A) 1-2 billion tonnes per year"
+      - "B) 5-10 billion tonnes per year"
+      - "C) 24-36 billion tonnes per year"
+      - "D) 100-200 billion tonnes per year"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "FAO and ITPS estimate ~24-36 billion tonnes of fertile topsoil lost annually (FAO, 2019; Borrelli et al., 2017). This is roughly 10-40 times the rate of soil formation, representing a net deficit."
+    tags: [erosion, soil_loss, global_assessment, soil_degradation]
+
+  - id: factual_soil_0048
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain how biochar affects the soil properties of a highly weathered tropical Oxisol differently compared to a fertile temperate Mollisol. Address CEC, pH, and nutrient retention.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["biochar", "CEC"]
+      rubric_criteria:
+        - name: oxisol_effects
+          description: "Explains that in Oxisols, biochar dramatically increases the very low native CEC (from <5 to potentially 10-20 cmol/kg), raises pH by liming effect, and greatly improves nutrient retention in soils that otherwise leach nutrients rapidly"
+          max_points: 3
+        - name: mollisol_effects
+          description: "Notes that in Mollisols with already high CEC (25-40+), high SOM, and near-neutral pH, biochar additions produce much smaller marginal improvements; CEC increase is proportionally minor"
+          max_points: 3
+        - name: mechanism
+          description: "Explains that biochar's high surface area, negative surface charge, and alkaline ash content are most impactful in degraded, acidic, low-CEC soils"
+          max_points: 2
+    source_notes: "Meta-analyses (Jeffery et al., 2011; Biederman & Harpole, 2013) show biochar yield responses averaging +25% in tropical/degraded soils vs. negligible or slightly negative in fertile temperate soils. The marginal benefit of added CEC is greatest where native CEC is lowest."
+    tags: [biochar, oxisols, mollisols, tropical_soils, cec, soil_amendment]
+
+  - id: factual_soil_0049
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What does AMF stand for in soil biology, and what major plant nutrient do these organisms primarily help acquire?
+    choices:
+      - "A) Aerobic Methanotrophic Fungi; carbon dioxide"
+      - "B) Arbuscular Mycorrhizal Fungi; phosphorus"
+      - "C) Anaerobic Mineralization Factors; nitrogen"
+      - "D) Actinomycete Metabolic Functions; potassium"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Arbuscular Mycorrhizal Fungi (AMF, phylum Glomeromycota) form symbioses with ~80% of land plants. Their extensive hyphal networks are especially effective at acquiring immobile phosphorus from beyond the P depletion zone around roots."
+    tags: [amf, mycorrhizae, phosphorus, soil_biology, symbiosis]
+
+  - id: factual_soil_0050
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          How does the microbial community in the rhizosphere differ from that in bulk soil, and what drives these differences?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["rhizosphere", "exudate"]
+      rubric_criteria:
+        - name: abundance_difference
+          description: "States that microbial biomass in the rhizosphere is 10-100 times higher than in bulk soil"
+          max_points: 2
+        - name: composition_shift
+          description: "Explains that rhizosphere selects for fast-growing copiotrophic bacteria (r-strategists) that can rapidly utilize labile root exudates, while bulk soil favors slow-growing oligotrophs (K-strategists)"
+          max_points: 3
+        - name: root_exudates
+          description: "Identifies root exudates (sugars, amino acids, organic acids, phenolics) as the primary driver, with plants allocating 5-30% of fixed carbon to roots"
+          max_points: 3
+    source_notes: "The rhizosphere effect was first described by Hiltner (1904). Root exudates create a carbon-rich hotspot. Rhizosphere microbial communities are less diverse but more active than bulk soil communities (Philippot et al., 2013)."
+    tags: [rhizosphere, bulk_soil, root_exudates, soil_biology, microbial_ecology]
+
+  - id: factual_soil_0051
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          In the USDA Soil Taxonomy system, which diagnostic horizon is defined as a subsurface horizon with an accumulation of translocated silicate clay, and what is its minimum clay increase requirement relative to the eluvial horizon above?
+    choices:
+      - "A) Spodic horizon; 3% absolute increase"
+      - "B) Argillic horizon; 1.2 times the clay content of the eluvial horizon (or 3% absolute if eluvial has <15% clay)"
+      - "C) Cambic horizon; any measurable clay increase"
+      - "D) Natric horizon; 5% absolute increase"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Argillic horizon requires illuvial clay accumulation. If eluvial has <15% clay, argillic needs >=3% absolute more. If 15-40%, needs 1.2x the eluvial amount. If >40%, needs >=8% more. Must also show clay films (argillans) or other evidence of translocation."
+    tags: [argillic_horizon, soil_taxonomy, diagnostic_horizons, clay_translocation]
+
+  - id: factual_soil_0052
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Approximately what percentage of Earth's ice-free land surface is covered by soils classified as Aridisols (desert soils)?
+    choices:
+      - "A) 1%"
+      - "B) 12%"
+      - "C) 33%"
+      - "D) 50%"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Aridisols cover approximately 12% of the ice-free land surface (roughly 15.7 million km2), making them one of the most extensive soil orders. They are defined by an aridic moisture regime and often feature calcic, petrocalcic, salic, or gypsic horizons."
+    tags: [aridisols, soil_orders, desert_soils, soil_geography]
+
+  - id: factual_soil_0053
+    question_type: mcq
+    difficulty: hard
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          The CEC of an Oxisol in the Brazilian Amazon is measured at 3.5 cmol(c)/kg at the native soil pH of 4.2, but rises to 12.0 cmol(c)/kg when measured at pH 7.0 (the standard buffered method). What does this large discrepancy indicate?
+    choices:
+      - "A) Laboratory measurement error"
+      - "B) The soil has predominantly permanent-charge clay minerals"
+      - "C) The soil has a large proportion of pH-dependent (variable) charge, primarily from iron and aluminum oxide surfaces and organic matter"
+      - "D) The soil contains significant amounts of soluble salts"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "Variable charge surfaces (iron/aluminum oxides, allophane, organic matter, kaolinite edges) develop increasing negative charge as pH rises. Effective CEC (ECEC) measured at field pH is the agronomically relevant value for tropical Oxisols. The difference (12.0 - 3.5 = 8.5) represents the variable charge component."
+    tags: [variable_charge, oxisols, cec, tropical_soils, iron_oxides, brazil]
+
+  - id: factual_soil_0054
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of anion exchange capacity (AEC) in highly weathered tropical soils and its practical significance for nitrate leaching in Oxisols and Andisols.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["anion", "positive charge", "nitrate"]
+      rubric_criteria:
+        - name: aec_definition
+          description: "Defines AEC as the soil's capacity to adsorb anions on positively charged surfaces, which develop on iron/aluminum oxide surfaces and allophane edges below their point of zero charge"
+          max_points: 3
+        - name: ph_relationship
+          description: "Explains that AEC increases as pH decreases (more protonation of variable-charge surfaces), so it is highest in acidic subsoils of Oxisols"
+          max_points: 2
+        - name: nitrate_retention
+          description: "Notes that significant AEC in subsurface horizons of Oxisols can retard nitrate leaching, an effect largely absent in temperate soils with permanent negative charge"
+          max_points: 3
+    source_notes: "Subsoil AEC in Brazilian Oxisols can reach 2-5 cmol(c)/kg at pH 4.0-4.5 due to goethite, hematite, and gibbsite surfaces. This electrostatic NO3- retention is agronomically significant and is not captured by standard temperate-soil models (Dynia, 2000)."
+    tags: [anion_exchange, aec, oxisols, nitrate_leaching, variable_charge, tropical_soils]
+
+  - id: factual_soil_0055
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Salinization currently affects approximately what area of irrigated agricultural land globally?
+    choices:
+      - "A) 5 million hectares"
+      - "B) 20-30 million hectares"
+      - "C) 60-80 million hectares"
+      - "D) 200 million hectares"
+    correct_answer: "C"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "C"
+    source_notes: "FAO estimates that 20-33% of the world's irrigated land (~62-80 million hectares) is salt-affected. Total salt-affected soils globally (including non-irrigated) exceed 800 million hectares. Secondary salinization from irrigation is the primary cause."
+    tags: [salinization, irrigated_soils, soil_degradation, global_assessment]
+
+  - id: factual_soil_0056
+    question_type: mcq
+    difficulty: medium
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          Which of the following correctly describes the relationship between iron and manganese availability and soil redox conditions?
+    choices:
+      - "A) Both Fe and Mn become more available under oxidizing conditions"
+      - "B) Fe2+ and Mn2+ (soluble, plant-available forms) are produced under reducing (waterlogged) conditions as Eh decreases"
+      - "C) Iron is reduced before manganese as soils become waterlogged"
+      - "D) Redox potential has no effect on Fe or Mn availability"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "Under reducing conditions: MnO2 is reduced to Mn2+ at Eh ~200 mV, Fe(OH)3 to Fe2+ at Eh ~100-120 mV. Mn is reduced first (higher Eh). Both become toxic at high concentrations in flooded soils. Option C reverses the order."
+    tags: [iron, manganese, redox, soil_chemistry, waterlogged_soils]
+
+  - id: factual_soil_0057
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Describe the process of desertification in the Sahel region of Africa, identifying at least three soil-specific degradation processes that contribute to it and explaining why these create positive feedback loops.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["erosion", "organic matter", "crust"]
+      rubric_criteria:
+        - name: wind_water_erosion
+          description: "Describes wind and water erosion removing topsoil and exposing less fertile subsoil"
+          max_points: 2
+        - name: organic_matter_loss
+          description: "Explains loss of soil organic matter from reduced vegetation inputs and increased decomposition, reducing water-holding capacity and aggregate stability"
+          max_points: 2
+        - name: surface_crusting
+          description: "Describes physical and biological crust degradation leading to sealed surfaces with reduced infiltration and increased runoff"
+          max_points: 2
+        - name: feedback_loops
+          description: "Explains positive feedback: degradation reduces vegetation, which reduces organic inputs and root networks, which increases erosion, which further reduces soil capacity to support vegetation"
+          max_points: 2
+    source_notes: "Sahel desertification involves: wind erosion removing fine particles and SOM, surface crusting reducing infiltration to <10% of rainfall, nutrient depletion from removal of crop residues, and loss of biological soil crusts. Each process reinforces others (UNCCD; Sterk, 2003)."
+    tags: [desertification, sahel, africa, erosion, soil_degradation, feedback_loops]
+
+  - id: factual_soil_0058
+    question_type: mcq
+    difficulty: easy
+    regions: [global]
+    turns:
+      - role: user
+        content: |
+          What is the approximate particle size range (diameter) for silt in the USDA classification system?
+    choices:
+      - "A) < 0.002 mm"
+      - "B) 0.002 - 0.05 mm"
+      - "C) 0.05 - 2.0 mm"
+      - "D) > 2.0 mm"
+    correct_answer: "B"
+    scoring_method: exact_match
+    scoring_config:
+      ground_truth: "B"
+    source_notes: "USDA particle size limits: clay <0.002 mm, silt 0.002-0.05 mm, sand 0.05-2.0 mm. Note the International Society of Soil Science uses different boundaries: silt 0.002-0.02 mm, sand 0.02-2.0 mm."
+    tags: [particle_size, silt, texture, fundamentals, classification]
+
+  - id: factual_soil_0059
+    question_type: short_answer
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          What is the Fe-Mn antagonism in soil nutrient uptake, and under what soil conditions does it become agronomically significant?
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["iron", "manganese", "competition"]
+      rubric_criteria:
+        - name: mechanism
+          description: "Explains that Fe2+ and Mn2+ compete for the same root membrane transporters (IRT1 transporter family), so excess of one inhibits uptake of the other"
+          max_points: 3
+        - name: conditions
+          description: "Identifies conditions where this is significant: waterlogged/reduced soils with high Mn2+ suppressing Fe uptake, or heavily limed soils where both become less available but at different rates"
+          max_points: 3
+        - name: crop_impact
+          description: "Notes practical examples such as Mn toxicity in acidic waterlogged soils or Mn-induced Fe deficiency in certain crops"
+          max_points: 2
+    source_notes: "Fe-Mn antagonism is bidirectional. In flooded rice paddies, excess Mn2+ can inhibit Fe uptake. In calcareous soils, both are poorly available but liming can differentially affect their availability. The IRT1 transporter accepts both Fe2+ and Mn2+ (Korshunova et al., 1999)."
+    tags: [iron, manganese, nutrient_antagonism, micronutrients, waterlogged_soils]
+
+  - id: factual_soil_0060
+    question_type: short_answer
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Answer concisely."
+    turns:
+      - role: user
+        content: |
+          Explain why AMF (arbuscular mycorrhizal fungi) colonization rates are typically lower in heavily fertilized agricultural soils compared to low-input or natural systems. Describe the physiological and ecological mechanisms involved.
+    scoring_method: keyword_rubric
+    scoring_config:
+      required_keywords: ["phosphorus", "colonization", "carbon"]
+      rubric_criteria:
+        - name: carbon_allocation
+          description: "Explains that plants reduce carbon allocation to AMF when nutrients (especially P) are abundant because the cost-benefit ratio of the symbiosis shifts; plants invest photosynthate in fungal partners only when nutrient limitation makes it worthwhile"
+          max_points: 3
+        - name: phosphorus_mechanism
+          description: "Notes that high soil P suppresses strigolactone exudation by roots, which is the key signaling molecule that stimulates AMF hyphal branching and colonization"
+          max_points: 3
+        - name: tillage_and_inputs
+          description: "Mentions that tillage physically disrupts hyphal networks and high N fertilization can also reduce colonization by altering plant C:N allocation"
+          max_points: 2
+        - name: ecological_consequences
+          description: "Notes consequences: loss of AMF-mediated benefits including soil aggregation (glomalin), extended nutrient foraging, drought tolerance, and pathogen protection"
+          max_points: 2
+    source_notes: "AMF colonization decreases with increasing P fertility (Smith & Read, 2008). Plants regulate the symbiosis via strigolactone signaling (Akiyama et al., 2005). High P suppresses SL biosynthesis, reducing pre-symbiotic fungal growth. This is a functional trade-off: maintaining AMF costs 4-20% of photosynthate."
+    tags: [amf, mycorrhizae, phosphorus, colonization, soil_biology, agricultural_intensification]

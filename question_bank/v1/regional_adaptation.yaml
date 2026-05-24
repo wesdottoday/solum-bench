@@ -1,0 +1,767 @@
+metadata:
+  category: regional_adaptation
+  subcategory: regional
+  version: v1
+
+questions:
+  # ============================================================
+  # BASE QUESTION 1: Cover crop recommendations before spring cash crop
+  # ============================================================
+
+  - id: regional_adapt_0001
+    question_type: regional
+    difficulty: medium
+    regions: [ohio]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer in central Ohio
+          who wants to improve soil organic matter before spring corn planting?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must mention Ohio-appropriate species (cereal rye, crimson clover, radish), timing (September plant, April termination), and Zone 6a frost dates. Mollisols already have good OM base but benefit from diverse mixes."
+    tags: [cover_crops, ohio, regional]
+
+  - id: regional_adapt_0002
+    question_type: regional
+    difficulty: medium
+    regions: [helsinki]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer near Helsinki, Finland
+          who wants to improve soil organic matter before spring barley planting?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address very short growing window after harvest (Aug-Sep), winter-hardy species for Zone 5 boreal climate (winter rye, hairy vetch, white clover), acidic podzol soils (pH ~5), snow cover dynamics, and late spring thaw (May). Growing season only ~150 days."
+    tags: [cover_crops, helsinki, regional, boreal]
+
+  - id: regional_adapt_0003
+    question_type: regional
+    difficulty: medium
+    regions: [tokyo]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer in the Kanto Plain near Tokyo
+          who wants to improve soil organic matter before spring rice transplanting?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Andisol soil properties (high P-fixation, allophane), monsoon moisture, rice paddy rotation. Winter covers like Chinese milk vetch (renge), ryegrass, barley are traditional. Must mention paddy flooding timing and incorporation before puddling. Subtropical humidity and disease pressure."
+    tags: [cover_crops, tokyo, regional, rice_systems]
+
+  - id: regional_adapt_0004
+    question_type: regional
+    difficulty: medium
+    regions: [nairobi]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer in the central highlands
+          near Nairobi, Kenya who wants to improve soil organic matter before the long
+          rains maize planting season?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address two rainy seasons (long rains Mar-May, short rains Oct-Dec), tropical highland conditions at 1700m, Nitisol soils, locally available species (Desmodium, Mucuna, Dolichos lablab, Crotalaria). Should mention intercropping tradition and push-pull system relevance."
+    tags: [cover_crops, nairobi, regional, tropical_highland]
+
+  - id: regional_adapt_0005
+    question_type: regional
+    difficulty: medium
+    regions: [mato_grosso]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer in Mato Grosso, Brazil
+          who wants to improve soil organic matter before the main soybean planting season?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Cerrado biome, Oxisol/Ferralsol soils (acid, low CEC, high Al saturation), safrinha (second crop) system, Brachiaria (Urochloa) as key cover, millet (milheto), Crotalaria juncea. Dry season May-Sep makes establishment timing critical. Should mention no-till (plantio direto) integration."
+    tags: [cover_crops, mato_grosso, regional, cerrado]
+
+  - id: regional_adapt_0006
+    question_type: regional
+    difficulty: medium
+    regions: [canterbury]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer on the Canterbury Plains
+          of New Zealand who wants to improve soil organic matter before spring wheat planting?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address maritime temperate climate, alluvial soils, Canterbury nor'wester winds (desiccation risk), mild winters allowing diverse covers. Species: oats, mustard, phacelia, crimson clover, tillage radish. Southern hemisphere timing (autumn sow Mar-Apr, spring termination Sep-Oct). Irrigation scheme context."
+    tags: [cover_crops, canterbury, regional, new_zealand]
+
+  - id: regional_adapt_0007
+    question_type: regional
+    difficulty: medium
+    regions: [rajasthan]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What cover crop mix would you recommend for a farmer in eastern Rajasthan, India
+          who wants to improve soil organic matter before the rabi (winter) wheat planting?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address extreme water limitation, Aridisol soils (low OM, often calcareous), monsoon timing (Jul-Sep kharif season covers before Oct-Nov rabi planting). Species: Sesbania, Dhaincha (Sesbania aculeata), cowpea, green gram (moong). Must emphasize water conservation, short-duration covers, and heat tolerance above 40C."
+    tags: [cover_crops, rajasthan, regional, arid]
+
+  # ============================================================
+  # BASE QUESTION 2: Soil building strategy for degraded land
+  # ============================================================
+
+  - id: regional_adapt_0008
+    question_type: regional
+    difficulty: hard
+    regions: [ohio]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A farmer in northwest Ohio has purchased 80 acres of severely degraded cropland
+          with compacted soils, less than 1.5% organic matter, and poor drainage. What
+          multi-year soil building strategy would you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Ohio-specific: tile drainage management, deep compaction from heavy equipment, transition from conventional corn-soy. Should mention subsoiling timing (fall when dry), diverse cover crop mixes, gradual no-till transition, possible CRP enrollment. Mollisols should have 3-5% OM naturally. NRCS EQIP funding availability."
+    tags: [soil_building, degraded_land, ohio, regional]
+
+  - id: regional_adapt_0009
+    question_type: regional
+    difficulty: hard
+    regions: [helsinki]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A farmer near Helsinki has 30 hectares of degraded arable land with acidic podzol
+          soils (pH 4.8), very low organic matter (1.2%), and poor soil structure from years
+          of intensive cereal monoculture. What multi-year soil building strategy would you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address boreal constraints: short growing season, slow decomposition rates (cold), acidic podzol requiring liming (dolomite), frost heave damage to soil structure. Include grass-clover leys in rotation (traditional Nordic approach), manure/compost application, gradual pH correction. EU CAP payment considerations. Mention Finnish specific: Ruokavirasto guidelines."
+    tags: [soil_building, degraded_land, helsinki, regional, boreal]
+
+  - id: regional_adapt_0010
+    question_type: regional
+    difficulty: hard
+    regions: [tokyo]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A farmer near Tsukuba in the Kanto region has 5 hectares of degraded upland Andisol
+          that has lost structure from continuous vegetable production, with declining yields
+          and severe phosphorus fixation issues. What multi-year soil building strategy would
+          you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Andisol-specific: allophane clay's extreme P-fixation, high organic matter potential (Andisols can hold >10% OM), volcanic parent material. Strategies: heavy compost (bokashi tradition), mycorrhizal inoculation for P access, green manure incorporation, raised bed drainage for monsoon season. Should reference Japanese farming techniques (shizen noho elements). Small-scale intensive context."
+    tags: [soil_building, degraded_land, tokyo, regional, andisol]
+
+  - id: regional_adapt_0011
+    question_type: regional
+    difficulty: hard
+    regions: [nairobi]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A smallholder farmer near Thika in central Kenya has 2 hectares of severely
+          degraded Nitisol with topsoil erosion on slopes, very low organic matter (0.8%),
+          and declining maize yields. What multi-year soil building strategy would you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address tropical highland context: steep terrain erosion, intense rainfall events, small farm size limiting options. Include terracing/fanya juu, Tithonia diversifolia biomass transfer, agroforestry with Calliandra/Grevillea, Napier grass strips, compost from locally available materials. Should reference ICRAF/KEFRI research. Consider labor and cost constraints of smallholder context."
+    tags: [soil_building, degraded_land, nairobi, regional, smallholder]
+
+  - id: regional_adapt_0012
+    question_type: regional
+    difficulty: hard
+    regions: [mato_grosso]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A farmer in northern Mato Grosso has 500 hectares of degraded former pasture on
+          Oxisol soil that was cleared from Cerrado 15 years ago. Soil organic matter is
+          below 1%, aluminum saturation is high, and the land has severe compaction from
+          cattle. What multi-year soil building strategy would you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Cerrado Oxisol: extreme weathering, low CEC, Al toxicity requiring lime (calcareo), gypsum for subsoil. ILP (Integracao Lavoura Pecuaria) / crop-livestock integration as proven Brazilian approach. Brachiaria renovation, gradual introduction of soy-millet-Brachiaria rotation, deep lime incorporation. Large scale context allows mechanized approach. Embrapa recommendations."
+    tags: [soil_building, degraded_land, mato_grosso, regional, cerrado]
+
+  - id: regional_adapt_0013
+    question_type: regional
+    difficulty: hard
+    regions: [canterbury]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A farmer on the Canterbury Plains has 200 hectares of degraded irrigated cropland
+          with declining soil carbon (below 2%), poor water infiltration rates, and nitrate
+          leaching issues affecting local waterways. What multi-year soil building strategy
+          would you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Canterbury-specific: shallow stony soils on alluvial gravel, irrigation dependency (center pivot), nitrate leaching to groundwater (Canterbury Water Management Strategy compliance), wind erosion from nor'westers. Include diverse pasture phases, reduced irrigation intensity, catch crops for N, Overseer nutrient modeling. NZ regulatory context (NES-F, Environment Canterbury rules)."
+    tags: [soil_building, degraded_land, canterbury, regional, nitrate_leaching]
+
+  - id: regional_adapt_0014
+    question_type: regional
+    difficulty: hard
+    regions: [rajasthan]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A farmer in the Shekhawati region of eastern Rajasthan has 10 hectares of degraded
+          Aridisol with soil organic matter below 0.3%, surface crusting, poor water retention,
+          and salt accumulation in patches. What multi-year soil building strategy would you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address extreme aridity: <500mm annual rainfall concentrated in 3 months, temperatures >45C, Aridisol characteristics. Include in-situ water harvesting (chauka, tanka, johad), drought-tolerant species (Prosopis cineraria/khejri, ber, cluster bean), FYM application, gypsum for sodic patches. Traditional Rajasthani conservation (agor system). CAZRI/ICAR-CAZRI recommendations."
+    tags: [soil_building, degraded_land, rajasthan, regional, arid]
+
+  # ============================================================
+  # BASE QUESTION 3: Water management approach for growing season
+  # ============================================================
+
+  - id: regional_adapt_0015
+    question_type: regional
+    difficulty: medium
+    regions: [ohio]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a regenerative row crop
+          farm in western Ohio that experiences both spring waterlogging and late-summer
+          drought stress?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Ohio water dynamics: high water table in spring, tile drainage management (controlled drainage, saturated buffers), cover crops for infiltration, reduced compaction for better drainage. Late summer: soil health practices to increase water holding capacity, no-till to preserve surface residue. Mention Lake Erie nutrient runoff context and 4R nutrient stewardship."
+    tags: [water_management, ohio, regional, drainage]
+
+  - id: regional_adapt_0016
+    question_type: regional
+    difficulty: medium
+    regions: [helsinki]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a regenerative grain farm
+          near Helsinki that deals with spring snowmelt waterlogging and must manage moisture
+          through the short growing season?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address boreal hydrology: spring snowmelt flooding, frost-thaw damage to drainage, surface water management (open ditches common in Finland), controlled drainage for peatland areas. Short growing season means every day of waterlogging costs yield. Subsurface drainage (salaojitus), green fallows for structure, timing of field operations relative to soil moisture. Finnish Water Act considerations."
+    tags: [water_management, helsinki, regional, boreal, snowmelt]
+
+  - id: regional_adapt_0017
+    question_type: regional
+    difficulty: medium
+    regions: [tokyo]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a regenerative rice-vegetable
+          rotation farm near Tokyo that must handle intense monsoon rainfall (tsuyu and typhoon
+          seasons) while maintaining soil health?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Japanese monsoon: tsuyu (June-July) and typhoon season (Aug-Oct) bringing 1400-1600mm rainfall. Paddy water management (midseason drainage, intermittent irrigation for methane reduction), raised beds for upland vegetables, Andisol's good drainage properties on slopes but waterlogging in lowlands. Mention traditional tanada (terraced paddy) water cycling principles."
+    tags: [water_management, tokyo, regional, monsoon, rice]
+
+  - id: regional_adapt_0018
+    question_type: regional
+    difficulty: medium
+    regions: [nairobi]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a regenerative smallholder
+          farm in the central highlands near Nairobi that must maximize water use efficiency
+          across both the long and short rainy seasons?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address bimodal rainfall pattern: long rains (Mar-May) and short rains (Oct-Dec) with dry spells between. Include rainwater harvesting (roof catchment, zai pits), mulching with locally available materials, terracing for slope management, contour farming. Keyline design principles adapted to smallholder scale. Mention Nairobi's 1000mm annual rainfall distribution and increasing climate variability."
+    tags: [water_management, nairobi, regional, rainwater_harvesting]
+
+  - id: regional_adapt_0019
+    question_type: regional
+    difficulty: medium
+    regions: [mato_grosso]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a large-scale regenerative
+          grain farm in Mato Grosso that faces a severe 5-month dry season followed by
+          intense wet season rainfall?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Cerrado water dynamics: extreme wet/dry seasonality (1500-2000mm concentrated Oct-Apr), deep Oxisols with good internal drainage but low water holding capacity. Permanent soil cover (palhada) critical for dry season moisture retention, Brachiaria's deep root system for water cycling, no-till to preserve surface residue. Integrated crop-livestock for compaction management near water sources. Mention Xingu seed network and riparian restoration."
+    tags: [water_management, mato_grosso, regional, cerrado, dry_season]
+
+  - id: regional_adapt_0020
+    question_type: regional
+    difficulty: medium
+    regions: [canterbury]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a regenerative mixed farm
+          on the Canterbury Plains that relies on irrigation but wants to reduce water use
+          while maintaining production?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Canterbury-specific: rain shadow (600mm annual), reliance on Waimakariri/Rakaia river irrigation schemes, center pivot systems, shallow stony soils with low water holding capacity. Soil health practices to increase WHC, variable rate irrigation, soil moisture monitoring, deficit irrigation strategies. NZ water allocation and consent framework. Mention Irrigation NZ guidelines and Environment Canterbury restrictions."
+    tags: [water_management, canterbury, regional, irrigation, new_zealand]
+
+  - id: regional_adapt_0021
+    question_type: regional
+    difficulty: medium
+    regions: [rajasthan]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          What water management practices would you recommend for a regenerative farm in
+          eastern Rajasthan that receives only 400-500mm of annual rainfall, concentrated
+          in the July-September monsoon?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address extreme water scarcity: <500mm concentrated in 10-12 monsoon events, potential ET >2000mm/year. Traditional water harvesting (tanka, johad, nadi, chauka), micro-irrigation (drip/sprinkler), mulching, drought-tolerant crops (bajra, guar, moth bean). Mention MGNREGA for earthwork construction, Jal Jeevan Mission. Critical to address both harvest/storage and efficiency. Tarun Bharat Sangh water revival model reference."
+    tags: [water_management, rajasthan, regional, arid, water_harvesting]
+
+  # ============================================================
+  # BASE QUESTION 4: Appropriate agroforestry system design
+  # ============================================================
+
+  - id: regional_adapt_0022
+    question_type: regional
+    difficulty: hard
+    regions: [ohio]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 120-acre farm in central Ohio that currently
+          grows corn and soybeans. The farmer wants to integrate trees while maintaining
+          row crop income during the transition.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Midwest alley cropping context: black walnut, chestnut, or hybrid poplar alleys with corn/soy between. Row spacing for combine access (60-80ft alleys), Zone 6a tree species, windbreak benefits in flat terrain. USDA NRCS practice code 311 (alley cropping) and 380 (silvopasture). Market considerations for timber/nut crops. Mention Ohio State Extension resources and Savanna Institute models."
+    tags: [agroforestry, ohio, regional, alley_cropping]
+
+  - id: regional_adapt_0023
+    question_type: regional
+    difficulty: hard
+    regions: [helsinki]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 50-hectare farm near Helsinki that currently
+          grows cereals and wants to integrate trees. Consider the boreal climate constraints
+          and short growing season.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address boreal agroforestry limitations: slow tree growth, limited species (birch, alder, willow, sea buckthorn), short growing season. Shelterbelts for wind protection, silvopasture with birch/alder for nitrogen, berry integration (sea buckthorn, currants). Alley cropping challenging due to shading in low sun angle. Finnish forest tradition as advantage. EU agroforestry payment schemes under CAP."
+    tags: [agroforestry, helsinki, regional, boreal]
+
+  - id: regional_adapt_0024
+    question_type: regional
+    difficulty: hard
+    regions: [tokyo]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 3-hectare farm in the Kanto region near Tokyo
+          that wants to integrate fruit and timber trees with vegetable and rice production.
+          Consider the humid subtropical climate and small farm scale.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Japanese context: very small farm scale requiring high-value species, existing satoyama landscape tradition (managed woodland-farmland mosaic), appropriate species (persimmon/kaki, chestnut/kuri, Japanese cedar/sugi, tea under canopy). Multi-story design: timber canopy, fruit midstory, vegetables/rice understory. Typhoon wind resistance considerations. Direct marketing (michi no eki roadside markets) for premium products."
+    tags: [agroforestry, tokyo, regional, satoyama, small_scale]
+
+  - id: regional_adapt_0025
+    question_type: regional
+    difficulty: hard
+    regions: [nairobi]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 5-hectare smallholder farm in the central
+          Kenyan highlands near Nairobi that grows maize, beans, and keeps a few dairy cows.
+          The farmer wants to improve soil fertility, provide animal fodder, and generate
+          additional income from trees.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address East African highland agroforestry: Grevillea robusta (timber + boundary), Calliandra calothyrsus (fodder), fruit trees (avocado, macadamia, mango), Napier grass fodder strips. Boundary planting tradition. ICRAF's research on improved fallows. Mention specific programs: Vi Agroforestry, Kenya Forest Service. Should address spacing for intercropping light needs and soil fertility trees (Sesbania, Tephrosia)."
+    tags: [agroforestry, nairobi, regional, smallholder, fodder_trees]
+
+  - id: regional_adapt_0026
+    question_type: regional
+    difficulty: hard
+    regions: [mato_grosso]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 1000-hectare farm in Mato Grosso that currently
+          runs soy-corn rotation and wants to integrate trees at scale. The farmer needs to
+          maintain mechanized grain production while adding a tree component for climate
+          resilience and diversified income.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Brazilian large-scale ILPF (Integracao Lavoura-Pecuaria-Floresta): eucalyptus rows at 20-28m spacing for mechanized access, teak or native species (parica, mogno africano), ILP rotation between tree rows. ABC+ Plan financing. Legal Reserve compliance (Cerrado 35% requirement under Forest Code). Embrapa ILPF technology transfer. Carbon credit potential under ABC+ and REDD+."
+    tags: [agroforestry, mato_grosso, regional, ilpf, large_scale]
+
+  - id: regional_adapt_0027
+    question_type: regional
+    difficulty: hard
+    regions: [canterbury]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 300-hectare mixed cropping and pastoral farm
+          on the Canterbury Plains of New Zealand. The farmer wants to integrate trees for
+          shelter, carbon, and diversified income while maintaining productive pasture and
+          arable land.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Canterbury conditions: nor'wester desiccation wind (shelter critical), flat terrain, irrigation infrastructure. Species: radiata pine, poplar, eucalyptus for shelter; walnuts, chestnuts for nuts; manuka for honey. Wide alley spacing for pivot irrigators. NZ ETS (Emissions Trading Scheme) carbon credit eligibility. Biosecurity considerations (no species posing wilding conifer risk). MPI One Billion Trees programme context."
+    tags: [agroforestry, canterbury, regional, shelterbelts, new_zealand]
+
+  - id: regional_adapt_0028
+    question_type: regional
+    difficulty: hard
+    regions: [rajasthan]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          Design an agroforestry system for a 15-hectare farm in eastern Rajasthan that
+          currently grows wheat and mustard in rabi and pearl millet in kharif. The farmer
+          wants trees for fodder, fuel, and climate resilience in this hot, semi-arid
+          environment.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address arid agroforestry: Prosopis cineraria (khejri, the Rajasthan state tree, fixes N, provides fodder/fuel), Ziziphus mauritiana (ber), Tecomella undulata (rohida), Azadirachta indica (neem). Traditional Rajasthani khejri-based agroforestry proven over centuries. Spacing for rainfed crop cultivation between trees. CAFRI/ICAR guidelines for arid agroforestry. Mention Bishnoi conservation ethic. Summer shade for livestock. Sub Mission on Agroforestry (SMAF) support."
+    tags: [agroforestry, rajasthan, regional, arid, traditional_systems]
+
+  # ============================================================
+  # BASE QUESTION 5: Livestock integration strategy for mixed farm
+  # ============================================================
+
+  - id: regional_adapt_0029
+    question_type: regional
+    difficulty: hard
+    regions: [ohio]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 200-acre row crop farmer in Ohio wants to integrate livestock into their corn-soy
+          rotation to improve soil health and add a revenue stream. What livestock integration
+          strategy would you recommend, including species selection, grazing management, and
+          how it fits with existing cropping?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Midwest crop-livestock integration: cover crop grazing (cattle on cereal rye/clover before corn), mob grazing on crop residues, fencing and water infrastructure for rotational grazing. Cattle or sheep as primary species. Market access via local auctions and direct sales. USDA conservation program support (EQIP for fencing/water). Ohio fence law and livestock regulations. Economic analysis of added revenue vs infrastructure cost."
+    tags: [livestock_integration, ohio, regional, crop_livestock]
+
+  - id: regional_adapt_0030
+    question_type: regional
+    difficulty: hard
+    regions: [helsinki]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 40-hectare cereal farmer near Helsinki wants to integrate livestock to improve
+          soil health during the long winters. What livestock integration strategy would you
+          recommend, considering the boreal climate, housing needs, and short grazing season?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address boreal livestock constraints: 6-7 months of indoor housing required, expensive winter feed, short grazing season (May-Oct). Cattle or sheep on grass-clover leys in rotation with cereals. Finnish tradition of summer pasture (laidun). Deep bedding composting systems for winter manure management. Consider Highland cattle or Finncattle for cold tolerance. EU animal welfare regulations and Finnish specific requirements (Elainsojelu laki). Economic viability in Finnish market context."
+    tags: [livestock_integration, helsinki, regional, boreal, winter_housing]
+
+  - id: regional_adapt_0031
+    question_type: regional
+    difficulty: hard
+    regions: [tokyo]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 4-hectare diversified farmer near Tokyo wants to integrate small-scale livestock
+          into their rice-vegetable operation to improve soil fertility and reduce input costs.
+          What livestock integration strategy would you recommend for this small, humid
+          subtropical farm?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Japanese small farm context: very limited land (livestock density regulations), humid climate disease pressure, rice paddy-compatible species. Aigamo (duck-rice integration, traditional Japanese method), small poultry flock for pest control in vegetables, possibly small cattle herd (Wagyu genetics). Post-rice straw as feed. Composting for bokashi/organic fertilizer. Mention Japanese organic JAS certification opportunity. Neighborhood considerations (smell, noise) in peri-urban setting."
+    tags: [livestock_integration, tokyo, regional, aigamo, small_scale]
+
+  - id: regional_adapt_0032
+    question_type: regional
+    difficulty: hard
+    regions: [nairobi]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 3-hectare smallholder farmer near Nairobi currently grows maize and beans and
+          wants to integrate livestock for soil fertility, food security, and income. What
+          livestock integration strategy would you recommend for this tropical highland
+          smallholder context?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address East African smallholder context: zero-grazing (stall-fed) dairy as primary strategy (1-2 improved Friesian crosses), Napier grass + Calliandra fodder system, manure collection for composting and biogas. Poultry (Kenbro or KARI improved breed) for eggs and manure. Goats for marginal areas. Mention KARI/KALRO improved breeds, dairy cooperative marketing (Brookside, New KCC), and NAAIAP/KCSAP support programs. Labor and capital constraints critical."
+    tags: [livestock_integration, nairobi, regional, smallholder, zero_grazing]
+
+  - id: regional_adapt_0033
+    question_type: regional
+    difficulty: hard
+    regions: [mato_grosso]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 2000-hectare farm in Mato Grosso currently growing soy and corn wants to integrate
+          cattle into the cropping system at scale. What livestock integration strategy would
+          you recommend, including breed selection, pasture management, and integration with
+          the existing grain operation?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Brazilian ILP (Integracao Lavoura-Pecuaria) at scale: Nelore or Nelore-Angus crosses, Brachiaria brizantha pastures renovated with grain crops, rotational grazing in dry season on crop residues + Brachiaria understory. Confinamento (feedlot finishing) integration. Mention Embrapa Gado de Corte guidelines, Boi Safrinha concept, carbon footprint reduction. Traceability requirements for export markets (EU deforestation regulation). ABC+ Plan financing for ILP."
+    tags: [livestock_integration, mato_grosso, regional, ilp, large_scale]
+
+  - id: regional_adapt_0034
+    question_type: regional
+    difficulty: hard
+    regions: [canterbury]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 400-hectare arable farm on the Canterbury Plains wants to reintegrate livestock
+          after decades of continuous cropping. What livestock integration strategy would you
+          recommend, considering the irrigation infrastructure, nitrate leaching regulations,
+          and New Zealand market conditions?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address NZ Canterbury context: sheep and beef cattle on pastoral phase of rotation, winter forage crops (kale, fodder beet) with careful management to avoid pugging damage, nitrate leaching risk on stony soils (Overseer N-loss compliance). Romney/composite sheep or Angus cattle. Mention Environment Canterbury Plan Change 7 (nutrient allocation), Fonterra cooperative if considering dairy support, and Beef+Lamb NZ extension resources. Precision grazing to avoid compaction on irrigated soils."
+    tags: [livestock_integration, canterbury, regional, nitrate_management, new_zealand]
+
+  - id: regional_adapt_0035
+    question_type: regional
+    difficulty: hard
+    regions: [rajasthan]
+    system_prompt: "You are a regenerative agriculture advisor with deep knowledge of local conditions."
+    turns:
+      - role: user
+        content: |
+          A 12-hectare farmer in eastern Rajasthan wants to better integrate their existing
+          livestock (cattle, goats) with crop production to improve soil fertility and farm
+          resilience in this semi-arid environment. What livestock integration strategy would
+          you recommend?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - regional_adaptation
+        - practical_actionability
+        - specificity
+        - factual_accuracy
+    source_notes: "Must address Rajasthani agropastoral context: Tharparkar or Rathi cattle breeds (heat-tolerant, dual-purpose), Sirohi or Marwari goats for browsing on thorny scrub, seasonal transhumance traditions. Crop residue management (wheat/bajra stover as dry season feed), FYM cycling back to fields, chaff cutter for efficient feeding. Mention MGNREGA for pasture development, Rajasthan Livestock Development Board schemes. Critical: water for livestock in arid conditions. Silvopastoral with khejri trees for shade and fodder pods."
+    tags: [livestock_integration, rajasthan, regional, arid, agropastoral]

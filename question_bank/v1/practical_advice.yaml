@@ -1,0 +1,885 @@
+metadata:
+  category: practical
+  subcategory: farmer_advice
+  version: v1
+
+questions:
+  - id: practical_advice_0001
+    question_type: scenario
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a row crop farmer in central Ohio. My latest soil test came back with organic matter at 2.1%, pH 6.2, phosphorus at 18 ppm (Mehlich-3), and potassium at 135 ppm. CEC is 11.4. I've been doing conventional no-till corn-soybean for 15 years. I want to start transitioning to regenerative practices but can't afford a big drop in yield. Where do I start?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice would address cover crops as a first step (e.g., cereal rye after corn, multi-species mix after beans), suggest reducing tillage intensity gradually, discuss building OM through cover crops, note that pH and P levels are adequate, K is moderate. Should mention realistic timeline (3-5 years to see soil health changes) and cost-sharing programs like NRCS EQIP."
+    tags: [transition, cover_crops, no_till, ohio, soil_testing, corn_soybean]
+
+  - id: practical_advice_0002
+    question_type: scenario
+    difficulty: medium
+    regions: [east_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I am a smallholder farmer in the Kenya highlands near Nyeri. I have 1.5 acres. I grow maize and beans. My soil is red volcanic (nitisol), and the yields have been declining over the past five seasons even though I apply DAP fertilizer at planting. The topsoil seems thinner than it used to be. What regenerative practices can help me restore my soil without expensive inputs?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address erosion control on slopes (terracing, contour farming, grass strips with napier or vetiver), composting farm residues and manure, incorporating leguminous cover crops or green manures (mucuna, lablab, desmodium), agroforestry with Calliandra or Grevillea for nitrogen fixation and fodder, push-pull system for stemborer and striga control, and reducing reliance on DAP alone (which acidifies nitisols)."
+    tags: [smallholder, kenya, erosion, soil_restoration, low_input, nitisols]
+
+  - id: practical_advice_0003
+    question_type: scenario
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 8 hectares in Rajasthan, India, near Jodhpur. We get only about 350mm of rainfall per year, mostly in the monsoon. The soil is sandy with very low organic matter (less than 0.5%). I grow pearl millet (bajra) and cluster bean (guar) in kharif season. The land sits fallow in rabi. Groundwater is dropping and my well is getting unreliable. How can I make my dryland farm more productive and resilient without depending on irrigation?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address water harvesting (tanka, bunding, contour trenches), mulching to reduce evaporation, adding organic matter through composting and FYM, using drought-hardy cover crops or intercrops (moth bean, sesame), retaining crop residues rather than grazing them completely, exploring rabi crops like mustard or chickpea on conserved moisture, and potentially silvopasture with prosopis cineraria (khejri) or ziziphus. Should acknowledge the extreme constraints honestly."
+    tags: [dryland, rajasthan, india, water_management, arid, pearl_millet, low_organic_matter]
+
+  - id: practical_advice_0004
+    question_type: scenario
+    difficulty: medium
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 200-hectare soybean farm in Mato Grosso, Brazil. We do soy in the main season and safrinha corn. The soils are oxisols, deep but weathered. We have been seeing increased compaction from heavy machinery and some areas with poor water infiltration. We apply lime regularly but I want to do more for soil biology. What regenerative practices fit our tropical two-crop system?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should mention cover crops in the short window between safrinha harvest and soy planting (brachiaria ruziziensis, crotalaria, millet), or intercropping brachiaria with safrinha corn (Santa Fe system). Discuss biological inputs (Trichoderma, Bradyrhizobium inoculants), controlled traffic farming to limit compaction, and deep-rooted species to break compaction layers. Note importance of maintaining ground cover year-round in tropical conditions."
+    tags: [brazil, soybean, oxisols, compaction, tropical, cover_crops, cerrado]
+
+  - id: practical_advice_0005
+    question_type: scenario
+    difficulty: medium
+    regions: [oceania]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I run a 400-hectare sheep and beef operation on hill country in the Wairarapa region of New Zealand. Our pastures are mostly ryegrass-clover but they're declining, especially on the north-facing slopes which dry out in summer. I want to move toward regenerative grazing and improve pasture diversity. Our soils are Olsen P of 12, pH 5.8, and we haven't applied much fertilizer in recent years. What should I focus on?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should cover adaptive multi-paddock grazing (longer rest periods, especially on hills), oversowing with diverse species (plantain, chicory, cocksfoot, tall fescue for drought tolerance), lime application to raise pH toward 6.0-6.2 for clover performance, maintaining Olsen P at 20-30 for legume growth, tree planting for shade/shelter on exposed slopes (poplar and willow poles for erosion, natives for biodiversity), and considering stock water reticulation to manage grazing pressure."
+    tags: [new_zealand, pastoral, grazing_management, pasture_diversity, sheep, beef, hill_country]
+
+  - id: practical_advice_0006
+    question_type: scenario
+    difficulty: medium
+    regions: [northern_europe]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 60 hectares in southern Finland near Hameenlinna. We grow spring barley, oats, and winter rye with a short growing season (May to September). The soils are glacial till, slightly acidic (pH 5.9), with decent organic matter (4.2%) but heavy clay content. We get waterlogging in spring and autumn. I want to add cover crops but the window between harvest and freeze-up is very short. What can I realistically do in a Nordic climate?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should acknowledge the short cover crop window and suggest frost-seeding or undersowing clover into spring cereals, winter-hardy covers like winter rye or winter vetch if sown early enough, or frost-killed covers like oats and tillage radish that winterkill and leave residue. Mention companion cropping, reducing tillage on heavy clay carefully (may need strategic loosening first), and improving drainage before going fully no-till."
+    tags: [finland, nordic, short_season, cover_crops, clay_soils, waterlogging]
+
+  - id: practical_advice_0007
+    question_type: scenario
+    difficulty: medium
+    regions: [east_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I grow rice in paddy fields in Niigata Prefecture, Japan. I have 3 hectares. Recently, consumer demand for pesticide-reduced rice has been growing. I want to reduce chemical inputs in my paddies and build soil health, but I cannot risk a total crop failure. My fields have been continuously flooded rice for 30 years. What steps can I take to transition toward more ecological rice production?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss winter cover crops in paddies (hairy vetch, Italian ryegrass, Chinese milk vetch), alternate wetting and drying (AWD) for methane reduction and root health, using rice bran or fermented organic matter to suppress weeds, aigamo (duck-rice) integrated system, mechanical weeding, maintaining biodiversity in paddy margins, and marketing channels for reduced-chemical rice (tokubetsu saibai certification). Transition should be gradual."
+    tags: [japan, rice, paddy, input_reduction, integrated_management, methane]
+
+  - id: practical_advice_0008
+    question_type: scenario
+    difficulty: medium
+    regions: [west_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 3 hectares in the Guinea savanna zone of northern Ghana. I grow maize, groundnuts, and yams. Soil fertility has been declining badly. Bush fallowing used to restore our soils, but population pressure means I can no longer leave land fallow for long enough. Burning crop residues is common practice here. What regenerative alternatives can I use to maintain fertility without long fallow periods?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should include improved fallows with fast-growing leguminous species (mucuna, pigeon pea, Gliricidia), composting instead of burning residues, incorporating crop residues as mulch, farmer-managed natural regeneration (FMNR) of indigenous trees, intercropping with nitrogen-fixing species, and micro-dosing fertilizer if organic inputs are insufficient alone. Should explain why burning destroys organic matter and nutrients."
+    tags: [ghana, west_africa, savanna, fallow, burning_alternatives, composting, agroforestry]
+
+  - id: practical_advice_0009
+    question_type: scenario
+    difficulty: easy
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm starting a half-acre market garden in central Virginia. I just got my first soil test: pH 5.5, organic matter 1.8%, very low phosphorus (8 ppm), adequate potassium (160 ppm), and CEC 7.2. I want to grow vegetables for farmers markets using regenerative methods. How should I prepare my beds and build soil fertility for the first season?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address liming to raise pH (target 6.2-6.8 for vegetables), adding rock phosphate or bone meal for P deficiency, heavy compost application (2-4 inches) for OM building, permanent bed systems with minimal tillage, cover crop plan between cash crops, and broad forking or initial tillage to address compaction before transitioning to no-till. Emphasize soil testing again after amendments."
+    tags: [market_garden, virginia, soil_building, vegetables, beginning_farmer, soil_testing]
+
+  - id: practical_advice_0010
+    question_type: scenario
+    difficulty: hard
+    regions: [southeast_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 5-hectare cacao agroforestry farm in Sulawesi, Indonesia. The trees are 12 years old and yields have dropped from 1.2 tonnes/ha to about 0.6 tonnes/ha. I notice increased vascular streak dieback (VSD) and cocoa pod borer damage. The shade canopy has thinned because some Gliricidia trees died. The soil under the trees is bare and compacted. What can I do to restore productivity using regenerative approaches?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address replanting shade trees (Gliricidia, leucaena, coconut), establishing ground cover crops (Arachis pintoi, Calopogonium), applying composted cacao pod husks and prunings, sanitary pruning for VSD management, regular harvesting to break pod borer cycle, improving soil biology through organic matter additions, and potentially side-grafting with VSD-tolerant clones. Address the relationship between shade management and disease pressure."
+    tags: [cacao, indonesia, agroforestry, disease_management, shade_management, tropical]
+
+  - id: practical_advice_0011
+    question_type: scenario
+    difficulty: medium
+    regions: [mediterranean]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have a 15-hectare olive grove in Andalusia, Spain. The trees are 40 years old, planted at 10m spacing. The ground between the trees has been kept bare by herbicide applications and tillage for decades. The soil is calcareous (pH 8.1), very low in organic matter (0.9%), and shows signs of erosion on the slopes. I want to establish permanent cover between the tree rows. What species and management approach do you recommend for a Mediterranean climate olive grove?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should recommend self-reseeding annual covers adapted to Mediterranean climate (Medicago truncatula, Trifolium subterraneum, Brachypodium, native grasses), mowing rather than herbicides, timing sowing with autumn rains, managing water competition by mowing covers in spring before summer drought, establishing covers in alternate rows first to reduce risk, and compost applications under the canopy. Note that pH 8.1 limits species choices."
+    tags: [olive, spain, mediterranean, cover_crops, erosion, calcareous_soils, herbicide_reduction]
+
+  - id: practical_advice_0012
+    question_type: scenario
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a rancher in eastern Montana running 300 cow-calf pairs on 5,000 acres of native range. We've done continuous grazing for years. Some pastures are dominated by cheatgrass and the native grasses (blue grama, western wheatgrass) are declining. We had a drought last year and had to sell 50 head. I'm interested in adaptive multi-paddock grazing but the infrastructure cost for cross-fencing and water is daunting. How do I start realistically?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should suggest starting small with temporary electric fence in one or two pastures, using portable water systems, establishing a grazing plan with adequate rest periods (60-90 days minimum in semi-arid range), timing grazing to reduce cheatgrass seed production, exploring NRCS cost-share for fencing and water development, and building infrastructure incrementally. Honest about timeline for native grass recovery (5-10 years)."
+    tags: [montana, rangeland, adaptive_grazing, cheatgrass, drought, infrastructure, cow_calf]
+
+  - id: practical_advice_0013
+    question_type: scenario
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I keep hearing about "building soil biology" and using compost teas, microbial inoculants, and biostimulants. There are so many products on the market now. Are these worth the money? My neighbor spent $15,000 on microbial products last year and I'm not sure he saw any difference. How do I evaluate whether these products are actually doing anything for my soil?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be balanced and evidence-based: acknowledge that soil biology matters but many commercial products lack rigorous evidence, recommend focusing on creating habitat for biology first (reduce tillage, add organic matter, keep living roots, reduce bare soil), suggest on-farm trials with check strips, mention that specific inoculants (Rhizobium for legumes, mycorrhizal inoculants for disturbed soils) have better evidence than broad-spectrum products, and caution against spending heavily without baseline soil biology testing."
+    tags: [soil_biology, microbial_products, compost_tea, evidence_based, cost_effectiveness]
+
+  - id: practical_advice_0014
+    question_type: scenario
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 2 hectares in coastal Odisha, India. My paddy fields were badly damaged by Cyclone Fani and then again by flooding last year. The soil has become saline in some patches (EC readings of 4-6 dS/m). Rice yields have dropped by half in the saline areas. I can't afford to abandon this land. What regenerative strategies can help me recover salt-affected paddy land?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address leaching salts with fresh water when available, growing salt-tolerant rice varieties (CSR series, Luna Sampad), using gypsum if sodium is the dominant cation, incorporating organic matter (rice straw, green manures like Sesbania) to improve soil structure and water movement, raised bed cultivation for worst-affected areas, and diversifying with salt-tolerant crops like barley or berseem clover in rotation. Should note that EC 4-6 is moderate salinity."
+    tags: [india, salinity, cyclone_recovery, coastal, rice, salt_tolerance, disaster_recovery]
+
+  - id: practical_advice_0015
+    question_type: scenario
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have a 120-acre grain farm in southern Manitoba, Canada. I grow canola, wheat, and sometimes peas. I want to add cover crops but our season is very short. Hard frost often comes by early October and our soil doesn't thaw until late April. My biggest issue is that canola harvest is often in late September, leaving almost no time to establish anything before winter. What are my cover crop options?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should suggest relay cropping or interseeding covers into standing crop, using winter cereals (fall rye) after earlier-harvested crops, aerial seeding covers before crop maturity, using peas or lentils in rotation (earlier harvest = more cover crop window), overwintering covers that establish in fall and grow in spring, and utilizing the longer window after wheat harvest versus canola. Be realistic about limitations."
+    tags: [canada, manitoba, short_season, cover_crops, canola, wheat, cold_climate]
+
+  - id: practical_advice_0016
+    question_type: scenario
+    difficulty: medium
+    regions: [east_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I grow coffee on 2 hectares near Mount Elgon in Uganda. My coffee trees are Robusta variety, about 8 years old. A soil test from an NGO project showed pH 4.8, very low calcium, and aluminum toxicity. The shade trees were removed a few years ago to plant more coffee, and now I have problems with sun scorch and die-back. My income depends entirely on this coffee. How can I restore the system?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address urgent liming to raise pH above 5.5 and reduce aluminum toxicity, replanting shade trees (Albizia, Cordia, or banana as interim shade), mulching heavily around coffee trees, establishing ground cover (Desmodium, Arachis pintoi), applying organic matter (coffee pulp compost), and diversifying income with shade tree products (banana, avocado). Should prioritize actions by urgency and cost."
+    tags: [uganda, coffee, shade_management, aluminum_toxicity, agroforestry, soil_acidity]
+
+  - id: practical_advice_0017
+    question_type: scenario
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm completely new to regenerative agriculture. I keep seeing the "five principles" or "six principles" of soil health mentioned online, but different sources list different things. Can you explain the core principles of regenerative agriculture in practical terms? How do they connect to each other, and which one should I focus on first?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should cover the core principles: minimize soil disturbance, keep soil covered, maintain living roots year-round, maximize diversity, and integrate livestock (some frameworks add 'context' as the sixth). Should explain how they are interconnected and suggest that the starting point depends on context, but reducing tillage and adding cover crops are common first steps."
+    tags: [principles, fundamentals, beginning_farmer, soil_health]
+
+  - id: practical_advice_0018
+    question_type: scenario
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a cattle rancher in the Pantanal region of Mato Grosso do Sul, Brazil. I run 800 head on 2,000 hectares, mostly native grassland with seasonal flooding. Environmentalists criticize ranching here but this is my livelihood and my family has been here for three generations. I want to ranch more sustainably but I also face pressure to intensify production. How can I improve my operation in a way that is both ecologically responsible and economically viable in this sensitive wetland ecosystem?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should respect the ecological sensitivity of the Pantanal while acknowledging the rancher's livelihood, suggest adaptive management based on flood cycles, recommend rotational grazing that works with seasonal flooding, discuss maintaining native grassland rather than converting to exotic pastures, consider premium market access through sustainable certifications, and address fire management as a traditional and ecological tool when used appropriately."
+    tags: [brazil, pantanal, wetland, cattle, conservation, sustainable_ranching, biodiversity]
+
+  - id: practical_advice_0019
+    question_type: scenario
+    difficulty: medium
+    regions: [southeast_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 4-hectare vegetable farm in the Cameron Highlands of Malaysia. We grow lettuce, cabbage, tomatoes, and strawberries. The steep terrain causes severe soil erosion during heavy monsoon rains. We use plastic mulch and high tunnel structures. Soil organic matter has dropped to 1.5% despite heavy fertilizer use, and we have recurring problems with root-knot nematodes. What regenerative practices can work on an intensive highland vegetable farm?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address terracing and contour planting for erosion, replacing plastic mulch with organic mulch where feasible, cover cropping between cash crop cycles (marigold and mustard for nematode suppression), composting, crop rotation to break nematode cycles, bio-fumigation with brassica crops, and considering biodegradable mulch alternatives. Address the challenge of maintaining commercial productivity during transition."
+    tags: [malaysia, highlands, vegetables, erosion, nematodes, intensive_production, tropical]
+
+  - id: practical_advice_0020
+    question_type: scenario
+    difficulty: medium
+    regions: [north_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I grow wheat and barley on 25 hectares in the Saiss plain near Fez, Morocco. Our rainfall has decreased significantly over the past decade, averaging only about 350mm now. The soils are vertisols, heavy clay that cracks deeply in summer. I'm facing increasing drought stress, and government subsidies for irrigation are being reduced. What regenerative strategies work for rainfed Mediterranean dryland cereal production?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address no-till to conserve moisture in vertisols, stubble retention, crop rotation with food legumes (lentil, chickpea, faba bean), drought-tolerant varieties, water harvesting structures, early sowing to capture autumn rainfall, and managing the self-mulching properties of vertisols. Should acknowledge that 350mm is near the viability limit for cereals and discuss risk management."
+    tags: [morocco, dryland, vertisols, wheat, barley, drought, mediterranean, rainfed]
+
+  - id: practical_advice_0021
+    question_type: scenario
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I run a 50-cow dairy in Vermont. We're grazing May through October and feeding hay and corn silage over winter. Our pastures are mostly tired old orchardgrass and Kentucky bluegrass. I want to integrate silvopasture by planting trees in some of our pastures, but I'm worried about losing forage production and my cows damaging young trees. How do I make silvopasture work on a working dairy?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss tree species selection for Northeast silvopasture (black locust, apple, hybrid poplar, sugar maple), tree protection methods (electric fence, tree tubes), planting patterns that maintain forage access and mechanical harvest ability, starting with a small area, shade-tolerant forages (orchardgrass actually performs well in partial shade), and the long-term benefits of shade for cow comfort and milk production in summer heat."
+    tags: [vermont, dairy, silvopasture, agroforestry, tree_protection, grazing]
+
+  - id: practical_advice_0022
+    question_type: scenario
+    difficulty: hard
+    regions: [sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I am a woman farmer in rural Malawi. I have 0.8 hectares and I grow maize, groundnuts, and some sweet potatoes. My husband passed away and I now manage the farm alone with my children. I have no access to tractor services and limited cash for inputs. The extension officer tells me to buy hybrid seed and fertilizer on credit, but I went into debt doing that last year when the rains failed. What regenerative practices can I adopt with very limited labor and no cash for purchased inputs?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be sensitive to gender-specific challenges, suggest zero-cost practices like pit planting (zai holes) for water concentration, retaining and composting crop residues, saving open-pollinated seed, intercropping maize with pigeon pea or cowpea for nitrogen fixation and food security, agroforestry with Faidherbia albida (compatible with maize), and connecting with women's farming cooperatives. Should be honest about limits and not suggest expensive inputs."
+    tags: [malawi, women_farmers, ultra_low_input, food_security, labor_constraints, smallholder]
+
+  - id: practical_advice_0023
+    question_type: scenario
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          My soil test shows a calcium-to-magnesium ratio of 2:1. My consultant says I need to add calcium to get it to 7:1 for ideal soil structure. Another advisor says the Ca:Mg ratio theory is outdated and I shouldn't worry about it since my base saturation is fine. Who is right? My soil is a silt loam with 3.5% organic matter, CEC 14, pH 6.4, and the crops look healthy.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should explain that the ideal Base Cation Saturation Ratio (BCSR) theory (Albrecht/Kinsey approach) is not well supported by peer-reviewed research, that sufficiency-level approach is more evidence-based, that a Ca:Mg of 2:1 is low but if crops are healthy and pH is good then major amendments may not be warranted, and that adding excessive calcium could waste money and raise pH too high. Should be diplomatically balanced."
+    tags: [ca_mg_ratio, bcsr, soil_testing, evidence_based, nutrient_management]
+
+  - id: practical_advice_0024
+    question_type: scenario
+    difficulty: medium
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have a small coffee farm (3 hectares) in the Cauca department of Colombia, at about 1,700 meters elevation. I currently grow Castillo variety in full sun with conventional inputs. A buyer is offering a premium for "regenerative" certified coffee. What would I need to change to qualify, and is the premium worth the transition costs and potential yield changes?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss what regenerative certification typically requires (shade integration, organic matter management, reduced chemicals, cover crops, biodiversity), realistic yield impacts during transition (may drop 10-20% initially), shade tree options for Colombian coffee (guamo, nogal, plantain as temporary shade), cost-benefit analysis of premiums versus transition costs, and that Castillo is well-suited to partial shade. Should be honest about certification costs and requirements."
+    tags: [colombia, coffee, certification, shade_grown, premiums, transition_economics]
+
+  - id: practical_advice_0025
+    question_type: scenario
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I've been making compost on my farm for the first time. I mixed chicken manure, wood chips, and vegetable scraps in a pile about 3 months ago. It never really heated up and now it smells bad, looks slimy, and has a lot of flies. What went wrong and how do I fix it?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should diagnose anaerobic conditions (too wet, too dense, insufficient turning, possibly too much nitrogen from chicken manure), explain the importance of C:N ratio (wood chips are very high C, chicken manure is very high N - they need to be balanced), recommend turning and adding dry carbon materials, proper moisture level (wrung-out sponge test), and suggest rebuilding the pile with correct proportions."
+    tags: [composting, troubleshooting, chicken_manure, beginning_farmer]
+
+  - id: practical_advice_0026
+    question_type: scenario
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 10-hectare rice-wheat rotation farm in Haryana, India. After rice harvest, there is enormous pressure to burn the rice stubble to prepare for wheat sowing. The government has banned burning and there are fines, but my neighbors all burn because managing stubble with the Happy Seeder is expensive to rent and often unavailable. The stubble also harbors rice stem borer. What are practical alternatives to stubble burning that actually work within our tight turnaround window?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss Happy Seeder technology (direct sowing wheat into rice stubble), Super SMS attachment on combine harvesters to spread residue evenly, managing paddy straw as mulch for wheat establishment, collective machinery sharing or custom hiring centers, potential for rice straw as mushroom substrate or cattle feed supplement, and government subsidy programs for residue management equipment. Should address the stem borer concern honestly."
+    tags: [india, haryana, stubble_burning, rice_wheat, residue_management, air_quality]
+
+  - id: practical_advice_0027
+    question_type: scenario
+    difficulty: medium
+    regions: [oceania]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have a 500-hectare wheat and sheep property in the Western Australian wheatbelt. We get about 325mm annual rainfall, mostly in winter. Our soils are duplex (sand over clay) with non-wetting issues on the sandy topsoils. We've been doing no-till for 10 years with good results for moisture conservation, but the non-wetting sands mean patchy crop establishment. What can I do about water-repellent soils while keeping my no-till system?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address furrow sowing to concentrate water, banded wetting agents, one-off strategic deep ripping with inclusion plates to bring clay to the surface (mouldboard ploughing as a one-off can be compatible with long-term no-till), claying (spreading clay on sand), adding organic matter to improve wettability over time, and species selection for better establishment in non-wetting conditions. Should note this is a well-researched problem in WA."
+    tags: [australia, western_australia, non_wetting_soils, duplex_soils, dryland, wheat, sheep]
+
+  - id: practical_advice_0028
+    question_type: scenario
+    difficulty: medium
+    regions: [central_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I grow corn and beans on a steep hillside (about 30% slope) in the highlands of Guatemala. Every rainy season I lose topsoil. My grandfather used to farm the same plot and it was much more productive. I've tried to make terraces but they keep collapsing. I also keep a few chickens and a pig. What can I do to stop losing my soil and rebuild fertility on this steep land?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss live barriers (vetiver grass, lemongrass, pineapple as terrace stabilizers), contour planting, A-frame level for marking contours, incorporating trees along contour lines (Inga, Leucaena for alley cropping), mucuna or velvet bean as cover crop, composting animal manure, and building slow-forming terraces using vegetation rather than just earth. Should address the 30% slope as a serious erosion risk."
+    tags: [guatemala, hillside, erosion, terracing, smallholder, contour_farming, live_barriers]
+
+  - id: practical_advice_0029
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I operate a 2,000-acre no-till corn-soy-wheat rotation in central Illinois. I've been using cover crops for 5 years. My soil health tests show improving aggregate stability and water infiltration, but my soil organic matter hasn't budged from 3.8%. I'm applying 180 lbs N/acre on corn. I see articles about farmers dramatically increasing SOM in a few years, but my experience doesn't match. Am I doing something wrong, or are those claims exaggerated?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be scientifically honest: SOM increases in the top 6 inches of Midwest mollisols are typically very slow (0.01-0.1%/year), dramatic claims are often based on shallow sampling or starting from degraded conditions, 3.8% in central IL is already moderate for that region, and improvements in aggregate stability and infiltration ARE meaningful even without big SOM numbers. Should discuss the difference between labile (active) carbon and total SOM, and that Haney soil health tests may show biological improvements that standard SOM tests miss."
+    tags: [illinois, soil_organic_matter, cover_crops, no_till, realistic_expectations, soil_testing]
+
+  - id: practical_advice_0030
+    question_type: scenario
+    difficulty: medium
+    regions: [west_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a cocoa farmer in Cote d'Ivoire with 6 hectares. My trees are old (25+ years) and production has dropped below 400 kg/ha. The government extension service says I should cut everything down and replant with improved varieties in full sun. But I've heard that agroforestry systems are better for the long term. I need income during any replanting period. What approach do you recommend?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss phased replanting (not all at once) to maintain income, intercropping with plantain and cocoyam during establishment, shade tree species selection (timber trees like Terminalia for long-term income), grafting improved varieties onto existing rootstock as partial renovation, rehabilitating productive trees through pruning and soil amendment, and the evidence for agroforestry cocoa sustainability versus full-sun monoculture yield curves."
+    tags: [cote_divoire, cocoa, replanting, agroforestry, phased_transition, old_plantations]
+
+  - id: practical_advice_0031
+    question_type: scenario
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have a 40-acre diversified farm in North Carolina. I want to integrate laying hens (about 200 birds) into my vegetable and pasture rotation as part of a regenerative system. I've heard about mobile coops and chicken tractors following cattle. How do I set up a poultry system that genuinely improves soil health rather than just concentrating manure and creating pathogen issues?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss stocking density management to prevent overloading (max 200 birds/acre on pasture with frequent moves), mobile coop design and rotation timing (move every 1-3 days), following cattle by 3-4 days to break fly cycles and spread manure, food safety rules about poultry on vegetable ground (90-120 day interval before harvest), and the benefits of scratching for pest control and nutrient distribution."
+    tags: [north_carolina, poultry, integration, mobile_coop, food_safety, diversified_farm]
+
+  - id: practical_advice_0032
+    question_type: scenario
+    difficulty: medium
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a farmer in the Terai region of Nepal, growing rice and wheat. I've started using System of Rice Intensification (SRI) methods and my rice yields have improved. Now I want to apply similar regenerative principles to my wheat crop. My biggest challenge is that after rice harvest, the soil is waterlogged and I need to get wheat planted quickly. Can you advise me on regenerative wheat management following SRI rice?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss zero-till wheat after rice (using zero-till drill), raised bed planting for drainage, applying rice straw as mulch rather than burning, Sesbania green manure in fallow periods, reducing nitrogen fertilizer through organic matter management, using SRI principles of wider spacing and early transplanting adapted to wheat context, and managing the rice-wheat transition for soil health."
+    tags: [nepal, sri, rice_wheat, zero_till, waterlogging, terai]
+
+  - id: practical_advice_0033
+    question_type: scenario
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          My farm has a serious herbicide-resistant weed problem. I have Palmer amaranth that's resistant to glyphosate and ALS inhibitors. I've been told the only option is to use dicamba or paraquat, but I want to move away from herbicides entirely. My neighbors say that's impossible with Palmer amaranth. Is it realistic to manage resistant Palmer amaranth without herbicides in a row crop system, and if so, how?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be honest that Palmer amaranth is extremely competitive and difficult to manage without herbicides in large-scale row crops, discuss integrated approaches (high-residue cover crops like cereal rye for suppression, narrow row spacing, roller-crimper systems, inter-row cultivation, hand roguing to prevent seed production), acknowledge that a transition period may require some targeted herbicide use, and discuss the seed bank reduction strategy over multiple years."
+    tags: [herbicide_resistance, palmer_amaranth, weed_management, integrated_weed_management, cover_crops]
+
+  - id: practical_advice_0034
+    question_type: scenario
+    difficulty: medium
+    regions: [east_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I run a small dairy operation with 5 improved crossbred cows near Arusha, Tanzania. I use a zero-grazing (cut-and-carry) system because my land is only 1.5 acres. The napier grass I grow for fodder seems to be declining in yield and I've noticed napier stunt disease symptoms. My cows are not producing as much milk as expected. How can I improve my fodder production and animal nutrition using regenerative approaches on such a small area?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address napier stunt disease management (replacing with resistant varieties like Kakamega 1 or South Africa), diversifying fodder (Brachiaria cv Mulato, desmodium, calliandra, sweet potato vines), multi-story fodder systems (tree legumes over grass), silage making for dry season, manure management for composting and returning to fodder plots, and balancing protein and energy in the diet through diverse fodder species."
+    tags: [tanzania, dairy, zero_grazing, napier_grass, fodder, small_scale, disease_management]
+
+  - id: practical_advice_0035
+    question_type: scenario
+    difficulty: medium
+    regions: [northern_europe]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm an arable farmer in East Anglia, England, growing winter wheat, oilseed rape, and sugar beet on heavy boulder clay. We've been doing conventional ploughing for decades. I attended a regenerative farming conference and I'm inspired to try no-till, but several local farmers who tried it had slug problems, blackgrass got worse, and yields dropped 20% for the first three years. My landlord won't tolerate a big yield drop. How do I make this transition work on heavy clay?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be realistic about challenges of no-till on heavy clay, suggest a gradual transition (strip-till or min-till first rather than jumping to no-till), address slug management without ploughing (ferric phosphate pellets, cover crop management, companion cropping with buckwheat), blackgrass management in no-till (delayed drilling, spring cropping to break cycle), and discuss the dip in yields during transition and how to manage expectations with the landlord."
+    tags: [england, clay_soils, no_till_transition, slugs, blackgrass, wheat, oilseed_rape]
+
+  - id: practical_advice_0036
+    question_type: scenario
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I want to start soil testing on my farm but I'm confused about which tests to get. There are standard soil tests, Haney tests, PLFA tests, comprehensive nutrient analysis, and many others. Some cost $15 and others cost $200. I have a limited budget. What soil tests should I prioritize, how often should I test, and how do I actually take good samples?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should recommend starting with a standard soil test (pH, OM, P, K, Ca, Mg, CEC, micronutrients) as the foundation, proper sampling technique (15-20 cores per field zone, consistent depth, avoid anomalous spots, same time each year), testing every 2-3 years for routine monitoring, and adding specialized tests (Haney, PLFA) only after establishing a baseline and specific management questions."
+    tags: [soil_testing, sampling, beginning_farmer, cost_effectiveness, lab_selection]
+
+  - id: practical_advice_0037
+    question_type: scenario
+    difficulty: hard
+    regions: [east_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 2 hectares in Yunnan Province, China, at about 2,000 meters elevation. I grow a traditional polyculture of rice, corn, vegetables, and some Pu'er tea. Local government is encouraging specialization and larger-scale production for market access. But my mixed system seems to have fewer pest problems than my neighbors' monocultures. Is there a way I can modernize and improve my income from this diverse system without losing the ecological benefits of polyculture?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should validate the ecological and risk-management benefits of polyculture, discuss value-adding opportunities (specialty tea processing, organic certification, direct marketing), improving yields within the diverse system through better variety selection and management, documenting and monetizing the biodiversity value, and connecting with markets that value diversity (farm tourism, CSA models, specialty export). Should respect traditional knowledge."
+    tags: [china, yunnan, polyculture, traditional_knowledge, market_access, biodiversity, tea]
+
+  - id: practical_advice_0038
+    question_type: scenario
+    difficulty: medium
+    regions: [southern_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 80 hectares of maize and sunflower in the Free State province of South Africa. We get about 550mm of rain, mostly in summer. My soils are sandy loam with pH 5.2 and organic matter of 1.4%. I've noticed that after heavy rains, water runs off rather than soaking in, and during dry spells the crops stress quickly. A consultant told me my soil is biologically dead from years of conventional farming. How do I start rebuilding soil health with practical steps I can afford?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address the infiltration problem (compaction, low OM, loss of soil structure), recommend no-till or minimum till, cover crops adapted to summer rainfall systems (sunnhemp, cowpea, Japanese radish, forage sorghum), liming for pH correction, retaining crop residues, and starting with on-farm trials. Should note that 'biologically dead' is likely an exaggeration but low OM indicates degraded biology."
+    tags: [south_africa, free_state, maize, sunflower, soil_health, infiltration, low_organic_matter]
+
+  - id: practical_advice_0039
+    question_type: scenario
+    difficulty: medium
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I grow turmeric and ginger as cash crops on 1.5 hectares in Kerala, India. These are heavy feeders and I've been using large amounts of chemical fertilizer and fungicide to manage rhizome rot. The input costs are eating into my profits. I've heard about using Trichoderma and Pseudomonas as biocontrol agents, and about mulching with coconut fronds. Can regenerative practices actually control rhizome rot and reduce my input costs while maintaining yield?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss Trichoderma viride and Pseudomonas fluorescens as proven biocontrol agents for Pythium and Phytophthora in turmeric/ginger, proper application methods (rhizome treatment before planting, soil application), importance of drainage for rhizome rot prevention, organic mulching with coconut fronds or leaves to suppress disease and conserve moisture, composted cattle manure as base fertility, and phased reduction of chemical inputs rather than cold-turkey switch."
+    tags: [india, kerala, turmeric, ginger, biocontrol, rhizome_rot, input_reduction, spices]
+
+  - id: practical_advice_0040
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 1,500-acre irrigated farm in the San Joaquin Valley, California. We grow almonds (600 acres), processing tomatoes (400 acres), and alfalfa (500 acres). Water allocations have been cut by 25% due to drought and groundwater sustainability regulations (SGMA). I'm facing $200/acre-foot water costs by next year. I need to figure out which crops to keep, whether to fallow some ground, and how to make my remaining water go further. How do regenerative practices fit into this water crisis?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address soil health's role in water efficiency (better infiltration and water-holding capacity reduce irrigation needs by 10-25%), cover cropping in orchards to reduce evaporation and build OM, deficit irrigation strategies for almonds, evaluating alfalfa economics under expensive water, managed aquifer recharge on fallow fields, and transitioning some acreage to lower-water crops. Should be realistic that soil health alone won't solve a 25% water cut."
+    tags: [california, water_scarcity, irrigation, almonds, sgma, drought, economics]

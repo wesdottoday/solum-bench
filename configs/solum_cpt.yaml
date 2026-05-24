@@ -1,0 +1,7 @@
+models:
+  - name: solum-cpt-v1
+    provider: vllm_local
+    model_id: /path/to/solum-cpt-checkpoint  # Update after training
+    dtype: bfloat16
+    tensor_parallel: 1
+    max_model_len: 4096

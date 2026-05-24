@@ -1,0 +1,665 @@
+metadata:
+  category: practical
+  subcategory: scenario
+  version: v1
+
+questions:
+  - id: practical_scenario_0001
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have 320 acres in central Kansas. My situation: I'm 62 years old and my son wants to take over the farm but only if we can make it profitable without government payments. Current rotation is continuous winter wheat with occasional grain sorghum. Soil tests show OM 1.9%, pH 7.8, low phosphorus (9 ppm Mehlich-3), and subsoil compaction from decades of tillage. Annual rainfall is 26 inches. My equipment is old — I have a drill, a field cultivator, and a combine. Budget is tight: I can invest maybe $15,000 total this year in transition costs. My son wants to add cattle but we have no fencing or water infrastructure. Create a realistic 5-year transition plan that addresses soil health, profitability, and succession.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should provide a phased year-by-year plan, address the budget constraint realistically, suggest diversifying rotation (add sorghum, sunflower, cover crops), discuss adding cattle gradually with temporary fencing, identify cost-share programs (EQIP, CSP), address the low P through rotation with mycorrhizal-friendly crops, and give honest economic projections for the transition period."
+    tags: [kansas, transition_plan, succession, budget_constraints, wheat, cattle_integration, dryland]
+
+  - id: practical_scenario_0002
+    question_type: scenario
+    difficulty: hard
+    regions: [east_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a program manager for an NGO working with 500 smallholder farmers in Machakos County, Kenya. The area is semi-arid (500-600mm rainfall, bimodal). Most farmers grow maize on degraded, eroded land with very low yields (under 1 tonne/ha). The main constraints are: (1) farmers have almost no cash for inputs, (2) men control land but women do most of the farming, (3) charcoal burning is degrading remaining tree cover, (4) the local market for maize is oversaturated and prices are low, (5) extension services are weak. We have a 3-year project budget for training and some input subsidies. Design a regenerative agriculture program that is realistic for these constraints.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address the gender dynamics, suggest farmer-to-farmer training models (lead farmers), promote drought-tolerant crops beyond maize (sorghum, cowpea, pigeon pea, green gram for market value), recommend FMNR and fuel-efficient stoves to address charcoal pressure, design input packages that don't create dependency, include water harvesting, and address market diversification. Should be honest about what 3 years can achieve."
+    tags: [kenya, ngo_program, semi_arid, gender, market_access, program_design, smallholder]
+
+  - id: practical_scenario_0003
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a beginning farmer (35 years old, no farming background) who just purchased 80 acres of former tobacco and hay land in eastern Tennessee. The fields haven't been farmed in 5 years and are full of fescue, broomsedge, and some volunteer trees. Soil tests show pH 5.4, OM 2.6%, P 12 ppm, K 95 ppm. I have $50,000 in startup capital. I want to build a profitable regenerative operation but I'm not sure whether to focus on vegetables, livestock, or field crops. My spouse works off-farm for health insurance. I live 45 minutes from Knoxville and 20 minutes from a small town of 8,000. Help me think through what enterprises make sense and how to start without going broke.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should consider market proximity (Knoxville farmers markets), suggest starting small and scaling (not spending all $50K at once), evaluate enterprise options based on labor, capital, and market access (pastured poultry and cattle as lower-labor entry, high tunnel vegetables for market value), address the existing fescue (endophyte issues for livestock), and give realistic income expectations. Should also mention NRCS beginning farmer programs."
+    tags: [tennessee, beginning_farmer, enterprise_planning, startup, market_access, diversified]
+
+  - id: practical_scenario_0004
+    question_type: scenario
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 15-hectare sugarcane farm in Maharashtra, India. Sugarcane is extremely water-intensive and my region is facing severe drought. The government has been criticizing sugarcane cultivation in water-scarce areas. But the sugar cooperative guarantees purchase and price — it's the only reliable market I have. My wells have dropped 30 meters in 10 years. My soils show declining organic matter (now 0.6%) and increasing salinity from years of flood irrigation. I'm caught between water sustainability, economic survival, and soil degradation. What options do I have?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address drip irrigation for sugarcane (30-40% water savings), intercropping with short-duration crops, trash mulching instead of burning sugarcane trash, partial diversification to less water-intensive crops (pulses, oilseeds, pomegranate) while maintaining some sugarcane for guaranteed income, organic matter building through green manure, salinity management through better irrigation scheduling, and exploring FPO marketing for alternative crops."
+    tags: [india, maharashtra, sugarcane, water_crisis, salinity, diversification, drought]
+
+  - id: practical_scenario_0005
+    question_type: scenario
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I recently purchased a 50-hectare degraded cattle ranch in the Atlantic Forest zone of Bahia, Brazil. The land was overgrazed and about 30% is now degraded Brachiaria pasture with exposed soil and gullies. The remaining 70% is in various stages of secondary forest regrowth and degraded pasture. Brazilian law requires me to maintain 20% as legal reserve and restore 30m riparian buffers (APP). I want to create a productive agroforestry ranch that complies with the Forest Code, produces income, and restores degraded land. I have moderate capital from selling a business. How should I approach this?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address Forest Code compliance (legal reserve, APP restoration), agroforestry system design (cacao, banana, palm heart, native timber species), PANC species for diversification, silvopastoral systems for productive areas, gully stabilization with vetiver and tree planting, CAR registration requirements, income during establishment (banana, cassava as interim crops), and potential for carbon credits or PES programs."
+    tags: [brazil, atlantic_forest, restoration, agroforestry, forest_code, degraded_land, cattle]
+
+  - id: practical_scenario_0006
+    question_type: scenario
+    difficulty: hard
+    regions: [oceania]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I run a 2,500-hectare merino wool property in western New South Wales, Australia. We're in the 300mm rainfall zone. After the 2019-2020 drought, I lost 40% of my flock and the land is still recovering. Last year was better with average rain, but the landscape is fragile — lots of bare ground between remaining perennial grasses. I want to rebuild my carrying capacity but I'm also facing: (1) increasing frequency of drought, (2) rising input costs, (3) wild dog predation, and (4) an aging workforce — my only employee is retiring next year. How do I build a resilient operation that can handle the next drought better?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss conservative stocking rates with drought triggers (sell early, not late), time-controlled grazing for perennial grass recovery, water point distribution to manage grazing pressure, drought preparedness (maintain a reserve fund, containment feeding strategies), wild dog management (exclusion fencing, guardian animals), labor efficiency through technology (telemetry water monitoring, remote sensing for pasture assessment), and insurance/risk management strategies."
+    tags: [australia, nsw, drought_resilience, merino, rangeland, labor_constraints, predation]
+
+  - id: practical_scenario_0007
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a fourth-generation farmer in Iowa. We have 800 acres of corn-soybean, and I also contract-finish 4,000 hogs per year in confinement barns. I want to transition toward regenerative practices but I face these constraints: (1) my operating loan from the bank requires certain yield minimums, (2) my landlords on 500 of those acres don't want cover crops or changes that might reduce rent value, (3) I have a 3-million-gallon manure pit that I need to manage, (4) my crop insurance agent says cover crops could complicate prevented planting claims, and (5) my input supplier (who is also my agronomist) is skeptical about regenerative practices. How do I navigate all these institutional barriers?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address each barrier specifically: renegotiating lease terms or starting cover crops on owned land first, communicating with crop insurance agents about RMA cover crop guidelines, finding an independent agronomist, better manure management as a transition tool (precision application, incorporating cover crops with manure for nutrient capture), and building a track record on owned land to convince landlords and bankers."
+    tags: [iowa, institutional_barriers, corn_soybean, hog_manure, landlords, crop_insurance, finance]
+
+  - id: practical_scenario_0008
+    question_type: scenario
+    difficulty: hard
+    regions: [southeast_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 20-hectare oil palm plantation in Riau Province, Sumatra, Indonesia. The palms are 18 years old and will need replanting in about 7 years. The plantation is on former peat swamp, and the peat has been drained and is subsiding — we've lost about 1.5 meters of peat depth already. The water table is maintained at -60cm for palm production. I'm increasingly worried about the environmental impact and long-term viability of farming on peat. I can't simply abandon the land. What are my options for the replanting decision and managing this peat land more sustainably?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address peat subsidence and fire risk honestly, discuss raising the water table to reduce oxidation (-40cm or higher), paludiculture options for after replanting (sago palm, jelutong, illipe nut), RSPO certification requirements for peat management, the option of rewetting and switching to wetland-adapted crops, government regulations on peat depth management, and the economic reality of transitioning away from oil palm."
+    tags: [indonesia, peat, oil_palm, subsidence, replanting, paludiculture, environmental]
+
+  - id: practical_scenario_0009
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          My 200-acre farm in southern Mississippi was hit by Hurricane Katrina's remnants and then flooded again badly last spring. The lower 60 acres sat under 3 feet of floodwater for two weeks. The water left behind a layer of fine silt over my fields and deposited debris and trash. Some areas have an oily sheen in standing water. I grow hay and have 40 beef cattle. Before I replant or resume grazing, what do I need to consider? I'm worried about contaminants but I also need to get the farm productive again soon because I have no income from it right now.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice MUST address contamination testing before any food production (heavy metals, petroleum, E. coli, industrial chemicals), debris removal, NRCS Emergency Conservation Program and FSA Emergency loans, the oily sheen as a serious contamination indicator (contact state DEQ), phased recovery starting with non-food cover crops, soil testing before grazing or hay production, and connecting with USDA disaster assistance. Must not tell the farmer to just start planting without testing."
+    tags: [mississippi, flood_recovery, contamination, disaster, beef_cattle, emergency, safety]
+
+  - id: practical_scenario_0010
+    question_type: scenario
+    difficulty: hard
+    regions: [mediterranean]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I run a 40-hectare mixed farm on Crete, Greece. I have 15 hectares of old olive trees (some over 200 years old), 10 hectares of table grapes, 5 hectares of vegetables, and 10 hectares of degraded terraced hillside that used to grow cereals but has been abandoned for 20 years. I also have 80 goats that graze the hillside and around the olives. My problems are: (1) Xylella fastidiosa is spreading toward our region and I'm terrified it will kill my ancient olives, (2) water is increasingly scarce and summer temperatures are rising, (3) the terrace walls are crumbling, (4) my goats are preventing any natural regeneration on the hillside, and (5) I want to sell directly to tourists at a farm shop but food safety regulations are complex. Advise me on a integrated plan.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address Xylella preparedness (vector monitoring, maintaining tree vigor, surveillance protocols), water conservation (drip irrigation, mulching, rainwater harvesting), terrace restoration as critical infrastructure, managing goat grazing to allow hillside recovery (rotational grazing, excluding some areas), and farm tourism regulations. Should acknowledge the complexity and prioritize actions."
+    tags: [greece, crete, olives, xylella, goats, terraces, water_scarcity, agritourism, mixed_farm]
+
+  - id: practical_scenario_0011
+    question_type: scenario
+    difficulty: hard
+    regions: [sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm an agricultural officer in northern Nigeria working with farmers in the Sahel zone where desertification is advancing. Average rainfall has dropped to about 300mm. Traditional rain-fed millet and sorghum farming is becoming increasingly unreliable. Many young men are leaving for the cities. The remaining farmers face: (1) wind erosion removing topsoil, (2) conflict between herders and crop farmers over dwindling resources, (3) loss of indigenous tree cover, (4) very limited access to markets or credit, and (5) recurring food insecurity. What regenerative land management strategies have proven effective in similar Sahel conditions, and how can I promote them?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should reference proven Sahel techniques: zai pits and half-moon water harvesting (documented success in Burkina Faso and Niger), farmer-managed natural regeneration (FMNR - Chris Reij's work in Niger), windbreaks and living fences, integration of crop-livestock systems rather than separation, drought-tolerant improved varieties, community land management agreements, and the Great Green Wall initiative. Should be evidence-based and reference real successes."
+    tags: [nigeria, sahel, desertification, fmnr, zai_pits, water_harvesting, conflict, food_security]
+
+  - id: practical_scenario_0012
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm converting a 300-acre conventional corn-soy farm in central Indiana to certified organic. I'm in year 2 of the 3-year transition. My challenges: (1) weed pressure is brutal — giant ragweed and waterhemp are out of control since I stopped using herbicides, (2) I can't get organic price premiums yet, (3) my corn yields dropped 30% last year without synthetic N, (4) my neighbors' herbicide drift damaged my transition soybeans, and (5) I'm running out of cash to make it through year 3. My organic certifier says I need better record-keeping too. How do I survive the transition financially and agronomically?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address weed management mechanically (rotary hoe, row cultivation, flame weeding), nitrogen through cover crops and organic amendments, financial strategies (organic grain buyers who pay transition premiums, FSA loans, Organic Transition Initiative), drift damage documentation and legal recourse, record-keeping systems, and honest assessment of whether the operation can pencil out. Should not sugarcoat the difficulty."
+    tags: [indiana, organic_transition, weed_management, financial_stress, drift_damage, certification]
+
+  - id: practical_scenario_0013
+    question_type: scenario
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I farm 4 hectares in the Sundarbans delta of West Bengal, India. My land is less than 2 meters above sea level. Saltwater intrusion from cyclones is increasing. During Cyclone Amphan, seawater flooded my paddy fields for 5 days. Now, two years later, some areas still won't grow rice properly. The embankment that protects our village from the river is weakening. I also keep a few freshwater fish ponds which got contaminated with saltwater. My family has farmed here for generations but more people are leaving every year. Is there a future for farming in the Sundarbans, and what should I do?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be honest about the existential threat of sea level rise, discuss salt-tolerant rice varieties (developed by CSSRI and IRRI), integrated rice-fish-shrimp farming adapted to brackish conditions, mangrove restoration along embankments for protection, raised bed cultivation, freshwater harvesting during monsoon, and diversification into salt-tolerant species. Should address the climate adaptation reality without false optimism."
+    tags: [india, sundarbans, sea_level_rise, salinity, climate_adaptation, rice, aquaculture, delta]
+
+  - id: practical_scenario_0014
+    question_type: scenario
+    difficulty: hard
+    regions: [northern_europe]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a dairy farmer in the Netherlands with 85 hectares and 120 Holstein cows. New government regulations are drastically cutting nitrogen emissions, and I may need to reduce my herd by 30%. My farm is near a Natura 2000 area. I also have high soil phosphorus levels from decades of manure application (P-status 60 mg P/L, which is well above the new regulatory limit). My bank loan is based on my current herd size and milk quota. The government is offering a buyout scheme but I don't want to stop farming entirely. How do I restructure my farm to comply with regulations, remain financially viable, and improve environmental outcomes?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss herd reduction with a shift to higher-value production (organic, A2 milk, cheese), reducing nitrogen through precision feeding and low-emission manure application, phosphorus drawdown strategies (no P fertilizer, export manure as compost), extending grazing to reduce housing emissions, diversifying income (nature management payments, carbon farming, agritourism), and engaging with the bank about restructured loan terms."
+    tags: [netherlands, dairy, nitrogen_regulation, phosphorus, natura2000, herd_reduction, restructuring]
+
+  - id: practical_scenario_0015
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a tribal agriculture director for a Native American reservation in South Dakota. We have 15,000 acres of rangeland and 2,000 acres of cropland. Historically this was all bison prairie. Current use is leased to non-tribal cattle ranchers who do continuous grazing, and some non-tribal farmers grow conventional corn. The tribal council wants to: (1) bring more land under tribal management, (2) reintroduce bison, (3) create food sovereignty programs for tribal members, (4) restore degraded rangeland, and (5) create jobs for tribal youth. But we have limited capital, the existing lessees have long-term agreements, and many tribal members have lost agricultural knowledge. How do we build a regenerative tribal agriculture program?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should respect tribal sovereignty and cultural context, discuss phased approach as leases expire, reference successful tribal bison programs (InterTribal Buffalo Council), address food sovereignty through community gardens and traditional crops, suggest regenerative grazing training programs for youth, discuss USDA programs available to tribal nations, and address the cultural significance of land restoration. Should not be paternalistic."
+    tags: [south_dakota, tribal, bison, food_sovereignty, rangeland_restoration, cultural, indigenous]
+
+  - id: practical_scenario_0016
+    question_type: scenario
+    difficulty: hard
+    regions: [east_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a young farmer (28 years old) who inherited a 1.5-hectare rice farm in Iloilo Province, Philippines. I also work a part-time job in the city. The farm has been conventionally managed with heavy fertilizer and pesticide use. Labor costs for manual transplanting and harvesting are my biggest expense, and it's harder each year to find workers. The local market price for rice barely covers my production costs. I'm considering abandoning the farm like many of my neighbors. Is there a way to make this small rice farm viable and sustainable with limited time and labor?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss direct seeding to reduce labor, mechanical options at appropriate scale, diversification (rice-fish, rice-duck, vegetable integration), reducing input costs through organic methods, marketing higher-value rice (organic, heirloom varieties), community farming cooperatives for shared labor and equipment, and honestly assessing whether part-time farming is viable. Should address the reality faced by millions of small rice farmers in Southeast Asia."
+    tags: [philippines, rice, labor_constraints, small_farm_viability, part_time_farming, youth]
+
+  - id: practical_scenario_0017
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I have a 160-acre farm on the urban fringe outside of Austin, Texas. Development pressure is intense — my neighbors are selling for $30,000/acre to developers. My property taxes have tripled in 5 years because of rising land values. I want to keep farming but the ag exemption requires me to demonstrate productive agricultural use. I currently have cattle but the herd is too small to be efficient on rising feed costs. My soil is thin, rocky Edwards Plateau limestone with brush encroachment (juniper, mesquite). I also want to explore agritourism. How do I create a financially sustainable regenerative operation that preserves the agricultural exemption and resists the pressure to sell?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address Texas ag exemption requirements (must demonstrate intent and use, not just token livestock), brush management for rangeland improvement (targeted juniper removal to restore native grasses), stacking enterprises (cattle + goats for brush control + agritourism + direct-market meat), conservation easements as a tool against development, and building community connections that make the farm culturally valuable beyond economics."
+    tags: [texas, urban_fringe, development_pressure, ag_exemption, brush_management, agritourism, economics]
+
+  - id: practical_scenario_0018
+    question_type: scenario
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a cooperative manager for 200 quinoa farmers on the Altiplano of Bolivia, near Oruro, at 3,800 meters elevation. During the quinoa boom (2010-2015), many farmers expanded production onto fragile hillsides and abandoned the traditional llama grazing that maintained soil fertility. Now quinoa prices have crashed, the hillside plots are eroding badly, and the lowland fields are showing declining yields from continuous quinoa monoculture. Thola (native shrub) fuel sources have been cleared. Meanwhile, climate change is bringing more erratic rainfall, frost, and hailstorms. How do we help our farmers restore the traditional balance while finding markets that pay enough to survive?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address restoring the quinoa-llama-fallow rotation that historically maintained Altiplano soils, rehabilitating hillside erosion, thola replanting, diversifying crops (canahua, potato, oca), improving quinoa quality for specialty markets rather than competing on volume, value-added processing at the cooperative level, weather-index insurance, and integrating traditional ecological knowledge with modern practices."
+    tags: [bolivia, altiplano, quinoa, llama, erosion, market_crash, traditional_knowledge, cooperative]
+
+  - id: practical_scenario_0019
+    question_type: scenario
+    difficulty: hard
+    regions: [west_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a cashew farmer in northern Mozambique with 25 hectares. The cashew trees are old (30+ years, originally from a government plantation scheme) and many are diseased with powdery mildew. Yields have dropped to about 300 kg/ha of raw cashew nut. I used to sell to local traders at very low prices, but a new processing factory opened nearby offering better prices for quality nuts. However, they want consistent supply and Grade A quality, which I can't deliver with my old, diseased trees. I have no experience with top-working or replanting. There's also a push from an international buyer for organic certification. I have 3 laborers and limited savings. What's my path forward?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss phased renovation (top-working some trees with improved clones, replanting worst areas), sulfur-based powdery mildew management compatible with organic certification, intercropping during establishment (cassava, groundnuts, sesame), connecting with the processing factory for potential forward contracts or input support, organic certification pathway and costs, and whether organic premiums justify the investment at this scale."
+    tags: [mozambique, cashew, disease_management, renovation, organic_certification, market_linkage]
+
+  - id: practical_scenario_0020
+    question_type: scenario
+    difficulty: hard
+    regions: [central_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a 500-hectare wheat farm in northern Kazakhstan. This area was part of the Soviet Virgin Lands campaign in the 1950s — native steppe was ploughed for the first time. After 70 years of wheat monoculture with heavy tillage, our soils have lost an estimated 50-60% of their original organic carbon. Wind erosion is severe in spring before crop establishment. Yields are declining and we need increasing amounts of fertilizer to maintain them. I have access to good equipment but limited technical support for alternative practices. The growing season is short (May-September) with harsh winters (-30C). How do I start regenerating these degraded steppe soils?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address the historical context of Virgin Lands degradation, recommend no-till as a critical first step for wind erosion control, diversifying rotation (adding flax, lentils, oats, perennial grasses), snow trapping with stubble for moisture, restoring grass strips for wind erosion control, and the long-term nature of SOC rebuilding in continental steppe. Should reference successful no-till adoption in northern Kazakhstan."
+    tags: [kazakhstan, steppe, wind_erosion, wheat_monoculture, soil_carbon, virgin_lands, continental_climate]
+
+  - id: practical_scenario_0021
+    question_type: scenario
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a recently discharged military veteran trying to start a regenerative farm through a veteran farmer program. I have access to 10 acres of leased land near Fort Campbell, Kentucky/Tennessee. The land was part of a tobacco allotment and hasn't been farmed for 8 years — it's now thick fescue and multiflora rose. I have USDA veteran beginning farmer status, a VA disability rating, and access to some grant funding ($20,000 from the veteran farmer program). I have PTSD and farming is part of my therapeutic plan, but I need it to eventually generate income too. I know nothing about farming but I'm a hard worker and fast learner. What enterprises and practices should I start with, and what training resources exist?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address the unique situation of veteran farmers (Farmer Veteran Coalition, USDA veteran programs, AgrAbility), suggest manageable starting enterprises (pastured poultry, market garden, small-scale cut flowers), connect to training (Farmer Veteran Fellowship, local extension programs), emphasize starting small and scaling, address the therapeutic value of farming without overcommitting, and leverage the veteran beginning farmer USDA priority status for FSA loans and NRCS programs."
+    tags: [veteran_farmer, beginning_farmer, kentucky, tennessee, therapy, enterprise_planning, grants]
+
+  - id: practical_scenario_0022
+    question_type: scenario
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I grow tea on 8 hectares in the Nilgiri Hills of Tamil Nadu, India, at about 1,800 meters. My tea bushes are 50 years old (the variety is seedling-origin Assam-China hybrid). The plantation was once part of a larger estate and has declining yields. The soil between the tea rows is bare and eroded. We apply heavy doses of urea and muriate of potash, and the tea quality (polyphenol content, flavor profile) has deteriorated. Specialty tea buyers are now paying 3-5x the auction price for organic, single-estate teas. I want to transition to organic regenerative tea production for the specialty market. What's involved, and how do I manage the transition without losing my crop?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss ground cover establishment between tea rows (Desmodium, Guatemala grass), shade tree integration (silver oak, Albizia), composting tea waste and cow manure, biofertilizers (Azotobacter, phosphate-solubilizing bacteria), gradual reduction of synthetic inputs, organic certification timeline and costs, rejuvenation pruning strategy for old bushes, and building direct relationships with specialty buyers. Should note that tea quality often improves with organic management."
+    tags: [india, tea, nilgiris, organic_transition, specialty_market, erosion, shade_management]
+
+  - id: practical_scenario_0023
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I operate a 500-acre irrigated vegetable farm in the Salinas Valley, California. We grow lettuce, broccoli, spinach, and strawberries for major grocery chains. We're facing: (1) new groundwater sustainability regulations limiting pumping, (2) Salinas River nitrate contamination partly attributed to agricultural runoff, (3) labor shortages and rising minimum wage ($20/hour), (4) buyers demanding food safety audits (LGMA) that seem to conflict with conservation practices (they don't want habitat near fields because of wildlife-pathogen concerns), and (5) increasing Fusarium wilt in our lettuce. How do I address all these pressures while moving toward regenerative practices in an industry dominated by high-input production?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should address the real tension between food safety protocols and conservation, discuss precision nitrogen management to reduce runoff, cover cropping between cash crops, bio-fumigation for Fusarium, water-efficient irrigation (drip, soil moisture monitoring), mechanization options for labor issues, and how to work within LGMA while still improving soil health. Should be realistic about the constraints of large-scale vegetable production."
+    tags: [california, salinas, vegetables, food_safety, nitrate, labor, water_regulation, fusarium]
+
+  - id: practical_scenario_0024
+    question_type: scenario
+    difficulty: hard
+    regions: [east_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I am a pastoralist in the Karamoja region of northeastern Uganda. My family keeps about 60 cattle, 40 goats, and some chickens. Traditionally we moved with the herds following seasonal pastures, but movement corridors are being blocked by expanding crop farms and government sedentarization programs. The rangeland around our settlement is becoming overgrazed and thorny acacia is encroaching where grass used to grow. During the last drought, we lost 15 cattle. The government wants us to settle, grow crops, and reduce our herd size. But livestock is our savings, our culture, and our food security. How can we adapt our pastoral system to be more sustainable within these shrinking boundaries without losing our livelihood?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should respect pastoral culture and the rationality of pastoralism in arid lands, discuss negotiated grazing agreements with crop farmers, rangeland restoration through planned grazing (resting areas in rotation), bush thinning of encroaching acacia, fodder banks for drought, strategic destocking during drought (sell early at good prices rather than losing animals), hay making when grass is abundant, and livestock diversification (more goats which are drought-hardier). Should not simply advocate for sedentarization."
+    tags: [uganda, karamoja, pastoralism, rangeland, drought, sedentarization, cultural_sensitivity, livestock]
+
+  - id: practical_scenario_0025
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I bought a 50-acre former conventional dairy farm in Wisconsin 2 years ago. The property includes 30 acres of cropland (was corn silage), 10 acres of permanent pasture, 5 acres of woodlot, and 5 acres around buildings. The old dairy barn still stands. I discovered that the previous owner stockpiled manure behind the barn for years without proper containment. The manure pile has leached into a nearby stream that feeds a trout fishing creek. The county has been notified and I may face remediation requirements even though I didn't create the problem. My well water tested positive for nitrate at 14 mg/L (above the safe limit). I want to clean this up properly and build a regenerative farm. What's my plan of action for the contamination and the future farm?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice MUST prioritize the contamination issues: immediate safe drinking water (bottled or treatment system for nitrate), contact county conservation and DNR proactively, manure pile remediation plan (proper composting, removal, or incorporation), riparian buffer establishment along the stream, well testing for bacteria as well as nitrate, and potential legal liability research. Only then discuss farm planning. Should not minimize the health and environmental risks."
+    tags: [wisconsin, contamination, manure, nitrate, stream_pollution, remediation, dairy, water_quality]
+
+  - id: practical_scenario_0026
+    question_type: scenario
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a viticulturist managing 30 hectares of wine grapes in the Mendoza region of Argentina. We grow Malbec at 1,000 meters elevation. Our irrigation comes entirely from snowmelt-fed rivers through a canal system, but allocations are shrinking as the Andean glaciers retreat. The soils are alluvial, sandy-gravelly, low in organic matter (0.7%). We currently manage the vineyard floor with cultivation and herbicides. Our winery buyer is asking for sustainably certified grapes. Climate models predict hotter, drier conditions with more extreme heat events. How do I adapt my vineyard to these changes using regenerative principles while maintaining wine quality?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss cover crop options for arid viticulture (native grasses, legumes in alternate rows), drip irrigation conversion, deficit irrigation strategies for wine quality, building soil organic matter for water retention, compost application, mulching vine rows, canopy management for heat stress, potential altitude shifts for new plantings, and sustainability certification options (Bodegas de Argentina Sustainability Protocol)."
+    tags: [argentina, mendoza, viticulture, malbec, water_scarcity, glacier_retreat, climate_adaptation, wine]
+
+  - id: practical_scenario_0027
+    question_type: scenario
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a farmer who wants to participate in a carbon credit program. Several companies have approached me offering to pay for soil carbon sequestration on my 800-acre Midwest corn-soy-wheat farm. One company offers $15/tonne CO2e with a 10-year commitment, another offers $25/tonne but requires a 25-year contract with strict practice requirements. A third offers upfront payments but with clawback provisions if I fail to maintain practices. I already do no-till and cover crops on part of my farm. How do I evaluate these carbon programs, and what are the risks I should understand before signing?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss additionality requirements (getting credit for practices you already do), permanence risk and reversal buffers, measurement and verification approaches, stacking restrictions (can you sell carbon and other ecosystem service credits?), contract terms to watch for (clawback, exclusivity, data rights), the current state of voluntary carbon markets (volatile), having a lawyer review contracts, and realistic expectations for per-acre payments."
+    tags: [carbon_markets, contracts, risk_assessment, soil_carbon, corn_soybean, economics, verification]
+
+  - id: practical_scenario_0028
+    question_type: scenario
+    difficulty: hard
+    regions: [southeast_asia]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I manage a shrimp aquaculture operation in the Mekong Delta of Vietnam. I have 3 hectares of intensive shrimp ponds that were converted from mangrove forest 15 years ago. Disease outbreaks (especially EMS/AHPND) have become more frequent and severe, and antibiotic use has increased. My last two crops failed completely. The soil in the pond bottoms is acid sulfate and extremely degraded. Seawater intrusion is increasing due to upstream damming and climate change. I've heard about integrated mangrove-shrimp systems but I'm worried about losing production area. What are my realistic options?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should discuss integrated mangrove-shrimp (extensive/improved extensive systems), the evidence that mangrove integration reduces disease through water quality improvement, biofloc technology as an alternative, reducing stocking density and antibiotic use, pond bottom remediation (drying, liming, probiotics), organic/ASC certification for market premiums, and the reality that intensive shrimp on acid sulfate soils is increasingly unviable. Should address antibiotic resistance risks honestly."
+    tags: [vietnam, mekong_delta, shrimp, mangrove, aquaculture, disease, acid_sulfate_soils, antibiotics]
+
+  - id: practical_scenario_0029
+    question_type: scenario
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm a first-generation immigrant farmer from Somalia, now farming 5 acres near Minneapolis, Minnesota. I grow vegetables for the Somali community — including crops like sukuma wiki (collards), bilan (moringa), and digir (lentils) that are hard to find in stores. I rent the land from a land trust. My challenges: (1) the growing season is very short with frost risk into May, (2) I don't have much English and the extension materials are not in Somali, (3) I can't afford a high tunnel but I need to extend the season, (4) my customers want specific varieties they remember from home but I can't find the seeds, (5) I have no experience with cover crops or soil health — in Somalia we farmed very differently. How can I improve my farm using practices that make sense for my situation?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should be culturally sensitive, suggest season extension without high tunnels (row covers, low tunnels, plastic mulch for heat-loving crops), connect to immigrant farmer programs (Hmong and Somali farmer networks in MN, The Food Group, extension in Somali), discuss seed sourcing for culturally specific crops (Seed Savers, Baker Creek, diaspora seed networks), affordable soil building (compost, mulch), and NRCS programs that serve limited-resource farmers. Should respect the farmer's existing knowledge."
+    tags: [minnesota, immigrant_farmer, somali, cultural_crops, season_extension, language_barriers, equity]
+
+  - id: practical_scenario_0030
+    question_type: scenario
+    difficulty: hard
+    regions: [sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture advisor helping a farmer. Give practical, actionable advice."
+    turns:
+      - role: user
+        content: |
+          I'm an agronomist for a large commercial farm group in Zambia. We manage 5,000 hectares growing irrigated wheat, soybean, and maize. The company wants to adopt regenerative practices for two reasons: (1) a major European commodity buyer now requires sustainability metrics, and (2) we're spending $400/hectare on fertilizer and want to reduce costs. However, our shareholders expect consistent high yields, our farm managers are trained in conventional agronomy, and our equipment fleet is set up for full tillage. We also employ 500 seasonal workers whose livelihoods depend on the current system. How do we plan a large-scale commercial transition to regenerative practices?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - llm_judge
+        - safety_check
+      dimensions:
+        - factual_accuracy
+        - practical_actionability
+        - specificity
+        - safety
+    source_notes: "Good advice should provide a phased corporate transition plan: pilot plots first (10% of area), staff training, equipment adaptation (no-till planters, cover crop seeders), cover crop integration into the irrigation schedule, precision nutrient management to reduce fertilizer gradually, measuring and reporting sustainability metrics for buyers, managing the workforce transition, and setting realistic expectations for shareholders about the 3-5 year transition period."
+    tags: [zambia, large_scale, commercial, transition_planning, corporate, sustainability_metrics, employment]

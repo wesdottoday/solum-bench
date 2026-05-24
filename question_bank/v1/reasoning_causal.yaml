@@ -1,0 +1,765 @@
+metadata:
+  category: reasoning
+  subcategory: causal_chains
+  version: v1
+
+questions:
+  - id: reasoning_causal_0001
+    question_type: open_ended
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          A wheat farmer in the US Great Plains (Kansas) converted from conventional moldboard plowing to no-till five years ago. Explain the cascade of soil biological changes that would have occurred over those five years, including shifts in fungal-to-bacterial ratios, earthworm populations, mycorrhizal colonization, and aggregate stability. Why does this sequence unfold in this particular order?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: year 1-2 residue accumulation and surface microbial shift, bacterial dominance initially giving way to increased fungal biomass by year 2-3, earthworm recolonization timeline, mycorrhizal network re-establishment as tillage disturbance ceases, improved aggregate stability through glomalin and fungal hyphae, and the feedback loop between aggregates protecting SOM which feeds further biological activity. Should note the 'transition penalty' of lower yields in years 1-3."
+    tags: [no_till, soil_biology, great_plains, transition, fungal_bacterial_ratio]
+
+  - id: reasoning_causal_0002
+    question_type: open_ended
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why does adding lime to highly weathered acidic Oxisols in the Brazilian Cerrado sometimes fail to improve crop yields, even though soil pH increases? Explain the full chain of chemical and biological interactions that can cause this counterintuitive outcome.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should include: Oxisols dominated by kaolinite and iron/aluminum oxides with variable charge; liming raises pH but can create phosphorus fixation by freshly exposed iron hydroxide surfaces; calcium may displace aluminum but doesn't address underlying P deficiency; overliming can immobilize micronutrients (Zn, Mn, Fe, Cu); disruption of adapted microbial communities; CEC is pH-dependent in these soils so nutrient leaching patterns change; the importance of deep liming because Al toxicity in subsoil restricts root depth."
+    tags: [liming, oxisols, cerrado, phosphorus_fixation, soil_chemistry]
+
+  - id: reasoning_causal_0003
+    question_type: open_ended
+    difficulty: medium
+    regions: [sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how overgrazing in the Sahel region of West Africa creates a positive feedback loop leading to desertification. Include the roles of soil surface crusting, albedo changes, rainfall patterns, and loss of soil biological activity in your explanation.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: removal of vegetation exposes soil surface; raindrop impact destroys aggregates forming physical crusts; crusted soil has higher albedo reflecting more solar radiation; reduced evapotranspiration means less local moisture recycling and potentially reduced convective rainfall (Charney hypothesis); reduced infiltration increases runoff and erosion; loss of organic matter inputs starves soil biota; fewer soil organisms means less bioturbation and aggregate formation; seeds cannot germinate through crusted surface; wind erosion accelerates on bare ground; each factor reinforces the others in a degradation spiral."
+    tags: [overgrazing, desertification, sahel, feedback_loops, soil_crusting]
+
+  - id: reasoning_causal_0004
+    question_type: open_ended
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why cover crop termination timing is far more critical in semi-arid regions (e.g., western Kansas, 450 mm annual rainfall) than in humid regions (e.g., Ohio, 1000 mm annual rainfall). What specific causal chain connects termination timing to cash crop yield risk in dry climates?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: in semi-arid zones, cover crops transpire limited stored soil moisture; every day of growth past optimal termination depletes finite water reserves; no reliable rainfall to recharge profile before cash crop needs it; the 'green bridge' concept where living cover crops draw down subsoil moisture; in humid regions, frequent rainfall replenishes soil water making timing less critical; should mention the tradeoff between biomass benefits (erosion control, N fixation, weed suppression) vs water use; concept of 'soil water bank' and withdrawal timing; possibly mention chemical vs roller-crimper termination and their different moisture implications."
+    tags: [cover_crops, termination_timing, semi_arid, water_management]
+
+  - id: reasoning_causal_0005
+    question_type: open_ended
+    difficulty: hard
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why do heavily tilled Mollisols in the US Great Plains lose organic matter faster than Mollisols with similar initial carbon stocks in cooler climates like southern Alberta, Canada? Explain all contributing factors including temperature kinetics, moisture regimes, and the interaction between tillage and climate.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should include: Q10 temperature sensitivity of microbial decomposition (roughly doubles per 10C); warmer Kansas soils have higher mean annual temperature driving faster enzymatic breakdown; tillage physically disrupts aggregates exposing previously protected organic matter to microbial attack (aggregate hierarchy theory); more freeze-thaw cycles in Alberta slow decomposition for longer periods; wetting-drying cycles in Great Plains can stimulate 'Birch effect' decomposition pulses; wind erosion selectively removes carbon-rich topsoil particles; shorter fallow periods with more intensive cropping; moisture-temperature interaction means decomposition peaks when both moisture and temperature are adequate simultaneously."
+    tags: [mollisols, organic_matter_loss, tillage, climate_interaction, great_plains]
+
+  - id: reasoning_causal_0006
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Trace the causal chain from soil compaction (caused by heavy machinery traffic on wet clay soil) through to nutrient loss from the field. Include every major step: physical, hydrological, chemical, and biological consequences.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should trace: heavy machinery on wet soil compresses macropores; reduced macroporosity decreases infiltration rate and hydraulic conductivity; water pools on surface creating anaerobic microsites; surface runoff increases carrying dissolved and particulate nutrients (especially P); compacted subsoil creates perched water table; anaerobic conditions promote denitrification (N2O, N2 gas loss); restricted root penetration means reduced nutrient uptake efficiency; fewer earthworms and reduced bioturbation; weakened root systems reduce mycorrhizal colonization and nutrient scavenging; cycle perpetuates as compacted soil has fewer biological channels to restore porosity."
+    tags: [compaction, erosion, nutrient_loss, soil_physics, hydrology]
+
+  - id: reasoning_causal_0007
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how common mycorrhizal networks (CMNs) redistribute nutrients between plants in a diverse agroforestry system. Include the mechanisms by which carbon, phosphorus, and nitrogen move through these networks, and why this process confers a competitive advantage to the plant community as a whole rather than individual plants.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: AM and EM fungi form hyphal networks linking root systems of different plant species; source-sink gradients drive nutrient movement (carbon from high-photosynthesis to shaded understory plants); phosphorus transferred via polyphosphate granules in hyphal vacuoles; nitrogen as amino acids (especially arginine) or ammonium; the 'wood wide web' concept; preferential allocation to plants providing more carbon (biological market); nurse plant effects where established trees support seedlings; warning signal transmission; community-level resilience from shared resource pools; evolutionary debate about mutualism vs parasitism in CMNs."
+    tags: [mycorrhizae, nutrient_redistribution, agroforestry, common_mycorrhizal_networks]
+
+  - id: reasoning_causal_0008
+    question_type: open_ended
+    difficulty: hard
+    regions: [tropics]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Biochar applied to highly weathered Ferralsols in the Congo Basin produces dramatic yield improvements, but the same biochar applied to fertile Chernozems in Ukraine shows minimal or no yield benefit. Explain the causal reasons for this difference, addressing CEC, nutrient retention, pH buffering, soil biology, and base saturation.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: Ferralsols have very low native CEC (dominated by kaolinite and oxides with variable charge), so biochar's high CEC surface dramatically improves nutrient retention; these soils are acidic and biochar's liming effect raises pH toward optimal range; biochar creates habitat for beneficial microbes in otherwise low-organic-matter soils; in Chernozems, native SOM already provides high CEC (40+ cmol/kg), pH is already near neutral, and biological activity is robust; biochar is 'filling a gap' in degraded soils but redundant in fertile ones; possible negative effects in Chernozems from excessive alkalinity or sorption of beneficial organic compounds; also address nutrient-poor vs nutrient-rich feedstock biochar differences."
+    tags: [biochar, tropical_soils, chernozem, cec, soil_fertility]
+
+  - id: reasoning_causal_0009
+    question_type: open_ended
+    difficulty: medium
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the causal mechanism of salt accumulation in irrigated farmland in Rajasthan, India. Trace the chain from irrigation water source through evapotranspiration, capillary rise, and eventual soil salinization. Why does this problem worsen year after year without intervention?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: irrigation water contains dissolved salts (even 'fresh' water has 200-500 mg/L TDS); in arid climate (high evaporative demand, low rainfall), water evaporates but salts remain in soil profile; shallow water tables develop from over-irrigation; capillary rise brings salt-laden groundwater to root zone and surface; high temperatures accelerate evaporation concentrating salts; sodicity (high Na) destroys soil structure causing dispersion of clay particles; surface crusting reduces infiltration; positive feedback loop as reduced infiltration concentrates more salt at surface; lack of leaching fraction in water-scarce environment; canal-irrigated areas raise regional water tables affecting neighboring fields."
+    tags: [salinization, irrigation, rajasthan, arid_soils, salt_accumulation]
+
+  - id: reasoning_causal_0010
+    question_type: open_ended
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Describe how deforestation of Amazonian rainforest in Mato Grosso, Brazil, for soybean cultivation affects soil structure, biology, and hydrology over the first five years. Why is the degradation trajectory so rapid in these soils compared to deforestation of temperate deciduous forests?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should include: most nutrients in tropical forests are in the biomass not the soil (shallow nutrient cycling); burning releases a nutrient pulse but also destroys organic matter; Ferralsols/Oxisols have low native fertility and CEC dependent on organic matter; loss of constant litter input collapses soil food web rapidly; intense tropical rainfall on exposed soil causes slaking and surface sealing; loss of root channels reduces infiltration; high temperatures accelerate SOM decomposition; iron and aluminum oxides cement into hardpans (laterization risk); compared to temperate forests where soils store more nutrients and organic matter in mineral-associated fractions, have lower temperatures slowing decomposition, and less intense rainfall. Should mention the 3-5 year 'fertility window' before yields crash."
+    tags: [deforestation, mato_grosso, tropical_soils, soil_degradation, amazon]
+
+  - id: reasoning_causal_0011
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why is it more difficult to build soil organic matter in sandy soils compared to clay soils, even when the same amount of organic inputs are applied? Explain the physical and chemical reasons.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: sand particles have low surface area so less mineral-associated organic matter (MAOM) can form; no clay platelet surfaces for organo-mineral complexes; larger pore spaces allow more oxygen penetration accelerating aerobic decomposition; poor aggregate formation means no physical protection of organic matter in microaggregates; low CEC means organic matter is the primary source of nutrient retention, so microbes rapidly decompose any additions; faster drainage reduces anaerobic microsites that would slow decomposition; less reactive surface chemistry (no 2:1 clay interlayer spaces)."
+    tags: [soil_organic_matter, sandy_soils, clay_soils, carbon_storage]
+
+  - id: reasoning_causal_0012
+    question_type: open_ended
+    difficulty: medium
+    regions: [europe]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          A farmer in northern France switched from annual plowing to no-till and noticed earthworm populations tripled within three years. Explain the full causal chain: why does tillage suppress earthworms, and how does their recovery create cascading benefits for soil structure, water infiltration, and nutrient cycling?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: tillage physically injures and kills earthworms (especially anecic species like Lumbricus terrestris); destroys permanent burrows; removes surface residue food source; exposes worms to predation and desiccation; no-till restores surface residue and permanent burrow systems; earthworm burrows create macropores for preferential water flow (up to 6x infiltration increase); casts are nutrient-rich and well-aggregated; mucus secretions stimulate microbial activity; deep-burrowing species transport surface residue into subsoil (bioturbation); middens around burrow openings concentrate nutrients; should distinguish between epigeic, endogeic, and anecic functional groups."
+    tags: [earthworms, no_till, soil_structure, france, soil_biology]
+
+  - id: reasoning_causal_0013
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why do waterlogged soils (such as poorly drained paddy fields or peatlands) produce methane? Trace the causal chain from water saturation through oxygen depletion to methanogenesis, and explain why this matters for climate change.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: water fills pore spaces displacing air; oxygen consumed by aerobic microbes is not replaced; sequential reduction of electron acceptors (O2, then NO3-, Mn4+, Fe3+, SO42-) by facultative and obligate anaerobes; once all preferred acceptors exhausted, methanogens (archaea) reduce CO2 or ferment acetate to produce CH4; methane is ~28-34x more potent greenhouse gas than CO2 over 100 years; ebullition (bubbling) and plant-mediated transport bypass oxidation at soil-water interface; global rice paddies produce ~1.5% of global GHG emissions; peatland drainage can shift from CH4 to CO2 emissions."
+    tags: [methane, anaerobic_decomposition, waterlogged_soils, climate_change]
+
+  - id: reasoning_causal_0014
+    question_type: open_ended
+    difficulty: hard
+    regions: [arctic, subarctic]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain how climate warming affects soil carbon dynamics in permafrost regions of Siberia and northern Canada. What is the permafrost carbon feedback, and why do scientists consider it a potential tipping point? Include both direct decomposition effects and indirect hydrological changes.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should include: permafrost stores ~1500 Gt C (twice atmospheric CO2); warming thaws active layer exposing previously frozen organic matter to decomposition; thawed saturated soils produce methane, thawed drained soils produce CO2; thermokarst formation creates lakes and wetlands altering drainage; released GHGs cause further warming (positive feedback); rate depends on temperature sensitivity (Q10) of ancient organic matter; microbial communities in thawed permafrost take time to adapt but then decompose rapidly; abrupt vs gradual thaw scenarios; Arctic amplification means warming 2-3x global average; potential for 5-15% of permafrost carbon released by 2100 under high warming scenarios; this is a tipping point because once started, the feedback is self-reinforcing and irreversible on human timescales."
+    tags: [permafrost, carbon_feedback, climate_change, arctic_soils, tipping_points]
+
+  - id: reasoning_causal_0015
+    question_type: open_ended
+    difficulty: medium
+    regions: [australia, sub_saharan_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the contrasting short-term and long-term effects of fire on soil in Australian savanna grasslands. How does a single low-intensity burn differ from repeated high-intensity burns in terms of nutrient cycling, soil biology, and organic matter dynamics?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: low-intensity burn consumes surface litter releasing ash (K, Ca, Mg, P) in plant-available forms; brief heat pulse sterilizes top 1-2 cm but deeper organisms survive; post-fire nutrient flush stimulates microbial activity and plant regrowth; some pyrogenic carbon (biochar-like) created, which is highly stable; repeated high-intensity burns progressively deplete organic matter, volatilize nitrogen (>200C), can sterilize soil to greater depth, destroy seed banks, kill fungal networks; repeated burning without recovery period leads to nutrient mining; Australian Aboriginal fire-stick farming used low-intensity mosaic burns to manage this; should contrast with African savanna fire regimes."
+    tags: [fire, soil_biology, nutrient_cycling, australia, savanna]
+
+  - id: reasoning_causal_0016
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          A farmer notices that after years of growing corn continuously on the same field, yields are declining even though fertilizer rates have increased. Explain three soil-related causal chains that could explain this yield decline.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should identify at least three chains: (1) soil structure degradation from repeated tillage reducing water infiltration and root penetration; (2) buildup of corn-specific pathogens, nematodes, and pest pressure without rotation to break disease cycles; (3) decline in mycorrhizal diversity and function from monoculture and high P fertilization; also valid: micronutrient depletion not addressed by NPK fertilizer; loss of soil organic matter reducing water-holding capacity; increased herbicide-resistant weed pressure; aluminum toxicity from acidification caused by ammonium-based fertilizers."
+    tags: [monoculture, yield_decline, soil_degradation, continuous_cropping]
+
+  - id: reasoning_causal_0017
+    question_type: open_ended
+    difficulty: medium
+    regions: [southeast_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In the highlands of northern Vietnam, farmers practice slash-and-burn agriculture with increasingly short fallow periods (from 15 years down to 3 years). Explain the causal chain of soil degradation that results from shortened fallow, and why there is a critical threshold below which the system cannot recover.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: long fallow allows forest regrowth which restores organic matter, rebuilds nutrient stocks through deep-rooted tree uptake and litterfall, re-establishes mycorrhizal networks, and improves soil structure; shortened fallow means insufficient time for these processes; soil organic matter drops below threshold needed to maintain aggregate stability; nutrients exported in harvest not fully replenished by short fallow; acidification from repeated burning without sufficient base cation recycling; weed species shift to aggressive grasses that outcompete crops; below ~5-7 year fallow on these soils, degradation exceeds recovery capacity; steep slopes amplify erosion risk on degraded soils."
+    tags: [slash_and_burn, fallow, vietnam, soil_recovery, shifting_cultivation]
+
+  - id: reasoning_causal_0018
+    question_type: open_ended
+    difficulty: hard
+    regions: [central_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          The Aral Sea region of Uzbekistan has experienced massive soil salinization following decades of cotton monoculture with canal irrigation. Explain the interconnected causal chains involving water table rise, salt redistribution, soil structure collapse, and how these created a regional-scale ecological disaster.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: diversion of Amu Darya and Syr Darya rivers for irrigation; flood irrigation without adequate drainage raised water tables; capillary rise brought salts to surface in arid climate (high evaporative demand); sodium-dominated salts caused clay dispersion destroying soil structure; cotton monoculture demanded heavy irrigation perpetuating the cycle; wind erosion of dried Aral Sea bed deposited salt-laden dust on surrounding farmland; saline drainage water returned to rivers increased downstream salinity; soil biological activity collapsed in highly saline conditions; white salt crusts on surface reflect sunlight altering local microclimate; multi-generational environmental disaster affecting millions of hectares."
+    tags: [salinization, aral_sea, uzbekistan, irrigation, cotton, ecological_disaster]
+
+  - id: reasoning_causal_0019
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why adding fresh high-carbon residues like wheat straw (C:N ratio of 80:1) to soil can temporarily reduce nitrogen available to the next crop. What is the biological mechanism, and how long does this "nitrogen tie-up" typically last?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: soil microbes decomposing high-C:N material need nitrogen to build their own biomass (C:N ~8:1 for bacteria, ~15:1 for fungi); they outcompete plant roots for available soil nitrogen (NO3- and NH4+); this is 'nitrogen immobilization'; lasts until microbial population stabilizes and C:N of remaining residue drops below ~20-25:1; typically 2-8 weeks depending on temperature, moisture, and residue particle size; nitrogen is not lost, just temporarily locked in microbial biomass; will be released (mineralized) as microbes die and are consumed; practical implications for planting timing and N fertilizer management."
+    tags: [nitrogen_immobilization, cn_ratio, residue_decomposition, nutrient_management]
+
+  - id: reasoning_causal_0020
+    question_type: open_ended
+    difficulty: medium
+    regions: [east_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In the Kenyan highlands, smallholder farmers often observe that their tea and coffee yields decline after several years of continuous cultivation on Nitisols. Explain the causal chain linking continuous export cropping, soil acidification, aluminum toxicity, and phosphorus fixation in these soils.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should trace: continuous harvest removes base cations (Ca, Mg, K); ammonium-based fertilizers produce H+ during nitrification; both processes acidify the soil; as pH drops below 5.5, aluminum solubility increases sharply; Al3+ is toxic to roots, inhibiting elongation and branching; reduced root system cannot access nutrients or water effectively; at low pH, phosphorus binds tightly to aluminum and iron oxides becoming unavailable; Nitisols already have high P-fixation capacity; declining organic matter (from residue removal) reduces pH buffering; cycle accelerates without liming intervention; should mention that tea tolerates some acidity but even tea has limits around pH 4.0."
+    tags: [tea, coffee, nitisols, kenya, aluminum_toxicity, acidification]
+
+  - id: reasoning_causal_0021
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why crop rotation is more effective at suppressing soilborne diseases than fungicide applications alone. What is the biological causal chain that makes rotation work?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: soilborne pathogens (Fusarium, Rhizoctonia, Pythium, nematodes) build up inoculum when their host is grown continuously; rotation breaks the disease cycle by removing the host for 1-3 years; pathogen propagules (spores, sclerotia) decline through natural attrition; different crops support different microbial communities creating 'disease-suppressive soils'; diverse rotations increase antagonistic organisms (Trichoderma, Pseudomonas); fungicides target specific pathogens but don't rebuild suppressive microbiology and can harm beneficial organisms; resistance development is a risk with chemical-only approaches; rotation also disrupts pest and weed cycles."
+    tags: [crop_rotation, disease_suppression, soil_biology, integrated_pest_management]
+
+  - id: reasoning_causal_0022
+    question_type: open_ended
+    difficulty: hard
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In the Indo-Gangetic Plains, the rice-wheat rotation system has been practiced for decades with intensive tillage and flood irrigation for rice, followed by wheat. Explain the interconnected degradation pathways: how does this system simultaneously cause soil compaction (plough pan formation), zinc deficiency, methane emissions, declining water tables, and arsenic contamination of rice grain? Show how these are causally linked rather than independent problems.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should show interconnections: repeated puddling for rice creates hard pan at 15-20 cm restricting root growth and drainage; flood irrigation for rice creates anaerobic conditions producing methane AND reducing Fe/Mn oxides which releases bound arsenic into soil solution taken up by rice; zinc becomes unavailable under flooded conditions (zinc sulfide precipitation); enormous water demand lowers water tables requiring deeper wells; pumping from deeper aquifers accesses naturally occurring arsenic in Bengal Delta sediments; hard pan prevents natural drainage between seasons compounding waterlogging; organic matter decomposition under anaerobic conditions is slow, creating dependency on fresh organic inputs. These are connected through the common driver of prolonged soil saturation."
+    tags: [rice_wheat, indo_gangetic, compaction, arsenic, methane, zinc_deficiency]
+
+  - id: reasoning_causal_0023
+    question_type: open_ended
+    difficulty: medium
+    regions: [mediterranean]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Olive groves in southern Spain have traditionally been maintained with bare soil between trees through herbicide application or tillage. Explain why this practice leads to accelerating soil erosion on sloped terrain, and trace the causal chain from bare soil through rill formation to eventual gully erosion and loss of productive capacity.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: Mediterranean climate delivers rainfall in intense autumn/winter storms on dry, often hydrophobic soils; bare soil between trees receives full raindrop impact energy; aggregate breakdown and surface sealing reduce infiltration; overland flow concentrates in low points forming rills; rills deepen into gullies as flow velocity and erosive power increase (positive feedback); selective erosion removes fine particles and organic matter leaving impoverished subsoil; root zone depth decreases; olive tree roots become exposed; estimated losses of 20-80 t/ha/yr in some Spanish olive groves; contrast with cover-cropped or mulched alternatives that intercept rainfall and maintain infiltration."
+    tags: [olive_groves, erosion, mediterranean, spain, bare_soil_management]
+
+  - id: reasoning_causal_0024
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why organic matter is often called the "foundation" of soil health. Trace at least four different causal pathways by which soil organic matter improves crop productivity.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should identify multiple pathways: (1) nutrient supply through mineralization providing N, P, S and micronutrients; (2) increased CEC and nutrient retention reducing leaching losses; (3) improved aggregate stability through binding agents (polysaccharides, glomalin, fungal hyphae) leading to better structure; (4) increased water-holding capacity (SOM holds 10-20x its weight in water); (5) food source for soil biological community supporting nutrient cycling and disease suppression; (6) pH buffering capacity; (7) chelation of micronutrients increasing their availability; (8) reduced bulk density improving root penetration."
+    tags: [soil_organic_matter, soil_health, crop_productivity, fundamentals]
+
+  - id: reasoning_causal_0025
+    question_type: open_ended
+    difficulty: hard
+    regions: [tropics]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Terra Preta soils (Amazonian Dark Earths) have maintained high fertility for hundreds of years in a region where surrounding soils are notoriously infertile. Explain the causal mechanisms by which the original amendments (charcoal, bone, organic waste) created a self-sustaining fertile soil system. Why hasn't the fertility leached away after centuries of tropical rainfall?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: pyrogenic carbon (charcoal/biochar) is highly resistant to microbial decomposition (hundreds to thousands of years persistence); its porous structure provides microbial habitat; oxidation of biochar surfaces over time creates carboxyl groups increasing CEC; bone fragments supply calcium phosphate that slowly dissolves providing long-term P; high CEC retains cations against leaching; organic waste inputs stimulated biological activity that became self-perpetuating; evidence that Terra Preta soils develop unique microbial communities; nutrient cycling through deep-rooted vegetation returns leached nutrients; possible role of slow-release nutrient dynamics from bone apatite; contrast with surrounding Ferralsols where low CEC means nutrients leach rapidly."
+    tags: [terra_preta, biochar, tropical_fertility, amazonian_dark_earths, nutrient_retention]
+
+  - id: reasoning_causal_0026
+    question_type: open_ended
+    difficulty: medium
+    regions: [east_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Chinese farmers on the Loess Plateau have practiced terracing for centuries. Explain the causal chain by which terrace farming reduces soil erosion on these highly erodible loess soils, and why the recent Grain-for-Green reforestation program has been more effective than terracing alone in restoring soil health.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: loess is windblown silt, highly erodible when wet, forms vertical cliff faces; terraces reduce slope length and steepness, decreasing runoff velocity and erosive power; but terraces alone don't address raindrop impact, biological degradation, or organic matter loss; Grain-for-Green converted marginal cropland to forest/grassland starting 1999; perennial vegetation provides year-round ground cover, deep root systems stabilize soil, litter inputs rebuild organic matter, biological activity improves aggregate stability, evapotranspiration reduces surface runoff; combined approach addresses both physical (slope reduction) and biological (vegetation restoration) dimensions; measured reductions of 60-80% in sediment delivery to Yellow River."
+    tags: [loess_plateau, terracing, grain_for_green, erosion_control, china]
+
+  - id: reasoning_causal_0027
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why does soil compaction affect crop roots differently in sandy soils versus clay soils? Explain the physical mechanisms at play.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: sandy soils compact into dense packing with few micropores but remaining macropores may still allow some root penetration; clay soils when compacted form a dense mass with very high mechanical resistance; bulk density thresholds for root restriction differ by texture (~1.75 g/cm3 for sand, ~1.4 g/cm3 for clay); clay compaction also creates anaerobic conditions due to water retention in micropores; sandy compaction primarily restricts through mechanical impedance while clay compaction combines impedance with poor aeration; wet clay smears creating impermeable layers; sandy soils can sometimes self-repair through wetting-drying cycles while clay compaction is more persistent."
+    tags: [compaction, root_growth, soil_texture, soil_physics]
+
+  - id: reasoning_causal_0028
+    question_type: open_ended
+    difficulty: medium
+    regions: [west_africa]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In the Guinea savanna zone of Ghana, farmers practice integrated crop-livestock systems where cattle graze on crop residues after harvest. Explain the causal chain of soil fertility consequences when residue grazing is too intensive (removing >80% of residues), and contrast this with moderate residue grazing (~40% removal) combined with manure return.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: intensive removal exposes soil to direct rainfall impact (high-intensity tropical storms), reduces organic matter inputs, increases soil temperature (reducing microbial activity in hot climate), removes habitat for termites and other decomposers; moderate grazing with manure return creates a more favorable nutrient cycle where cattle process cellulose-rich residues into nutrient-concentrated manure (N, P, K more available than in raw residue); manure inoculates soil with microbes; some residue remaining provides soil cover; net nutrient balance depends on whether cattle are kraaled (manure concentrated elsewhere) or graze in-field; should mention the tradeoff between livestock feed needs and soil protection."
+    tags: [crop_livestock_integration, residue_management, ghana, guinea_savanna, manure]
+
+  - id: reasoning_causal_0029
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of "soil priming effect" and its implications for regenerative agriculture. When a farmer adds a labile carbon source (like molasses or fresh green manure) to soil, why can this sometimes lead to a net LOSS of stable soil organic matter? Under what conditions does priming build soil carbon versus deplete it?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: labile C inputs stimulate microbial growth and enzyme production; energized microbes produce enzymes that decompose not just the fresh input but also older, more stable organic matter (positive priming); this occurs because microbes use labile C as energy to 'mine' nutrients (especially N) from stable SOM; conditions favoring net carbon loss: N-limited soils where microbes must mine SOM for N; high-quality labile inputs in soils with large stable C pools; conditions favoring net carbon gain: when N is sufficient so microbes don't need to mine SOM; when labile inputs are accompanied by high C:N residues; when microbial necromass accumulation exceeds primed losses; importance of mineral-associated organic matter formation from microbial products; practical implications for compost vs molasses applications."
+    tags: [priming_effect, soil_carbon, microbial_ecology, organic_matter_dynamics]
+
+  - id: reasoning_causal_0030
+    question_type: open_ended
+    difficulty: medium
+    regions: [north_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why adaptive multi-paddock (AMP) grazing can increase soil carbon on degraded rangelands in the southern Great Plains of Texas, while continuous grazing at the same stocking rate leads to carbon loss. What are the specific biological and physical mechanisms that differ between these two grazing strategies?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: AMP grazing concentrates animals briefly then allows long recovery (60-90+ days); short intense grazing stimulates root exudate production and compensatory growth; long rest allows full root recovery and photosynthetic capacity restoration; trampling of standing residue creates mulch layer protecting soil and feeding decomposers; dung and urine concentrated in patches create fertility hotspots; continuous grazing allows selective overgrazing of palatable species, repeated defoliation weakens root systems, bare patches expand, soil surface exposed to erosion; AMP promotes deeper root growth which deposits carbon at depth; should mention the debate in scientific literature about magnitude of carbon sequestration claims."
+    tags: [adaptive_grazing, amp_grazing, soil_carbon, rangelands, texas]
+
+  - id: reasoning_causal_0031
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why does excessive synthetic nitrogen fertilizer application eventually degrade soil health, even though it increases short-term crop yields? Explain at least three causal pathways of degradation.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should identify multiple pathways: (1) soil acidification from nitrification of ammonium (2H+ produced per NH4+ oxidized); (2) suppression of mycorrhizal colonization when plants have abundant N and P, weakening nutrient scavenging networks; (3) reduced organic matter inputs as farmers rely on synthetic N instead of manure/compost/legumes; (4) increased microbial mining of soil organic matter (priming) when N is abundant; (5) nitrate leaching carries base cations (Ca, Mg) out of root zone; (6) N2O emissions (potent greenhouse gas); (7) salt effect of concentrated fertilizer can damage soil aggregates."
+    tags: [synthetic_nitrogen, soil_degradation, fertilizer, soil_health]
+
+  - id: reasoning_causal_0032
+    question_type: open_ended
+    difficulty: hard
+    regions: [south_america]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In the Argentine Pampas, the shift from mixed crop-livestock systems to continuous soybean monoculture since the 1990s has caused measurable soil degradation. Explain the interconnected causal chains: how does soybean monoculture simultaneously deplete soil organic matter (despite being a legume), degrade soil structure, and increase flood risk at a landscape scale?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: soybean exports large amounts of N in grain (high-protein crop) so net N fixation contribution to soil is minimal or even negative; low residue C:N ratio means rapid decomposition without building stable SOM; no-till soybean still causes gradual organic matter decline without diverse rotations; removal of livestock eliminates manure inputs and pastoral phase that rebuilt soil structure; soybean's shallow root system doesn't create deep biopores; glyphosate-tolerant soybean allows herbicide-only weed control but may affect soil microbial communities; at landscape scale, conversion of perennial pasture to annual cropping reduces water infiltration capacity and evapotranspiration, increasing runoff volume contributing to flooding of downstream areas in Buenos Aires province."
+    tags: [soybean, pampas, argentina, monoculture, soil_structure, flooding]
+
+  - id: reasoning_causal_0033
+    question_type: open_ended
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of "aggregate hierarchy" in soil structure and why it matters for carbon storage. How do macroaggregates and microaggregates form, what holds each type together, and how does tillage disrupt this hierarchy?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: microaggregates (<250 um) held together by persistent binding agents (organo-mineral complexes, humified organic matter, iron/aluminum oxides); macroaggregates (>250 um) formed around fresh organic matter with temporary binding agents (fungal hyphae, roots, polysaccharides, glomalin); microaggregates form WITHIN macroaggregates as particulate organic matter decomposes; this is the aggregate hierarchy model (Tisdall and Oades 1982, Six et al. 2000); carbon physically protected inside microaggregates within macroaggregates is most stable; tillage disrupts macroaggregates exposing previously protected organic matter to decomposition; loss of macroaggregates prevents new microaggregate formation; no-till preserves hierarchy allowing progressive carbon stabilization."
+    tags: [aggregate_hierarchy, soil_structure, carbon_storage, tillage, microaggregates]
+
+  - id: reasoning_causal_0034
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Why do plants grow poorly in highly alkaline soils (pH > 8.5)? Explain the causal chain linking high pH to nutrient deficiencies and physical soil problems.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: at high pH, iron, manganese, zinc, copper, and boron become increasingly insoluble and unavailable to plants (form insoluble hydroxides and carbonates); phosphorus precipitates with calcium; sodium-dominated high-pH soils (sodic soils) have dispersed clay destroying structure; poor structure means low infiltration and aeration; high bicarbonate concentrations interfere with iron uptake (bicarbonate-induced chlorosis); in calcareous soils, free calcium carbonate buffers pH preventing correction; some adapted plants (calcicoles) have mechanisms to acidify rhizosphere, but most crops suffer."
+    tags: [alkaline_soils, nutrient_availability, soil_ph, micronutrient_deficiency]
+
+  - id: reasoning_causal_0035
+    question_type: open_ended
+    difficulty: hard
+    regions: [southeast_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Peatland conversion for oil palm plantation in Borneo involves draining organic soils that accumulated over thousands of years. Explain the full cascade of consequences: from drainage through oxidative decomposition, subsidence, fire risk, carbon emissions, and eventual loss of agricultural viability. Why is this process essentially irreversible?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: tropical peatlands store massive carbon (up to 20m depth, ~600 Gt C globally in peatlands); drainage lowers water table exposing peat to oxygen; aerobic decomposition releases CO2 (estimated 15-20 t CO2/ha/yr); peat subsides 1-5 cm/year through oxidation and compaction; as surface drops, drainage infrastructure must be deepened creating a self-reinforcing cycle; dry peat is highly flammable (2015 Indonesian fires released ~1.62 Gt CO2); subsidence eventually brings surface below sea level/water table making cultivation impossible (60-100 year plantation lifespan); peat formation rate is ~1mm/year so thousands of years of accumulation destroyed in decades; fires can burn into peat layer destroying root zone; irreversible because peat cannot reform under drained conditions and the carbon is permanently lost to atmosphere."
+    tags: [peatland, oil_palm, borneo, carbon_emissions, subsidence, irreversibility]
+
+  - id: reasoning_causal_0036
+    question_type: open_ended
+    difficulty: medium
+    regions: [north_america, europe]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain why integrating livestock into a cropping system can improve soil biological activity and nutrient cycling compared to a crop-only system. What specific biological mechanisms are enhanced by the presence of grazing animals?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: animal saliva contains growth-stimulating compounds that promote plant regrowth and root exudation; dung provides concentrated, pre-digested organic matter that is rapidly colonized by dung beetles, fungi, and bacteria; urine delivers readily available N and K in forms immediately accessible to soil biota; hoof action breaks soil crusts and incorporates residue; grazing stimulates compensatory root growth and turnover depositing carbon belowground; diverse dung microbiome inoculates soil; dung beetle activity improves soil structure and nutrient distribution; rotational grazing creates pulses of nutrient input that stimulate microbial blooms; animal movement distributes seeds and microbes across landscape."
+    tags: [crop_livestock_integration, soil_biology, nutrient_cycling, grazing]
+
+  - id: reasoning_causal_0037
+    question_type: open_ended
+    difficulty: easy
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          A farmer observes that after installing subsurface drainage tiles in a wet clay field, crop yields improved dramatically in the first few years but then began to plateau. Meanwhile, the drainage water increasingly carries nitrate into nearby streams. Explain the causal connections between these observations.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: drainage removed excess water allowing root aeration and earlier planting (initial yield boost); improved drainage also increased soil organic matter decomposition by introducing oxygen to previously waterlogged zones, releasing a flush of mineralized N; this 'legacy nitrogen' contributed to initial yields; as SOM declines, the natural N supply decreases requiring more fertilizer; tile drains create preferential flow paths bypassing the soil matrix, short-circuiting natural denitrification zones; fertilizer N applied to drained soil readily moves to tiles as nitrate (mobile anion); yield plateau occurs as SOM-derived N supply diminishes and soil structure degradation from loss of organic matter offsets drainage benefits."
+    tags: [tile_drainage, nitrate_leaching, water_quality, clay_soils]
+
+  - id: reasoning_causal_0038
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the "4 per 1000" initiative (increasing soil organic carbon by 0.4% per year) and critically evaluate whether it is achievable across different soil types and climate zones. What are the biophysical constraints that make this target easy or difficult in different contexts? Provide specific examples from at least three different regions.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: the 4 per 1000 initiative launched at COP21 proposes increasing top 40 cm SOC stocks by 0.4% annually to offset global CO2 emissions; achievability varies enormously: degraded tropical soils may achieve this or more through restoration (high potential); already-high-C soils in northern Europe are near saturation (very difficult); arid zone soils limited by low biomass production; hot tropical soils face rapid decomposition opposing accumulation; sandy soils limited by mineral-associated protection capacity; permafrost soils could lose carbon with warming; practical examples: Brazilian Cerrado with no-till and cover crops (achievable), Finnish boreal soils (near saturation, difficult), Australian rangelands (water-limited, variable); should note that the target is aspirational and a global average, not expected to be uniform."
+    tags: [four_per_thousand, soil_carbon, climate_policy, carbon_sequestration]
+
+  - id: reasoning_causal_0039
+    question_type: open_ended
+    difficulty: medium
+    regions: [south_asia]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          In parts of Punjab, India, farmers burn approximately 20 million tonnes of rice straw each year before planting wheat. Explain the immediate and long-term soil consequences of this practice compared to incorporating or mulching the straw. Why do farmers continue burning despite known negative consequences?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should cover: burning destroys organic matter, volatilizes N and S, kills surface-dwelling organisms, creates air pollution; ash returns K and P but in forms subject to wind and water loss; heat sterilizes top few centimeters; long-term effects include declining SOM, reduced biological activity, and degraded structure; incorporation benefits include organic matter addition but risks N immobilization and disease carryover; mulching with Happy Seeder technology is emerging alternative; farmers burn because of extremely short turnaround time between rice harvest and wheat planting (10-20 days), high volume of residue from combine harvesting, cost of alternatives, lack of equipment access; policy context of delayed rice transplanting dates to save groundwater has compressed the window further."
+    tags: [residue_burning, rice_straw, punjab, india, air_quality, soil_carbon]
+
+  - id: reasoning_causal_0040
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a regenerative agriculture expert. Explain your reasoning thoroughly."
+    turns:
+      - role: user
+        content: |
+          Explain the concept of "soil carbon saturation" and the saturation deficit. Why do some soils respond dramatically to regenerative practices while others show minimal carbon gains? How do soil mineralogy, climate, existing carbon stocks, and management history interact to determine a soil's carbon sequestration potential? Illustrate with contrasting examples.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - factual_accuracy
+        - reasoning_depth
+        - specificity
+        - completeness
+    source_notes: "Good answer should explain: Hassink's concept of protective capacity determined by clay + silt content; mineral-associated organic matter (MAOM) has a finite capacity determined by reactive mineral surfaces; particulate organic matter (POM) is less bounded but turns over faster; saturation deficit = maximum C - current C; highly degraded soils with high clay content have large deficits and respond strongly to improved management; already high-C soils near saturation show diminishing returns; sandy soils have low maximum C regardless of management; 2:1 clays (smectite) protect more C than 1:1 clays (kaolinite); iron and aluminum oxides in tropical soils provide additional protection capacity; climate determines both input (NPP) and output (decomposition) rates; examples: degraded Vertisol in India (high deficit, high clay, strong response expected) vs productive Mollisol in Iowa (near saturation, limited gains) vs sandy Arenosol in Sahel (low maximum capacity)."
+    tags: [carbon_saturation, soil_mineralogy, carbon_sequestration, saturation_deficit]

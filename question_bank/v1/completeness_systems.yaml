@@ -1,0 +1,743 @@
+metadata:
+  category: completeness
+  subcategory: systems_thinking
+  version: v1
+
+questions:
+  # ============================================================
+  # WHOLE-FARM PLANNING
+  # ============================================================
+
+  - id: completeness_systems_0001
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Design a whole-farm regenerative plan for a 150-hectare mixed farm in the
+          temperate zone that currently runs conventional wheat-canola rotation. The plan
+          must integrate soil health, water management, biodiversity corridors, livestock,
+          and economic viability over a 10-year transition period.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must connect multiple systems: soil biology improvement feeding into water infiltration, livestock nutrient cycling replacing synthetic inputs, biodiversity corridors providing pest control services, economic phasing to maintain cash flow during transition. Should address temporal sequencing and feedback loops."
+    tags: [systems_thinking, whole_farm_planning, transition]
+
+  - id: completeness_systems_0002
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How does a regenerative transition affect the entire farm ecosystem over a 10-year
+          period? Trace the cascading changes from the initial switch to no-till and cover
+          crops through to soil biology, water dynamics, pest ecology, nutrient cycling,
+          farm economics, and landscape-level impacts.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must trace temporal cascade: Year 1-2 reduced erosion and surface biology changes, Year 3-5 mycorrhizal network development and improved water infiltration, Year 5-7 pest-predator equilibrium shifts, Year 7-10 soil carbon plateau effects. Should address non-linear dynamics, possible 'transition dip' in yields, and emergent properties of the mature system."
+    tags: [systems_thinking, transition_timeline, cascading_effects]
+
+  - id: completeness_systems_0003
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Explain the interconnections between soil health, water quality, and local
+          biodiversity in an agricultural landscape. How do management decisions on individual
+          farms scale up to affect watershed-level outcomes? Include both above-ground and
+          below-ground linkages.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must connect: soil aggregate stability to infiltration to reduced runoff to stream water quality; soil organic matter to microbial diversity to nutrient cycling efficiency to reduced leaching; root exudates to rhizosphere biology to mycorrhizal networks to plant community diversity to pollinator habitat. Should address scale transitions from micro (aggregate) to landscape (watershed)."
+    tags: [systems_thinking, soil_water_biodiversity, watershed]
+
+  - id: completeness_systems_0004
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How do above-ground and below-ground food webs interact in a managed regenerative
+          pasture? Describe the key organisms, energy flows, nutrient transfers, and feedback
+          loops that connect the two realms, and explain how grazing management affects these
+          interactions.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must connect: root exudates feeding bacterial/fungal communities, mycorrhizal nutrient transport, dung beetle processing and burial, nematode-bacteria-protozoa grazing chains, predatory mite and beetle communities, earthworm bioturbation, plant-herbivore-predator dynamics above ground. Should address how mob grazing pulse creates root exudate pulse that cascades through soil food web. Reference Elaine Ingham's soil food web framework."
+    tags: [systems_thinking, food_webs, pasture_ecology]
+
+  - id: completeness_systems_0005
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Design a climate-resilient farming system for the Sahel zone of West Africa
+          (semi-arid, 400-600mm annual rainfall, sandy soils, extreme heat). The system
+          must address food security, soil restoration, water scarcity, and economic
+          viability for smallholder farmers with limited capital.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must integrate: Farmer Managed Natural Regeneration (FMNR/RNA), zai pit water harvesting, half-moon planting basins, appropriate tree species (Faidherbia albida reverse phenology, Piliostigma, balanites), millet-cowpea intercropping, small ruminant integration, dry-season gardening near water points. Should reference Chris Reij/WRI Great Green Wall research, Tony Rinaudo's FMNR success in Niger. Address climate variability increasing."
+    tags: [systems_thinking, climate_resilience, sahel, dryland]
+
+  - id: completeness_systems_0006
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How does landscape-scale management affect individual farm outcomes? Analyze
+          how coordination among neighboring farms in a 5000-hectare watershed creates
+          emergent benefits (or problems) that individual farms cannot achieve alone.
+          Consider ecological, hydrological, economic, and social dimensions.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: coordinated pest management reducing refuge areas, landscape-level pollinator corridors, watershed-scale hydrology benefits from multiple farms improving infiltration, collective marketing power, shared equipment economics. Should discuss game theory of adoption (free-rider problem), successful examples (Burren farming in Ireland, Landcare Australia), and tragedy of the commons vs collaborative management."
+    tags: [systems_thinking, landscape_scale, collective_action]
+
+  - id: completeness_systems_0007
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Connect carbon cycling, water cycling, and nutrient cycling in a field that has
+          transitioned from conventional tillage to a no-till cover-cropped system. How do
+          changes in one cycle create feedback effects in the others? Trace both positive
+          and negative feedback loops.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must connect: increased C inputs from covers drive microbial activity driving aggregate formation driving infiltration driving reduced runoff driving nutrient retention. Positive feedback: more C = more biology = more aggregation = more water = more plant growth = more C. Negative feedback/limits: N immobilization during high-C cover decomposition, potential waterlogging in poorly drained soils, weed seed bank shifts. Should address saturation points and non-linear dynamics."
+    tags: [systems_thinking, biogeochemical_cycling, feedback_loops]
+
+  - id: completeness_systems_0008
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How do market forces, policy incentives, and ecological principles interact in
+          regenerative farm design? Analyze how commodity prices, carbon credit markets,
+          ecosystem service payments, consumer demand for regenerative products, and
+          government subsidies either support or conflict with ecologically sound farm
+          management decisions.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address tensions and synergies: commodity price signals rewarding monoculture vs ecosystem service payments rewarding diversity; carbon credit additionality debates; premium markets (regenerative organic certified) vs volume commodity reality; CAP/Farm Bill incentive structures and their ecological alignment or misalignment. Should discuss specific programs: Indigo Ag, Nori, Land O'Lakes SUSTAIN, EU eco-schemes."
+    tags: [systems_thinking, economics, policy, market_forces]
+
+  # ============================================================
+  # SOIL-CLIMATE INTERACTIONS
+  # ============================================================
+
+  - id: completeness_systems_0009
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Explain how soil management decisions on farms affect global climate regulation.
+          Trace the pathways from tillage practices through soil carbon dynamics, nitrous
+          oxide emissions, methane fluxes, and albedo changes to net radiative forcing.
+          Quantify where possible.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: CO2 from tillage-induced oxidation (potential 0.5-1.0 Gt C/year sequestration globally), N2O from excess N application (298x CO2 GWP), CH4 from paddy rice and ruminants vs methanotrophic soil uptake, surface albedo changes from residue management. Should reference 4 per 1000 initiative, Rattan Lal's estimates, IPCC land sector contributions. Acknowledge uncertainty and permanence debates."
+    tags: [systems_thinking, climate_regulation, greenhouse_gases]
+
+  - id: completeness_systems_0010
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          A farmer in a Mediterranean climate is experiencing increasingly erratic rainfall,
+          hotter summers, and more intense winter storms due to climate change. Design an
+          adaptive management system that builds resilience across soil, water, crop, and
+          economic dimensions. How should the farm plan evolve as climate change progresses?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address Mediterranean-specific adaptation: drought-tolerant perennials (olive, almond, carob), water harvesting earthworks, soil organic matter for water retention, windbreaks, heat-tolerant livestock breeds. Adaptive management framework: monitoring triggers (soil moisture, temperature thresholds), phased species transitions, insurance and risk management. Should discuss shifting suitability zones and managed retreat from some crops."
+    tags: [systems_thinking, climate_adaptation, mediterranean]
+
+  # ============================================================
+  # BIOLOGICAL SYSTEMS
+  # ============================================================
+
+  - id: completeness_systems_0011
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Describe the complete nitrogen cycle in a regenerative farming system that uses
+          no synthetic nitrogen. Trace all nitrogen pathways from atmospheric fixation
+          through biological cycling, plant uptake, animal processing, and potential losses.
+          How does the system maintain nitrogen sufficiency without external inputs?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must trace: biological N fixation (rhizobial and free-living), atmospheric deposition, organic matter mineralization-immobilization, plant uptake and root exudate cycling, animal manure decomposition, denitrification and leaching losses. Should quantify approximate fluxes (legume fixation 50-200 kg N/ha/year, free-living 5-20 kg/ha/year). Address why conventional farming 'needs' synthetic N (broken cycle from removal without return) vs closed-loop regenerative approach."
+    tags: [systems_thinking, nitrogen_cycle, biological_farming]
+
+  - id: completeness_systems_0012
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How does the soil microbiome regulate plant health, and how do regenerative
+          practices restore these regulatory functions? Connect the roles of bacteria,
+          fungi, archaea, protists, and viruses in disease suppression, nutrient provision,
+          stress tolerance, and plant immune priming.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: induced systemic resistance from PGPR, mycorrhizal-mediated nutrient access and pathogen protection, competitive exclusion of pathogens by diverse microbiome, antibiotic production by antagonistic bacteria, phage regulation of bacterial populations, protozoan grazing releasing locked-up nutrients. Should reference disease-suppressive soils research (Fusarium-suppressive soils of Chateaurenard). Connect management practices to specific microbiome functions."
+    tags: [systems_thinking, soil_microbiome, plant_health]
+
+  - id: completeness_systems_0013
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Explain the role of soil organic matter as the central hub connecting physical,
+          chemical, and biological soil functions. How does building SOM simultaneously
+          improve water dynamics, nutrient availability, biological activity, structural
+          stability, and carbon storage? What are the limits and trade-offs?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address SOM as: water sponge (each 1% OM increase holds ~25,000 gallons/acre more water), CEC contributor (~200 cmol(c)/kg for humus vs 2-50 for mineral clay), microbial energy source (labile vs stable fractions), aggregate binding agent, pH buffering. Limits: saturation point (C equilibrium concept), climate-dependent decomposition rates, nutrient mining risk if building OM too fast. Should distinguish particulate vs mineral-associated organic matter (MAOM) functions."
+    tags: [systems_thinking, soil_organic_matter, hub_concept]
+
+  # ============================================================
+  # INTEGRATED PEST AND WEED MANAGEMENT
+  # ============================================================
+
+  - id: completeness_systems_0014
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How does transitioning to regenerative agriculture change the pest and disease
+          pressure dynamics on a farm? Trace the shifts in insect, fungal, bacterial, and
+          weed communities over a 5-year transition. What biological control mechanisms
+          emerge, and what new challenges might arise?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: initial weed pressure increase in no-till transition (changed weed spectrum from annual to perennial), beneficial insect habitat creation timeline (3-5 years for stable predator populations), disease suppressive soil development, slug/vole increase in high-residue systems. Should discuss the 'messy middle' transition period and strategies to manage it. Reference Lundgren's work on pest:predator ratios in regenerative vs conventional."
+    tags: [systems_thinking, pest_ecology, biological_control]
+
+  - id: completeness_systems_0015
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Design an integrated weed management system for a regenerative farm that is
+          eliminating herbicide use. Address the ecological, mechanical, cultural, and
+          biological weed management tools available, and explain how they interact as a
+          system rather than as individual tactics.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must integrate: competitive cover crop smothering, allelopathic species (cereal rye, sorghum-sudan), crop rotation breaking weed cycles, roller-crimper technology, targeted tillage (only where needed), weed seed bank depletion strategy, livestock grazing for weed control. Should address how these interact synergistically rather than just listing. Discuss timeline for seed bank reduction (Harrington seed destructor concept) and economic analysis of labor vs chemical cost."
+    tags: [systems_thinking, weed_management, herbicide_free]
+
+  # ============================================================
+  # WATER AND LANDSCAPE
+  # ============================================================
+
+  - id: completeness_systems_0016
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Explain how regenerative soil management can restore the small water cycle at a
+          landscape scale. Connect soil infiltration capacity, evapotranspiration, cloud
+          formation, and local rainfall patterns. How much can farm management realistically
+          influence regional hydrology?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: Millán Millán's research on Mediterranean deforestation and rainfall decline, Makarieva's biotic pump theory, soil as water storage (reduced runoff = more evapotranspiration = more local precipitation), role of vegetation in atmospheric moisture recycling. Should quantify: healthy soil can infiltrate 3-8 inches/hour vs degraded 0.5 inch/hour, landscape-scale effects require 30-50% coverage threshold. Acknowledge uncertainty in landscape-scale claims."
+    tags: [systems_thinking, small_water_cycle, landscape_hydrology]
+
+  - id: completeness_systems_0017
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          A tropical watershed in Southeast Asia has experienced severe deforestation for
+          palm oil, followed by soil degradation, flooding, and downstream sedimentation.
+          Design a comprehensive landscape restoration plan that integrates regenerative
+          agriculture, reforestation, and hydrological restoration. Address both ecological
+          and socioeconomic constraints.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: riparian zone restoration priorities, contour management on slopes, sustainable palm oil intensification on existing plantations (RSPO standards), agroforestry alternatives (cacao, rubber, durian under canopy), community land tenure issues, indigenous knowledge integration. Should connect upstream management to downstream outcomes (flooding, sedimentation, fisheries). Reference Borneo/Sumatra case studies."
+    tags: [systems_thinking, landscape_restoration, tropical, palm_oil]
+
+  # ============================================================
+  # ECONOMIC AND SOCIAL SYSTEMS
+  # ============================================================
+
+  - id: completeness_systems_0018
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Analyze the full economic system of a farm transitioning to regenerative practices.
+          Go beyond simple enterprise budgets to address: input cost reduction curves, yield
+          trajectory during transition, new revenue streams (carbon credits, premium markets,
+          ecosystem services), risk profile changes, capital requirements, and the time value
+          of natural capital investment.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: 3-5 year transition economics (often 10-20% yield dip years 1-3), input cost reductions (fertilizer, pesticide, fuel savings), new revenue streams and their reliability, balance sheet changes (soil health as asset), insurance and risk implications, opportunity cost of management time. Reference LaCanne and Lundgren 2018 (regenerative farms 78% more profitable), Ecdysis Foundation data. Acknowledge variability in outcomes."
+    tags: [systems_thinking, farm_economics, transition_finance]
+
+  - id: completeness_systems_0019
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How do traditional and indigenous agricultural knowledge systems embody systems
+          thinking? Analyze three specific traditional systems from different continents
+          (e.g., milpa, rice-fish culture, forest gardens) and explain how they integrate
+          soil, water, biodiversity, and social dimensions. What can modern regenerative
+          agriculture learn from these systems?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must analyze specific traditional systems in depth (not just name-drop): Mesoamerican milpa (maize-bean-squash three sisters + nutrient cycling logic), Asian rice-fish-duck systems (nutrient recycling, pest control, protein production), tropical forest gardens (Kerala homegardens or Javanese pekarangan - multi-strata design mimicking forest structure). Should connect indigenous knowledge to modern ecological principles. Address intellectual property and benefit-sharing ethics."
+    tags: [systems_thinking, traditional_knowledge, indigenous_systems]
+
+  - id: completeness_systems_0020
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How should regenerative agriculture measurement and verification systems work?
+          Design a comprehensive monitoring framework that captures soil health, biodiversity,
+          water quality, carbon sequestration, economic viability, and social outcomes.
+          Address the tensions between scientific rigor, farmer practicality, and market
+          credibility.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: tiered monitoring (simple indicators for farmers, detailed metrics for carbon markets, research-grade for science), appropriate indicators at each level (CASH, Haney test, PLFA, remote sensing, biodiversity surveys), cost-benefit of monitoring intensity, digital tools (satellite, soil sensors, eDNA), verification standards (Verra VM0042, Gold Standard). Should discuss the tension between standardization for markets and context-specificity for ecology."
+    tags: [systems_thinking, monitoring, measurement_verification]
+
+  # ============================================================
+  # SOIL PHYSICS AND ENGINEERING
+  # ============================================================
+
+  - id: completeness_systems_0021
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Explain how soil compaction cascades through all farm systems. Trace the effects
+          of a single compaction event (e.g., heavy harvest traffic on wet soil) through
+          soil physics, hydrology, root growth, soil biology, nutrient cycling, crop yield,
+          greenhouse gas emissions, and long-term soil health trajectory.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must trace cascade: compaction reduces macroporosity (>50 micron pores lost first), reduces infiltration, creates anaerobic zones increasing denitrification (N2O), restricts root exploration volume, reduces mycorrhizal colonization, decreases earthworm populations, creates surface ponding, increases runoff. Recovery timelines: surface compaction 1-3 years with biology, subsoil compaction 5-15+ years or permanent. Should discuss prevention vs remediation economics."
+    tags: [systems_thinking, compaction, cascading_effects]
+
+  - id: completeness_systems_0022
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Design a regenerative farming system for heavy clay soils (>50% clay content) in
+          a continental climate with freeze-thaw cycles. Address the unique challenges and
+          opportunities of clay soils across all system dimensions: drainage, structure
+          building, biological activation, crop selection, tillage strategy, and timing of
+          operations.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address clay-specific: high CEC as advantage for nutrient retention, shrink-swell creating natural structure (vertic properties), critical moisture window for field operations, freeze-thaw as natural tillage, tile drainage management, deep-rooted covers for bio-drilling (daikon radish, chicory). Should discuss how biology can transform 'problem' clay into highly productive soil through aggregate hierarchy building. Reference Brenna Aegerter's clay soil management research."
+    tags: [systems_thinking, clay_soils, soil_physics]
+
+  # ============================================================
+  # ENERGY AND NUTRIENT FLOWS
+  # ============================================================
+
+  - id: completeness_systems_0023
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Compare the energy flows in a conventional farming system versus a regenerative
+          farming system. Trace all energy inputs (solar, fossil fuel, human labor, embedded
+          energy in inputs) and outputs (food calories, ecosystem services, waste heat) for
+          both systems. What is the net energy return on investment for each approach?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: fossil fuel inputs (manufacture of N fertilizer = ~1% of global energy, diesel for tillage, pesticide production), solar energy capture efficiency, biological energy flows (photosynthesis to root exudates to soil biology), human labor energy. EROI of conventional agriculture ~1:10 fossil fuel invested per food calorie vs regenerative potentially improving ratio. Reference Pimentel's energy analysis framework. Acknowledge complexity and uncertainty in full lifecycle analysis."
+    tags: [systems_thinking, energy_flows, eroi]
+
+  - id: completeness_systems_0024
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How does the phosphorus cycle in regenerative agriculture differ from conventional
+          agriculture, and why is this critical for long-term food security? Address the
+          biological mechanisms for P access, the role of mycorrhizae, the implications of
+          peak phosphorus, and design strategies for a farm to minimize external P dependency.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: P is non-substitutable and non-renewable (peak phosphorus ~2030-2070), mycorrhizal networks as primary biological P access mechanism (extend root reach 100x), organic acid exudation dissolving mineral P, phosphatase enzyme activity, legacy P in over-fertilized soils (>500 kg/ha in many Western soils). Regenerative approach: maintain mycorrhizae (no-till, living roots), recycle all organic waste, build biological P access. Reference Dana Cordell's peak phosphorus work."
+    tags: [systems_thinking, phosphorus_cycle, peak_phosphorus]
+
+  # ============================================================
+  # COMPLEX REGIONAL SYSTEMS
+  # ============================================================
+
+  - id: completeness_systems_0025
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Design a regenerative aquaculture-agriculture integrated system for a coastal
+          community in a tropical developing country. Address nutrient cycling between
+          aquaculture ponds and crop fields, mangrove restoration, livelihood diversification,
+          and climate resilience. How do marine, freshwater, and terrestrial systems connect?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: integrated multi-trophic aquaculture principles, pond effluent as crop fertilizer, mangrove as nursery habitat and coastal defense, rice-fish/shrimp integration (Vietnamese/Bangladeshi models), seaweed cultivation for feed and soil amendment. Should connect marine nutrient cycling to terrestrial agriculture. Address land tenure, gender dynamics in coastal communities. Reference WorldFish Center and CGIAR aquatic foods research."
+    tags: [systems_thinking, aquaculture_integration, coastal, tropical]
+
+  - id: completeness_systems_0026
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How can urban and peri-urban agriculture integrate with rural regenerative farming
+          systems to create circular nutrient economies? Address organic waste recycling,
+          composting at scale, biochar production from urban green waste, and the social
+          and regulatory barriers to closing the urban-rural nutrient loop.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: urban organic waste stream volumes (30-40% of municipal waste is organic), centralized composting and quality control (heavy metals, PFAS contamination risk), biochar from green waste (pyrolysis systems), humanure and biosolids (regulatory and cultural barriers), urban farm nutrient demands vs rural surplus. Reference circular economy frameworks, San Francisco composting program, Cuban urban agriculture model. Address PFAS/contaminant concerns honestly."
+    tags: [systems_thinking, circular_economy, urban_rural, nutrient_cycling]
+
+  - id: completeness_systems_0027
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Analyze the complete lifecycle of a regenerative grazing operation from soil to
+          consumer plate. Trace the carbon, nitrogen, water, and energy flows from soil
+          biology through grass growth, animal metabolism, meat/dairy processing, distribution,
+          and consumption. Where are the leverage points for improving system efficiency
+          and reducing environmental impact?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: soil C sequestration potential vs enteric methane emissions (net GHG balance debate), N cycling through ruminant system (only ~15% feed N converted to product), water footprint (green vs blue vs grey water distinction), energy in processing and cold chain, nutrient density of grassfed products. Leverage points: grazing management, finishing strategy, local processing, direct marketing. Reference Quantitative reviews by Garnett, Godde, or Stanley on net GHG of grazing systems."
+    tags: [systems_thinking, lifecycle_analysis, grazing, supply_chain]
+
+  # ============================================================
+  # RESILIENCE AND ADAPTATION
+  # ============================================================
+
+  - id: completeness_systems_0028
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How does biodiversity at multiple scales (genetic, species, ecosystem) create
+          resilience in a regenerative farming system? Connect crop genetic diversity,
+          soil microbial diversity, insect community diversity, landscape habitat diversity,
+          and market/income diversity as layers of a resilience framework.
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address multiple diversity scales: genetic (heritage varieties, diverse cultivars for buffering), species (polycultures, cover crop mixes, companion planting), functional groups (N-fixers, deep-rooted, mycorrhizal hosts), ecosystem (hedgerows, wetlands, woodlots creating habitat mosaic). Insurance hypothesis of biodiversity. Should discuss portfolio theory applied to farm biodiversity. Reference Swift et al.'s framework on planned vs associated biodiversity."
+    tags: [systems_thinking, biodiversity, resilience, multi_scale]
+
+  - id: completeness_systems_0029
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          Analyze how salt-affected soils (saline, sodic, and saline-sodic) can be
+          rehabilitated through regenerative approaches. Integrate soil chemistry, plant
+          physiology, microbiology, hydrology, and management strategies into a comprehensive
+          reclamation plan. Why do biological approaches often outperform purely chemical
+          amendments?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address: distinction between saline (high EC) vs sodic (high ESP/SAR) vs saline-sodic, chemical amendments (gypsum for sodic), biological approaches (halophyte cultivation, organic matter for aggregate stability, microbial EPS production improving structure), drainage requirements, salt-tolerant crop sequences (barley > wheat > rice in tolerance). Should explain why OM improves soil physical properties that facilitate leaching. Reference Australian salt-land management and ICBA research."
+    tags: [systems_thinking, salinity, soil_reclamation]
+
+  - id: completeness_systems_0030
+    question_type: open_ended
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are Solum, a regenerative agriculture intelligence system. Provide comprehensive, systems-level analysis."
+    turns:
+      - role: user
+        content: |
+          How can regenerative agriculture scale from individual farms to transform the
+          global food system? Analyze the barriers and enablers at each scale: field,
+          farm, community, region, national policy, and international trade. What systemic
+          interventions at which levels would have the greatest leverage for transformation?
+    scoring_method: llm_judge
+    scoring_config:
+      dimensions:
+        - systems_thinking
+        - completeness
+        - reasoning_depth
+        - specificity
+        - practical_actionability
+    source_notes: "Must address multi-scale barriers: field (knowledge and skills), farm (economics and risk), community (infrastructure and markets), region (extension and support), national (policy and subsidy alignment), global (trade rules and commodity systems). Leverage points: farmer-to-farmer networks, supply chain commitments (General Mills, Danone), policy reform (CAP eco-schemes, CRP enhancement), research investment. Should reference Donella Meadows' leverage points framework and apply to food system transformation."
+    tags: [systems_thinking, scaling, food_system_transformation]

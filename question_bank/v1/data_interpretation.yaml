@@ -1,0 +1,2268 @@
+metadata:
+  category: data_interpretation
+  subcategory: data_interpretation
+  version: v1
+
+questions:
+  # ============================================================
+  # SOIL TEST REPORTS (15 questions)
+  # ============================================================
+
+  - id: data_interp_0001
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Tropical Ferralsol
+      Location: Kisangani, Congo Basin, Democratic Republic of Congo
+      Depth: 0-20 cm
+      Land use: Slash-and-burn agriculture (cassava/maize rotation)
+
+      Physical properties:
+        Texture: Clay (68% clay, 18% silt, 14% sand)
+        Bulk density: 1.08 g/cm3
+        Color (moist): 2.5YR 4/6 (dark red)
+
+      Chemical properties:
+        pH (H2O): 4.3
+        pH (KCl): 3.6
+        Organic carbon: 1.8%
+        Total nitrogen: 0.15%
+        Available P (Bray-1): 2.1 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 0.82
+          Mg: 0.34
+          K: 0.11
+          Na: 0.03
+          Al: 2.95
+          H: 0.48
+        ECEC: 4.73 cmol(c)/kg
+        Base saturation: 27.5%
+        Al saturation: 62.4%
+        Available micronutrients (mg/kg):
+          Fe: 42.3
+          Mn: 8.7
+          Zn: 0.6
+          Cu: 1.2
+    turns:
+      - role: user
+        content: |
+          Analyze this Ferralsol soil test report from the Congo Basin. Identify the primary fertility constraints and recommend regenerative management strategies appropriate for smallholder farmers in this region. What are the critical limiting factors for crop production?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ph: 4.3
+        al_saturation: 62.4
+        available_p: 2.1
+        ecec: 4.73
+        base_saturation: 27.5
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should identify Al toxicity (62.4% Al sat), severe P deficiency (2.1 mg/kg Bray-1), very low CEC, and strong acidity as primary constraints. Should recommend biomass recycling, P-efficient crops, and agroforestry rather than heavy liming."
+    tags: [data_interpretation, ferralsol, tropical, africa, al_toxicity, phosphorus]
+
+  - id: data_interp_0002
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Vertisol
+      Location: Bhavnagar District, Gujarat, India
+      Depth: 0-30 cm
+      Land use: Cotton-wheat rotation (rainfed)
+
+      Physical properties:
+        Texture: Heavy clay (62% clay, 24% silt, 14% sand)
+        Bulk density: 1.32 g/cm3
+        Color (dry): 10YR 3/1 (very dark gray)
+        Linear extensibility: 9.2 cm/m (high shrink-swell)
+        Cracks when dry: Yes, up to 3 cm wide, 50 cm deep
+
+      Chemical properties:
+        pH (H2O): 8.1
+        EC: 0.42 dS/m
+        Organic carbon: 0.62%
+        Total nitrogen: 0.06%
+        Available P (Olsen): 6.8 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 28.4
+          Mg: 14.2
+          K: 0.62
+          Na: 0.98
+        CEC: 48.6 cmol(c)/kg
+        Base saturation: 90.8%
+        ESP: 2.0%
+        Available micronutrients (mg/kg):
+          Fe: 3.8
+          Mn: 5.4
+          Zn: 0.42
+          Cu: 1.8
+    turns:
+      - role: user
+        content: |
+          Interpret this Vertisol soil test from Gujarat. What are the key management challenges and nutrient deficiencies? How does the high CEC interact with the shrink-swell behavior, and what regenerative practices would you recommend for improving this soil?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        cec: 48.6
+        ph: 8.1
+        organic_carbon: 0.62
+        available_p: 6.8
+        zinc: 0.42
+        iron: 3.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should identify low organic carbon (0.62%), Zn deficiency (<0.6 mg/kg is deficient), Fe deficiency at alkaline pH, marginal P, and the physical challenges of cracking clay. Ca:Mg ratio of 2:1 is slightly Mg-heavy. Should discuss difficulty of tillage timing with Vertisols."
+    tags: [data_interpretation, vertisol, india, asia, micronutrient, shrink_swell]
+
+  - id: data_interp_0003
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Podzol
+      Location: Jyvaskyla, Central Finland
+      Depth: 0-25 cm (combined O/A horizon)
+      Land use: Boreal coniferous forest (Norway spruce), potential conversion to blueberry cultivation
+
+      Physical properties:
+        Texture: Loamy sand (78% sand, 14% silt, 8% clay)
+        Bulk density: 0.92 g/cm3
+        Color (moist): 10YR 2/1 (black organic layer over gray E horizon)
+
+      Chemical properties:
+        pH (H2O): 4.1
+        pH (CaCl2): 3.5
+        Organic carbon: 8.4%
+        Total nitrogen: 0.38%
+        C:N ratio: 22.1
+        Available P (Bray-1): 4.8 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 1.24
+          Mg: 0.42
+          K: 0.18
+          Na: 0.06
+          Al: 3.82
+          H: 2.14
+        ECEC: 7.86 cmol(c)/kg
+        Base saturation: 24.2%
+        Al saturation: 48.6%
+    turns:
+      - role: user
+        content: |
+          This Podzol in Finland is being considered for blueberry cultivation. Analyze the soil test and assess whether the soil conditions are suitable for blueberries. What amendments, if any, would you recommend? Identify key fertility limitations.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ph: 4.1
+        organic_carbon: 8.4
+        base_saturation: 24.2
+        al_saturation: 48.6
+        cn_ratio: 22.1
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note that pH 4.1 is actually favorable for blueberries (prefer 4.0-5.5), high organic matter is a plus, but P is very low and Al saturation is high. Should not recommend heavy liming (would harm blueberries). C:N of 22 suggests moderate decomposition."
+    tags: [data_interpretation, podzol, finland, europe, blueberry, boreal]
+
+  - id: data_interp_0004
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Andisol (Andosol)
+      Location: Tokachi Plain, Hokkaido, Japan
+      Depth: 0-25 cm
+      Land use: Potato-sugar beet-wheat rotation
+
+      Physical properties:
+        Texture: Silt loam (22% sand, 58% silt, 20% clay)
+        Bulk density: 0.68 g/cm3
+        Color (moist): 10YR 2/2 (very dark brown)
+        Water retention at 1500 kPa: 42%
+        Allophane content: 14.2%
+        Phosphate retention: 92%
+
+      Chemical properties:
+        pH (H2O): 5.8
+        pH (NaF): 11.2
+        Organic carbon: 6.8%
+        Total nitrogen: 0.52%
+        C:N ratio: 13.1
+        Available P (Truog): 8.4 mg/kg
+        Total P: 2,840 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 8.6
+          Mg: 2.4
+          K: 0.52
+          Na: 0.12
+        CEC (pH 7): 32.4 cmol(c)/kg
+        ECEC: 14.8 cmol(c)/kg
+        Base saturation (ECEC): 78.6%
+        Available micronutrients (mg/kg):
+          Fe: 68.4
+          Mn: 22.1
+          Zn: 2.8
+          Cu: 0.8
+          B: 0.3
+    turns:
+      - role: user
+        content: |
+          Analyze this Andisol soil test from Hokkaido. Explain the significance of the large difference between total P and available P. Why is the CEC measured at pH 7 so much higher than ECEC? What management strategies would optimize phosphorus availability in this soil?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        phosphate_retention: 92.0
+        total_p: 2840.0
+        available_p: 8.4
+        bulk_density: 0.68
+        allophane: 14.2
+        cec_ph7: 32.4
+        ecec: 14.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should explain allophane-driven P fixation (92% retention locks up P), the variable charge nature of Andisols (CEC 32.4 at pH 7 vs ECEC 14.8 reflects pH-dependent charge from allophane), low bulk density from volcanic glass structure, and recommend banded P application and mycorrhizal inoculation."
+    tags: [data_interpretation, andisol, japan, asia, phosphorus_fixation, allophane]
+
+  - id: data_interp_0005
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Chernozem
+      Location: Poltava Oblast, Central Ukraine
+      Depth: 0-30 cm
+      Land use: Sunflower-winter wheat-maize rotation
+
+      Physical properties:
+        Texture: Silty clay loam (12% sand, 56% silt, 32% clay)
+        Bulk density: 1.18 g/cm3
+        Color (moist): 10YR 2/1 (black)
+        Aggregate stability (WSA >0.25mm): 72%
+
+      Chemical properties:
+        pH (H2O): 6.8
+        Organic carbon: 3.4%
+        Organic matter: 5.9%
+        Total nitrogen: 0.31%
+        C:N ratio: 11.0
+        Available P (Olsen): 24.6 mg/kg
+        Available K: 186 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 22.8
+          Mg: 5.4
+          K: 0.96
+          Na: 0.18
+        CEC: 32.6 cmol(c)/kg
+        Base saturation: 90.0%
+        Available S: 12.4 mg/kg
+        Available micronutrients (mg/kg):
+          Fe: 18.6
+          Mn: 14.2
+          Zn: 1.8
+          Cu: 2.4
+          B: 0.82
+    turns:
+      - role: user
+        content: |
+          Evaluate this Chernozem soil from Ukraine. Is this soil in good health? Compare the values to ideal ranges for the sunflower-wheat-maize rotation. What, if anything, needs attention? Calculate the Ca:Mg ratio and assess its implications.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        organic_matter: 5.9
+        ph: 6.8
+        cec: 32.6
+        available_p: 24.6
+        base_saturation: 90.0
+        ca_mg_ratio: 4.2
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should recognize this as a highly fertile soil. Ca:Mg ratio is 22.8/5.4 = 4.2, which is ideal (3-5 range). P at 24.6 is adequate for these crops. The 72% aggregate stability is good. S at 12.4 may be marginal for canola/sunflower. Overall a benchmark-quality soil."
+    tags: [data_interpretation, chernozem, ukraine, europe, fertility, ca_mg_ratio]
+
+  - id: data_interp_0006
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Sandy Arenosol
+      Location: Niamey Region, Niger, West Africa (Sahel)
+      Depth: 0-20 cm
+      Land use: Millet monoculture (rainfed)
+
+      Physical properties:
+        Texture: Sand (92% sand, 5% silt, 3% clay)
+        Bulk density: 1.62 g/cm3
+        Color (moist): 10YR 6/3 (pale brown)
+        Water holding capacity: 6.2% (w/w)
+
+      Chemical properties:
+        pH (H2O): 5.4
+        Organic carbon: 0.18%
+        Total nitrogen: 0.018%
+        C:N ratio: 10.0
+        Available P (Bray-1): 3.2 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 0.48
+          Mg: 0.12
+          K: 0.06
+          Na: 0.02
+          Al: 0.14
+          H: 0.08
+        ECEC: 0.90 cmol(c)/kg
+        Base saturation: 75.6%
+        Available micronutrients (mg/kg):
+          Fe: 12.8
+          Mn: 4.2
+          Zn: 0.22
+          Cu: 0.3
+    turns:
+      - role: user
+        content: |
+          This Arenosol from the Sahel supports smallholder millet production. Analyze the data and identify the most severe constraints. What low-cost, locally available regenerative strategies could improve productivity? Consider water, nutrients, and organic matter.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ecec: 0.90
+        organic_carbon: 0.18
+        water_holding_capacity: 6.2
+        available_p: 3.2
+        zinc: 0.22
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should identify extremely low CEC (0.90), negligible organic matter (0.18% OC), severe Zn deficiency, low water holding capacity, and P deficiency. Should recommend zai pits, half-moon water harvesting, compost/manure, Faidherbia albida agroforestry, and microdosing fertilizer."
+    tags: [data_interpretation, arenosol, sahel, west_africa, low_fertility, water_scarcity]
+
+  - id: data_interp_0007
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Mollisol (Typic Hapludoll)
+      Location: Story County, Iowa, USA
+      Depth: 0-20 cm
+      Land use: Corn-soybean rotation (no-till, 4th year)
+
+      Physical properties:
+        Texture: Silty clay loam (8% sand, 60% silt, 32% clay)
+        Bulk density: 1.28 g/cm3
+        Color (moist): 10YR 3/2 (very dark grayish brown)
+        Aggregate stability (WSA): 58%
+
+      Chemical properties:
+        pH (H2O): 6.4
+        Buffer pH: 6.8
+        Organic matter: 4.2%
+        Available P (Bray-1): 32 mg/kg
+        Available K: 168 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 14.8
+          Mg: 3.6
+          K: 0.86
+          Na: 0.08
+          H: 3.46
+        CEC: 22.8 cmol(c)/kg
+        Base saturation: 84.8%
+        Available S: 8.4 mg/kg
+        Available micronutrients (mg/kg):
+          Fe: 42.0
+          Mn: 18.6
+          Zn: 3.2
+          Cu: 1.6
+          B: 0.72
+    turns:
+      - role: user
+        content: |
+          Evaluate this Iowa Mollisol currently in no-till corn-soybean rotation. Is the soil health improving under no-till management? What do the aggregate stability and organic matter values suggest? Are there any nutrient concerns for either corn or soybean production?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        organic_matter: 4.2
+        ph: 6.4
+        cec: 22.8
+        available_p: 32.0
+        available_k: 168.0
+        aggregate_stability: 58.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note OM at 4.2% is good for Iowa, P at 32 is optimum to high, K at 168 is adequate, aggregate stability of 58% in 4th year no-till is improving but has room to grow (native prairie would be >70%). S at 8.4 may be marginal for corn. Buffer pH of 6.8 suggests moderate lime need."
+    tags: [data_interpretation, mollisol, iowa, usa, north_america, no_till, corn_soy]
+
+  - id: data_interp_0008
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Saline-Sodic Soil
+      Location: Barmer District, Rajasthan, India
+      Depth: 0-30 cm
+      Land use: Degraded rangeland, proposed rehabilitation
+
+      Physical properties:
+        Texture: Sandy clay loam (52% sand, 22% silt, 26% clay)
+        Bulk density: 1.58 g/cm3
+        Color (dry): 10YR 7/2 (light gray, white salt crust visible)
+        Infiltration rate: 0.8 mm/hr (very slow)
+
+      Chemical properties:
+        pH (H2O): 9.2
+        EC (1:2 extract): 8.6 dS/m
+        EC (saturation extract): 16.4 dS/m
+        Organic carbon: 0.24%
+        Total nitrogen: 0.024%
+        Available P (Olsen): 4.2 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 4.8
+          Mg: 2.6
+          K: 0.42
+          Na: 8.4
+        CEC: 18.2 cmol(c)/kg
+        ESP: 46.2%
+        SAR: 18.6
+        Available micronutrients (mg/kg):
+          Fe: 2.1
+          Mn: 1.8
+          Zn: 0.18
+          Cu: 0.4
+        Soluble salts (meq/L):
+          Na: 86.4
+          Cl: 52.8
+          SO4: 38.2
+          HCO3: 14.6
+    turns:
+      - role: user
+        content: |
+          Analyze this saline-sodic soil from Rajasthan. Classify the soil using the USDA salinity classification system (saline, sodic, or saline-sodic). What is the reclamation strategy, and in what order should problems be addressed? Estimate the gypsum requirement.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ec_sat: 16.4
+        esp: 46.2
+        sar: 18.6
+        ph: 9.2
+        sodium_exchangeable: 8.4
+        infiltration: 0.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should classify as saline-sodic (EC >4, ESP >15, pH >8.5). Must address sodicity first with gypsum (Ca replaces Na on exchange sites), then leach salts with good drainage. ESP of 46.2% is severe. Should discuss halophyte revegetation, organic matter addition, and phased reclamation."
+    tags: [data_interpretation, saline_sodic, rajasthan, india, asia, reclamation, gypsum]
+
+  - id: data_interp_0009
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Recent Alluvial Soil
+      Location: Canterbury Plains, South Island, New Zealand
+      Depth: 0-20 cm
+      Land use: Mixed cropping (wheat, barley, ryegrass seed)
+
+      Physical properties:
+        Texture: Fine sandy loam (52% sand, 32% silt, 16% clay)
+        Bulk density: 1.34 g/cm3
+        Color (moist): 10YR 4/3 (brown)
+        Stones (>2mm): 18% by volume
+
+      Chemical properties:
+        pH (H2O): 5.9
+        Organic carbon: 2.8%
+        Total nitrogen: 0.26%
+        C:N ratio: 10.8
+        Available P (Olsen): 18.0 mg/kg
+        Available K (quick test): 8 (MAF units)
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 6.8
+          Mg: 1.4
+          K: 0.52
+          Na: 0.14
+        CEC: 14.2 cmol(c)/kg
+        Base saturation: 62.4%
+        Available S (sulphate-S): 6.2 mg/kg
+        Available micronutrients (mg/kg):
+          Fe: 86.0
+          Mn: 24.6
+          Zn: 2.4
+          Cu: 1.1
+          B: 0.48
+          Mo: 0.06
+    turns:
+      - role: user
+        content: |
+          Interpret this Canterbury Plains soil test for mixed arable cropping. Using New Zealand soil test interpretation guidelines, assess P, K, and S status. Is the soil pH optimal? What nutrient management adjustments would improve yields, and how do the stony conditions affect management?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        olsen_p: 18.0
+        ph: 5.9
+        cec: 14.2
+        available_s: 6.2
+        organic_carbon: 2.8
+        stone_content: 18.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+        - regional_adaptation
+    source_notes: "Model should use NZ interpretation: Olsen P 18 is near optimum for cropping (20-30 target), K at 8 MAF units is above optimum (5-8 range), S at 6.2 is low (target >10 for crops). pH 5.9 is slightly low for barley (prefers 6.0-6.5). Stones reduce effective rooting volume and water storage."
+    tags: [data_interpretation, alluvial, canterbury, new_zealand, oceania, arable]
+
+  - id: data_interp_0010
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Oxisol (Latossolo Vermelho)
+      Location: Sorriso, Mato Grosso, Brazil
+      Depth: 0-20 cm
+      Land use: Soybean-maize double crop (safrinha system)
+
+      Physical properties:
+        Texture: Clay (72% clay, 16% silt, 12% sand)
+        Bulk density: 1.04 g/cm3
+        Color (moist): 2.5YR 3/6 (dark red)
+
+      Chemical properties:
+        pH (H2O): 5.1
+        pH (CaCl2): 4.4
+        Organic carbon: 2.2%
+        Total nitrogen: 0.19%
+        Available P (Mehlich-1): 6.8 mg/kg
+        Available P (resin): 12.4 mg/kg
+        Available K: 62 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 1.82
+          Mg: 0.64
+          K: 0.16
+          Al: 0.42
+        ECEC: 3.38 cmol(c)/kg
+        CEC at pH 7: 8.6 cmol(c)/kg
+        V% (base saturation): 30.5%
+        m% (Al saturation): 12.4%
+        Available S: 4.8 mg/kg
+        Available micronutrients (mg/kg):
+          Fe: 34.2
+          Mn: 6.8
+          Zn: 0.82
+          Cu: 0.6
+          B: 0.28
+          Mo: 0.04
+    turns:
+      - role: user
+        content: |
+          Analyze this Cerrado Oxisol used for soybean-maize production. Interpret V% and m% values. Why do Mehlich-1 and resin P values differ, and which is more reliable for this soil? What amendments are needed for optimal soybean and maize yields? Address both macro and micronutrient needs.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        v_percent: 30.5
+        m_percent: 12.4
+        mehlich_p: 6.8
+        resin_p: 12.4
+        cec_ph7: 8.6
+        ecec: 3.38
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should explain that V% of 30.5% needs to reach 50-60% for soy/maize (requires liming), m% at 12.4% is moderate Al stress. Resin P is preferred for Oxisols (Mehlich-1 underestimates due to Fe/Al oxide interference). B, Mo deficiencies are critical for soybean N fixation. K at 62 mg/kg is low."
+    tags: [data_interpretation, oxisol, cerrado, brazil, south_america, soybean, liming]
+
+  - id: data_interp_0011
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Terra Rossa (Chromic Luvisol)
+      Location: Jaen Province, Andalusia, Southern Spain
+      Depth: 0-25 cm
+      Land use: Olive grove (traditional, rainfed, 40-year-old trees)
+
+      Physical properties:
+        Texture: Clay (54% clay, 28% silt, 18% sand)
+        Bulk density: 1.36 g/cm3
+        Color (moist): 2.5YR 3/4 (dark reddish brown)
+
+      Chemical properties:
+        pH (H2O): 7.8
+        CaCO3 equivalent: 12.4%
+        Active CaCO3: 6.8%
+        Organic carbon: 1.4%
+        Total nitrogen: 0.14%
+        C:N ratio: 10.0
+        Available P (Olsen): 8.2 mg/kg
+        Available K: 248 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 24.6
+          Mg: 3.8
+          K: 0.64
+          Na: 0.22
+        CEC: 31.4 cmol(c)/kg
+        Base saturation: 93.0%
+        Available micronutrients (mg/kg):
+          Fe (DTPA): 4.2
+          Mn: 6.8
+          Zn: 0.52
+          Cu: 2.4
+          B: 0.38
+    turns:
+      - role: user
+        content: |
+          Evaluate this Mediterranean Terra Rossa soil for olive production. How does the calcareous nature affect nutrient availability? Identify any micronutrient concerns related to the pH and CaCO3 content. What organic matter building strategies suit this climate?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ph: 7.8
+        caco3: 12.4
+        active_caco3: 6.8
+        organic_carbon: 1.4
+        olsen_p: 8.2
+        iron: 4.2
+        zinc: 0.52
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should discuss lime-induced chlorosis risk (Fe at 4.2 is borderline, active CaCO3 of 6.8% is significant). Zn at 0.52 is marginal. P at 8.2 is low for olives (Ca-P fixation). OC at 1.4% is typical for Mediterranean but should be improved with cover crops, compost, and maintaining ground cover."
+    tags: [data_interpretation, terra_rossa, mediterranean, spain, europe, olive, calcareous]
+
+  - id: data_interp_0012
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Gleysol
+      Location: Sylhet Division, Bangladesh (Haor floodplain)
+      Depth: 0-20 cm
+      Land use: Boro rice (dry season irrigated), monsoon flooding 4-5 months
+
+      Physical properties:
+        Texture: Silty clay (8% sand, 48% silt, 44% clay)
+        Bulk density: 0.94 g/cm3
+        Color (moist): 5Y 4/1 (dark gray) with 7.5YR 5/6 (strong brown) mottles
+
+      Chemical properties:
+        pH (H2O): 5.6 (field, waterlogged)
+        pH (H2O): 4.8 (dried and re-wetted)
+        Organic carbon: 3.6%
+        Total nitrogen: 0.32%
+        C:N ratio: 11.3
+        Available P (Olsen): 14.2 mg/kg
+        Available K: 124 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 6.4
+          Mg: 3.2
+          K: 0.32
+          Na: 0.86
+          Fe2+: 4.8
+        CEC: 22.4 cmol(c)/kg
+        Available S: 22.6 mg/kg
+        Available micronutrients (mg/kg):
+          Fe: 248.0
+          Mn: 42.6
+          Zn: 0.68
+          Cu: 1.4
+        Redox potential (Eh): -120 mV (waterlogged)
+    turns:
+      - role: user
+        content: |
+          Interpret this Gleysol from a Bangladesh floodplain. Explain the significance of the two pH values, the redox potential, and the very high Fe concentration. What are the implications for rice production? What happens to nutrient availability when this soil floods and drains?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ph_wet: 5.6
+        ph_dry: 4.8
+        iron: 248.0
+        redox: -120.0
+        organic_carbon: 3.6
+        exchangeable_fe: 4.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should explain that Eh -120 mV means strongly reduced conditions, Fe3+ reduces to soluble Fe2+ causing toxicity risk in rice, the pH rises when waterlogged (H+ consumed in reduction) vs drops when aerated. Zn at 0.68 is deficient for rice. Denitrification losses are a concern at this Eh."
+    tags: [data_interpretation, gleysol, bangladesh, asia, rice, flooding, redox]
+
+  - id: data_interp_0013
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Volcanic Ash Soil (Andosol)
+      Location: Chimborazo Province, Ecuador Highlands (3,200 m elevation)
+      Depth: 0-30 cm
+      Land use: Potato-faba bean rotation on steep slopes (20-35% gradient)
+
+      Physical properties:
+        Texture: Sandy loam (56% sand, 30% silt, 14% clay)
+        Bulk density: 0.72 g/cm3
+        Color (moist): 10YR 2/1 (black)
+        Water retention at field capacity: 68% (w/w)
+        Thixotropic: Yes
+
+      Chemical properties:
+        pH (H2O): 5.4
+        pH (NaF): 10.8
+        Organic carbon: 9.2%
+        Total nitrogen: 0.64%
+        C:N ratio: 14.4
+        Available P (Olsen): 5.6 mg/kg
+        Available K: 142 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 4.2
+          Mg: 1.1
+          K: 0.36
+          Na: 0.08
+          Al: 0.92
+        ECEC: 7.58 cmol(c)/kg
+        CEC (pH 7): 38.4 cmol(c)/kg
+        Base saturation (ECEC): 75.9%
+        Available micronutrients (mg/kg):
+          Fe: 52.4
+          Mn: 8.6
+          Zn: 1.4
+          Cu: 0.6
+          B: 0.22
+    turns:
+      - role: user
+        content: |
+          Analyze this high-altitude Andosol from Ecuador. Why is the organic carbon so high despite active farming? Address the P availability issue and the erosion risk given the slope gradient. What conservation practices would you recommend for this highland system?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        organic_carbon: 9.2
+        available_p: 5.6
+        bulk_density: 0.72
+        slope_gradient: 35.0
+        cec_ph7: 38.4
+        ecec: 7.58
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should explain that high OC results from Al-humus complexes in Andisols (organo-mineral protection) plus cool highland temperatures slowing decomposition. P is fixed by allophane. Slope of 20-35% is severe erosion risk. Should recommend terracing, contour farming, grass barriers, and deep-rooted cover crops."
+    tags: [data_interpretation, andosol, ecuador, south_america, highland, erosion, phosphorus]
+
+  - id: data_interp_0014
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Calcareous Soil (Calcisol)
+      Location: Jordan Valley, Jordan (near Deir Alla)
+      Depth: 0-25 cm
+      Land use: Irrigated vegetable production (tomato, eggplant, cucumber)
+
+      Physical properties:
+        Texture: Clay loam (32% sand, 34% silt, 34% clay)
+        Bulk density: 1.38 g/cm3
+        Color (moist): 10YR 5/3 (brown)
+
+      Chemical properties:
+        pH (H2O): 8.0
+        EC (saturation extract): 2.8 dS/m
+        CaCO3 equivalent: 28.6%
+        Active CaCO3: 11.4%
+        Organic carbon: 0.86%
+        Total nitrogen: 0.09%
+        C:N ratio: 9.6
+        Available P (Olsen): 11.2 mg/kg
+        Available K: 312 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 32.4
+          Mg: 4.6
+          K: 0.8
+          Na: 0.62
+        CEC: 42.8 cmol(c)/kg
+        Available micronutrients (DTPA, mg/kg):
+          Fe: 2.8
+          Mn: 3.4
+          Zn: 0.38
+          Cu: 1.6
+          B: 0.86
+    turns:
+      - role: user
+        content: |
+          Interpret this Jordan Valley calcareous soil for vegetable production. How does the high CaCO3 content affect nutrient availability? Which micronutrients are deficient, and what is the most effective way to supply them under these conditions? Evaluate the irrigation salinity risk.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        caco3: 28.6
+        active_caco3: 11.4
+        iron: 2.8
+        zinc: 0.38
+        ec: 2.8
+        organic_carbon: 0.86
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should identify Fe deficiency (<4.5 DTPA critical), Zn deficiency (<0.6), and P fixation by CaCO3. EC at 2.8 is approaching concern for sensitive crops (tomato threshold ~2.5). Should recommend chelated micronutrients (Fe-EDDHA for calcareous soils), foliar Zn, and organic matter to improve nutrient cycling."
+    tags: [data_interpretation, calcisol, jordan, middle_east, calcareous, micronutrient, irrigation]
+
+  - id: data_interp_0015
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Soil Test Report - Acid Sulfate Soil (Thionic Fluvisol)
+      Location: An Giang Province, Mekong Delta, Vietnam
+      Depth: 0-25 cm (with sulfidic material at 40-80 cm)
+      Land use: Triple rice cropping (partially drained for dry season crop)
+
+      Physical properties:
+        Texture: Silty clay (6% sand, 42% silt, 52% clay)
+        Bulk density: 0.88 g/cm3
+        Color (moist): 2.5Y 4/2 (dark grayish brown)
+        Jarosite mottles: Present at 40-60 cm (pale yellow, 2.5Y 8/6)
+
+      Chemical properties:
+        pH (H2O, field): 3.8
+        pH (H2O, oxidized): 2.9
+        EC: 3.2 dS/m
+        Organic carbon: 4.2%
+        Total nitrogen: 0.36%
+        Total S: 2.8%
+        Available P (Bray-1): 3.4 mg/kg
+        Exchangeable cations (cmol(c)/kg):
+          Ca: 2.4
+          Mg: 3.8
+          K: 0.28
+          Na: 1.2
+          Al: 12.6
+          H: 4.8
+          Fe2+: 6.4
+        ECEC: 31.5 cmol(c)/kg
+        Al saturation: 40.0%
+        Available micronutrients (mg/kg):
+          Fe: 482.0
+          Mn: 68.4
+          Zn: 1.2
+          Cu: 0.8
+    turns:
+      - role: user
+        content: |
+          Analyze this acid sulfate soil from the Mekong Delta. Explain the chemical processes causing the extreme acidity when the soil is drained. Why is the oxidized pH so much lower than field pH? What water management strategies prevent acidification, and what are the risks of the triple-crop system?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ph_field: 3.8
+        ph_oxidized: 2.9
+        total_s: 2.8
+        al_saturation: 40.0
+        iron: 482.0
+        al_exchangeable: 12.6
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should explain pyrite (FeS2) oxidation producing sulfuric acid, jarosite formation as indicator of acid sulfate conditions, the critical importance of maintaining waterlogged conditions to prevent oxidation. Triple cropping requires drainage that risks exposing sulfidic layer. Al and Fe toxicity are severe at these levels."
+    tags: [data_interpretation, acid_sulfate, mekong_delta, vietnam, asia, rice, pyrite]
+
+  # ============================================================
+  # CLIMATE DATA SUMMARIES (10 questions)
+  # ============================================================
+
+  - id: data_interp_0016
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Lusaka, Zambia (1,280 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | Rain Days | PET (mm)
+      ---------|-------------|-------------|-------------|------------|-----------|--------
+      Jan      | 21.8        | 17.2        | 26.4        | 228        | 18        | 132
+      Feb      | 21.6        | 17.0        | 26.2        | 182        | 15        | 118
+      Mar      | 21.2        | 16.4        | 26.0        | 94         | 9         | 124
+      Apr      | 19.8        | 13.6        | 26.0        | 18         | 2         | 108
+      May      | 17.2        | 9.4         | 25.0        | 2          | 0         | 92
+      Jun      | 15.0        | 6.8         | 23.2        | 0          | 0         | 78
+      Jul      | 14.8        | 6.2         | 23.4        | 0          | 0         | 82
+      Aug      | 17.4        | 8.8         | 26.0        | 0          | 0         | 108
+      Sep      | 21.2        | 13.2        | 29.2        | 2          | 1         | 142
+      Oct      | 23.4        | 16.4        | 30.4        | 28         | 5         | 162
+      Nov      | 22.8        | 17.0        | 28.6        | 98         | 11        | 148
+      Dec      | 22.0        | 17.2        | 26.8        | 214        | 17        | 138
+
+      Annual total precipitation: 866 mm
+      Annual total PET: 1,432 mm
+    turns:
+      - role: user
+        content: |
+          Using this climate data for Lusaka, determine the growing season length, identify the dry season, and calculate the annual moisture deficit. What rainfed crops are suitable for this climate? When should planting occur to optimize water use?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 866.0
+        annual_pet: 1432.0
+        moisture_deficit: 566.0
+        dry_months: 5.0
+        wettest_month_precip: 228.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should identify Nov-Mar as the wet/growing season (~816 mm in 5 months), Apr-Oct as dry season. Moisture deficit is 1432-866 = 566 mm. Should recommend maize, groundnut, sorghum planted in Nov-Dec. Koppen classification Cwa (subtropical highland)."
+    tags: [data_interpretation, climate, zambia, africa, growing_season, rainfed]
+
+  - id: data_interp_0017
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Fargo, North Dakota, USA (274 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | Snowfall (cm) | Frost Days
+      ---------|-------------|-------------|-------------|------------|--------------|----------
+      Jan      | -13.8       | -19.2       | -8.4        | 14         | 22.4         | 31
+      Feb      | -11.2       | -16.8       | -5.6        | 12         | 18.0         | 28
+      Mar      | -3.4        | -9.4        | 2.6         | 24         | 24.6         | 27
+      Apr      | 6.4         | 0.2         | 12.6        | 38         | 8.2          | 16
+      May      | 13.6        | 7.2         | 20.0        | 72         | 0.4          | 3
+      Jun      | 19.0        | 13.0        | 25.0        | 92         | 0            | 0
+      Jul      | 21.6        | 15.4        | 27.8        | 78         | 0            | 0
+      Aug      | 20.4        | 14.2        | 26.6        | 62         | 0            | 0
+      Sep      | 14.8        | 8.6         | 21.0        | 56         | 0            | 2
+      Oct      | 6.8         | 1.2         | 12.4        | 48         | 2.8          | 14
+      Nov      | -3.2        | -8.4        | 2.0         | 22         | 16.4         | 26
+      Dec      | -11.4       | -16.6       | -6.2        | 14         | 20.8         | 31
+
+      Annual total precipitation: 532 mm
+      Growing degree days (base 5C): 1,680
+      Last spring frost (avg): May 12
+      First fall frost (avg): Sep 28
+    turns:
+      - role: user
+        content: |
+          Analyze this Fargo climate data for crop planning. Calculate the frost-free growing season length. Based on temperature, precipitation, and GDD accumulation, what field crops are suitable? What are the key climate risks for agriculture in this region?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        frost_free_days: 139.0
+        annual_precip: 532.0
+        gdd_base5: 1680.0
+        jan_min_temp: -19.2
+        jul_max_temp: 27.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should calculate ~139 frost-free days (May 12 to Sep 28). Suitable crops: hard red spring wheat, canola, sunflower, dry beans, sugar beets (all within 90-120 day maturity). Key risks: late spring frost, early fall frost, drought stress in Jun-Aug, extreme winter cold limiting fall-planted crops."
+    tags: [data_interpretation, climate, north_dakota, usa, north_america, frost, gdd]
+
+  - id: data_interp_0018
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Marrakech, Morocco (466 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | PET (mm) | Rel Humidity (%)
+      ---------|-------------|-------------|-------------|------------|----------|----------------
+      Jan      | 11.8        | 5.6         | 18.0        | 32         | 38       | 62
+      Feb      | 13.4        | 6.8         | 20.0        | 36         | 48       | 56
+      Mar      | 16.0        | 9.2         | 22.8        | 38         | 74       | 48
+      Apr      | 18.2        | 11.0        | 25.4        | 32         | 98       | 42
+      May      | 21.6        | 13.8        | 29.4        | 18         | 138      | 36
+      Jun      | 25.8        | 17.4        | 34.2        | 4          | 182      | 28
+      Jul      | 29.4        | 20.8        | 38.0        | 2          | 214      | 22
+      Aug      | 29.0        | 20.6        | 37.4        | 4          | 198      | 24
+      Sep      | 25.2        | 17.6        | 32.8        | 12         | 142      | 34
+      Oct      | 20.4        | 13.8        | 27.0        | 28         | 88       | 46
+      Nov      | 15.8        | 9.4         | 22.2        | 38         | 52       | 56
+      Dec      | 12.4        | 6.2         | 18.6        | 28         | 36       | 62
+
+      Annual total precipitation: 272 mm
+      Annual total PET: 1,308 mm
+      Irrigation water source: Tensift River (EC 1.2 dS/m)
+    turns:
+      - role: user
+        content: |
+          Analyze this Marrakech climate data for irrigated agriculture. Calculate the monthly water deficit during the growing season. When are irrigation needs greatest? Considering the irrigation water quality (EC 1.2 dS/m), what is the risk of soil salinization, and what leaching fraction would you recommend?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 272.0
+        annual_pet: 1308.0
+        annual_deficit: 1036.0
+        jul_pet: 214.0
+        irrigation_ec: 1.2
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should calculate annual deficit of ~1036 mm. Peak irrigation need is Jun-Aug (PET 182-214, precip 2-4 mm). With EC 1.2 dS/m, leaching fraction of ~15-20% is needed to prevent salt accumulation. Should discuss winter cropping (Oct-Mar) to align with rainfall and cooler temperatures."
+    tags: [data_interpretation, climate, morocco, africa, mediterranean, irrigation, salinity]
+
+  - id: data_interp_0019
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Chiang Mai, Northern Thailand (310 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | Rain Days | RH (%)
+      ---------|-------------|-------------|-------------|------------|-----------|-------
+      Jan      | 21.4        | 14.2        | 28.6        | 8          | 1         | 62
+      Feb      | 23.4        | 15.2        | 31.6        | 6          | 1         | 52
+      Mar      | 26.6        | 18.4        | 34.8        | 16         | 2         | 48
+      Apr      | 28.6        | 22.0        | 35.2        | 52         | 8         | 58
+      May      | 27.4        | 23.2        | 31.6        | 158        | 16        | 72
+      Jun      | 27.0        | 23.4        | 30.6        | 128        | 16        | 74
+      Jul      | 26.6        | 23.2        | 30.0        | 162        | 18        | 76
+      Aug      | 26.2        | 23.0        | 29.4        | 228        | 21        | 80
+      Sep      | 26.0        | 22.6        | 29.4        | 218        | 18        | 78
+      Oct      | 25.4        | 21.4        | 29.4        | 122        | 12        | 74
+      Nov      | 23.2        | 17.8        | 28.6        | 42         | 5         | 68
+      Dec      | 21.0        | 14.6        | 27.4        | 14         | 2         | 64
+
+      Annual total precipitation: 1,154 mm
+      Burning haze season: Feb-Apr (PM2.5 often >150 ug/m3)
+    turns:
+      - role: user
+        content: |
+          Using this Chiang Mai climate data, define the monsoon and dry seasons. What cropping calendar would optimize the bimodal rainfall pattern? How does the burning haze season (Feb-Apr) affect agricultural planning, and what alternatives to burning could be promoted?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 1154.0
+        peak_month_precip: 228.0
+        dry_season_precip: 44.0
+        monsoon_months: 6.0
+        mar_max_temp: 34.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should identify May-Oct as monsoon (1016 mm), Nov-Apr as dry season (138 mm). Peak rain Aug-Sep. Should discuss wet-season rice followed by dry-season cash crops with irrigation. Burning alternatives: composting residues, cover cropping, mulching. Haze affects pollination and worker health."
+    tags: [data_interpretation, climate, thailand, asia, monsoon, burning, air_quality]
+
+  - id: data_interp_0020
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Bahia Blanca, Argentina (83 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | PET (mm) | Wind (km/h)
+      ---------|-------------|-------------|-------------|------------|----------|----------
+      Jan      | 23.4        | 16.6        | 30.2        | 68         | 162      | 24
+      Feb      | 22.4        | 15.8        | 29.0        | 62         | 132      | 22
+      Mar      | 19.4        | 13.0        | 25.8        | 72         | 98       | 20
+      Apr      | 14.6        | 8.4         | 20.8        | 52         | 58       | 18
+      May      | 10.6        | 4.8         | 16.4        | 38         | 34       | 18
+      Jun      | 7.2         | 2.0         | 12.4        | 24         | 20       | 16
+      Jul      | 7.0         | 1.6         | 12.4        | 22         | 22       | 18
+      Aug      | 8.6         | 2.8         | 14.4        | 26         | 32       | 20
+      Sep      | 11.4        | 5.4         | 17.4        | 42         | 54       | 24
+      Oct      | 15.2        | 8.6         | 21.8        | 62         | 86       | 26
+      Nov      | 18.8        | 12.0        | 25.6        | 58         | 118      | 26
+      Dec      | 22.0        | 15.4        | 28.6        | 62         | 152      | 24
+
+      Annual total precipitation: 588 mm
+      Annual total PET: 968 mm
+      Frost days per year: ~28
+      Dominant soil: Haplustoll (loess-derived, 2.8% OM)
+    turns:
+      - role: user
+        content: |
+          Analyze this Bahia Blanca (Argentine Pampas) climate data. Classify the climate, assess the moisture balance, and determine which months are most vulnerable to wind erosion given the combination of wind speed, low precipitation, and crop cover gaps. What cropping system minimizes erosion risk?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 588.0
+        annual_pet: 968.0
+        moisture_deficit: 380.0
+        max_wind_speed: 26.0
+        frost_days: 28.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should identify BSk/Cfa transitional climate, annual deficit of 380 mm. Wind erosion risk peaks Oct-Dec (high wind 24-26 km/h, after winter fallow before crop canopy closure). Should recommend continuous cover systems, winter cover crops, strip cropping perpendicular to prevailing winds, and no-till."
+    tags: [data_interpretation, climate, argentina, south_america, pampas, wind_erosion]
+
+  - id: data_interp_0021
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Addis Ababa, Ethiopia (2,355 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | Rain Days | Solar Rad (MJ/m2/d)
+      ---------|-------------|-------------|-------------|------------|-----------|-------------------
+      Jan      | 16.2        | 7.4         | 25.0        | 18         | 3         | 22.4
+      Feb      | 17.0        | 8.8         | 25.2        | 38         | 5         | 23.2
+      Mar      | 17.6        | 10.2        | 25.0        | 62         | 8         | 22.8
+      Apr      | 17.4        | 10.8        | 24.0        | 84         | 11        | 20.4
+      May      | 17.0        | 10.4        | 23.6        | 68         | 10        | 20.8
+      Jun      | 15.8        | 10.2        | 21.4        | 128        | 18        | 16.4
+      Jul      | 15.0        | 10.6        | 19.4        | 268        | 24        | 12.8
+      Aug      | 15.2        | 10.4        | 20.0        | 284        | 24        | 13.6
+      Sep      | 15.8        | 10.0        | 21.6        | 162        | 17        | 18.2
+      Oct      | 16.0        | 8.4         | 23.6        | 32         | 5         | 22.0
+      Nov      | 15.6        | 6.8         | 24.4        | 8          | 1         | 22.8
+      Dec      | 15.4        | 6.4         | 24.4        | 8          | 1         | 22.2
+
+      Annual total precipitation: 1,160 mm
+      Belg (short rains): Feb-May
+      Kiremt (long rains): Jun-Sep
+    turns:
+      - role: user
+        content: |
+          Analyze this Addis Ababa highland climate data. Characterize the bimodal rainfall pattern (Belg and Kiremt seasons). How does solar radiation change with the rainy season? What teff and wheat planting windows would you recommend, and how does the highland altitude affect crop selection?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 1160.0
+        kiremt_precip: 842.0
+        belg_precip: 252.0
+        jul_solar_rad: 12.8
+        jan_solar_rad: 22.4
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+        - regional_adaptation
+    source_notes: "Model should identify Kiremt (Jun-Sep) = 842 mm (73% of annual), Belg (Feb-May) = 252 mm. Solar radiation drops from 22-23 to 12-13 MJ/m2/d during Kiremt (cloud cover). Teff planted Jun-Jul for Kiremt harvest in Nov, wheat planted Jun-Jul. Altitude limits tropical crops but suits highland crops like teff, wheat, barley, faba bean."
+    tags: [data_interpretation, climate, ethiopia, africa, highland, bimodal_rainfall, teff]
+
+  - id: data_interp_0022
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Bendigo, Victoria, Australia (225 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | PET (mm) | Heatwave Days (>40C)
+      ---------|-------------|-------------|-------------|------------|----------|-------------------
+      Jan      | 22.4        | 14.2        | 30.6        | 32         | 178      | 2.4
+      Feb      | 22.0        | 14.0        | 30.0        | 28         | 148      | 1.8
+      Mar      | 19.2        | 11.4        | 27.0        | 32         | 118      | 0.4
+      Apr      | 14.8        | 8.2         | 21.4        | 38         | 62       | 0
+      May      | 11.2        | 5.8         | 16.6        | 42         | 34       | 0
+      Jun      | 8.6         | 3.8         | 13.4        | 38         | 20       | 0
+      Jul      | 7.8         | 3.2         | 12.4        | 36         | 22       | 0
+      Aug      | 9.0         | 3.6         | 14.4        | 42         | 32       | 0
+      Sep      | 11.4        | 5.4         | 17.4        | 42         | 54       | 0
+      Oct      | 14.2        | 7.4         | 21.0        | 46         | 86       | 0
+      Nov      | 17.4        | 9.8         | 25.0        | 38         | 122      | 0.2
+      Dec      | 20.4        | 12.0        | 28.8        | 34         | 158      | 1.0
+
+      Annual total precipitation: 448 mm
+      Annual total PET: 1,034 mm
+      Average annual heatwave days (>40C): 5.8
+    turns:
+      - role: user
+        content: |
+          Analyze this Bendigo climate data for dryland farming. How does the inverse relationship between temperature and rainfall affect agriculture? Calculate the growing season moisture surplus/deficit for winter crops (Apr-Nov). What adaptation strategies address increasing heatwave frequency?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 448.0
+        annual_pet: 1034.0
+        heatwave_days: 5.8
+        winter_precip: 322.0
+        summer_deficit: 444.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note Mediterranean-type pattern: winter rainfall dominant (Apr-Sep ~238 mm, Oct-Mar ~210 mm, relatively uniform). Winter crops (Apr-Nov) receive ~322 mm vs PET of ~432 mm = 110 mm deficit. Summer is extremely dry relative to PET. Should recommend winter cereals, early maturing varieties, stubble retention, and heat-tolerant cultivars."
+    tags: [data_interpretation, climate, australia, oceania, dryland, heatwave]
+
+  - id: data_interp_0023
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Punjab (Ludhiana), India (247 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | PET (mm) | RH (%)
+      ---------|-------------|-------------|-------------|------------|----------|-------
+      Jan      | 12.8        | 5.4         | 20.2        | 24         | 32       | 68
+      Feb      | 15.2        | 7.8         | 22.6        | 28         | 48       | 62
+      Mar      | 20.4        | 12.2        | 28.6        | 22         | 86       | 48
+      Apr      | 27.0        | 18.0        | 36.0        | 12         | 142      | 32
+      May      | 31.6        | 22.8        | 40.4        | 18         | 192      | 28
+      Jun      | 33.0        | 25.6        | 40.4        | 52         | 198      | 42
+      Jul      | 30.8        | 25.8        | 35.8        | 218        | 158      | 72
+      Aug      | 29.8        | 25.0        | 34.6        | 196        | 142      | 76
+      Sep      | 28.4        | 22.6        | 34.2        | 98         | 128      | 64
+      Oct      | 24.6        | 16.2        | 33.0        | 14         | 98       | 48
+      Nov      | 18.4        | 9.8         | 27.0        | 6          | 52       | 56
+      Dec      | 13.4        | 5.6         | 21.2        | 12         | 32       | 68
+
+      Annual total precipitation: 700 mm
+      Annual total PET: 1,308 mm
+      Groundwater decline: 0.5 m/year (20-year trend)
+      Rice-wheat system water use: ~1,800 mm/year
+    turns:
+      - role: user
+        content: |
+          Analyze this Punjab climate data in the context of the rice-wheat system's sustainability. How does the annual water balance explain the groundwater decline? Calculate monthly water deficits. What alternative cropping systems could reduce water demand while maintaining farm income?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 700.0
+        annual_pet: 1308.0
+        system_water_use: 1800.0
+        groundwater_decline: 0.5
+        may_max_temp: 40.4
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should calculate annual deficit of 608 mm (PET-precip), but rice-wheat uses 1800 mm vs 700 mm rain = 1100 mm from irrigation/groundwater. This explains the 0.5 m/yr decline. Should recommend DSR (direct seeded rice), maize replacing rice, short-duration pulses, and laser land leveling to save water."
+    tags: [data_interpretation, climate, punjab, india, asia, groundwater, rice_wheat]
+
+  - id: data_interp_0024
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Sao Gabriel da Cachoeira, Amazonas, Brazil (90 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | Rain Days | RH (%)
+      ---------|-------------|-------------|-------------|------------|-----------|-------
+      Jan      | 26.0        | 22.4        | 29.6        | 282        | 22        | 86
+      Feb      | 26.0        | 22.4        | 29.6        | 248        | 20        | 86
+      Mar      | 26.0        | 22.6        | 29.4        | 298        | 22        | 87
+      Apr      | 26.2        | 22.8        | 29.6        | 312        | 22        | 88
+      May      | 26.4        | 23.0        | 29.8        | 288        | 21        | 87
+      Jun      | 26.2        | 22.8        | 29.6        | 198        | 16        | 84
+      Jul      | 26.0        | 22.4        | 29.6        | 162        | 14        | 82
+      Aug      | 26.6        | 22.4        | 30.8        | 128        | 12        | 78
+      Sep      | 27.0        | 22.8        | 31.2        | 158        | 14        | 78
+      Oct      | 27.0        | 23.0        | 31.0        | 218        | 17        | 82
+      Nov      | 26.6        | 23.0        | 30.2        | 258        | 20        | 85
+      Dec      | 26.2        | 22.6        | 29.8        | 298        | 22        | 87
+
+      Annual total precipitation: 2,848 mm
+      Annual average temperature: 26.3 C
+      Temperature range (annual): 1.0 C
+    turns:
+      - role: user
+        content: |
+          Analyze this equatorial Amazon climate data. What challenges does year-round high rainfall and humidity create for agriculture? Identify any drier period and explain its significance. What agroforestry systems are suited to this climate, and why is soil organic matter cycling so rapid here?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        annual_precip: 2848.0
+        avg_temp: 26.3
+        temp_range: 1.0
+        driest_month_precip: 128.0
+        wettest_month_precip: 312.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note: virtually no dry season (driest month still 128 mm), temperature nearly constant (1C annual range vs ~7C diurnal range), year-round humidity >78%. Rapid OM decomposition due to constant warmth and moisture. Should discuss syntropic agroforestry, cacao-based systems, and Brazil nut. Leaching losses are extreme."
+    tags: [data_interpretation, climate, amazon, brazil, south_america, equatorial, agroforestry]
+
+  - id: data_interp_0025
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroclimate expert. Analyze the provided data carefully. Reference specific values in your response."
+    context_data: |
+      Climate Data Summary - Reykjavik, Iceland (52 m elevation)
+      Period: 30-year average (1991-2020)
+
+      Month    | Avg Temp (C) | Min Temp (C) | Max Temp (C) | Precip (mm) | Daylight (hrs) | Wind (km/h)
+      ---------|-------------|-------------|-------------|------------|---------------|----------
+      Jan      | 0.4         | -2.4        | 3.2         | 76         | 5.0           | 38
+      Feb      | 0.6         | -2.2        | 3.4         | 72         | 8.0           | 36
+      Mar      | 1.2         | -1.6        | 4.0         | 82         | 11.5          | 34
+      Apr      | 3.8         | 0.8         | 6.8         | 58         | 15.5          | 30
+      May      | 7.4         | 4.0         | 10.8        | 52         | 19.5          | 26
+      Jun      | 10.6        | 7.4         | 13.8        | 48         | 21.5          | 24
+      Jul      | 12.4        | 9.2         | 15.6        | 52         | 20.0          | 22
+      Aug      | 11.8        | 8.6         | 15.0        | 68         | 16.5          | 24
+      Sep      | 9.0         | 5.8         | 12.2        | 72         | 13.0          | 30
+      Oct      | 5.4         | 2.4         | 8.4         | 86         | 9.5           | 34
+      Nov      | 2.4         | -0.4        | 5.2         | 72         | 6.0           | 36
+      Dec      | 0.8         | -1.8        | 3.4         | 78         | 4.0           | 38
+
+      Annual total precipitation: 816 mm
+      Growing degree days (base 5C): 580
+      Geothermal heating available: Yes
+    turns:
+      - role: user
+        content: |
+          Analyze this Reykjavik climate data for agricultural potential. With only 580 GDD (base 5C), what crops can be grown outdoors? How does the extreme daylight variation (4-21.5 hrs) affect plant growth? What role could geothermal energy play in extending the growing season?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        gdd_base5: 580.0
+        annual_precip: 816.0
+        jul_max_temp: 15.6
+        max_daylight: 21.5
+        min_daylight: 4.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note: 580 GDD severely limits crops (need ~900 for barley, ~1200 for potatoes). Only cool-season grass, hay, potatoes (early varieties), and root vegetables outdoors. Long summer days (21.5 hrs) partially compensate for low temps. Geothermal greenhouses enable year-round tomato, cucumber, and flower production."
+    tags: [data_interpretation, climate, iceland, europe, subarctic, geothermal, daylight]
+
+  # ============================================================
+  # SPECIES OBSERVATION DATA (8 questions)
+  # ============================================================
+
+  - id: data_interp_0026
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Grassland Species Survey - Tallgrass Prairie Remnant
+      Location: Flint Hills, Kansas, USA
+      Survey date: July 2024
+      Plot size: 10 m x 10 m (5 plots)
+      Management: Annual prescribed burn (spring), moderate cattle grazing
+
+      Grass species (frequency / avg cover %):
+        Andropogon gerardii (big bluestem): 5/5 plots, 28%
+        Sorghastrum nutans (Indiangrass): 5/5 plots, 14%
+        Panicum virgatum (switchgrass): 4/5 plots, 8%
+        Schizachyrium scoparium (little bluestem): 5/5 plots, 12%
+        Bouteloua curtipendula (sideoats grama): 3/5 plots, 4%
+        Bromus inermis (smooth brome)*: 2/5 plots, 6%
+
+      Forb species:
+        Liatris punctata (dotted blazing star): 4/5 plots
+        Solidago canadensis (Canada goldenrod): 3/5 plots
+        Ratibida columnifera (prairie coneflower): 4/5 plots
+        Asclepias viridis (green milkweed): 2/5 plots
+        Dalea purpurea (purple prairie clover): 3/5 plots
+        Lespedeza capitata (round-head bush clover): 3/5 plots
+
+      *Non-native species
+      Total species richness: 42 species across 5 plots
+      Shannon diversity index: 2.84
+      Bare ground: 8%
+      Litter cover: 12%
+    turns:
+      - role: user
+        content: |
+          Evaluate the ecological health of this tallgrass prairie based on the species data. Is the community composition typical of a healthy remnant? What does the presence of Bromus inermis indicate? Assess the native-to-non-native ratio and the functional group balance. What management adjustments would improve biodiversity?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        species_richness: 42.0
+        shannon_index: 2.84
+        bare_ground: 8.0
+        big_bluestem_cover: 28.0
+        brome_frequency: 2.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should note: dominance of C4 grasses (big bluestem, Indiangrass, switchgrass, little bluestem) is characteristic of healthy tallgrass prairie. Shannon 2.84 is moderate-good. Bromus inermis is invasive cool-season grass; presence in 2/5 plots is early invasion. Legumes present (Dalea, Lespedeza) indicate N cycling function. Low bare ground (8%) is healthy."
+    tags: [data_interpretation, species, prairie, kansas, usa, north_america, biodiversity]
+
+  - id: data_interp_0027
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Soil Invertebrate Survey - Temperate Agroforestry System
+      Location: Devon, England, UK
+      Survey date: May 2024
+      Sampling: 5 pitfall traps + 5 soil cores (0-15 cm) per zone
+      System: Silvoarable (apple trees in rows, wheat alleys)
+
+      Tree row zone (under canopy):
+        Earthworms: 186 individuals/m2
+          Lumbricus terrestris (anecic): 42/m2
+          Aporrectodea caliginosa (endogeic): 98/m2
+          Lumbricus rubellus (epi-endogeic): 46/m2
+        Springtails (Collembola): 28,400/m2
+        Mites (Acari): 18,600/m2
+        Carabid beetles: 12 species, 86 individuals (pitfall)
+        Staphylinid beetles: 8 species, 42 individuals
+        Spiders: 14 species, 68 individuals
+
+      Open alley zone (wheat crop):
+        Earthworms: 84 individuals/m2
+          Lumbricus terrestris: 12/m2
+          Aporrectodea caliginosa: 52/m2
+          Lumbricus rubellus: 20/m2
+        Springtails: 12,200/m2
+        Mites: 8,400/m2
+        Carabid beetles: 7 species, 38 individuals (pitfall)
+        Staphylinid beetles: 4 species, 18 individuals
+        Spiders: 8 species, 32 individuals
+
+      Adjacent conventional wheat field (control):
+        Earthworms: 48 individuals/m2
+        Springtails: 6,800/m2
+        Mites: 4,200/m2
+        Carabid beetles: 4 species, 22 individuals
+    turns:
+      - role: user
+        content: |
+          Compare the soil invertebrate communities across the three zones. What does the higher abundance and diversity under tree rows indicate about soil health? Interpret the earthworm community composition (functional groups). What ecosystem services do these invertebrate communities provide?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        tree_earthworms: 186.0
+        alley_earthworms: 84.0
+        control_earthworms: 48.0
+        tree_springtails: 28400.0
+        tree_carabid_species: 12.0
+        control_carabid_species: 4.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should note: tree rows have 3.9x more earthworms than conventional, 2.2x more than alley. L. terrestris (anecic = deep burrowing) is 3.5x more abundant under trees (litter input). Springtails and mites indicate active decomposition. Carabids and spiders are biocontrol agents (3x more species under trees). Agroforestry creates habitat heterogeneity."
+    tags: [data_interpretation, species, invertebrates, agroforestry, england, europe, earthworms]
+
+  - id: data_interp_0028
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Weed Species Survey - Indicator Plants for Soil Conditions
+      Location: Bavarian farmland, Southern Germany
+      Survey date: June 2024
+      Field history: Conventional arable, recently converted to organic (3 years)
+
+      Species observed (with abundance scores 1-5):
+        Stellaria media (chickweed): 4 - abundant
+        Chenopodium album (fat hen/lambsquarters): 5 - dominant
+        Capsella bursa-pastoris (shepherd's purse): 3 - frequent
+        Veronica persica (Persian speedwell): 3 - frequent
+        Galium aparine (cleavers): 4 - abundant
+        Cirsium arvense (creeping thistle): 2 - occasional
+        Rumex obtusifolius (broad-leaved dock): 2 - occasional
+        Taraxacum officinale (dandelion): 3 - frequent
+        Polygonum aviculare (knotgrass): 2 - occasional
+        Equisetum arvense (field horsetail): 1 - rare
+        Matricaria chamomilla (wild chamomile): 2 - occasional
+        Papaver rhoeas (common poppy): 3 - frequent
+
+      Soil conditions (lab test):
+        pH: 6.8
+        Organic matter: 3.2%
+        Available N: 42 mg/kg
+        Available P: 28 mg/kg
+        Compaction layer: 25-30 cm depth
+    turns:
+      - role: user
+        content: |
+          Interpret this weed species assemblage as indicators of soil conditions. What do the dominant species tell us about nutrient status, pH, compaction, and drainage? Do the weed indicators align with the lab soil test results? What does this community suggest about the transition from conventional to organic?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ph: 6.8
+        organic_matter: 3.2
+        available_n: 42.0
+        available_p: 28.0
+        compaction_depth: 25.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should recognize: Chenopodium and Stellaria indicate high N and fertile soil (matches 42 mg/kg N). Rumex indicates compaction (matches 25-30 cm layer). Equisetum indicates acidic microsites or poor drainage. Galium indicates fertile, moist conditions. Papaver rhoeas is a classic indicator of recently disturbed calcareous soils. The assemblage is typical of early organic transition."
+    tags: [data_interpretation, species, weeds, indicator_plants, germany, europe, organic]
+
+  - id: data_interp_0029
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Bird Species Survey - Farmland Biodiversity Assessment
+      Location: Mixed farming landscape, Waikato Region, New Zealand
+      Survey: Point counts, 3 visits (Oct, Dec, Feb), 12 survey points
+      Land use: Dairy pasture (60%), native bush remnants (15%), hedgerows (10%), wetland (5%), crop (10%)
+
+      Native species (avg detections per point):
+        Tui (Prosthemadera novaeseelandiae): 2.4
+        Kereru (Hemiphaga novaeseelandiae): 0.8
+        Grey warbler (Gerygone igata): 3.2
+        Fantail (Rhipidura fuliginosa): 2.8
+        Silvereye (Zosterops lateralis): 4.2
+        Pukeko (Porphyrio melanotus): 1.4
+        Paradise shelduck (Tadorna variegata): 1.8
+        NZ pipit (Anthus novaeseelandiae): 0.3
+        Morepork (Ninox novaeseelandiae): 0.2 (night survey)
+
+      Introduced species:
+        House sparrow (Passer domesticus): 8.6
+        Starling (Sturnus vulgaris): 6.4
+        Blackbird (Turdus merula): 5.8
+        Song thrush (Turdus philomelos): 3.2
+        Chaffinch (Fringilla coelebs): 4.4
+        Yellowhammer (Emberiza citrinella): 2.6
+        Magpie (Gymnorhina tibicen): 1.8
+        Myna (Acridotheres tristis): 3.4
+
+      Native:introduced ratio (individuals): 0.38
+      Total species: 22 (9 native, 13 introduced)
+    turns:
+      - role: user
+        content: |
+          Assess farmland biodiversity based on this bird survey. What does the native-to-introduced ratio indicate? Which native species suggest healthy habitat connectivity, and which are absent that should be present? What farm-level interventions could increase native bird diversity?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        native_introduced_ratio: 0.38
+        total_species: 22.0
+        native_species: 9.0
+        sparrow_detections: 8.6
+        tui_detections: 2.4
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note: native:introduced ratio of 0.38 is concerning. Tui and kereru presence indicates some flowering/fruiting native trees. NZ pipit (0.3) and morepork are low, suggesting limited open grassland quality and mature trees respectively. Missing: bellbird, whitehead, rifleman (forest specialists = poor habitat connectivity). Should recommend expanding native bush corridors, riparian planting, and predator control."
+    tags: [data_interpretation, species, birds, new_zealand, oceania, biodiversity, habitat]
+
+  - id: data_interp_0030
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Cover Crop Mix Species Assessment
+      Location: Regenerative grain farm, Saskatchewan, Canada
+      Planted: Late July (after winter wheat harvest)
+      Assessed: Late September (8 weeks after planting)
+      Mix design: 12-species cocktail for soil health
+
+      Species performance:
+        Grasses:
+          Avena sativa (oats): 85% establishment, 45 cm height, vigorous
+          Secale cereale (cereal rye): 72% establishment, 30 cm, moderate
+        Brassicas:
+          Raphanus sativus (tillage radish): 90% establishment, 25 cm tops, 18 cm root penetration
+          Brassica rapa (turnip): 78% establishment, 20 cm
+        Legumes:
+          Trifolium incarnatum (crimson clover): 12% establishment, 4 cm, poor
+          Pisum sativum (field pea): 68% establishment, 22 cm, moderate nodulation
+          Vicia villosa (hairy vetch): 8% establishment, 3 cm, very poor
+          Lens culinaris (lentil): 42% establishment, 12 cm, fair
+        Broadleaves:
+          Helianthus annuus (sunflower): 82% establishment, 48 cm, vigorous
+          Fagopyrum esculentum (buckwheat): 76% establishment, 32 cm, flowering
+          Phacelia tanacetifolia (phacelia): 58% establishment, 18 cm, fair
+          Linum usitatissimum (flax): 64% establishment, 14 cm, fair
+
+      Soil temperature at planting: 18 C
+      First killing frost expected: Oct 5-15
+      Growing degree days accumulated: 620 (base 5C)
+    turns:
+      - role: user
+        content: |
+          Evaluate this cover crop mix performance. Why did the legumes (especially crimson clover and hairy vetch) establish so poorly compared to other species? Which functional groups are well-represented and which are underperforming? How would you modify the mix for next year to ensure better legume representation?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        crimson_clover_establishment: 12.0
+        hairy_vetch_establishment: 8.0
+        oat_establishment: 85.0
+        radish_root_depth: 18.0
+        gdd_accumulated: 620.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should explain: crimson clover (12%) and hairy vetch (8%) are poor because they are long-season species that need more GDD than available in Saskatchewan's short post-harvest window. Should recommend replacing with cold-tolerant species like Berseem clover or Austrian winter peas. Field pea (68%) and lentil (42%) did better as they are adapted to northern climates."
+    tags: [data_interpretation, species, cover_crops, canada, north_america, mix_design]
+
+  - id: data_interp_0031
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Mycorrhizal Colonization and Soil Biology Assessment
+      Location: Comparison trial, Minas Gerais, Brazil
+      System: Regenerative coffee (10-year transition) vs. conventional coffee
+
+      Regenerative system (shade-grown, no synthetic inputs):
+        Arbuscular mycorrhizal colonization: 68%
+        AMF spore density: 142 spores/50g soil
+        AMF species identified: 14
+          Dominant: Glomus clarum, Acaulospora scrobiculata, Gigaspora margarita
+        Glomalin (GRSP): 4.8 mg/g soil
+        Microbial biomass C: 486 ug C/g soil
+        Microbial biomass N: 68 ug N/g soil
+        Soil respiration: 42 mg CO2/kg/day
+        Bacterial:fungal ratio: 1.2:1
+        Phosphatase activity: 248 ug pNP/g/hr
+        Total soil carbon: 3.8%
+
+      Conventional system (full sun, synthetic NPK + herbicide):
+        Arbuscular mycorrhizal colonization: 22%
+        AMF spore density: 38 spores/50g soil
+        AMF species identified: 5
+          Dominant: Glomus clarum only
+        Glomalin (GRSP): 1.6 mg/g soil
+        Microbial biomass C: 186 ug C/g soil
+        Microbial biomass N: 24 ug N/g soil
+        Soil respiration: 18 mg CO2/kg/day
+        Bacterial:fungal ratio: 4.8:1
+        Phosphatase activity: 86 ug pNP/g/hr
+        Total soil carbon: 1.9%
+    turns:
+      - role: user
+        content: |
+          Compare the soil biological indicators between regenerative and conventional coffee systems. What does the 3-fold difference in mycorrhizal colonization mean for nutrient uptake? Interpret the bacterial:fungal ratios and their implications. How does the higher glomalin content relate to soil structure and carbon storage?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        regen_amf_colonization: 68.0
+        conv_amf_colonization: 22.0
+        regen_glomalin: 4.8
+        conv_glomalin: 1.6
+        regen_bact_fungal: 1.2
+        conv_bact_fungal: 4.8
+        regen_soil_c: 3.8
+        conv_soil_c: 1.9
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should explain: 68% vs 22% AMF colonization means dramatically better P and micronutrient uptake. B:F ratio of 1.2 (regen) vs 4.8 (conv) shows fungal-dominated vs bacterial-dominated system; fungal dominance indicates mature, stable soil food web. Glomalin (4.8 vs 1.6 mg/g) is a glycoprotein that cements aggregates and stores carbon. Total C is 2x higher in regenerative."
+    tags: [data_interpretation, species, mycorrhizae, coffee, brazil, south_america, soil_biology]
+
+  - id: data_interp_0032
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Aquatic Macroinvertebrate Survey - Farm Stream Health Assessment
+      Location: Waikato dairy catchment, New Zealand
+      Survey date: February 2024
+      Method: Kick-net sampling, 3 riffles per site
+      Two sites compared: upstream of dairy farm vs. downstream of dairy farm
+
+      Upstream site (native bush riparian buffer, 15 m wide):
+        EPT taxa (pollution-sensitive):
+          Ephemeroptera (mayflies): 5 taxa, 186 individuals
+          Plecoptera (stoneflies): 3 taxa, 42 individuals
+          Trichoptera (caddisflies): 6 taxa, 124 individuals
+        Other taxa:
+          Chironomidae (midges): 68 individuals
+          Oligochaeta (worms): 24 individuals
+          Mollusca (snails): 3 taxa, 38 individuals
+          Crustacea (amphipods): 2 taxa, 56 individuals
+        MCI (Macroinvertebrate Community Index): 128
+        %EPT: 72%
+        Total taxa richness: 28
+
+      Downstream site (no riparian buffer, stock access to stream):
+        EPT taxa:
+          Ephemeroptera: 1 taxon, 18 individuals
+          Plecoptera: 0 taxa, 0 individuals
+          Trichoptera: 2 taxa, 28 individuals
+        Other taxa:
+          Chironomidae: 342 individuals
+          Oligochaeta: 186 individuals
+          Mollusca: 1 taxon, 12 individuals
+          Crustacea: 1 taxon, 8 individuals
+        MCI: 62
+        %EPT: 8%
+        Total taxa richness: 11
+
+      Water quality (downstream):
+        Dissolved reactive P: 0.042 mg/L
+        Nitrate-N: 4.8 mg/L
+        E. coli: 1,240 CFU/100mL
+        Turbidity: 18 NTU
+        Water temperature: 22.4 C
+    turns:
+      - role: user
+        content: |
+          Compare the upstream and downstream macroinvertebrate communities. What does the MCI score difference indicate about water quality degradation? Interpret the shift from EPT-dominated to Chironomidae/Oligochaeta-dominated communities. What farm management changes would improve the downstream site, and what MCI recovery target is realistic?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        upstream_mci: 128.0
+        downstream_mci: 62.0
+        upstream_ept: 72.0
+        downstream_ept: 8.0
+        downstream_ecoli: 1240.0
+        downstream_nitrate: 4.8
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note: MCI drop from 128 (excellent) to 62 (poor) indicates severe degradation. Loss of stoneflies (0 taxa downstream) is classic organic pollution signal. Chironomidae dominance (342 individuals) and Oligochaeta (186) indicate eutrophication and organic enrichment. E. coli at 1240 far exceeds contact recreation standard (260). Solutions: riparian fencing and planting, stock exclusion, constructed wetlands. MCI recovery to 100+ possible in 5-10 years with good riparian management."
+    tags: [data_interpretation, species, macroinvertebrates, stream_health, new_zealand, oceania, dairy]
+
+  - id: data_interp_0033
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are an agroecologist. Analyze the provided species data carefully. Reference specific species and their ecological roles in your response."
+    context_data: |
+      Pollinator Survey - Diversified Vegetable Farm
+      Location: Kampala periurban area, Uganda
+      Survey: Pan traps + visual observation, monthly (Mar-Nov 2024)
+      Farm size: 2.5 hectares, mixed vegetables with flower strips
+
+      Bee species (total individuals caught/observed):
+        Apis mellifera (African honeybee): 842
+        Meliponula ferruginea (stingless bee): 186
+        Meliponula bocandei (stingless bee): 124
+        Xylocopa caffra (carpenter bee): 68
+        Xylocopa nigrita (carpenter bee): 42
+        Megachile spp. (leafcutter bees): 96
+        Halictus spp. (sweat bees): 218
+        Lasioglossum spp. (sweat bees): 164
+        Ceratina spp. (small carpenter bees): 82
+
+      Other pollinators:
+        Butterflies (mixed spp.): 324
+        Hoverflies (Syrphidae): 486
+        Beetle pollinators: 142
+
+      Monthly pattern (total bee individuals):
+        Mar: 124  Apr: 186  May: 248  Jun: 182  Jul: 156
+        Aug: 198  Sep: 286  Oct: 224  Nov: 218
+
+      Flower strip species: Bidens pilosa, Tithonia diversifolia, Crotalaria juncea,
+                           Tagetes spp., Zinnia elegans, Cosmos sulphureus
+    turns:
+      - role: user
+        content: |
+          Assess pollinator health on this Ugandan farm. What does the species composition tell us about habitat quality? Is the farm overly dependent on managed honeybees, or is wild pollinator diversity adequate? How does the monthly pattern relate to floral resource availability? What improvements would strengthen pollination services?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        honeybee_count: 842.0
+        stingless_bee_total: 310.0
+        hoverfly_count: 486.0
+        total_bee_species_groups: 9.0
+        peak_month_count: 286.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note: diverse wild bee community (stingless bees, carpenter bees, leafcutters, sweat bees) indicates good habitat. Honeybees are 46% of bees caught (not overly dominant). Hoverflies (486) are important secondary pollinators and biocontrol agents. Monthly dip in Jul suggests floral gap. Stingless bees (Meliponula spp.) are valuable native pollinators that could be managed. Flower strip species are well-chosen."
+    tags: [data_interpretation, species, pollinators, uganda, africa, biodiversity, flower_strips]
+
+  # ============================================================
+  # SOIL PROFILE DESCRIPTIONS (7 questions)
+  # ============================================================
+
+  - id: data_interp_0034
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Manawatu, North Island, New Zealand
+      Landscape position: Poorly drained river terrace
+      Vegetation: Improved pasture (ryegrass-white clover)
+      Classification query: Determine drainage class and land use capability
+
+      Horizon | Depth (cm) | Color (moist)       | Texture     | Structure            | Mottles        | Roots    | pH  | BD (g/cm3)
+      --------|-----------|---------------------|-------------|---------------------|----------------|----------|-----|----------
+      Ap      | 0-18      | 10YR 3/2 dark brown | Silt loam   | Mod medium granular | None           | Abundant | 5.8 | 1.22
+      AB      | 18-32     | 10YR 4/2 dk gr brn  | Silt loam   | Weak med subang blky| None           | Common   | 5.6 | 1.34
+      Bg1     | 32-55     | 2.5Y 5/2 gr brown   | Silty clay  | Mod coarse prismatic| Many, fine, 7.5YR 4/6 | Few | 5.4 | 1.42
+      Bg2     | 55-80     | 5Y 5/1 gray         | Silty clay  | Massive             | Many, med, 7.5YR 5/8  | Very few | 5.6 | 1.48
+      BCg     | 80-110    | 5Y 6/1 gray         | Clay        | Massive             | Common, coarse, 5YR 4/6| None | 5.8 | 1.52
+      Cg      | 110-150+  | N 5/0 gray           | Clay        | Massive             | Few, fine, 10YR 5/6    | None | 6.0 | 1.56
+
+      Water table observations:
+        Winter (Jun-Aug): 20-30 cm from surface
+        Summer (Dec-Feb): 60-80 cm from surface
+      Saturated hydraulic conductivity (Bg1): 0.4 mm/hr
+    turns:
+      - role: user
+        content: |
+          Classify the drainage of this soil profile using the color, mottle, and water table data. What NZ Land Use Capability class would this soil fall into? Identify the root-limiting horizon and explain what is causing the poor drainage. What management is needed to maintain productive pasture on this soil?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        winter_water_table: 20.0
+        bg1_ksat: 0.4
+        bg2_bd: 1.48
+        mottle_depth: 32.0
+        cg_bd: 1.56
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should classify as poorly drained (Bg notation, gray colors from 32 cm, mottles from 32 cm, winter WT at 20-30 cm). NZ LUC Class 4w or 5w (wetness limitation). Root restriction at Bg1 (32 cm) due to waterlogging and compaction (BD 1.42-1.56). Management: subsurface drainage, avoid stock treading when wet, maintain grass cover."
+    tags: [data_interpretation, soil_profile, drainage, new_zealand, oceania, pasture]
+
+  - id: data_interp_0035
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Loess Plateau, Shaanxi Province, China
+      Landscape position: Convex hillslope, 18% gradient, north-facing
+      Vegetation: Degraded grassland (overgrazed), patchy vegetation cover ~35%
+      Classification query: Assess erosion risk and restoration potential
+
+      Horizon | Depth (cm) | Color (moist)       | Texture      | Structure            | OC (%) | Roots     | BD (g/cm3) | CaCO3 (%)
+      --------|-----------|---------------------|-------------|---------------------|--------|-----------|-----------|----------
+      Ap      | 0-12      | 10YR 5/3 brown      | Silt loam   | Weak fine granular  | 0.48   | Few       | 1.32      | 8.2
+      C1      | 12-45     | 10YR 6/3 pale brown | Silt loam   | Massive (loess)     | 0.22   | Very few  | 1.38      | 12.4
+      C2      | 45-120    | 10YR 6/4 lt yl brn  | Silt loam   | Massive (loess)     | 0.14   | None      | 1.42      | 14.8
+      C3      | 120-200+  | 10YR 7/3 very pale  | Silt loam   | Massive (loess)     | 0.08   | None      | 1.44      | 16.2
+
+      Surface observations:
+        Rill erosion: Present, 5-15 cm deep, spacing 2-4 m
+        Crust formation: Yes, 2-3 mm thick surface seal
+        Stone/gravel: None (pure loess deposit)
+
+      Rainfall erosivity (R factor): 2,800 MJ mm/ha/hr/yr
+      Slope length: 120 m
+      K factor (erodibility): 0.42
+    turns:
+      - role: user
+        content: |
+          Assess the erosion risk for this Loess Plateau profile. Using the USLE/RUSLE parameters provided, explain why loess soils are so erodible. What does the thin A horizon (12 cm) with low OC suggest about past erosion? Calculate whether the current erosion rate is sustainable, and recommend restoration strategies specific to the Loess Plateau.
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        a_horizon_depth: 12.0
+        a_horizon_oc: 0.48
+        slope_gradient: 18.0
+        k_factor: 0.42
+        r_factor: 2800.0
+        vegetation_cover: 35.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should note: K=0.42 is very high erodibility (silt loam loess lacks cohesion and clay armoring), thin A horizon (12 cm) indicates significant historical erosion (natural loess A horizons are 30-50 cm). 35% cover is dangerously low. Should recommend Grain for Green program-style terracing, perennial grass establishment, check dams, and grazing exclusion. RUSLE would give very high erosion rates with these parameters."
+    tags: [data_interpretation, soil_profile, erosion, loess, china, asia, restoration]
+
+  - id: data_interp_0036
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Piedmont region, North Carolina, USA
+      Landscape position: Broad interfluve summit, 2% slope
+      Vegetation: Loblolly pine plantation (15 years), formerly row crop tobacco
+      Classification query: Determine root restriction and land capability
+
+      Horizon | Depth (cm) | Color (moist)         | Texture        | Structure             | Clay (%) | Roots    | pH  | BD (g/cm3)
+      --------|-----------|----------------------|---------------|----------------------|----------|----------|-----|----------
+      Ap      | 0-20      | 7.5YR 4/4 brown      | Sandy loam    | Weak med granular    | 14       | Common   | 5.2 | 1.48
+      E       | 20-35     | 10YR 5/4 yl brown    | Sandy loam    | Weak fine subang blky| 10       | Few      | 5.0 | 1.52
+      Bt1     | 35-65     | 5YR 4/6 yl red       | Clay          | Strong med subang blky| 52      | Very few | 4.8 | 1.46
+      Bt2     | 65-95     | 2.5YR 4/8 red        | Clay          | Mod coarse subang blky| 58      | None     | 4.6 | 1.48
+      BC      | 95-130    | 2.5YR 5/8 red        | Sandy clay    | Weak coarse subang    | 38       | None     | 4.8 | 1.52
+      C       | 130-180+  | Mottled red/white     | Sandy loam    | Massive (saprolite)   | 16       | None     | 5.0 | 1.58
+
+      Additional data:
+        Bt1 Al saturation: 38%
+        Bt2 Al saturation: 52%
+        ECEC (Bt1): 6.8 cmol(c)/kg
+        ECEC (Bt2): 5.4 cmol(c)/kg
+    turns:
+      - role: user
+        content: |
+          Analyze this Piedmont Ultisol profile. What is the abrupt texture change from E to Bt1, and how does it affect water movement and root growth? Assess whether the Al saturation levels are root-limiting. Would this soil be suitable for conversion back to agriculture, and if so, what crops and amendments?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        e_clay: 10.0
+        bt1_clay: 52.0
+        bt1_al_saturation: 38.0
+        bt2_al_saturation: 52.0
+        ap_ph: 5.2
+        bt2_ph: 4.6
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+    source_notes: "Model should note: clay increase from 10% (E) to 52% (Bt1) is an abrupt textural change creating a perched water table during heavy rain. Al saturation of 38% (Bt1) and 52% (Bt2) are root-limiting for most crops (>20% is toxic for sensitive species). Deep liming is impractical. Conversion to agriculture would require surface liming, pH-tolerant crops, and deep-rooted cover crops to gradually ameliorate subsoil acidity."
+    tags: [data_interpretation, soil_profile, ultisol, piedmont, usa, north_america, al_toxicity]
+
+  - id: data_interp_0037
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Western Cape, South Africa (Swartland)
+      Landscape position: Midslope, 8% gradient, west-facing
+      Vegetation: Wheat-canola-pasture rotation (Mediterranean dryland)
+      Classification query: Land capability classification and limiting factors
+
+      Horizon | Depth (cm) | Color (moist)       | Texture      | Structure            | OC (%) | pH  | EC (dS/m) | BD (g/cm3) | Stones (%)
+      --------|-----------|---------------------|-------------|---------------------|--------|-----|----------|-----------|----------
+      Ap      | 0-22      | 10YR 3/3 dk brown   | Sandy loam  | Mod fine granular   | 1.2    | 5.8 | 0.12     | 1.38      | 5
+      B       | 22-40     | 7.5YR 4/4 brown     | Sandy clay  | Mod med subang blky | 0.6    | 6.2 | 0.18     | 1.52      | 12
+      Bk      | 40-55     | 10YR 5/4 yl brown   | Sandy clay  | Weak coarse subang  | 0.3    | 7.8 | 0.42     | 1.58      | 18
+      Ck      | 55-75     | 10YR 6/3 pale brown | Sandy clay  | Massive (hardpan)   | 0.1    | 8.2 | 0.68     | 1.72      | 35
+      R       | 75+       | --                   | Shale/slate | Fractured rock      | --     | --  | --       | --        | --
+
+      Additional:
+        Available depth for roots: 55 cm (hardpan at Ck)
+        PAW (plant available water): 48 mm (in 55 cm profile)
+        Annual rainfall: 380 mm
+        Wheat yield (5-yr avg): 1.8 t/ha
+    turns:
+      - role: user
+        content: |
+          Evaluate this shallow Swartland soil for dryland cropping. How does the effective rooting depth of 55 cm combined with only 48 mm PAW affect crop production? Interpret the pH and EC trends with depth. What management practices could maximize water use efficiency and improve yields in this challenging environment?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        rooting_depth: 55.0
+        paw: 48.0
+        annual_rainfall: 380.0
+        wheat_yield: 1.8
+        ck_bd: 1.72
+        ap_oc: 1.2
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+        - regional_adaptation
+    source_notes: "Model should note: 48 mm PAW is very low (crops need ~300-400 mm for wheat; supplemented by in-season rain). Hardpan at 55 cm is root-limiting. pH shift from 5.8 to 8.2 indicates CaCO3 accumulation (Bk/Ck horizons). EC increasing with depth but not yet problematic. Should recommend no-till (preserve moisture), early planting, short-season varieties, and possibly ripping the Ck horizon if feasible."
+    tags: [data_interpretation, soil_profile, shallow_soil, south_africa, mediterranean, dryland]
+
+  - id: data_interp_0038
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Tuscany, Italy (Chianti region)
+      Landscape position: Terrace on colluvial slope, 12% gradient
+      Vegetation: Vineyard (Sangiovese, 20-year-old vines), cover-cropped alleys
+      Classification query: Assess vine root zone quality and water dynamics
+
+      Horizon | Depth (cm) | Color (moist)         | Texture       | Structure              | OC (%) | pH  | CaCO3 (%) | BD (g/cm3)
+      --------|-----------|----------------------|--------------|----------------------|--------|-----|----------|----------
+      Ap      | 0-25      | 10YR 4/3 brown       | Clay loam    | Strong fine granular  | 2.4    | 7.2 | 2.8      | 1.18
+      Bw1     | 25-50     | 7.5YR 4/4 brown      | Clay         | Mod med subang blky   | 1.2    | 7.4 | 4.2      | 1.28
+      Bw2     | 50-80     | 7.5YR 5/4 brown      | Clay         | Mod coarse subang blky| 0.6    | 7.6 | 6.8      | 1.34
+      Bk      | 80-110    | 10YR 6/4 lt yl brn   | Clay loam    | Weak coarse subang    | 0.3    | 8.0 | 18.4     | 1.42
+      C       | 110-160+  | 2.5Y 6/3 lt yl brn   | Silty clay   | Massive (marl)        | 0.1    | 8.2 | 42.6     | 1.56
+
+      Vine root observations:
+        0-25 cm: Dense fine roots, mycorrhizal colonization observed
+        25-50 cm: Common roots, some thickened roots
+        50-80 cm: Few roots, mainly along ped faces
+        80+ cm: Rare roots in cracks only
+
+      Aggregate stability (Ap): 78%
+      Water infiltration rate: 28 mm/hr
+    turns:
+      - role: user
+        content: |
+          Assess this vineyard soil profile for Sangiovese grape production. How does the increasing CaCO3 with depth affect vine root exploration and nutrient uptake? Is the Ap horizon in good condition for a vineyard soil? What does the root distribution pattern suggest about water stress management during the growing season?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ap_oc: 2.4
+        ap_aggregate_stability: 78.0
+        bk_caco3: 18.4
+        c_caco3: 42.6
+        infiltration: 28.0
+        ap_ph: 7.2
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - practical_actionability
+    source_notes: "Model should note: Ap is in excellent condition (OC 2.4%, aggregate stability 78%, infiltration 28 mm/hr = well-structured). CaCO3 increases from 2.8% to 42.6% restricting deep root growth. Most roots in upper 50 cm means vines rely on surface water. For Sangiovese quality, moderate water stress is desirable (mild deficit irrigation). Cover crop competition may help control vigor. Limestone-rich C horizon is typical of quality Chianti terroir."
+    tags: [data_interpretation, soil_profile, vineyard, italy, europe, terroir, calcareous]
+
+  - id: data_interp_0039
+    question_type: data_interpretation
+    difficulty: hard
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Central Highlands, Kenya (Murang'a County)
+      Landscape position: Upper backslope, 22% gradient
+      Vegetation: Smallholder tea plantation (Camellia sinensis), 30+ years
+      Classification query: Assess soil degradation and sustainability
+
+      Horizon | Depth (cm) | Color (moist)         | Texture    | Structure              | OC (%) | pH   | Al sat (%) | BD (g/cm3)
+      --------|-----------|----------------------|-----------|----------------------|--------|------|----------|----------
+      Ap      | 0-15      | 5YR 3/4 dk red brn   | Clay      | Mod fine subang blky  | 2.8    | 4.2  | 42       | 1.14
+      AB      | 15-30     | 2.5YR 3/6 dark red   | Clay      | Mod med subang blky   | 1.8    | 4.0  | 58       | 1.18
+      Bo1     | 30-70     | 2.5YR 4/6 red        | Clay      | Strong fine granular  | 0.8    | 4.2  | 62       | 1.02
+      Bo2     | 70-120    | 10R 4/8 red          | Clay      | Strong v.fine granular| 0.4    | 4.4  | 68       | 0.98
+      Bo3     | 120-200+  | 10R 4/6 red          | Clay      | Strong v.fine granular| 0.2    | 4.6  | 72       | 0.96
+
+      Additional data:
+        ECEC (Ap): 6.2 cmol(c)/kg
+        ECEC (Bo1): 3.4 cmol(c)/kg
+        Available P (Ap, Mehlich-3): 4.8 mg/kg
+        Tea yield (current): 1,200 kg made tea/ha/yr
+        Tea yield (regional best): 3,500 kg made tea/ha/yr
+        Annual fertilizer applied: 150 kg N/ha (as ammonium sulfate)
+        Soil loss estimate: 28 t/ha/yr (from slope, sparse ground cover)
+
+      Adjacent reference forest profile:
+        Ap OC: 6.8%
+        Ap pH: 5.2
+        Ap Al saturation: 18%
+    turns:
+      - role: user
+        content: |
+          Compare this tea plantation profile with the reference forest data. Quantify the soil degradation that has occurred. Why is the tea yield only 34% of regional potential? How has continuous ammonium sulfate application affected the soil? What regenerative interventions could restore productivity while maintaining the tea plantation?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ap_oc_tea: 2.8
+        ap_oc_forest: 6.8
+        ap_al_sat_tea: 42.0
+        ap_al_sat_forest: 18.0
+        soil_loss: 28.0
+        tea_yield: 1200.0
+        yield_potential: 3500.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should quantify: OC dropped from 6.8% to 2.8% (59% loss), pH from 5.2 to 4.2 (ten-fold acidity increase), Al sat from 18% to 42% (severe toxicity). Ammonium sulfate is the main acidifying agent (NH4+ nitrification produces H+). Soil loss at 28 t/ha/yr on 22% slope with sparse cover is unsustainable. Should recommend: shade trees (Grevillea robusta), vetiver grass barriers, lime to raise pH, switch to less acidifying N sources, mulching with prunings."
+    tags: [data_interpretation, soil_profile, tea, kenya, africa, degradation, acidification]
+
+  - id: data_interp_0040
+    question_type: data_interpretation
+    difficulty: medium
+    regions: [global]
+    system_prompt: "You are a soil science expert. Analyze the provided soil profile data carefully. Reference specific horizon properties in your response."
+    context_data: |
+      Soil Profile Description
+      Location: Mekong floodplain, Cambodia (Kandal Province)
+      Landscape position: Seasonally flooded backswamp depression
+      Vegetation: Wet-season rice, dry-season fallow (traditional system)
+      Classification query: Classify profile, assess potential for crop intensification
+
+      Horizon | Depth (cm) | Color (moist)         | Texture      | Structure              | OC (%) | pH  | BD (g/cm3)
+      --------|-----------|----------------------|-------------|----------------------|--------|-----|----------
+      Apg     | 0-18      | 5Y 4/1 dark gray     | Silty clay  | Mod fine subang blky  | 2.6    | 5.4 | 0.98
+      Bg1     | 18-40     | 5Y 5/1 gray          | Clay        | Mod med prismatic     | 1.2    | 5.2 | 1.12
+      Bg2     | 40-70     | 5GY 5/1 greenish gray| Clay        | Massive               | 0.6    | 5.6 | 1.18
+      BCg     | 70-100    | 5G 5/1 greenish gray | Clay        | Massive               | 0.3    | 6.0 | 1.24
+      Cg      | 100-140+  | N 4/0 dark gray      | Silty clay  | Massive               | 0.2    | 6.2 | 1.28
+
+      Seasonal water regime:
+        Jun-Nov: Flooded, 30-150 cm standing water
+        Dec-Feb: Saturated, water table at surface
+        Mar-May: Water table drops to 40-80 cm
+
+      Additional chemistry (Apg):
+        Available P (Olsen): 8.4 mg/kg
+        Available K: 86 mg/kg
+        Fe2+ (flooded): 186 mg/kg
+        Available Zn: 0.48 mg/kg
+        Available S: 18.4 mg/kg
+    turns:
+      - role: user
+        content: |
+          Evaluate this Mekong floodplain soil for rice intensification (moving from single to double cropping). How does the seasonal flooding regime drive soil chemistry? What are the nutrient constraints for wet-season rice? What risks does early drainage for a dry-season crop pose, and what soil management is needed to support intensification?
+    scoring_method: composite
+    scoring_config:
+      methods:
+        - numeric_grounding
+        - llm_judge
+      expected_values:
+        ap_oc: 2.6
+        ap_ph: 5.4
+        available_p: 8.4
+        iron_flooded: 186.0
+        zinc: 0.48
+        flood_duration_months: 6.0
+      dimensions:
+        - data_grounding
+        - factual_accuracy
+        - reasoning_depth
+        - practical_actionability
+    source_notes: "Model should explain: flooding creates reduced conditions (greenish-gray colors from Fe2+ dominance), pH shifts toward neutral when flooded. Zn at 0.48 mg/kg is deficient for rice. Fe2+ at 186 mg/kg may cause Fe toxicity in sensitive varieties. K at 86 is marginal. Dry-season crop risks: acid generation on drainage, cracking in clay soils, Fe toxicity when re-flooded. Need Zn supplementation, K fertilization, and adapted varieties."
+    tags: [data_interpretation, soil_profile, floodplain, cambodia, asia, rice, intensification]

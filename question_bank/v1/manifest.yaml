@@ -1,0 +1,60 @@
+version: v1
+created: "2026-05-24"
+total_questions: 540
+
+files:
+  - path: factual_soil.yaml
+    count: 60
+    sha256: eac05575f9278581a287172f70a36f26406f4d56f462643a57680bdfb588834e
+  - path: factual_climate.yaml
+    count: 40
+    sha256: f8f78d8c88413ceaaa1626ce30c8c1bdd59ce1a12c0ba5e0749cf5af4617e1d4
+  - path: factual_ecology.yaml
+    count: 40
+    sha256: 7f15eb24b108924db54bef9fe4a55f2a08ed35cf2dea77c0f8afcfcbe8cf6eec
+  - path: factual_crop_science.yaml
+    count: 40
+    sha256: 99cd59eff084732a83f35ec09ff70bc8598b7fe2a49faef7757b1f6629035f85
+  - path: factual_regen_practices.yaml
+    count: 30
+    sha256: 1a1bb838d3341d3ac34185f93660b1d503ea54f78b3e7e26a8cfefd8e4871134
+  - path: reasoning_causal.yaml
+    count: 40
+    sha256: 52daf3cd2049bf8fbc35866ba22e59b632a647761ba174222e04b5b8b24da803
+  - path: reasoning_nutrient_cycling.yaml
+    count: 25
+    sha256: 514598c4844d701ce05eece79512e69609bad7ad1f08ddf5e5cd33080b1c98d3
+  - path: reasoning_comparative.yaml
+    count: 25
+    sha256: bc22e8f8fc3722639889fc285aec6c1f7d5c14fad7e6cc652b816fe7bd11e735
+  - path: practical_advice.yaml
+    count: 40
+    sha256: 687fce773d86b2ffdfc9442859c99a1fe413f633f9f7deea6644af7bdb6cfaea
+  - path: practical_scenario.yaml
+    count: 30
+    sha256: e3c2802e45f38e140596abde0996371848671c5138081c37cff7ed277f1a259b
+  - path: data_interpretation.yaml
+    count: 40
+    sha256: 9320ccc984c2260a51762431f97ecfea6e5758f51dbe985e3036ebd8bfaafdbc
+  - path: regional_adaptation.yaml
+    count: 35
+    sha256: f086470c788a123392ae38f5645862d26d7577d26c660b31f5f52d41ce1114fa
+  - path: safety_critical.yaml
+    count: 35
+    sha256: 3c6b8cf8e2a49effa7afc05f5aa5a1832310aed8aae7a65a2dd91581c1e9f300
+  - path: completeness_systems.yaml
+    count: 30
+    sha256: 0a5c3c01c11bcf70df94607f500f2d8e98331a25f52c5d793e91238e34fe4c80
+  - path: grounding_citation.yaml
+    count: 30
+    sha256: 55e51e26fbbb3134868f5cd7fed6180fafa9ec266c0ec0eb9c5c52a89c389004
+
+categories:
+  factual: 210
+  reasoning: 90
+  practical: 70
+  data_interpretation: 40
+  regional_adaptation: 35
+  safety: 35
+  completeness: 30
+  grounding: 30

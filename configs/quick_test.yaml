@@ -1,0 +1,5 @@
+# Quick test config — single model, for development iteration
+models:
+  - name: claude-sonnet-4-20250514
+    provider: anthropic
+    model_id: claude-sonnet-4-20250514
