@@ -1,0 +1,16 @@
+# Run benchmark via Claude Code CLI — no API keys needed.
+# Uses your existing Claude Code authentication (enterprise billing works).
+#
+# Usage: solum-bench run --config configs/claude_code.yaml
+#
+# Set 'model' to control which Claude model is used:
+#   sonnet (default, fast), opus (most capable), haiku (cheapest)
+models:
+  - name: claude-sonnet-via-cc
+    provider: claude_code
+    model: sonnet
+
+  # Uncomment to also benchmark opus:
+  # - name: claude-opus-via-cc
+  #   provider: claude_code
+  #   model: opus

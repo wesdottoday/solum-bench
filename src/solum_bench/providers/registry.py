@@ -13,8 +13,8 @@ from solum_bench.providers.base import ModelProvider
 def create_provider(config: dict[str, Any]) -> ModelProvider:
     """Create a model provider from a config dict."""
     provider_type = config["provider"]
-    model_id = config["model_id"]
-    name = config.get("name", model_id)
+    model_id = config.get("model_id", "")
+    name = config.get("name", model_id or provider_type)
 
     # Filter out keys consumed by the registry
     extra = {k: v for k, v in config.items() if k not in ("provider", "model_id", "name")}
@@ -49,6 +49,11 @@ def create_provider(config: dict[str, Any]) -> ModelProvider:
         from solum_bench.providers.hf_local import HFLocalProvider
 
         return HFLocalProvider(model_id=model_id, name=name, **extra)
+
+    elif provider_type == "claude_code":
+        from solum_bench.providers.claude_code import ClaudeCodeProvider
+
+        return ClaudeCodeProvider(name=name, model=extra.pop("model", None), **extra)
 
     else:
         raise ValueError(f"Unknown provider type: {provider_type}")
